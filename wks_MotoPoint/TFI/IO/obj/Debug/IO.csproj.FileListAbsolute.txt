@@ -1,0 +1,12 @@
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\IO.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\IO.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\BE.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\DAL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\EL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\BE.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\DAL.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\bin\Debug\EL.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\obj\Debug\IO.csprojResolveAssemblyReference.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\obj\Debug\IO.csproj.CoreCompileInputs.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\obj\Debug\IO.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\IO\obj\Debug\IO.pdb

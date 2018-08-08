@@ -1,0 +1,6 @@
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\bin\Debug\EL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\bin\Debug\EL.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\obj\Debug\EL.csprojResolveAssemblyReference.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\obj\Debug\EL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\EL\obj\Debug\EL.pdb

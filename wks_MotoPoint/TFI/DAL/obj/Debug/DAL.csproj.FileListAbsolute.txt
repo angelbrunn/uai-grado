@@ -1,0 +1,10 @@
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\DAL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\DAL.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\BE.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\EL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\BE.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\bin\Debug\EL.pdb
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\obj\Debug\DAL.dll
+C:\Users\angel\Desktop\BackEndC#\TFI\DAL\obj\Debug\DAL.pdb
