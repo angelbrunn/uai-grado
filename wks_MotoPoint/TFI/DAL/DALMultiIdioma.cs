@@ -1,112 +1,116 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace SIS.DATOS
 {
-    class DALMultiIdioma
+    public class DALMultiIdioma
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idioma"></param>
+        /// <returns></returns>
+        public List<MultiIdioma> ObtenerPermisosPorIdGrupo(String idioma)
+        {
+            List<MultiIdioma> listaMultiIdioma = new List<MultiIdioma>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_MultiIdioma where ikey=@Idioma", con);
+                    cmdSelect.Parameters.AddWithValue("@Idioma", idioma);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MultiIdioma oMultiIdioma = new MultiIdioma();
+                            oMultiIdioma.Componente = reader["componente"].ToString();
+                            oMultiIdioma.IKey = reader["ikey"].ToString();
+                            oMultiIdioma.Value = reader["value"].ToString();
+                            listaMultiIdioma.Add(oMultiIdioma);
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return listaMultiIdioma;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<MultiIdioma> ObtenerTablaMultiIdiomaAll()
+        {
+            List<MultiIdioma> listaMultiIdioma = new List<MultiIdioma>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_MultiIdioma", con);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MultiIdioma oMultiIdioma = new MultiIdioma();
+                            oMultiIdioma.Componente = reader["componente"].ToString();
+                            oMultiIdioma.IKey = reader["ikey"].ToString();
+                            oMultiIdioma.Value = reader["value"].ToString();
+                            listaMultiIdioma.Add(oMultiIdioma);
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return listaMultiIdioma;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<MultiIdioma> IdiomasDisponibles()
+        {
+            List<MultiIdioma> listaMultiIdioma = new List<MultiIdioma>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT DISTINCT iKey FROM tbl_MultiIdioma", con);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MultiIdioma oMultiIdioma = new MultiIdioma();
+                            oMultiIdioma.Componente = reader["componente"].ToString();
+                            oMultiIdioma.IKey = reader["ikey"].ToString();
+                            oMultiIdioma.Value = reader["value"].ToString();
+                            listaMultiIdioma.Add(oMultiIdioma);
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return listaMultiIdioma;
+            }
+        }
     }
-    /*
-     Public Function obtenerTablaMultiIdioma(ByVal idioma As String) As List(Of BE.SIS.ENTIDAD.MultiIdioma)
-            Dim listaMultiIdioma As New List(Of BE.SIS.ENTIDAD.MultiIdioma)
-
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT * FROM tbl_MultiIdioma where ikey =" + "'" + idioma + "'"
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim adapter As New SqlDataAdapter(comando)
-            Dim ds As New DataSet
-
-            Try
-                adapter.Fill(ds, "MultiIdioma")
-                Dim enu As IEnumerator(Of DataRow) = ds.Tables("MultiIdioma").Rows.GetEnumerator
-                While enu.MoveNext
-                    Dim oMultiIdioma As New BE.SIS.ENTIDAD.MultiIdioma
-                    oMultiIdioma.componente = enu.Current("componente").ToString
-                    oMultiIdioma.iKey = enu.Current("iKey").ToString
-                    oMultiIdioma.value = enu.Current("value").ToString
-                    listaMultiIdioma.Add(oMultiIdioma)
-                End While
-            Catch
-            End Try
-            Return listaMultiIdioma
-        End Function
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
-        Public Function obtenerTablaMultiIdiomaAll() As List(Of BE.SIS.ENTIDAD.MultiIdioma)
-            Dim listaMultiIdioma As New List(Of BE.SIS.ENTIDAD.MultiIdioma)
-
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT * FROM tbl_MultiIdioma "
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim adapter As New SqlDataAdapter(comando)
-            Dim ds As New DataSet
-
-            Try
-                adapter.Fill(ds, "MultiIdioma")
-                Dim enu As IEnumerator(Of DataRow) = ds.Tables("MultiIdioma").Rows.GetEnumerator
-                While enu.MoveNext
-                    Dim oMultiIdioma As New BE.SIS.ENTIDAD.MultiIdioma
-                    oMultiIdioma.componente = enu.Current("componente").ToString
-                    oMultiIdioma.iKey = enu.Current("iKey").ToString
-                    oMultiIdioma.value = enu.Current("value").ToString
-                    listaMultiIdioma.Add(oMultiIdioma)
-                End While
-            Catch
-            End Try
-            Return listaMultiIdioma
-        End Function
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
-        Public Function idiomasDisponibles() As List(Of BE.SIS.ENTIDAD.MultiIdioma)
-            Dim listaMultiIdioma As New List(Of BE.SIS.ENTIDAD.MultiIdioma)
-
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT DISTINCT iKey FROM tbl_MultiIdioma "
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim adapter As New SqlDataAdapter(comando)
-            Dim ds As New DataSet
-
-            Try
-                adapter.Fill(ds, "MultiIdioma")
-                Dim enu As IEnumerator(Of DataRow) = ds.Tables("MultiIdioma").Rows.GetEnumerator
-                While enu.MoveNext
-                    Dim oMultiIdioma As New BE.SIS.ENTIDAD.MultiIdioma
-                    oMultiIdioma.iKey = enu.Current("iKey").ToString
-                    listaMultiIdioma.Add(oMultiIdioma)
-                End While
-            Catch
-            End Try
-            Return listaMultiIdioma
-        End Function
-        */
 }

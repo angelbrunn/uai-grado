@@ -1,121 +1,107 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace SIS.DATOS
 {
-    class DALUsuarioGrupo
+    public class DALUsuarioGrupo
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        public List<UsuarioGrupo> ObtenerGrupoPorIdUsuario(int idUsuario)
+        {
+            List<UsuarioGrupo> listadoUsuarioGrupo = new List<UsuarioGrupo>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_UsuarioGrupo WHERE idUsuario=@IdUsuario", con);
+                    cmdSelect.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UsuarioGrupo oUsuarioGrupo = new UsuarioGrupo();
+                            oUsuarioGrupo.IdUsuario = Convert.ToInt32(reader["idUsuario"]);
+                            oUsuarioGrupo.IdGrupo = Convert.ToInt32(reader["idGrupo"]);
+                            listadoUsuarioGrupo.Add(oUsuarioGrupo);
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return listadoUsuarioGrupo;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<UsuarioGrupo> ObtenerTablaUsuarioGrupo()
+        {
+            List<UsuarioGrupo> listadoUsuarioGrupo = new List<UsuarioGrupo>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_UsuarioGrupo", con);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UsuarioGrupo oUsuarioGrupo = new UsuarioGrupo();
+                            oUsuarioGrupo.IdUsuario = Convert.ToInt32(reader["idUsuario"]);
+                            oUsuarioGrupo.IdGrupo = Convert.ToInt32(reader["idGrupo"]);
+                            listadoUsuarioGrupo.Add(oUsuarioGrupo);
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return listadoUsuarioGrupo;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oUsuarioGrupo"></param>
+        public void InsertarUsuarioGrupo(UsuarioGrupo oUsuarioGrupo)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_UsuarioGrupo([idUsuario],[idGrupo]) VALUES (@IdUsuario,@IdGrupo)", con))
+                {
+                    cmdInsert.Parameters.AddWithValue("@IdUsuario", oUsuarioGrupo.IdUsuario);
+                    cmdInsert.Parameters.AddWithValue("@IdGrupo", oUsuarioGrupo.IdGrupo);
+
+                    try
+                    {
+                        con.Open();
+                        cmdInsert.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+        }
     }
-    /*
-    Public Function obtenerGrupoPorIdUsuario(ByVal idUsuario As Integer) As List(Of BE.SIS.ENTIDAD.UsuarioGrupo)
-            Dim listadoUsuarioGrupo As New List(Of BE.SIS.ENTIDAD.UsuarioGrupo)
-
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT * FROM tbl_UsuarioGrupo WHERE idUsuario=@idUsuario"
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim iPar As IDataParameter = comando.CreateParameter
-            iPar.ParameterName = "idUsuario"
-            iPar.DbType = DbType.Int32
-            iPar.Value = idUsuario
-            comando.Parameters.Add(iPar)
-
-            Dim adapter As New SqlDataAdapter(comando)
-            Dim ds As New DataSet
-
-            Try
-                adapter.Fill(ds, "UsuarioGrupo")
-                Dim enu As IEnumerator(Of DataRow) = ds.Tables("UsuarioGrupo").Rows.GetEnumerator
-                While enu.MoveNext
-                    Dim oUsuarioGrupo As New BE.SIS.ENTIDAD.UsuarioGrupo
-                    oUsuarioGrupo.idUsuario = CType(enu.Current("idUsuario"), Integer)
-                    oUsuarioGrupo.idGrupo = CType(enu.Current("idGrupo"), Integer)
-                    listadoUsuarioGrupo.Add(oUsuarioGrupo)
-                End While
-            Catch
-            End Try
-            Return listadoUsuarioGrupo
-        End Function
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="oUsuarioGrupo"></param>
-        ''' <remarks></remarks>
-        Public Sub insertarUsuarioGrupo(ByVal oUsuarioGrupo As BE.SIS.ENTIDAD.UsuarioGrupo)
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "INSERT INTO tbl_UsuarioGrupo([idUsuario],[idGrupo]) VALUES (@idUsuario,@idGrupo)"
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim iPar As IDataParameter = comando.CreateParameter
-
-            iPar.ParameterName = "idUsuario"
-            iPar.DbType = DbType.Int32
-            iPar.Value = oUsuarioGrupo.idUsuario
-            comando.Parameters.Add(iPar)
-
-            iPar = comando.CreateParameter
-            iPar.ParameterName = "idGrupo"
-            iPar.DbType = DbType.Int32
-            iPar.Value = oUsuarioGrupo.idGrupo
-            comando.Parameters.Add(iPar)
-
-            Try
-                conex.Open()
-                comando.ExecuteNonQuery()
-                conex.Close()
-            Catch ex As Exception
-            End Try
-        End Sub
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <remarks></remarks>
-        Public Function obtenerTablaUsuarioGrupo() As List(Of BE.SIS.ENTIDAD.UsuarioGrupo)
-            Dim listaUsuarioGrupo As New List(Of BE.SIS.ENTIDAD.UsuarioGrupo)
-
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT * FROM tbl_UsuarioGrupo"
-
-            Dim conex As New SqlConnection
-            conex.ConnectionString = conexString
-
-            Dim comando As SqlCommand = conex.CreateCommand
-            comando.CommandType = CommandType.Text
-            comando.CommandText = sqlQuery
-
-            Dim adapter As New SqlDataAdapter(comando)
-            Dim ds As New DataSet
-
-            Try
-                adapter.Fill(ds, "UsuarioGrupo")
-                Dim enu As IEnumerator(Of DataRow) = ds.Tables("UsuarioGrupo").Rows.GetEnumerator
-
-                While enu.MoveNext
-                    Dim oUsuarioGrupo As New BE.SIS.ENTIDAD.UsuarioGrupo
-                    oUsuarioGrupo.idUsuario = CType(enu.Current("idUsuario"), Integer)
-                    oUsuarioGrupo.idGrupo = CType(enu.Current("idGrupo"), Integer)
-                    listaUsuarioGrupo.Add(oUsuarioGrupo)
-                End While
-            Catch ex As Exception
-                Throw New EL.SIS.EXCEPCIONES.DALExcepcion("Error en BD", ex)
-            End Try
-            Return listaUsuarioGrupo
-        End Function
-        */
 }

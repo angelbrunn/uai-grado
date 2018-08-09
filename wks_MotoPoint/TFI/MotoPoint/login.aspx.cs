@@ -16,26 +16,17 @@ namespace MotoPoint
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SIS.DATOS.DALGrupo dDALGrupo = new SIS.DATOS.DALGrupo();
+            SIS.DATOS.DALUsuario oDALUsuario = new SIS.DATOS.DALUsuario();
 
-            List<SIS.ENTIDAD.Grupo> listGrupo = new List<SIS.ENTIDAD.Grupo>();
+            List<SIS.ENTIDAD.Usuario> listadoUsuarios = new List<SIS.ENTIDAD.Usuario>();
 
-            //TEST1
-            listGrupo = dDALGrupo.ObtenerGrupos();
+            SIS.ENTIDAD.Usuario oUsuario1 = new SIS.ENTIDAD.Usuario();
+            SIS.ENTIDAD.Usuario oUsuario2 = new SIS.ENTIDAD.Usuario();
+            SIS.ENTIDAD.Usuario oUsuario3 = new SIS.ENTIDAD.Usuario();
 
-            SIS.ENTIDAD.Grupo oGrupo1 = new SIS.ENTIDAD.Grupo();
 
-            //TEST2
-            oGrupo1 = dDALGrupo.ObtenerGrupoPorId(1);
 
-            //TEST3
-            String nombre = dDALGrupo.ObtenerDescripcionGrupoPorNombreGrupo("Admin");
-
-            SIS.ENTIDAD.Grupo oGrupo2 = new SIS.ENTIDAD.Grupo();
-
-            //TEST4
-            oGrupo2 = dDALGrupo.obtenerGrupoPorNombreGrupo("Admin");
-
+            oDALUsuario.InsertarUsuario(listadoUsuarios);
 
         }
     }
