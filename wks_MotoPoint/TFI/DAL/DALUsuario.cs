@@ -321,10 +321,8 @@ namespace SIS.DATOS
                 }
                 else
                 {
-                    // sobre escribir el regustro cuyo idUsuario=1 (digitos Verificadores verticales)
                     IEnumerable<DataRow> sequence = ds.Tables["Usuario"].AsEnumerable();
                     IEnumerator<DataRow> enu = sequence.GetEnumerator();
-                    //IEnumerator<DataRow> enu = ds.Tables["Usuario"].Rows.GetEnumerator();
 
                     while (enu.MoveNext())
                     {
@@ -363,64 +361,3 @@ namespace SIS.DATOS
         }
     }
 }
-/*
-    
-        Public Sub insertarUsuario(ByVal listaUsuarios As List(Of BE.SIS.ENTIDAD.Usuario))
-            Dim conexString As String = System.Configuration.ConfigurationManager.ConnectionStrings("MotoPoint").ConnectionString
-            Dim sqlQuery As String = "SELECT * FROM tbl_Usuario"
-
-            Dim adaptador As New SqlDataAdapter(sqlQuery, conexString)
-            Dim ds As New DataSet
-            Dim cb As New SqlCommandBuilder(adaptador)
-            adaptador.UpdateCommand = cb.GetUpdateCommand
-            adaptador.InsertCommand = cb.GetInsertCommand
-            adaptador.DeleteCommand = cb.GetDeleteCommand
-
-            Try
-                adaptador.Fill(ds, "Usuario")
-
-                If ds.Tables("Usuario").Rows.Count = 0 Then
-                    Dim ColumnaVerificadora As BE.SIS.ENTIDAD.Usuario = listaUsuarios.Item(0)
-                    Dim dr As DataRow = ds.Tables("Usuario").Rows.Add
-                    dr("idUsuario") = ColumnaVerificadora.idUsuario.ToString
-                    dr("usuario") = ColumnaVerificadora.usuario.ToString
-                    dr("password") = ColumnaVerificadora.password.ToString
-                    dr("legajo") = ColumnaVerificadora.legajo.ToString
-                    dr("idioma") = ColumnaVerificadora.idioma.ToString
-                    dr("digitoVerificador") = ColumnaVerificadora.digitoVerificador.ToString
-                Else
-                    'sobre escribir el regustro cuyo idUsuario=1 (digitos Verificadores verticales)
-
-                    Dim enu As IEnumerator(Of DataRow) = ds.Tables("Usuario").Rows.GetEnumerator
-                    While enu.MoveNext
-                        If enu.Current.Item(0) = 1 Then
-                            enu.Current.Item(1) = listaUsuarios.Item(0).usuario
-                            enu.Current.Item(2) = listaUsuarios.Item(0).password
-                            enu.Current.Item(3) = listaUsuarios.Item(0).legajo
-                            enu.Current.Item(4) = listaUsuarios.Item(0).idioma
-                            enu.Current.Item(5) = listaUsuarios.Item(0).digitoVerificador
-                        End If
-
-                    End While
-                End If
-
-                Dim posicionUltimo As Integer = listaUsuarios.Count
-                posicionUltimo = posicionUltimo - 1
-                Dim oUsuario2 As BE.SIS.ENTIDAD.Usuario = listaUsuarios.Item(posicionUltimo)
-                Dim dr2 As DataRow = ds.Tables("Usuario").NewRow
-                dr2("idUsuario") = CType(oUsuario2.idUsuario, Integer)
-                dr2("usuario") = oUsuario2.usuario.ToString
-                dr2("password") = oUsuario2.password.ToString
-                dr2("legajo") = oUsuario2.legajo.ToString
-                dr2("idioma") = oUsuario2.idioma.ToString
-                dr2("digitoVerificador") = oUsuario2.digitoVerificador.ToString
-                ds.Tables("Usuario").Rows.Add(dr2)
-
-                adaptador.Update(ds, "Usuario")
-            Catch ex As Exception
-                Throw New EL.SIS.EXCEPCIONES.DALExcepcion(ex.Message)
-            End Try
-        End Sub
-
-
-*/
