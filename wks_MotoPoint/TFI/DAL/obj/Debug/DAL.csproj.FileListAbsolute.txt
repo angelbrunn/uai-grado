@@ -14,7 +14,6 @@ C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\bin\Debug
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\bin\Debug\EL.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\bin\Debug\BE.pdb
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\bin\Debug\EL.pdb
-C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\obj\Debug\DAL.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\DAL\obj\Debug\DAL.pdb

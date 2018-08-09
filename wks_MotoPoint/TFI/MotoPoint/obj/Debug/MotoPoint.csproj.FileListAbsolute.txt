@@ -15,9 +15,9 @@ C:\Users\angel\Desktop\BackEndC#\TFI\MotoPoint\obj\Debug\MotoPoint.csprojResolve
 C:\Users\angel\Desktop\BackEndC#\TFI\MotoPoint\obj\Debug\MotoPoint.csproj.CoreCompileInputs.cache
 C:\Users\angel\Desktop\BackEndC#\TFI\MotoPoint\obj\Debug\MotoPoint.dll
 C:\Users\angel\Desktop\BackEndC#\TFI\MotoPoint\obj\Debug\MotoPoint.pdb
+C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.pdb
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.dll.config
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.dll
-C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.pdb
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BE.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BLL.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\DAL.dll

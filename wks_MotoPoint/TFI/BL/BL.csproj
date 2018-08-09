@@ -48,9 +48,17 @@
       <Project>{d176e75a-9d28-4245-86a9-939feb13fdc5}</Project>
       <Name>BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{abe66fb8-e7cb-4729-988d-cee2e77bcbce}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EL\EL.csproj">
       <Project>{ea7ffa46-6a8b-4698-b1cf-c94e1c382370}</Project>
       <Name>EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IO\IO.csproj">
+      <Project>{f2db6db5-a059-420f-86a7-5a73b6ef76b1}</Project>
+      <Name>IO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
