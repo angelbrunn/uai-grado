@@ -1,4 +1,5 @@
 ﻿using System;
+using SIS.DATOS;
 using System.Collections.Generic;
 
 namespace SIS.BIT
@@ -12,19 +13,18 @@ namespace SIS.BIT
         /// 
         /// </summary>
         /// <returns></returns>
-        private int obtenerUltimoId()
+        private int ObtenerUltimoId()
         {
             int ultimoId=1;
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DALBitacora oDalBitacora = new DALBitacora();
             try
             {
-                ultimoId = oDalBitacora.obtenerUltimoId();
+                ultimoId = oDalBitacora.ObtenerUltimoId();
             }
             catch (Exception ex)
             {
+                throw new EXCEPCIONES.IOException(ex.Message);
             }
-            */
             return ultimoId;
         }
         /// <summary>
@@ -32,212 +32,201 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oBKPExc"></param>
-        public void registrarEnBitacora_BKP(string usuarioI, SIS.EXCEPCIONES.BKPException oBKPExc)
+        public void RegistrarEnBitacora_BKP(string usuarioI, SIS.EXCEPCIONES.BKPException oBKPExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "BKPException:" + oBKPExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "BKPException:" + oBKPExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
 
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                SIS.ESCRITURA.IOBitacora oIOBitacora = new SIS.ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oBLLExc"></param>
-        public void registrarEnBitacora_BLL(string usuarioI, SIS.EXCEPCIONES.BLLExcepcion oBLLExc)
+        public void RegistrarEnBitacora_BLL(string usuarioI, SIS.EXCEPCIONES.BLLExcepcion oBLLExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "BLLExcepcion:" + oBLLExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "BLLExcepcion:" + oBLLExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oDALExc"></param>
-        public void registrarEnBitacora_DAL(string usuarioI, SIS.EXCEPCIONES.DALExcepcion oDALExc)
+        public void RegistrarEnBitacora_DAL(string usuarioI, SIS.EXCEPCIONES.DALExcepcion oDALExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "DALExcepcion:" + oDALExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "DALExcepcion:" + oDALExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oIOExc"></param>
-        public void registrarEnBitacora_IO(string usuarioI, SIS.EXCEPCIONES.IOException oIOExc)
+        public void RegistrarEnBitacora_IO(string usuarioI, SIS.EXCEPCIONES.IOException oIOExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "IOException:" + oIOExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "IOException:" + oIOExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oSEGExc"></param>
-        public void registrarEnBitacora_SEG(string usuarioI, SIS.EXCEPCIONES.SEGExcepcion oSEGExc)
+        public void RegistrarEnBitacora_SEG(string usuarioI, SIS.EXCEPCIONES.SEGExcepcion oSEGExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "SEGExcepcion:" + oSEGExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "SEGExcepcion:" + oSEGExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oUIExc"></param>
-        public void registrarEnBitacora_UI(string usuarioI, SIS.EXCEPCIONES.UIExcepcion oUIExc)
+        public void RegistrarEnBitacora_UI(string usuarioI, SIS.EXCEPCIONES.UIExcepcion oUIExc)
         {
-            /*
-            BE.SIS.ENTIDAD.Bitacora oBitacora = new BE.SIS.ENTIDAD.Bitacora();
+            ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
-            oBitacora.idUsuario = usuarioI;
+            oBitacora.IdUsuario = usuarioI;
             // Se agrega la fecha del evento.
-            oBitacora.fecha = DateTime.Now;
-            oBitacora.descripcion = "UIExcepcion:" + oUIExc.Message;
+            oBitacora.Fecha = DateTime.Now.ToString("HH:mm:ss");
+            oBitacora.Descripcion = "UIExcepcion:" + oUIExc.Message;
 
             try
             {
                 // Obtengo el ultimo id para agregarselo al objeto oBitacora.
-                oBitacora.idEvento = (this.obtenerUltimoId() + 1);
+                oBitacora.IdEvento = (this.ObtenerUltimoId() + 1);
 
                 // Realizo la insercion en la base de datos por medio de DALBitacora
                 // si hay una excepcion cualquier que no me permite ingresar el resgistro
                 // llamo a la insercion en el archivo local dentro de IOBitacora.
-                DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-                oDalBitacora.registrarEnBitacoraBD(oBitacora);
+                DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+                oDalBitacora.RegistrarEnBitacoraBD(oBitacora);
             }
             catch (Exception ex)
             {
-                System.IO.SIS.ESCRITURA.IOBitacora oIOBitacora = new System.IO.SIS.ESCRITURA.IOBitacora();
-                oIOBitacora.registrarEnBitacoraIO(oBitacora);
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.Bitacora> obtenerEventos()
+        public List<SIS.ENTIDAD.Bitacora> ObtenerEventos()
         {
-            List<SIS.ENTIDAD.Bitacora> listado = new List<SIS.ENTIDAD.Bitacora>();
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
-            listado = oDalBitacora.obtenerEventos;
-            */
+            List<ENTIDAD.Bitacora> listado = new List<ENTIDAD.Bitacora>();
+
+            DALBitacora oDalBitacora = new DALBitacora();
+            listado = oDalBitacora.ObtenerEventos();
+
             return listado;
         }
     }

@@ -12,29 +12,29 @@ namespace SIS.IO
         /// </summary>
         /// <param name="sCadena"></param>
         /// <returns></returns>
-        string generarSHA(string sCadena);
+        string GenerarSHA(string sCadena);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="cadena"></param>
         /// <returns></returns>
-        string obtenerHash(string cadena);
+        string ObtenerHash(string cadena);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="oUsuario"></param>
         /// <returns></returns>
-        string obtenerHashUsuario(SIS.ENTIDAD.Usuario oUsuario);
+        string ObtenerHashUsuario(ENTIDAD.Usuario oUsuario);
        /// <summary>
        /// 
        /// </summary>
        /// <returns></returns>
-        bool verificarConsistenciaBD();
+        bool VerificarConsistenciaBD();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuario"></param>
         /// <returns></returns>
-        List<SIS.ENTIDAD.Usuario> calcularHashTablaUsuario(List<SIS.ENTIDAD.Usuario> listaUsuario);
+        List<SIS.ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuario);
     }
 }

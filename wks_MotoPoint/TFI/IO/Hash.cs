@@ -15,7 +15,7 @@ namespace SIS.IO
         /// </summary>
         /// <param name="sCadena"></param>
         /// <returns></returns>
-        public string generarSHA(string sCadena)
+        public string GenerarSHA(string sCadena)
         {
 
             // Objeto de codificación
@@ -35,12 +35,12 @@ namespace SIS.IO
         /// </summary>
         /// <param name="cadena"></param>
         /// <returns></returns>
-        public string obtenerHash(string cadena)
+        public string ObtenerHash(string cadena)
         {
             string cadenaHasheada;
 
             IHash interfazHash = new Hash();
-            cadenaHasheada = interfazHash.generarSHA(cadena);
+            cadenaHasheada = interfazHash.GenerarSHA(cadena);
 
             return cadenaHasheada;
         }
@@ -49,14 +49,14 @@ namespace SIS.IO
         /// </summary>
         /// <param name="oUsuario"></param>
         /// <returns></returns>
-        public string obtenerHashUsuario(SIS.ENTIDAD.Usuario oUsuario)
+        public string ObtenerHashUsuario(SIS.ENTIDAD.Usuario oUsuario)
         {
             string digiVerif = "ERROR";
 
             string cadena;
             cadena = oUsuario.IdUsuario.ToString() + oUsuario.usuario + oUsuario.Password + oUsuario.Legajo.ToString() + oUsuario.Idioma.ToString();
 
-            digiVerif = this.obtenerHash(cadena);
+            digiVerif = this.ObtenerHash(cadena);
 
             return digiVerif;
         }
@@ -64,26 +64,26 @@ namespace SIS.IO
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool verificarConsistenciaBD()
+        public bool VerificarConsistenciaBD()
         {
             bool resultadoVerificacion = true;
-            /*
+            
             int resultado;
             string cadena;
             string cadenaHasheada;
             string hashVerificador;
             int contadorErroneo = 0;
-            List<SIS.ENTIDAD.Usuario> listaUsuarios = new List<SIS.ENTIDAD.Usuario>();
+            List<ENTIDAD.Usuario> listaUsuarios = new List<ENTIDAD.Usuario>();
 
-            SIS.DATOS.DALUsuario oDalUsuario = new SIS.DATOS.DALUsuario();
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
 
             try
             {
-                listaUsuarios = oDalUsuario.obtenerTablaUsuario;
+                listaUsuarios = oDalUsuario.ObtenerTablaUsuario();
             }
-            catch (SIS.EXCEPCIONES.DALExcepcion ex)
+            catch (EXCEPCIONES.DALExcepcion ex)
             {
-                throw new SIS.EXCEPCIONES.BLLExcepcion(ex.Message);
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
             // #################### DIGITO VERIFICADOR HORIZONTAL ####################
             IEnumerator<SIS.ENTIDAD.Usuario> enu = listaUsuarios.GetEnumerator();
@@ -92,8 +92,8 @@ namespace SIS.IO
                 cadena = "";
                 cadenaHasheada = "";
                 cadena = enu.Current.IdUsuario.ToString() + enu.Current.usuario + enu.Current.Password + enu.Current.Legajo + enu.Current.Idioma;
-                cadenaHasheada = this.obtenerHash(cadena);
-                hashVerificador = enu.Current.digitoVerificador;
+                cadenaHasheada = this.ObtenerHash(cadena);
+                hashVerificador = enu.Current.DigitoVerificador;
 
                 resultado = cadenaHasheada.CompareTo(hashVerificador);
                 if (resultado == -1)
@@ -118,7 +118,7 @@ namespace SIS.IO
             string columDigiLegajo = "";
             string columDigiIdioma = "";
 
-            IEnumerator<SIS.ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
             while (enuVert.MoveNext())
             {
                 if (bandera == 1)
@@ -138,22 +138,22 @@ namespace SIS.IO
                 }
             }
 
-            columnaUsuarioHasheada = this.obtenerHash(columnaUsuario);
+            columnaUsuarioHasheada = this.ObtenerHash(columnaUsuario);
             resultado = columnaUsuarioHasheada.CompareTo(columDigiUsuario);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
-            columnaPasswordHasheada = this.obtenerHash(columnaPassword);
+            columnaPasswordHasheada = this.ObtenerHash(columnaPassword);
             resultado = columnaPasswordHasheada.CompareTo(columDigiPassword);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
-            columnaLegajoHasheada = this.obtenerHash(columnaLegajo);
+            columnaLegajoHasheada = this.ObtenerHash(columnaLegajo);
             resultado = columnaLegajoHasheada.CompareTo(columDigiLegajo);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
-            columnaIdiomaHasheada = this.obtenerHash(columnaIdioma);
+            columnaIdiomaHasheada = this.ObtenerHash(columnaIdioma);
             resultado = columnaIdiomaHasheada.CompareTo(columDigiIdioma);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
@@ -166,7 +166,7 @@ namespace SIS.IO
                 resultadoVerificacion = true;
             else
                 resultadoVerificacion = false;
-            */
+            
             return resultadoVerificacion;
         }
         /// <summary>
@@ -175,10 +175,10 @@ namespace SIS.IO
         ///         ''' <param name="listaUsuarios"></param>
         ///         ''' <returns></returns>
         ///         ''' <remarks></remarks>
-        public List<SIS.ENTIDAD.Usuario> calcularHashTablaUsuario(List<SIS.ENTIDAD.Usuario> listaUsuarios)
+        public List<ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuarios)
         {
-            List<SIS.ENTIDAD.Usuario> listaUsuarioHash = new List<SIS.ENTIDAD.Usuario>();
-            /*
+            List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
+            
             // #################### DIGITO VERIFICADOR VERTICAL ####################
             string columnaIdUsuario = "";
             string columnaUsuario = "";
@@ -192,10 +192,10 @@ namespace SIS.IO
             string columDigiLegajo = "";
             string columDigiIdioma = "";
 
-            IEnumerator<SIS.ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
             while (enuVert.MoveNext())
             {
-                if (enuVert.Current.IdUsuario == 1)
+                if (enuVert.Current.IdUsuario == "1")
                 {
                 }
                 else
@@ -207,16 +207,16 @@ namespace SIS.IO
                 }
             }
 
-            IEnumerator<SIS.ENTIDAD.Usuario> enuVert2 = listaUsuarios.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enuVert2 = listaUsuarios.GetEnumerator();
             while (enuVert2.MoveNext())
             {
-                if (enuVert2.Current.IdUsuario == 1)
+                if (enuVert2.Current.IdUsuario == "1")
                 {
                     // No hay digito verificador de la PK
-                    enuVert2.Current.usuario = this.obtenerHash(columnaUsuario);
-                    enuVert2.Current.Password = this.obtenerHash(columnaPassword);
-                    enuVert2.Current.Legajo = this.obtenerHash(columnaLegajo);
-                    enuVert2.Current.Idioma = this.obtenerHash(columnaIdioma);
+                    enuVert2.Current.usuario = this.ObtenerHash(columnaUsuario);
+                    enuVert2.Current.Password = this.ObtenerHash(columnaPassword);
+                    enuVert2.Current.Legajo = this.ObtenerHash(columnaLegajo);
+                    enuVert2.Current.Idioma = this.ObtenerHash(columnaIdioma);
                 }
             }
 
@@ -226,16 +226,16 @@ namespace SIS.IO
             string cadenaHasheada = "";
 
             // #################### DIGITO VERIFICADOR HORIZONTAL ####################
-            IEnumerator<SIS.ENTIDAD.Usuario> enu = listaUsuarios.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enu = listaUsuarios.GetEnumerator();
             while (enu.MoveNext())
             {
                 cadena = "";
                 cadenaHasheada = "";
                 cadena = enu.Current.IdUsuario.ToString() + enu.Current.usuario + enu.Current.Password + enu.Current.Legajo + enu.Current.Idioma;
-                cadenaHasheada = this.obtenerHash(cadena);
-                enu.Current.digitoVerificador = cadenaHasheada;
+                cadenaHasheada = this.ObtenerHash(cadena);
+                enu.Current.DigitoVerificador = cadenaHasheada;
             }
-            */
+            
             return listaUsuarioHash;
         }
     }

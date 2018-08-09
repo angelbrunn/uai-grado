@@ -29,7 +29,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
             }
@@ -60,7 +60,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
             }
@@ -97,7 +97,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
                 return listBitacora;
@@ -122,7 +122,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -146,7 +146,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -169,7 +169,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -190,7 +190,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -213,7 +213,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -233,7 +233,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -256,7 +256,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -276,7 +276,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -299,7 +299,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -320,7 +320,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -343,7 +343,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -363,7 +363,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -386,7 +386,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
 
@@ -410,7 +410,7 @@ namespace SIS.DATOS
                 catch (Exception ex)
                 {
                     con.Close();
-                    throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
         }
@@ -446,7 +446,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
                 return listBitacora;
@@ -478,7 +478,7 @@ namespace SIS.DATOS
                     catch (Exception ex)
                     {
                         con.Close();
-                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
             }
