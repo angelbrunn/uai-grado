@@ -49,7 +49,7 @@ namespace SIS.IO
         /// </summary>
         /// <param name="oUsuario"></param>
         /// <returns></returns>
-        public string ObtenerHashUsuario(SIS.ENTIDAD.Usuario oUsuario)
+        public string ObtenerHashUsuario(ENTIDAD.Usuario oUsuario)
         {
             string digiVerif = "ERROR";
 
@@ -86,7 +86,7 @@ namespace SIS.IO
                 throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
             // #################### DIGITO VERIFICADOR HORIZONTAL ####################
-            IEnumerator<SIS.ENTIDAD.Usuario> enu = listaUsuarios.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enu = listaUsuarios.GetEnumerator();
             while (enu.MoveNext())
             {
                 cadena = "";

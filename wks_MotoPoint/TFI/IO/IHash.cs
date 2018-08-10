@@ -35,6 +35,6 @@ namespace SIS.IO
         /// </summary>
         /// <param name="listaUsuario"></param>
         /// <returns></returns>
-        List<SIS.ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuario);
+        List<ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuario);
     }
 }

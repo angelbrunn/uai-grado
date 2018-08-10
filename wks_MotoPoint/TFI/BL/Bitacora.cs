@@ -56,7 +56,7 @@ namespace SIS.BIT
             }
             catch (Exception ex)
             {
-                SIS.ESCRITURA.IOBitacora oIOBitacora = new SIS.ESCRITURA.IOBitacora();
+                ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -65,7 +65,7 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oBLLExc"></param>
-        public void RegistrarEnBitacora_BLL(string usuarioI, SIS.EXCEPCIONES.BLLExcepcion oBLLExc)
+        public void RegistrarEnBitacora_BLL(string usuarioI, EXCEPCIONES.BLLExcepcion oBLLExc)
         {
             
             ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
@@ -97,7 +97,7 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oDALExc"></param>
-        public void RegistrarEnBitacora_DAL(string usuarioI, SIS.EXCEPCIONES.DALExcepcion oDALExc)
+        public void RegistrarEnBitacora_DAL(string usuarioI, EXCEPCIONES.DALExcepcion oDALExc)
         {
             ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
@@ -128,7 +128,7 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oIOExc"></param>
-        public void RegistrarEnBitacora_IO(string usuarioI, SIS.EXCEPCIONES.IOException oIOExc)
+        public void RegistrarEnBitacora_IO(string usuarioI, EXCEPCIONES.IOException oIOExc)
         {
             ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
@@ -159,7 +159,7 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oSEGExc"></param>
-        public void RegistrarEnBitacora_SEG(string usuarioI, SIS.EXCEPCIONES.SEGExcepcion oSEGExc)
+        public void RegistrarEnBitacora_SEG(string usuarioI, EXCEPCIONES.SEGExcepcion oSEGExc)
         {
             ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
@@ -190,7 +190,7 @@ namespace SIS.BIT
         /// </summary>
         /// <param name="usuarioI"></param>
         /// <param name="oUIExc"></param>
-        public void RegistrarEnBitacora_UI(string usuarioI, SIS.EXCEPCIONES.UIExcepcion oUIExc)
+        public void RegistrarEnBitacora_UI(string usuarioI, EXCEPCIONES.UIExcepcion oUIExc)
         {
             ENTIDAD.Bitacora oBitacora = new ENTIDAD.Bitacora();
             // Guardo Usuario
@@ -220,7 +220,7 @@ namespace SIS.BIT
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.Bitacora> ObtenerEventos()
+        public List<ENTIDAD.Bitacora> ObtenerEventos()
         {
             List<ENTIDAD.Bitacora> listado = new List<ENTIDAD.Bitacora>();
 
