@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace SIS.ESCRITURA
 {
@@ -73,8 +74,100 @@ namespace SIS.ESCRITURA
         /// </summary>
         public DataTable LeerLogSystem()
         {
+            string ruta = "C:\\MotoPoint\\log_System.txt";
+            Char delimitador = '|';
+            bool header = false;
             DataTable dt = new DataTable();
 
+            System.IO.StreamReader sr = new System.IO.StreamReader(ruta);
+            string[] txtlines = sr.ReadToEnd().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+            // Return nothing if there's nothing in the textfile
+            if ((txtlines.Count() == 0))
+            {
+                return null;
+            }
+
+            int column_count = 0;
+            foreach (string col in txtlines[0].Split(delimitador))
+            {
+
+                if (header)
+                {
+                    // If there's a header then add it by it's name
+                    dt.Columns.Add(col);
+                    dt.Columns[column_count].Caption = col;
+                }
+                else
+                {
+                    // If there's no header then add it by the column count
+                    string valorheader = "";
+                    switch (column_count)
+                    {
+                        case 0:
+                            valorheader = "TIPO";
+                            break;
+                        case 1:
+                            valorheader = "TABLA";
+                            break;
+                        case 2:
+                            valorheader = "COLUMNA";
+                            break;
+                        case 3:
+                            valorheader = "GRAVEDAD";
+                            break;
+                        case 4:
+                            valorheader = "FECHA";
+                            break;
+                    }
+                    dt.Columns.Add(valorheader, typeof(string));
+                    dt.Columns[column_count].Caption = valorheader;
+                }
+                column_count++;
+            }
+            header = true;
+            if (header)
+            {
+                for (int rows = 1; (rows <= (txtlines.Count() - 1)); rows++)
+                {
+                    // start at one because there's a header for the first line(0)
+                    // Declare a new datarow
+                    DataRow dr = dt.NewRow();
+                    // Set the column count back to 0, we can reuse this variable ;]
+                    column_count = 0;
+                    foreach (string col in txtlines[rows].Split(delimitador))
+                    {
+                        //Each column in the row
+                        // The column in cue is set for the datarow
+                        dr[column_count] = col;
+                        column_count++;
+                    }
+                    // Add the row
+                    dt.Rows.Add(dr);
+                }
+
+            }
+            else
+            {
+                for (int rows = 0; (rows <= (txtlines.Count() - 1)); rows++)
+                {
+                    // start at zero because there's no header
+                    // Declare a new datarow
+                    DataRow dr = dt.NewRow();
+                    // Set the column count back to 0, we can reuse this variable ;]
+                    column_count = 0;
+                    foreach (string col in txtlines[rows].Split(delimitador))
+                    {
+                        // Each column in the row
+                        // The column in cue is set for the datarow
+                        dr[column_count] = col;
+                        column_count++;
+                    }
+                    // Add the row
+                    dt.Rows.Add(dr);
+                }
+
+            }
             return dt;
         }
     }
