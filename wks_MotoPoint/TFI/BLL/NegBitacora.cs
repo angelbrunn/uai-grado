@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace SIS.BUSINESS
 {
@@ -7,6 +8,14 @@ namespace SIS.BUSINESS
     /// </summary>
     public class NegBitacora : INegBitacora
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        IO.IHash interfazHash = new IO.Hash();
+        /// <summary>
+        /// 
+        /// </summary>
+        ESCRITURA.IOBitacora interfazIOBitacora = new ESCRITURA.IOBitacora();
         /// <summary>
         /// 
         /// </summary>
@@ -79,6 +88,46 @@ namespace SIS.BUSINESS
             listadoEventos = oBITBitacora.ObtenerEventos();
 
             return listadoEventos;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool VerificarConsistenciaBD()
+        {
+            bool estado = false;
+            string IdDB = "DB";
+            try
+            {
+                estado = interfazHash.VerificarConsistenciaBitacoraBD();
+            }
+            catch (EXCEPCIONES.SEGExcepcion ex)
+            {
+                BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+                oBITBitacora.RegistrarEnBitacora_SEG(IdDB,ex);
+            }
+
+            return estado;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public DataTable ObtenerLogSystem()
+        {
+            DataTable dt = null;
+            string IdFile = "Error en lectura de log_System";
+            try
+            {
+                dt = interfazIOBitacora.LeerLogSystem();
+            }
+            catch (EXCEPCIONES.SEGExcepcion ex)
+            {
+                BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+                oBITBitacora.RegistrarEnBitacora_SEG(IdFile, ex);
+            }
+
+            return dt;
         }
     }
 }

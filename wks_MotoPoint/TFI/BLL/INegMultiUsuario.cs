@@ -75,6 +75,6 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
-        bool VerificarConsistenciaBD();
+        bool VerificarConsistenciaUsuarioBD();
     }
 }

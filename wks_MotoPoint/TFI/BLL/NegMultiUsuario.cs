@@ -314,14 +314,14 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool VerificarConsistenciaBD()
+        public bool VerificarConsistenciaUsuarioBD()
         {
             bool estado = false;
             string IdDB = "DB";
 
             try
             {
-                estado = interfazHash.VerificarConsistenciaBD();
+                estado = interfazHash.VerificarConsistenciaUsuarioBD();
             }
             catch (EXCEPCIONES.SEGExcepcion ex)
             {

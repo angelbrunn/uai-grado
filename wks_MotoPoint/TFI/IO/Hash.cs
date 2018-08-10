@@ -13,6 +13,10 @@ namespace SIS.IO
         /// <summary>
         /// 
         /// </summary>
+        ESCRITURA.IOBitacora interfazIOBitacora = new ESCRITURA.IOBitacora();
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="sCadena"></param>
         /// <returns></returns>
         public string GenerarSHA(string sCadena)
@@ -64,7 +68,7 @@ namespace SIS.IO
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool VerificarConsistenciaBD()
+        public bool VerificarConsistenciaUsuarioBD()
         {
             bool resultadoVerificacion = true;
             
@@ -170,6 +174,116 @@ namespace SIS.IO
             return resultadoVerificacion;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool VerificarConsistenciaBitacoraBD()
+        {
+            bool resultadoVerificacion;
+            int resultado;
+            string cadena;
+            string cadenaHasheada;
+            string hashVerificador;
+            int contadorErroneo = 0;
+            List<ENTIDAD.Bitacora> listaBitacora = new List<ENTIDAD.Bitacora>();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+            try
+            {
+                listaBitacora = oDalBitacora.ObtenerTablaBitacora();
+            }
+            catch (EXCEPCIONES.DALExcepcion ex)
+            {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
+            }
+
+            // #################### DIGITO VERIFICADOR HORIZONTAL ####################
+            IEnumerator<ENTIDAD.Bitacora> enu = listaBitacora.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                cadena = "";
+                cadenaHasheada = "";
+                cadena = (enu.Current.IdEvento.ToString()
+                            + (enu.Current.IdUsuario
+                            + (enu.Current.Descripcion + enu.Current.Fecha)));
+                cadenaHasheada = this.ObtenerHash(cadena);
+                hashVerificador = enu.Current.DigitoVerificador;
+                resultado = cadenaHasheada.CompareTo(hashVerificador);
+                if ((resultado == -1))
+                {
+                    contadorErroneo = (contadorErroneo + 1);
+                }
+
+            }
+
+            // #################### DIGITO VERIFICADOR VERTICAL ####################
+            int bandera = 1;
+            string columnaIdUsuario = "";
+            string columnaDescripcion = "";
+            string columnaFecha = "";
+            string columnaIdUsuarioHasheada = "";
+            string columnaDescripciondHasheada = "";
+            string columnaFechaHasheada = "";
+            string columDigiIdUsuario = "";
+            string columDigiDescripcion = "";
+            string columDigiFecha = "";
+            IEnumerator<ENTIDAD.Bitacora> enuVert = listaBitacora.GetEnumerator();
+            while (enuVert.MoveNext())
+            {
+                if ((bandera == 1))
+                {
+                    columDigiIdUsuario = enuVert.Current.IdUsuario;
+                    columDigiDescripcion = enuVert.Current.Descripcion;
+                    columDigiFecha = enuVert.Current.Fecha;
+                    bandera = 2;
+                }
+                else
+                {
+                    columnaIdUsuario = (columnaIdUsuario + enuVert.Current.IdUsuario);
+                    columnaDescripcion = (columnaDescripcion + enuVert.Current.Descripcion);
+                    columnaFecha = (columnaFecha + enuVert.Current.Fecha);
+                }
+
+            }
+
+            columnaIdUsuarioHasheada = this.ObtenerHash(columnaIdUsuario);
+            resultado = columnaIdUsuarioHasheada.CompareTo(columDigiIdUsuario);
+            if ((resultado == 1))
+            {
+                contadorErroneo = (contadorErroneo + 1);
+                interfazIOBitacora.RegistrarLogSystem("TBL_BITACORA", "COL_USUARIOS");
+            }
+
+            columnaDescripciondHasheada = this.ObtenerHash(columnaDescripcion);
+            resultado = columnaDescripciondHasheada.CompareTo(columDigiDescripcion);
+            if ((resultado == 1))
+            {
+                contadorErroneo = (contadorErroneo + 1);
+                interfazIOBitacora.RegistrarLogSystem("TBL_BITACORA", "COL_DESCRIPCION");
+            }
+
+            columnaFechaHasheada = this.ObtenerHash(columnaFechaHasheada);
+            resultado = columnaFechaHasheada.CompareTo(columDigiFecha);
+            if ((resultado == 1))
+            {
+                contadorErroneo = (contadorErroneo + 1);
+                interfazIOBitacora.RegistrarLogSystem("TBL_BITACORA", "COL_FECHA");
+            }
+
+            // ###### EVALUACION FINAL ######
+            // Evaluaci�n final para saber si hubo algun error de comprobaci�n
+            // en los digitos verificadores tanto verticales como horizontales.
+            if ((contadorErroneo == 0))
+            {
+                resultadoVerificacion = true;
+            }
+            else
+            {
+                resultadoVerificacion = false;
+            }
+
+            return resultadoVerificacion;
+        }
+        /// <summary>
         ///         ''' 
         ///         ''' </summary>
         ///         ''' <param name="listaUsuarios"></param>
@@ -237,6 +351,73 @@ namespace SIS.IO
             }
             
             return listaUsuarioHash;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void CalcularHashTablaBitacora()
+        {
+            ENTIDAD.Bitacora oUpdateBitacora = new ENTIDAD.Bitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
+            List<ENTIDAD.Bitacora> listaBitacora = new List<ENTIDAD.Bitacora>();
+            try
+            {
+                listaBitacora = oDalBitacora.ObtenerTablaBitacora();
+            }
+            catch (EXCEPCIONES.DALExcepcion ex)
+            {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
+            }
+
+            // #################### DIGITO VERIFICADOR VERTICAL ####################
+            int bandera = 1;
+            string columnaIdUsuario = "";
+            string columnaDescripcion = "";
+            string columnaFecha = "";
+            string columnaDigitoVerficador = "";
+            string columnaIdUsuarioHasheada = "";
+            string columnaDescripciondHasheada = "";
+            string columnaFechaHasheada = "";
+            string columnaDigitoVerficadorHasheada = "";
+            string columDigiIdUsuario = "";
+            string columDigiDescripcion = "";
+            string columDigiFecha = "";
+            string columnaDigiIdEvento = "";
+            IEnumerator<ENTIDAD.Bitacora> enuVert = listaBitacora.GetEnumerator();
+            while (enuVert.MoveNext())
+            {
+                if ((bandera == 1))
+                {
+                    columnaDigiIdEvento = enuVert.Current.IdEvento.ToString();
+                    columDigiIdUsuario = enuVert.Current.IdUsuario;
+                    columDigiDescripcion = enuVert.Current.Descripcion;
+                    columDigiFecha = enuVert.Current.Fecha;
+                    bandera = 2;
+                }
+                else
+                {
+                    columnaIdUsuario = (columnaIdUsuario + enuVert.Current.IdUsuario);
+                    columnaDescripcion = (columnaDescripcion + enuVert.Current.Descripcion);
+                    columnaFecha = (columnaFecha + enuVert.Current.Fecha);
+                }
+
+            }
+            
+            // ARQ.BASE - CALCULAMOS LOS NUEVOS VALORES DE DIGITOS VERIFICADORES
+            columnaIdUsuarioHasheada = this.ObtenerHash(columnaIdUsuario);
+            columnaDescripciondHasheada = this.ObtenerHash(columnaDescripcion);
+            columnaFechaHasheada = this.ObtenerHash(columnaFechaHasheada);
+            object headerVerificador = (columnaDigiIdEvento
+                        + (columnaIdUsuarioHasheada
+                        + (columnaDescripciondHasheada + columnaFechaHasheada)));
+            columnaDigitoVerficadorHasheada = this.ObtenerHash(System.Convert.ToString(headerVerificador));
+            oUpdateBitacora.IdEvento = 1;
+            oUpdateBitacora.IdUsuario = columnaIdUsuarioHasheada;
+            oUpdateBitacora.Descripcion = columnaDescripciondHasheada;
+            oUpdateBitacora.Fecha = columnaFechaHasheada;
+            oUpdateBitacora.DigitoVerificador = columnaDigitoVerficadorHasheada;
+            // ARQ.BASE - ACTUALIZO LA TABLA DE BITACORA CON LOS DIG. VERIFICADORES
+            oDalBitacora.ActualizarDigitoVerificadorBitacora(oUpdateBitacora);
         }
     }
 }

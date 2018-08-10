@@ -75,10 +75,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\home.css" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\webmaster.css" />
+    <Content Include="eventos.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="home.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="webmaster.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eventos.aspx.cs">
+      <DependentUpon>eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eventos.aspx.designer.cs">
+      <DependentUpon>eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -87,6 +108,13 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="webmaster.aspx.cs">
+      <DependentUpon>webmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webmaster.aspx.designer.cs">
+      <DependentUpon>webmaster.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
@@ -97,14 +125,13 @@
       <Project>{ff887740-e69d-4959-9b09-0eae54328530}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{abe66fb8-e7cb-4729-988d-cee2e77bcbce}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EL\EL.csproj">
       <Project>{ea7ffa46-6a8b-4698-b1cf-c94e1c382370}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\image\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

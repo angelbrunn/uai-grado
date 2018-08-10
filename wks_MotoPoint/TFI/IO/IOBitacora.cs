@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 
 namespace SIS.ESCRITURA
@@ -33,8 +34,48 @@ namespace SIS.ESCRITURA
             }
             catch (Exception ex)
             {
-                throw new SIS.EXCEPCIONES.IOException(ex.Message);
+                throw new EXCEPCIONES.IOException(ex.Message);
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="errorTabla"></param>
+        /// <param name="errorColumna"></param>
+        public void RegistrarLogSystem(string errorTabla, string errorColumna)
+        {
+            string delimitador = "|";
+            string ruta = "C:\\MotoPoint\\log_System.txt";
+            try
+            {
+                StreamWriter archivo = new StreamWriter(ruta, true);
+                string linea;
+                string ERROR_TABLA = errorTabla;
+                string ERROR_COLUMNA = errorColumna;
+                string ERROR_FECHA = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                linea = ("ERROR"
+                            + (delimitador
+                            + (ERROR_TABLA
+                            + (delimitador
+                            + (ERROR_COLUMNA
+                            + (delimitador + ("SE PRODUJO ERROR CRITICO"
+                            + (delimitador + ERROR_FECHA))))))));
+                archivo.WriteLine(linea);
+                archivo.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new EXCEPCIONES.IOException(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DataTable LeerLogSystem()
+        {
+            DataTable dt = new DataTable();
+
+            return dt;
         }
     }
 }

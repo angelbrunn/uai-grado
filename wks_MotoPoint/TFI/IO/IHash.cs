@@ -29,12 +29,21 @@ namespace SIS.IO
        /// 
        /// </summary>
        /// <returns></returns>
-        bool VerificarConsistenciaBD();
+        bool VerificarConsistenciaUsuarioBD();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        bool VerificarConsistenciaBitacoraBD();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuario"></param>
         /// <returns></returns>
         List<ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        void CalcularHashTablaBitacora();
     }
 }

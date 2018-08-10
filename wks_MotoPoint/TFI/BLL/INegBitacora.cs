@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace SIS.BUSINESS
 {
@@ -48,5 +49,15 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         List<ENTIDAD.Bitacora> ObtenerEventosBitacora();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        bool VerificarConsistenciaBD();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        DataTable ObtenerLogSystem();
     }
 }
