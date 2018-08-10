@@ -9,11 +9,11 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="idioma"></param>
         /// <returns></returns>
-        List<SIS.ENTIDAD.MultiIdioma> obtenerTablaMultiIdioma(string idioma);
+        List<ENTIDAD.MultiIdioma> ObtenerTablaMultiIdioma(string idioma);
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        List<SIS.ENTIDAD.MultiIdioma> obtenerIdiomasDisponibles();
+        List<ENTIDAD.MultiIdioma> ObtenerIdiomasDisponibles();
     }
 }

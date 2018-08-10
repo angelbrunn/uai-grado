@@ -48,7 +48,6 @@
     <Compile Include="NegBitacora.cs" />
     <Compile Include="NegMultiIdioma.cs" />
     <Compile Include="NegMultiUsuario.cs" />
-    <Compile Include="NegNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

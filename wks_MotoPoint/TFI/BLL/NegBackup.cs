@@ -13,356 +13,322 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        //private INegMultiUsuario interfazNegMultiUsuario = new NegMultiUsuario();
+        private INegMultiUsuario interfazNegMultiUsuario = new NegMultiUsuario();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoUsuario(string ruta, string delim)
+        public void ExportarAArchivoUsuario(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Usuario> listaUsuario = new List<BE.SIS.ENTIDAD.Usuario>();
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<SIS.ENTIDAD.Usuario> listaUsuario = new List<ENTIDAD.Usuario>();
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
 
             try
             {
-                listaUsuario = oDalUsuario.obtenerTablaUsuario();
-                oIOBackup.escribirArchivoUsuario(ruta, delim, listaUsuario);
+                listaUsuario = oDalUsuario.ObtenerTablaUsuario();
+                oIOBackup.EscribirArchivoUsuario(ruta, delim, listaUsuario);
             }
             catch (Exception ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoBitacora(string ruta, string delim)
+        public void ExportarAArchivoBitacora(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Bitacora> listaEventos = new List<BE.SIS.ENTIDAD.Bitacora>();
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Bitacora> listaEventos = new List<ENTIDAD.Bitacora>();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
             try
             {
-                listaEventos = oDalBitacora.obtenerEventos();
-                oIOBackup.escribirArchivoBitacora(ruta, delim, listaEventos);
+                listaEventos = oDalBitacora.ObtenerEventos();
+                oIOBackup.EscribirArchivoBitacora(ruta, delim, listaEventos);
             }
             catch (Exception ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoUsuarioGrupo(string ruta, string delim)
+        public void ExportarAArchivoUsuarioGrupo(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo = new List<BE.SIS.ENTIDAD.UsuarioGrupo>();
-            DAL.SIS.DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DAL.SIS.DATOS.DALUsuarioGrupo();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo = new List<ENTIDAD.UsuarioGrupo>();
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
 
             try
             {
-                listaUsuarioGrupo = oDalUsuarioGrupo.obtenerTablaUsuarioGrupo();
-                oIOBackup.escribirArchivoUsuarioGrupo(ruta, delim, listaUsuarioGrupo);
+                listaUsuarioGrupo = oDalUsuarioGrupo.ObtenerTablaUsuarioGrupo();
+                oIOBackup.EscribirArchivoUsuarioGrupo(ruta, delim, listaUsuarioGrupo);
             }
             catch (Exception ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoGrupo(string ruta, string delim)
+        public void ExportarAArchivoGrupo(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Grupo> listaGrupo = new List<BE.SIS.ENTIDAD.Grupo>();
-            DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
+            DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
 
             try
             {
-                listaGrupo = oDalGrupo.obtenerGrupos();
-                oIOBackup.escribirArchivoGrupo(ruta, delim, listaGrupo);
+                listaGrupo = oDalGrupo.ObtenerGrupos();
+                oIOBackup.EscribirArchivoGrupo(ruta, delim, listaGrupo);
             }
             catch (IOException ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoGrupoPermisos(string ruta, string delim)
+        public void ExportarAArchivoGrupoPermisos(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.GrupoPermiso> listaGrupoPermiso = new List<BE.SIS.ENTIDAD.GrupoPermiso>();
-            DAL.SIS.DATOS.DALGrupoPermiso oDalGrupoPermiso = new DAL.SIS.DATOS.DALGrupoPermiso();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.GrupoPermiso> listaGrupoPermiso = new List<ENTIDAD.GrupoPermiso>();
+            DATOS.DALGrupoPermiso oDalGrupoPermiso = new DATOS.DALGrupoPermiso();
 
             try
             {
-                listaGrupoPermiso = oDalGrupoPermiso.obtenerGrupoPermiso();
-                oIOBackup.escribirArchivoGrupoPermiso(ruta, delim, listaGrupoPermiso);
+                listaGrupoPermiso = oDalGrupoPermiso.ObtenerGrupoPermiso();
+                oIOBackup.EscribirArchivoGrupoPermiso(ruta, delim, listaGrupoPermiso);
             }
             catch (IOException ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoPermisos(string ruta, string delim)
+        public void ExportarAArchivoPermisos(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Permiso> listaPermiso = new List<BE.SIS.ENTIDAD.Permiso>();
-            DAL.SIS.DATOS.DALPermiso oDalPermiso = new DAL.SIS.DATOS.DALPermiso();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Permiso> listaPermiso = new List<ENTIDAD.Permiso>();
+            DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
 
             try
             {
-                listaPermiso = oDalPermiso.obtenerPermiso();
-                oIOBackup.escribirArchivoPermiso(ruta, delim, listaPermiso);
+                listaPermiso = oDalPermiso.ObtenerPermiso();
+                oIOBackup.EscribirArchivoPermiso(ruta, delim, listaPermiso);
             }
             catch (IOException ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void exportarAArchivoMultiIdioma(string ruta, string delim)
+        public void ExportarAArchivoMultiIdioma(string ruta, string delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.MultiIdioma> listaMultiIdioma = new List<BE.SIS.ENTIDAD.MultiIdioma>();
-            DAL.SIS.DATOS.DALMultiIdioma oDalMultiIdioma = new DAL.SIS.DATOS.DALMultiIdioma();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.MultiIdioma> listaMultiIdioma = new List<ENTIDAD.MultiIdioma>();
+            DATOS.DALMultiIdioma oDalMultiIdioma = new DATOS.DALMultiIdioma();
 
             try
             {
-                listaMultiIdioma = oDalMultiIdioma.obtenerTablaMultiIdiomaAll();
-                oIOBackup.escribirArchivoMultiIdioma(ruta, delim, listaMultiIdioma);
+                listaMultiIdioma = oDalMultiIdioma.ObtenerTablaMultiIdiomaAll();
+                oIOBackup.EscribirArchivoMultiIdioma(ruta, delim, listaMultiIdioma);
             }
             catch (IOException ex)
             {
+                throw new EXCEPCIONES.BLLExcepcion(ex.Message);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoUsuario(string ruta, string delim)
+        public void ImportarDesdeArchivoUsuario(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Usuario> listaUsuario = new List<BE.SIS.ENTIDAD.Usuario>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Usuario> listaUsuario = new List<ENTIDAD.Usuario>();
 
-            listaUsuario = oIOBackup.leerArchivoUsuario(ruta, delim);
+            listaUsuario = oIOBackup.LeerArchivoUsuario(ruta, delim);
 
-            this.insertarUsuarioDesdeBackup(listaUsuario);
-            */
+            this.InsertarUsuarioDesdeBackup(listaUsuario);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoBitacora(string ruta, string delim)
+        public void ImportarDesdeArchivoBitacora(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Bitacora> listaBitacora = new List<BE.SIS.ENTIDAD.Bitacora>();
 
-            listaBitacora = oIOBackup.leerArchivoBitacora(ruta, delim);
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Bitacora> listaBitacora = new List<ENTIDAD.Bitacora>();
 
-            this.insertarBitacoraDesdeBackup(listaBitacora);
-            */
+            listaBitacora = oIOBackup.LeerArchivoBitacora(ruta, delim);
+
+            this.InsertarBitacoraDesdeBackup(listaBitacora);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoGrupo(string ruta, string delim)
+        public void ImportarDesdeArchivoGrupo(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Grupo> listaGrupo = new List<BE.SIS.ENTIDAD.Grupo>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
 
-            listaGrupo = oIOBackup.leerArchivoGrupo(ruta, delim);
+            listaGrupo = oIOBackup.LeerArchivoGrupo(ruta, delim);
 
-            this.insertarGrupoDesdeBackup(listaGrupo);
-            */
+            this.InsertarGrupoDesdeBackup(listaGrupo);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoGrupoPermiso(string ruta, string delim)
+        public void ImportarDesdeArchivoGrupoPermiso(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.GrupoPermiso> listaGrupoPermiso = new List<BE.SIS.ENTIDAD.GrupoPermiso>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.GrupoPermiso> listaGrupoPermiso = new List<ENTIDAD.GrupoPermiso>();
 
-            listaGrupoPermiso = oIOBackup.leerArchivoGrupoPermiso(ruta, delim);
+            listaGrupoPermiso = oIOBackup.LeerArchivoGrupoPermiso(ruta, delim);
 
-            this.insertarGrupoPermisoDesdeBackup(listaGrupoPermiso);
-            */
+            this.InsertarGrupoPermisoDesdeBackup(listaGrupoPermiso);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoPermiso(string ruta, string delim)
+        public void ImportarDesdeArchivoPermiso(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.Permiso> listaPermiso = new List<BE.SIS.ENTIDAD.Permiso>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.Permiso> listaPermiso = new List<ENTIDAD.Permiso>();
 
-            listaPermiso = oIOBackup.leerArchivoPermiso(ruta, delim);
+            listaPermiso = oIOBackup.LeerArchivoPermiso(ruta, delim);
 
-            this.insertarPermisoDesdeBackup(listaPermiso);
-            */
+            this.InsertarPermisoDesdeBackup(listaPermiso);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoMultiIdioma(string ruta, string delim)
+        public void ImportarDesdeArchivoMultiIdioma(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.MultiIdioma> listaMultiIdioma = new List<BE.SIS.ENTIDAD.MultiIdioma>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.MultiIdioma> listaMultiIdioma = new List<ENTIDAD.MultiIdioma>();
 
-            listaMultiIdioma = oIOBackup.leerArchivoMultiIdioma(ruta, delim);
+            listaMultiIdioma = oIOBackup.LeerArchivoMultiIdioma(ruta, delim);
 
-            this.insertarMultiIdiomaDesdeBackup(listaMultiIdioma);
-            */
+            this.InsertarMultiIdiomaDesdeBackup(listaMultiIdioma);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        public void importarDesdeArchivoUsuarioGrupo(string ruta, string delim)
+        public void ImportarDesdeArchivoUsuarioGrupo(string ruta, Char delim)
         {
-            /*
-            System.IO.SIS.ESCRITURA.IOBackup oIOBackup = new System.IO.SIS.ESCRITURA.IOBackup();
-            List<BE.SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo = new List<BE.SIS.ENTIDAD.UsuarioGrupo>();
+            ESCRITURA.IOBackup oIOBackup = new ESCRITURA.IOBackup();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo = new List<ENTIDAD.UsuarioGrupo>();
 
-            listaUsuarioGrupo = oIOBackup.leerArchivoUsuarioGrupo(ruta, delim);
+            listaUsuarioGrupo = oIOBackup.LeerArchivoUsuarioGrupo(ruta, delim);
 
-            this.insertarUsuarioGrupoDesdeBackup(listaUsuarioGrupo);
-            */
+            this.InsertarUsuarioGrupoDesdeBackup(listaUsuarioGrupo);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuarios"></param>
-        public void insertarUsuarioDesdeBackup(List<SIS.ENTIDAD.Usuario> listaUsuarios)
+        public void InsertarUsuarioDesdeBackup(List<ENTIDAD.Usuario> listaUsuarios)
         {
-            /*
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
 
-            oDalUsuario.insertarUsuarioDesdeBackup(listaUsuarios);
-            */
+            oDalUsuario.InsertarUsuarioDesdeBackup(listaUsuarios);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaEventos"></param>
-        public void insertarBitacoraDesdeBackup(List<SIS.ENTIDAD.Bitacora> listaEventos)
+        public void InsertarBitacoraDesdeBackup(List<ENTIDAD.Bitacora> listaEventos)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarBitacoraDesdeBackup(listaEventos);
-            */
+            oDalBitacora.InsertarBitacoraDesdeBackup(listaEventos);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaGrupo"></param>
-        public void insertarGrupoDesdeBackup(List<SIS.ENTIDAD.Grupo> listaGrupo)
+        public void InsertarGrupoDesdeBackup(List<ENTIDAD.Grupo> listaGrupo)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarGrupoDesdeBackup(listaGrupo);
-            */
+            oDalBitacora.InsertarGrupoDesdeBackup(listaGrupo);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaGrupoPermiso"></param>
-        public void insertarGrupoPermisoDesdeBackup(List<SIS.ENTIDAD.GrupoPermiso> listaGrupoPermiso)
+        public void InsertarGrupoPermisoDesdeBackup(List<ENTIDAD.GrupoPermiso> listaGrupoPermiso)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarGrupoPermisoDesdeBackup(listaGrupoPermiso);
-            */
+            oDalBitacora.InsertarGrupoPermisoDesdeBackup(listaGrupoPermiso);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaMultiIdioma"></param>
-        public void insertarMultiIdiomaDesdeBackup(List<SIS.ENTIDAD.MultiIdioma> listaMultiIdioma)
+        public void InsertarMultiIdiomaDesdeBackup(List<ENTIDAD.MultiIdioma> listaMultiIdioma)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarMultiIdiomaDesdeBackup(listaMultiIdioma);
-            */
+            oDalBitacora.InsertarMultiIdiomaDesdeBackup(listaMultiIdioma);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaPermiso"></param>
-        public void insertarPermisoDesdeBackup(List<SIS.ENTIDAD.Permiso> listaPermiso)
+        public void InsertarPermisoDesdeBackup(List<ENTIDAD.Permiso> listaPermiso)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarPermisoDesdeBackup(listaPermiso);
-            */
+            oDalBitacora.InsertarPermisoDesdeBackup(listaPermiso);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuarioGrupo"></param>
-        public void insertarUsuarioGrupoDesdeBackup(List<SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo)
+        public void InsertarUsuarioGrupoDesdeBackup(List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo)
         {
-            /*
-            DAL.SIS.DATOS.DALBitacora oDalBitacora = new DAL.SIS.DATOS.DALBitacora();
+            DATOS.DALBitacora oDalBitacora = new DATOS.DALBitacora();
 
-            oDalBitacora.insertarUsuarioGrupoDesdeBackup(listaUsuarioGrupo);
-            */
+            oDalBitacora.InsertarUsuarioGrupoDesdeBackup(listaUsuarioGrupo);
         }
     }
 }

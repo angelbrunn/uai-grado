@@ -12,7 +12,7 @@ namespace SIS.ESCRITURA
         /// 
         /// </summary>
         /// <param name="oBitacora"></param>
-        public void RegistrarEnBitacoraIO(SIS.ENTIDAD.Bitacora oBitacora)
+        public void RegistrarEnBitacoraIO(ENTIDAD.Bitacora oBitacora)
         {
             string delimitador = ";";
             string ruta = @"C:\Logs MotoPoint\log.csv";

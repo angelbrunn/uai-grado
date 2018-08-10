@@ -12,41 +12,41 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oBKP"></param>
-        void registrarEnBitacora_BKP(string usuarioId, SIS.EXCEPCIONES.BKPException oBKP);
+        void RegistrarEnBitacora_BKP(string usuarioId, EXCEPCIONES.BKPException oBKP);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oBLL"></param>
-        void registrarEnBitacora_BLL(string usuarioId, SIS.EXCEPCIONES.BLLExcepcion oBLL);
+        void RegistrarEnBitacora_BLL(string usuarioId, EXCEPCIONES.BLLExcepcion oBLL);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oDAL"></param>
-        void registrarEnBitacora_DAL(string usuarioId, SIS.EXCEPCIONES.DALExcepcion oDAL);
+        void RegistrarEnBitacora_DAL(string usuarioId, EXCEPCIONES.DALExcepcion oDAL);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oIO"></param>
-        void registrarEnBitacora_IO(string usuarioId, SIS.EXCEPCIONES.IOException oIO);
+        void RegistrarEnBitacora_IO(string usuarioId, EXCEPCIONES.IOException oIO);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oSEG"></param>
-        void registrarEnBitacora_SEG(string usuarioId, SIS.EXCEPCIONES.SEGExcepcion oSEG);
+        void RegistrarEnBitacora_SEG(string usuarioId, EXCEPCIONES.SEGExcepcion oSEG);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oUI"></param>
-        void registrarEnBitacora_UI(string usuarioId, SIS.EXCEPCIONES.UIExcepcion oUI);
+        void RegistrarEnBitacora_UI(string usuarioId, EXCEPCIONES.UIExcepcion oUI);
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        List<SIS.ENTIDAD.Bitacora> obtenerEventosBitacora();
+        List<ENTIDAD.Bitacora> ObtenerEventosBitacora();
     }
 }

@@ -12,86 +12,72 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oBKP"></param>
-        public void registrarEnBitacora_BKP(string usuarioId, SIS.EXCEPCIONES.BKPException oBKP)
+        public void RegistrarEnBitacora_BKP(string usuarioId, EXCEPCIONES.BKPException oBKP)
         {
-            /*
-            SIS.BIT.Bitacora oBITBitacora = new SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_BKP(usuarioId, oBKP);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_BKP(usuarioId, oBKP);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oBLL"></param>
-        public void registrarEnBitacora_BLL(string usuarioId, SIS.EXCEPCIONES.BLLExcepcion oBLL)
+        public void RegistrarEnBitacora_BLL(string usuarioId, EXCEPCIONES.BLLExcepcion oBLL)
         {
-            /*
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_BLL(usuarioId, oBLL);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_BLL(usuarioId, oBLL);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oDAL"></param>
-        public void registrarEnBitacora_DAL(string usuarioId, SIS.EXCEPCIONES.DALExcepcion oDAL)
+        public void RegistrarEnBitacora_DAL(string usuarioId, EXCEPCIONES.DALExcepcion oDAL)
         {
-            /*
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_DAL(usuarioId, oDAL);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_DAL(usuarioId, oDAL);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oIO"></param>
-        public void registrarEnBitacora_IO(string usuarioId, SIS.EXCEPCIONES.IOException oIO)
+        public void RegistrarEnBitacora_IO(string usuarioId, EXCEPCIONES.IOException oIO)
         {
-            /*
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_IO(usuarioId, oIO);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_IO(usuarioId, oIO);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oSEG"></param>
-        public void registrarEnBitacora_SEG(string usuarioId, SIS.EXCEPCIONES.SEGExcepcion oSEG)
+        public void RegistrarEnBitacora_SEG(string usuarioId, EXCEPCIONES.SEGExcepcion oSEG)
         {
-            /*
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_SEG(usuarioId, oSEG);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_SEG(usuarioId, oSEG);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuarioId"></param>
         /// <param name="oUI"></param>
-        public void registrarEnBitacora_UI(string usuarioId, SIS.EXCEPCIONES.UIExcepcion oUI)
+        public void RegistrarEnBitacora_UI(string usuarioId, EXCEPCIONES.UIExcepcion oUI)
         {
-            /*
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            oBITBitacora.registrarEnBitacora_UI(usuarioId, oUI);
-            */
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            oBITBitacora.RegistrarEnBitacora_UI(usuarioId, oUI);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.Bitacora> obtenerEventosBitacora()
+        public List<ENTIDAD.Bitacora> ObtenerEventosBitacora()
         {
-            List<SIS.ENTIDAD.Bitacora> listadoEventos = new List<SIS.ENTIDAD.Bitacora>();
-            /*
+            List<ENTIDAD.Bitacora> listadoEventos = new List<ENTIDAD.Bitacora>();
 
-            BL.SIS.BIT.Bitacora oBITBitacora = new BL.SIS.BIT.Bitacora();
-            listadoEventos = oBITBitacora.obtenerEventos;
+            BIT.Bitacora oBITBitacora = new BIT.Bitacora();
+            listadoEventos = oBITBitacora.ObtenerEventos();
 
-            */
             return listadoEventos;
         }
     }

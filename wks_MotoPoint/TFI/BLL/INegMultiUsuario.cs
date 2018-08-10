@@ -11,70 +11,70 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <param name="oUsuario"></param>
-        void insertarUsuario(SIS.ENTIDAD.Usuario oUsuario);
+        void InsertarUsuario(ENTIDAD.Usuario oUsuario);
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        int obtenerIdParaUsuario();
+        int ObtenerIdParaUsuario();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="idUsuario"></param>
         /// <returns></returns>
-        SIS.ENTIDAD.Usuario obtenerUsuario(int idUsuario);
+        ENTIDAD.Usuario ObtenerUsuario(int idUsuario);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="legajo"></param>
         /// <returns></returns>
-        SIS.ENTIDAD.Usuario obtenerUsuarioPorLegajo(int legajo);
+        ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int legajo);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        bool validarExistenciaUsuario(string usuario);
+        bool ValidarExistenciaUsuario(string usuario);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="idGrupo"></param>
         /// <returns></returns>
-        SIS.ENTIDAD.Grupo obtenerGrupoPorId(int idGrupo);
+        ENTIDAD.Grupo ObtenerGrupoPorId(int idGrupo);
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        List<SIS.ENTIDAD.Grupo> obtenerGrupos();
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nombreGrupo"></param>
-        /// <returns></returns>
-        string obtenerDescripcionGrupoPorNombre(string nombreGrupo);
+        List<ENTIDAD.Grupo> ObtenerGrupos();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="nombreGrupo"></param>
         /// <returns></returns>
-        SIS.ENTIDAD.Grupo obtenerGrupoPorNombre(string nombreGrupo);
+        string ObtenerDescripcionGrupoPorNombre(string nombreGrupo);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreGrupo"></param>
+        /// <returns></returns>
+        ENTIDAD.Grupo ObtenerGrupoPorNombre(string nombreGrupo);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="idPermiso"></param>
         /// <returns></returns>
-        SIS.ENTIDAD.Permiso obtenerPermisoPorId(int idPermiso);
+        ENTIDAD.Permiso ObtenerPermisoPorId(int idPermiso);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        int login(string usuario, string password);
+        int Login(string usuario, string password);
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        bool verificarConsistenciaBD();
+        bool VerificarConsistenciaBD();
     }
 }

@@ -316,9 +316,9 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaUsuario"></param>
-        public void escribirArchivoUsuario(string ruta, string delim, List<SIS.ENTIDAD.Usuario> listaUsuario)
+        public void EscribirArchivoUsuario(string ruta, string delim, List<ENTIDAD.Usuario> listaUsuario)
         {
-            /*
+
             // idUsuario;usuario;password;legajo;idioma;digitoVerificador
             string cabecera = "idUsuario;usuario;password;legajo;idioma;digitoVerificador";
 
@@ -326,16 +326,16 @@ namespace SIS.ESCRITURA
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.Usuario> enumC = listaUsuario.GetEnumerator();
+            IEnumerator<ENTIDAD.Usuario> enumC = listaUsuario.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idUsuario.ToString() + delim + enumC.Current.usuario
-               + delim + enumC.Current.password + delim + enumC.Current.legajo + delim + enumC.Current.idioma + delim + enumC.Current.digitoVerificador;
+                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.usuario
+               + delim + enumC.Current.Password + delim + enumC.Current.Legajo + delim + enumC.Current.Idioma + delim + enumC.Current.DigitoVerificador;
 
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
+           
         }
         /// <summary>
         /// 
@@ -343,9 +343,8 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaEventos"></param>
-        public void escribirArchivoBitacora(string ruta, string delim, List<SIS.ENTIDAD.Bitacora> listaEventos)
+        public void EscribirArchivoBitacora(string ruta, string delim, List<ENTIDAD.Bitacora> listaEventos)
         {
-            /*
             // idEvento;idUsuario;descripcion;fecha
             string cabecera = "idEvento;idUsuario;descripcion;fecha";
 
@@ -353,16 +352,15 @@ namespace SIS.ESCRITURA
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.Bitacora> enumC = listaEventos.GetEnumerator();
+            IEnumerator<SIS.ENTIDAD.Bitacora> enumC = listaEventos.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idEvento.ToString() + delim + enumC.Current.idUsuario.ToString
-               + delim + enumC.Current.descripcion.ToString + delim + enumC.Current.fecha.ToString;
+                linea = enumC.Current.IdEvento.ToString() + delim + enumC.Current.IdUsuario.ToString()
+               + delim + enumC.Current.Descripcion.ToString() + delim + enumC.Current.Fecha.ToString();
 
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
         }
         /// <summary>
         /// 
@@ -370,9 +368,8 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaUsuarioGrupo"></param>
-        public void escribirArchivoUsuarioGrupo(string ruta, string delim, List<SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo)
+        public void EscribirArchivoUsuarioGrupo(string ruta, string delim, List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo)
         {
-            /*
             // idUsuario;idGrupo
             string cabecera = "idUsuario;idGrupo";
 
@@ -380,14 +377,13 @@ namespace SIS.ESCRITURA
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.UsuarioGrupo> enumC = listaUsuarioGrupo.GetEnumerator();
+            IEnumerator<ENTIDAD.UsuarioGrupo> enumC = listaUsuarioGrupo.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idUsuario.ToString() + delim + enumC.Current.idGrupo.ToString;
+                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.IdGrupo.ToString();
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
         }
         /// <summary>
         /// 
@@ -395,10 +391,9 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaGrupo"></param>
-        public void escribirArchivoGrupo(string ruta, string delim, List<SIS.ENTIDAD.Grupo> listaGrupo)
+        public void EscribirArchivoGrupo(string ruta, string delim, List<ENTIDAD.Grupo> listaGrupo)
         {
 
-            /*
             // idUsuario;idGrupo
             string cabecera = "idGrupo;grupo;descripcion";
 
@@ -406,14 +401,14 @@ namespace SIS.ESCRITURA
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.Grupo> enumC = listaGrupo.GetEnumerator();
+            IEnumerator<ENTIDAD.Grupo> enumC = listaGrupo.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idGrupo.ToString() + delim + enumC.Current.grupo.ToString + delim + enumC.Current.descripcion.ToString;
+                linea = enumC.Current.IdGrupo.ToString() + delim + enumC.Current.grupo.ToString() + delim + enumC.Current.Descripcion.ToString();
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
+
         }
         /// <summary>
         /// 
@@ -421,23 +416,22 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaGrupoPermiso"></param>
-        public void escribirArchivoGrupoPermiso(string ruta, string delim, List<SIS.ENTIDAD.GrupoPermiso> listaGrupoPermiso)
+        public void EscribirArchivoGrupoPermiso(string ruta, string delim, List<ENTIDAD.GrupoPermiso> listaGrupoPermiso)
         {
-            /*
             string cabecera = "idGrupo;idPermiso";
 
             StreamWriter sw = new StreamWriter(ruta);
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.GrupoPermiso> enumC = listaGrupoPermiso.GetEnumerator();
+            IEnumerator<ENTIDAD.GrupoPermiso> enumC = listaGrupoPermiso.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idGrupo.ToString() + delim + enumC.Current.idPermiso.ToString();
+                linea = enumC.Current.IdGrupo.ToString() + delim + enumC.Current.IdPermiso.ToString();
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
+
         }
         /// <summary>
         /// 
@@ -445,23 +439,23 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaPermiso"></param>
-        public void escribirArchivoPermiso(string ruta, string delim, List<SIS.ENTIDAD.Permiso> listaPermiso)
+        public void EscribirArchivoPermiso(string ruta, string delim, List<ENTIDAD.Permiso> listaPermiso)
         {
-            /*
+
             string cabecera = "idPermiso;descripcion";
 
             StreamWriter sw = new StreamWriter(ruta);
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.Permiso> enumC = listaPermiso.GetEnumerator();
+            IEnumerator<ENTIDAD.Permiso> enumC = listaPermiso.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.idPermiso.ToString() + delim + enumC.Current.descripcion.ToString();
+                linea = enumC.Current.IdPermiso.ToString() + delim + enumC.Current.Descripcion.ToString();
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
+
         }
         /// <summary>
         /// 
@@ -469,23 +463,23 @@ namespace SIS.ESCRITURA
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
         /// <param name="listaPermiso"></param>
-        public void escribirArchivoMultiIdioma(string ruta, string delim, List<SIS.ENTIDAD.MultiIdioma> listaPermiso)
+        public void EscribirArchivoMultiIdioma(string ruta, string delim, List<ENTIDAD.MultiIdioma> listaPermiso)
         {
-            /*
+
             string cabecera = "componente;idiomaEspanol;idiomaIngles";
 
             StreamWriter sw = new StreamWriter(ruta);
             sw.WriteLine(cabecera);
             string linea;
 
-            IEnumerator<BE.SIS.ENTIDAD.MultiIdioma> enumC = listaPermiso.GetEnumerator();
+            IEnumerator<ENTIDAD.MultiIdioma> enumC = listaPermiso.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.componente.ToString() + delim + enumC.Current.iKey.ToString() + delim + enumC.Current.value.ToString();
+                linea = enumC.Current.Componente.ToString() + delim + enumC.Current.IKey.ToString() + delim + enumC.Current.Value.ToString();
                 sw.WriteLine(linea);
             }
             sw.Close();
-            */
+
         }
     }
 }

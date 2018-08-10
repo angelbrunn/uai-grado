@@ -11,7 +11,7 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        private SIS.ENTIDAD.Usuario unUsuarioField;
+        private ENTIDAD.Usuario unUsuarioField;
         /// <summary>
         /// 
         /// </summary>
@@ -21,48 +21,50 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="idioma"></param>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.MultiIdioma> obtenerTablaMultiIdioma(string idioma)
+        public List<ENTIDAD.MultiIdioma> ObtenerTablaMultiIdioma(string idioma)
         {
-            List<SIS.ENTIDAD.MultiIdioma> listaMultiIdioma = new List<SIS.ENTIDAD.MultiIdioma>(new SIS.ENTIDAD.MultiIdioma[] { });
-            /*
-            DAL.SIS.DATOS.DALMultiIdioma oDalMultiIdioma = new DAL.SIS.DATOS.DALMultiIdioma();
+            List<ENTIDAD.MultiIdioma> listaMultiIdioma = new List<ENTIDAD.MultiIdioma>(new ENTIDAD.MultiIdioma[] { });
+
+            DATOS.DALMultiIdioma oDalMultiIdioma = new DATOS.DALMultiIdioma();
 
             try
             {
-                listaMultiIdioma = oDalMultiIdioma.obtenerTablaMultiIdioma(idioma);
+                listaMultiIdioma = oDalMultiIdioma.ObtenerTablaMultiIdioma(idioma);
             }
             catch (Exception ex)
             {
-                interfazNegocioBitacora.registrarEnBitacora_BLL(unUsuario.idUsuario, ex);
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(UnUsuario.IdUsuario, oExBLL);
             }
-            */
+
             return listaMultiIdioma;
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.MultiIdioma> obtenerIdiomasDisponibles()
+        public List<ENTIDAD.MultiIdioma> ObtenerIdiomasDisponibles()
         {
-            List<SIS.ENTIDAD.MultiIdioma> listaIdiomas = new List<SIS.ENTIDAD.MultiIdioma>(new SIS.ENTIDAD.MultiIdioma[] { });
-            /*
-            SIS.DATOS.DALMultiIdioma oDalMultiIdioma = new DAL.SIS.DATOS.DALMultiIdioma();
+            List<ENTIDAD.MultiIdioma> listaIdiomas = new List<ENTIDAD.MultiIdioma>(new ENTIDAD.MultiIdioma[] { });
+
+            DATOS.DALMultiIdioma oDalMultiIdioma = new DATOS.DALMultiIdioma();
 
             try
             {
-                listaIdiomas = oDalMultiIdioma.idiomasDisponibles();
+                listaIdiomas = oDalMultiIdioma.IdiomasDisponibles();
             }
             catch (Exception ex)
             {
-                interfazNegocioBitacora.registrarEnBitacora_BLL(unUsuario.idUsuario, ex);
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(UnUsuario.IdUsuario, oExBLL);
             }
-            */
+
             return listaIdiomas;
         }
         /// <summary>
         /// 
         /// </summary>
-        public SIS.ENTIDAD.Usuario unUsuario
+        public ENTIDAD.Usuario UnUsuario
         {
             get
             {

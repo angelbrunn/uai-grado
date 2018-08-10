@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
 
 namespace SIS.BUSINESS
 {
@@ -14,120 +14,120 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoUsuario(string ruta, string delim);
+        void ExportarAArchivoUsuario(string ruta, string delim);
        /// <summary>
        /// 
        /// </summary>
        /// <param name="ruta"></param>
        /// <param name="delim"></param>
-        void exportarAArchivoBitacora(string ruta, string delim);
+        void ExportarAArchivoBitacora(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoUsuarioGrupo(string ruta, string delim);
+        void ExportarAArchivoUsuarioGrupo(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoGrupo(string ruta, string delim);
+        void ExportarAArchivoGrupo(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoGrupoPermisos(string ruta, string delim);
+        void ExportarAArchivoGrupoPermisos(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoMultiIdioma(string ruta, string delim);
+        void ExportarAArchivoMultiIdioma(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void exportarAArchivoPermisos(string ruta, string delim);
+        void ExportarAArchivoPermisos(string ruta, string delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoUsuario(string ruta, string delim);
+        void ImportarDesdeArchivoUsuario(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoBitacora(string ruta, string delim);
+        void ImportarDesdeArchivoBitacora(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoGrupo(string ruta, string delim);
+        void ImportarDesdeArchivoGrupo(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoGrupoPermiso(string ruta, string delim);
+        void ImportarDesdeArchivoGrupoPermiso(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoPermiso(string ruta, string delim);
+        void ImportarDesdeArchivoPermiso(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoMultiIdioma(string ruta, string delim);
+        void ImportarDesdeArchivoMultiIdioma(string ruta, Char delim);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="ruta"></param>
         /// <param name="delim"></param>
-        void importarDesdeArchivoUsuarioGrupo(string ruta, string delim);
+        void ImportarDesdeArchivoUsuarioGrupo(string ruta, Char delim);
         // ##### INSERT EN BD #####
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuarios"></param>
-        void insertarUsuarioDesdeBackup(List<SIS.ENTIDAD.Usuario> listaUsuarios);
+        void InsertarUsuarioDesdeBackup(List<ENTIDAD.Usuario> listaUsuarios);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaEventos"></param>
-        void insertarBitacoraDesdeBackup(List<SIS.ENTIDAD.Bitacora> listaEventos);
+        void InsertarBitacoraDesdeBackup(List<ENTIDAD.Bitacora> listaEventos);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaGrupo"></param>
-        void insertarGrupoDesdeBackup(List<SIS.ENTIDAD.Grupo> listaGrupo);
+        void InsertarGrupoDesdeBackup(List<ENTIDAD.Grupo> listaGrupo);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaGrupoPermiso"></param>
-        void insertarGrupoPermisoDesdeBackup(List<SIS.ENTIDAD.GrupoPermiso> listaGrupoPermiso);
+        void InsertarGrupoPermisoDesdeBackup(List<ENTIDAD.GrupoPermiso> listaGrupoPermiso);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaPermiso"></param>
-        void insertarPermisoDesdeBackup(List<SIS.ENTIDAD.Permiso> listaPermiso);
+        void InsertarPermisoDesdeBackup(List<ENTIDAD.Permiso> listaPermiso);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaMultiIdioma"></param>
-        void insertarMultiIdiomaDesdeBackup(List<SIS.ENTIDAD.MultiIdioma> listaMultiIdioma);
+        void InsertarMultiIdiomaDesdeBackup(List<ENTIDAD.MultiIdioma> listaMultiIdioma);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="listaUsuarioGrupo"></param>
-        void insertarUsuarioGrupoDesdeBackup(List<SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo);
+        void InsertarUsuarioGrupoDesdeBackup(List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo);
     }
 }

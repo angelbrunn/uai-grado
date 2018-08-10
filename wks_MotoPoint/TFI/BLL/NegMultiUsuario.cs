@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace SIS.BUSINESS
 {
     /// <summary>
@@ -12,19 +11,21 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        //private SIS.IO.IHash interfazHash = new SIS.IO.Hash();
-        
+        private IO.IHash interfazHash = new IO.Hash();
+        /// <summary>
+        /// 
+        /// </summary>
         private INegBitacora interfazNegocioBitacora = new NegBitacora();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="oUsuario"></param>
-        public void insertarUsuario(SIS.ENTIDAD.Usuario oUsuario)
+        public void InsertarUsuario(ENTIDAD.Usuario oUsuario)
         {
-            /*
             string passHasheada;
             string digiVerificador;
             string IdHASH = "HASH";
+
             // passHasheada = interfazHash.obtenerHash(oUsuario.password)
             // oUsuario.password = passHasheada
 
@@ -33,67 +34,66 @@ namespace SIS.BUSINESS
             // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             try
             {
-                passHasheada = interfazHash.obtenerHash(oUsuario.password);
-                oUsuario.password = passHasheada;
+                passHasheada = interfazHash.ObtenerHash(oUsuario.Password);
+                oUsuario.Password = passHasheada;
 
-                digiVerificador = interfazHash.obtenerHashUsuario(oUsuario);
-                oUsuario.digitoVerificador = digiVerificador;
+                digiVerificador = interfazHash.ObtenerHashUsuario(oUsuario);
+                oUsuario.DigitoVerificador = digiVerificador;
             }
             catch (Exception ex)
             {
-                interfazNegocioBitacora.registrarEnBitacora_BLL(IdHASH, ex);
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdHASH, oExBLL);
             }
             // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            List<BE.SIS.ENTIDAD.Usuario> listaUsuarios = new List<BE.SIS.ENTIDAD.Usuario>();
-            DAL.SIS.DATOS.DALUsuario oDalUsuaio = new DAL.SIS.DATOS.DALUsuario();
-            listaUsuarios = oDalUsuaio.obtenerTablaUsuario();
+            List<ENTIDAD.Usuario> listaUsuarios = new List<ENTIDAD.Usuario>();
+            DATOS.DALUsuario oDalUsuaio = new DATOS.DALUsuario();
+            listaUsuarios = oDalUsuaio.ObtenerTablaUsuario();
             if (listaUsuarios.Count == 0)
             {
-                BE.SIS.ENTIDAD.Usuario oUsuarioColumnHash = new BE.SIS.ENTIDAD.Usuario();
-                oUsuarioColumnHash.idUsuario = 1;
+                ENTIDAD.Usuario oUsuarioColumnHash = new ENTIDAD.Usuario();
+                oUsuarioColumnHash.IdUsuario = "1";
                 oUsuarioColumnHash.usuario = "a";
-                oUsuarioColumnHash.password = "a";
-                oUsuarioColumnHash.legajo = "a";
-                oUsuarioColumnHash.idioma = true;
+                oUsuarioColumnHash.Password = "a";
+                oUsuarioColumnHash.Legajo = "a";
+                oUsuarioColumnHash.Idioma = "es";
                 listaUsuarios.Add(oUsuarioColumnHash);
             }
 
             listaUsuarios.Add(oUsuario);
 
-            List<BE.SIS.ENTIDAD.Usuario> listaUsuariosConDigitosVerif = new List<BE.SIS.ENTIDAD.Usuario>();
-            listaUsuariosConDigitosVerif = interfazHash.calcularHashTablaUsuario(listaUsuarios);
+            List<ENTIDAD.Usuario> listaUsuariosConDigitosVerif = new List<ENTIDAD.Usuario>();
+            listaUsuariosConDigitosVerif = interfazHash.CalcularHashTablaUsuario(listaUsuarios);
 
-            oDalUsuaio.insertarUsuario(listaUsuariosConDigitosVerif);
+            oDalUsuaio.InsertarUsuario(listaUsuariosConDigitosVerif);
 
-            DAL.SIS.DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DAL.SIS.DATOS.DALUsuarioGrupo();
-            List<BE.SIS.ENTIDAD.Grupo> listadoGruposAUsuario = oUsuario.listadoGrupos;
-            IEnumerator<BE.SIS.ENTIDAD.Grupo> enu = listadoGruposAUsuario.GetEnumerator();
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
+            List<ENTIDAD.Grupo> listadoGruposAUsuario = oUsuario.ListadoGrupos;
+            IEnumerator<ENTIDAD.Grupo> enu = listadoGruposAUsuario.GetEnumerator();
             while (enu.MoveNext())
             {
-                BE.SIS.ENTIDAD.UsuarioGrupo oUsuarioGrupo = new BE.SIS.ENTIDAD.UsuarioGrupo();
-                oUsuarioGrupo.idUsuario = oUsuario.idUsuario;
-                oUsuarioGrupo.idGrupo = enu.Current.idGrupo;
-                oDalUsuarioGrupo.insertarUsuarioGrupo(oUsuarioGrupo);
+                ENTIDAD.UsuarioGrupo oUsuarioGrupo = new ENTIDAD.UsuarioGrupo();
+                oUsuarioGrupo.IdUsuario = System.Convert.ToInt32(oUsuario.IdUsuario);
+                oUsuarioGrupo.IdGrupo = enu.Current.IdGrupo;
+                oDalUsuarioGrupo.InsertarUsuarioGrupo(oUsuarioGrupo);
             }
-            */
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public int obtenerIdParaUsuario()
+        public int ObtenerIdParaUsuario()
         {
             int ultimoIdUsuario = 1;
-            /*
 
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
-            ultimoIdUsuario = oDalUsuario.obtenerUltimoId;
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            ultimoIdUsuario = oDalUsuario.ObtenerUltimoId();
 
             if (ultimoIdUsuario == 0)
                 ultimoIdUsuario = 1;
 
             ultimoIdUsuario = ultimoIdUsuario + 1;
-            */
+
             return ultimoIdUsuario;
         }
         /// <summary>
@@ -101,50 +101,49 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="idUsuario"></param>
         /// <returns></returns>
-        public SIS.ENTIDAD.Usuario obtenerUsuario(int idUsuario)
+        public ENTIDAD.Usuario ObtenerUsuario(int idUsuario)
         {
             // Instancio el usuario que voy a pasar por parametro
-            SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
-            /*
+            ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
 
             // Instancio DAL Usuario para obtener el usuario
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
-            oUsuario = oDalUsuario.obtenerUsuarioPorId(idUsuario);
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            oUsuario = oDalUsuario.ObtenerUsuarioPorId(System.Convert.ToString(idUsuario));
 
             // Instancio el objeto UsuarioGrupo para buscar los grupos de ese usuario
-            DAL.SIS.DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DAL.SIS.DATOS.DALUsuarioGrupo();
-            List<BE.SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
-            listaUsuarioGrupo = oDalUsuarioGrupo.obtenerGrupoPorIdUsuario(idUsuario);
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
+            listaUsuarioGrupo = oDalUsuarioGrupo.ObtenerGrupoPorIdUsuario(idUsuario);
 
             // Instancio una lista de grupos para el usuario
-            List<BE.SIS.ENTIDAD.Grupo> listaGrupo = new List<BE.SIS.ENTIDAD.Grupo>();
-            List<BE.SIS.ENTIDAD.Permiso> listaPermisos = new List<BE.SIS.ENTIDAD.Permiso>();
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
+            List<ENTIDAD.Permiso> listaPermisos = new List<ENTIDAD.Permiso>();
 
             // Recorro la lista y obtengo los objetos Grupo
-            IEnumerator<BE.SIS.ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
+            IEnumerator<ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
             while (enu.MoveNext())
             {
-                BE.SIS.ENTIDAD.Grupo oGrupo = new BE.SIS.ENTIDAD.Grupo();
-                DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
-                oGrupo = oDalGrupo.obtenerGrupoPorId(enu.Current.idGrupo);
+                ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+                DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+                oGrupo = oDalGrupo.ObtenerGrupoPorId(enu.Current.IdGrupo);
 
-                DAL.SIS.DATOS.DALGrupoPermiso oDalGrupoPermiso = new DAL.SIS.DATOS.DALGrupoPermiso();
-                List<BE.SIS.ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<BE.SIS.ENTIDAD.GrupoPermiso>();
-                listadoGrupoPermisos = oDalGrupoPermiso.obtenerPermisosPorIdGrupo(oGrupo.idGrupo);
+                DATOS.DALGrupoPermiso oDalGrupoPermiso = new DATOS.DALGrupoPermiso();
+                List<ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<ENTIDAD.GrupoPermiso>();
+                listadoGrupoPermisos = oDalGrupoPermiso.ObtenerPermisosPorIdGrupo(oGrupo.IdGrupo);
 
-                IEnumerator<BE.SIS.ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
+                IEnumerator<ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
                 while (enu2.MoveNext())
                 {
-                    DAL.SIS.DATOS.DALPermiso oDalPermiso = new DAL.SIS.DATOS.DALPermiso();
-                    BE.SIS.ENTIDAD.Permiso oPermiso;
-                    oPermiso = oDalPermiso.obtenerPermisoPorId(enu2.Current.idPermiso);
+                    DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
+                    ENTIDAD.Permiso oPermiso;
+                    oPermiso = oDalPermiso.ObtenerPermisoPorId(enu2.Current.IdPermiso);
                     listaPermisos.Add(oPermiso);
-                    oGrupo.listadoPermisos = listaPermisos;
+                    oGrupo.ListadoPermisos = listaPermisos;
                 }
                 listaGrupo.Add(oGrupo);
             }
-            oUsuario.listadoGrupos = listaGrupo;
-            */
+            oUsuario.ListadoGrupos = listaGrupo;
+
             return oUsuario;
         }
         /// <summary>
@@ -152,48 +151,49 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="legajo"></param>
         /// <returns></returns>
-        public SIS.ENTIDAD.Usuario obtenerUsuarioPorLegajo(int legajo)
+        public ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int legajo)
         {
-            SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
-            /*
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
+            ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
 
-            oUsuario = oDalUsuario.obtenerUsuarioPorLegajo(legajo);
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+
+            oUsuario = oDalUsuario.ObtenerUsuarioPorLegajo(System.Convert.ToString(legajo));
 
             // Instancio el objeto UsuarioGrupo para buscar los grupos de ese usuario
-            DAL.SIS.DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DAL.SIS.DATOS.DALUsuarioGrupo();
-            List<BE.SIS.ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
-            listaUsuarioGrupo = oDalUsuarioGrupo.obtenerGrupoPorIdUsuario(oUsuario.idUsuario);
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
+
+            listaUsuarioGrupo = oDalUsuarioGrupo.ObtenerGrupoPorIdUsuario(System.Convert.ToInt32(oUsuario.IdUsuario));
 
             // Instancio una lista de grupos para el usuario
-            List<BE.SIS.ENTIDAD.Grupo> listaGrupo = new List<BE.SIS.ENTIDAD.Grupo>();
-            List<BE.SIS.ENTIDAD.Permiso> listaPermisos = new List<BE.SIS.ENTIDAD.Permiso>();
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
+            List<ENTIDAD.Permiso> listaPermisos = new List<ENTIDAD.Permiso>();
 
             // Recorro la lista y obtengo los objetos Grupo
-            IEnumerator<BE.SIS.ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
+            IEnumerator<ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
             while (enu.MoveNext())
             {
-                BE.SIS.ENTIDAD.Grupo oGrupo = new BE.SIS.ENTIDAD.Grupo();
-                DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
-                oGrupo = oDalGrupo.obtenerGrupoPorId(enu.Current.idGrupo);
+                ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+                DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+                oGrupo = oDalGrupo.ObtenerGrupoPorId(enu.Current.IdGrupo);
 
-                DAL.SIS.DATOS.DALGrupoPermiso oDalGrupoPermiso = new DAL.SIS.DATOS.DALGrupoPermiso();
-                List<BE.SIS.ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<BE.SIS.ENTIDAD.GrupoPermiso>();
-                listadoGrupoPermisos = oDalGrupoPermiso.obtenerPermisosPorIdGrupo(oGrupo.idGrupo);
+                DATOS.DALGrupoPermiso oDalGrupoPermiso = new DATOS.DALGrupoPermiso();
+                List<ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<ENTIDAD.GrupoPermiso>();
+                listadoGrupoPermisos = oDalGrupoPermiso.ObtenerPermisosPorIdGrupo(oGrupo.IdGrupo);
 
-                IEnumerator<BE.SIS.ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
+                IEnumerator<ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
                 while (enu2.MoveNext())
                 {
-                    DAL.SIS.DATOS.DALPermiso oDalPermiso = new DAL.SIS.DATOS.DALPermiso();
-                    BE.SIS.ENTIDAD.Permiso oPermiso;
-                    oPermiso = oDalPermiso.obtenerPermisoPorId(enu2.Current.idPermiso);
+                    DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
+                    ENTIDAD.Permiso oPermiso;
+                    oPermiso = oDalPermiso.ObtenerPermisoPorId(enu2.Current.IdPermiso);
                     listaPermisos.Add(oPermiso);
-                    oGrupo.listadoPermisos = listaPermisos;
+                    oGrupo.ListadoPermisos = listaPermisos;
                 }
                 listaGrupo.Add(oGrupo);
             }
-            oUsuario.listadoGrupos = listaGrupo;
-            */
+            oUsuario.ListadoGrupos = listaGrupo;
+
             return oUsuario;
         }
         /// <summary>
@@ -202,25 +202,26 @@ namespace SIS.BUSINESS
         /// <param name="usuario"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public int login(string usuario, string password)
+        public int Login(string usuario, string password)
         {
             // Cifro la password
             string passHasheada;
             int resultadoValidacion = 0;
-            /*
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
             string IdDB = "DB";
 
             try
             {
-                passHasheada = interfazHash.obtenerHash(password);
-                resultadoValidacion = oDalUsuario.validarUsuario(usuario, passHasheada);
+                passHasheada = interfazHash.ObtenerHash(password);
+                resultadoValidacion = oDalUsuario.ValidarUsuario(usuario, passHasheada);
             }
             catch (Exception ex)
             {
-                interfazNegocioBitacora.registrarEnBitacora_BLL(IdDB, ex);
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdDB, oExBLL);
             }
-            */
+
             return resultadoValidacion;
         }
         /// <summary>
@@ -228,13 +229,13 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public bool validarExistenciaUsuario(string usuario)
+        public bool ValidarExistenciaUsuario(string usuario)
         {
             bool resultado = false;
-            /*
-            DAL.SIS.DATOS.DALUsuario oDalUsuario = new DAL.SIS.DATOS.DALUsuario();
-            resultado = oDalUsuario.validarExistenciaUsuario(usuario);
-            */
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            resultado = oDalUsuario.ValidarExistenciaUsuario(usuario);
+
             return resultado;
         }
         // ##### GRUPO #####
@@ -243,27 +244,27 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="idGrupo"></param>
         /// <returns></returns>
-        public SIS.ENTIDAD.Grupo obtenerGrupoPorId(int idGrupo)
+        public ENTIDAD.Grupo ObtenerGrupoPorId(int idGrupo)
         {
 
-            SIS.ENTIDAD.Grupo oGrupo = new SIS.ENTIDAD.Grupo();
-            /*
-            DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
-            oGrupo = oDalGrupo.obtenerGrupoPorId(idGrupo);
-            */
+            ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+
+            DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+            oGrupo = oDalGrupo.ObtenerGrupoPorId(idGrupo);
+
             return oGrupo;
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<SIS.ENTIDAD.Grupo> obtenerGrupos()
+        public List<ENTIDAD.Grupo> ObtenerGrupos()
         {
-            List<SIS.ENTIDAD.Grupo> listadoGrupos = new List<SIS.ENTIDAD.Grupo>();
-            /*
-            DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
-            listadoGrupos = oDalGrupo.obtenerGrupos;
-            */
+            List<ENTIDAD.Grupo> listadoGrupos = new List<ENTIDAD.Grupo>();
+
+            DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+            listadoGrupos = oDalGrupo.ObtenerGrupos();
+
             return listadoGrupos;
         }
         /// <summary>
@@ -271,13 +272,13 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="nombreGrupo"></param>
         /// <returns></returns>
-        public string obtenerDescripcionGrupoPorNombre(string nombreGrupo)
+        public string ObtenerDescripcionGrupoPorNombre(string nombreGrupo)
         {
             string descripcionGrupo = "";
-            /*
-            DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
-            descripcionGrupo = oDalGrupo.obtenerDescripcionGrupoPorNombreGrupo(nombreGrupo);
-            */
+
+            DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+            descripcionGrupo = oDalGrupo.ObtenerDescripcionGrupoPorNombreGrupo(nombreGrupo);
+
             return descripcionGrupo;
         }
         /// <summary>
@@ -285,13 +286,13 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="nombreGrupo"></param>
         /// <returns></returns>
-        public SIS.ENTIDAD.Grupo obtenerGrupoPorNombre(string nombreGrupo)
+        public ENTIDAD.Grupo ObtenerGrupoPorNombre(string nombreGrupo)
         {
-            SIS.ENTIDAD.Grupo oGrupo = new SIS.ENTIDAD.Grupo();
-            /*
-            DAL.SIS.DATOS.DALGrupo oDalGrupo = new DAL.SIS.DATOS.DALGrupo();
+            ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+
+            DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
             oGrupo = oDalGrupo.obtenerGrupoPorNombreGrupo(nombreGrupo);
-            */
+
             return oGrupo;
         }
         // ##### PERMISO #####
@@ -300,33 +301,33 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="idPermiso"></param>
         /// <returns></returns>
-        public SIS.ENTIDAD.Permiso obtenerPermisoPorId(int idPermiso)
+        public ENTIDAD.Permiso ObtenerPermisoPorId(int idPermiso)
         {
-            SIS.ENTIDAD.Permiso oPermiso = new SIS.ENTIDAD.Permiso();
-            /*
-            DAL.SIS.DATOS.DALPermiso oDalPermiso = new DAL.SIS.DATOS.DALPermiso();
-            oPermiso = oDalPermiso.obtenerPermisoPorId(idPermiso);
-            */
+            ENTIDAD.Permiso oPermiso = new ENTIDAD.Permiso();
+
+            DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
+            oPermiso = oDalPermiso.ObtenerPermisoPorId(idPermiso);
+
             return oPermiso;
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool verificarConsistenciaBD()
+        public bool VerificarConsistenciaBD()
         {
             bool estado = false;
             string IdDB = "DB";
-            /*
+
             try
             {
-                estado = interfazHash.verificarConsistenciaBD();
+                estado = interfazHash.VerificarConsistenciaBD();
             }
-            catch (EL.SIS.EXCEPCIONES.SEGExcepcion ex)
+            catch (EXCEPCIONES.SEGExcepcion ex)
             {
-                interfazNegocioBitacora.registrarEnBitacora_SEG(IdDB, ex);
+                interfazNegocioBitacora.RegistrarEnBitacora_SEG(IdDB, ex);
             }
-            */
+
             return estado;
         }
     }

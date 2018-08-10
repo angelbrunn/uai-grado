@@ -13,7 +13,7 @@ namespace SIS.DATOS
         /// </summary>
         /// <param name="idioma"></param>
         /// <returns></returns>
-        public List<MultiIdioma> ObtenerPermisosPorIdGrupo(String idioma)
+        public List<MultiIdioma> ObtenerTablaMultiIdioma(String idioma)
         {
             List<MultiIdioma> listaMultiIdioma = new List<MultiIdioma>();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
