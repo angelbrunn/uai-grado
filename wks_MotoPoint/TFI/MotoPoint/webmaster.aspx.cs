@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MotoPoint
 {
-    public partial class webmaster : System.Web.UI.Page
+    public partial class admin : System.Web.UI.Page
     {
         /// <summary>
         /// 
@@ -37,8 +37,7 @@ namespace MotoPoint
                 //SI EL USUARIO NO TIENE PERMISOS LO SACO DE LA WEBMASTER PAGE!
                 Response.Redirect("home.aspx");
             }
-            else
-            {
+            else {
                 // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
                 bool resultadoConsistenciaUsuarios = false;
                 // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
@@ -72,7 +71,7 @@ namespace MotoPoint
                 {
                     Tx = TxBackUp.ToString();
                 }
-
+                
                 if (Tx == "1")
                 {
                     TxE = TxExportar.ToString();
@@ -90,7 +89,7 @@ namespace MotoPoint
                         TxI = "0";
                     }
                 }
-                else if (Tx == "0")
+                else if(Tx == "0")
                 {
                     TxE = "0";
                     TxI = "0";
@@ -121,14 +120,13 @@ namespace MotoPoint
                 CellDescripcion.Text = _bitacora.Descripcion;
                 CellFecha.Text = _bitacora.Fecha.ToString();
 
-                if (CellIdEvento.Text != "1")
-                {
-                    row.Cells.Add(CellIdEvento);
-                    row.Cells.Add(CellIdUsuario);
-                    row.Cells.Add(CellDescripcion);
-                    row.Cells.Add(CellFecha);
+                if (CellIdEvento.Text != "1") {
+                row.Cells.Add(CellIdEvento);
+                row.Cells.Add(CellIdUsuario);
+                row.Cells.Add(CellDescripcion);
+                row.Cells.Add(CellFecha);
 
-                    tbBitacora.Rows.Add(row);
+                tbBitacora.Rows.Add(row);
                 }
 
             }
@@ -240,8 +238,7 @@ namespace MotoPoint
                 new SIS.EXCEPCIONES.UIExcepcion(ex.Message);
             }
 
-            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked))
-            {
+            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked)) {
                 validarExportar = false;
             }
 
@@ -262,6 +259,7 @@ namespace MotoPoint
         {
             var ruta = "";
             var validarImportar = true;
+            Char delimitter = ';';
             Session["fImportar"] = 0;
             Session["fExportar"] = 0;
             Session["TxBackup"] = 1;
@@ -271,49 +269,49 @@ namespace MotoPoint
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_Bitacora.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoBitacora(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoBitacora(ruta, delimitter);
                 }
 
                 if (chkbxUsuario.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_Usuario.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoUsuario(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoUsuario(ruta, delimitter);
                 }
 
                 if (chkbxGrupo.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_Grupo.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoGrupo(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoGrupo(ruta, delimitter);
                 }
 
                 if (chkbxGrupoPermiso.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_GrupoPermiso.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoGrupoPermiso(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoGrupoPermiso(ruta, delimitter);
                 }
 
                 if (chkbxPermiso.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_Permiso.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoPermiso(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoPermiso(ruta, delimitter);
                 }
 
                 if (chkbxMultiIdioma.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_MultiIdioma.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoMultiIdioma(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoMultiIdioma(ruta, delimitter);
                 }
 
                 if (chkbxUsuarioGrupo.Checked)
                 {
                     ruta = "C:\\MotoPoint";
                     ruta = ruta + "\\bkp_UsuarioGrupo.csv";
-                    interfazNegocioBackup.ImportarDesdeArchivoUsuarioGrupo(ruta, ";");
+                    interfazNegocioBackup.ImportarDesdeArchivoUsuarioGrupo(ruta, delimitter);
                 }
             }
             catch (Exception ex)
@@ -377,5 +375,6 @@ namespace MotoPoint
             */
             Response.Redirect("webmaster.aspx");
         }
+
     }
 }

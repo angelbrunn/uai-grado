@@ -23,12 +23,9 @@ namespace MotoPoint
             if (loginEstado == null)
             {
                 Session["loginEstado"] = 0;
-            }
-            else if (loginEstado.ToString() == "0")
-            {
+            } else if (loginEstado.ToString() == "0") {
                 Session["loginEstado"] = 0;
-            }
-            else if (loginEstado.ToString() == "1")
+            } else if (loginEstado.ToString() == "1")
             {
                 Session["loginEstado"] = 1;
             }

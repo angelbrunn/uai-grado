@@ -24,5 +24,7 @@ namespace MotoPoint
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }
+
+
     }
 }

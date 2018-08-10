@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59D76217-89C9-488B-BE31-A0C9D7952B87}</ProjectGuid>
+    <ProjectGuid>{554263C3-EE4E-440E-9550-9CC81CEA31FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BL</RootNamespace>
@@ -45,19 +45,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
-      <Project>{d176e75a-9d28-4245-86a9-939feb13fdc5}</Project>
+      <Project>{7107c084-3424-4de8-916b-36bc6a16807d}</Project>
       <Name>BE</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{abe66fb8-e7cb-4729-988d-cee2e77bcbce}</Project>
+      <Project>{6ee2f3fa-5e64-4ece-a213-29ad60a16684}</Project>
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\EL\EL.csproj">
-      <Project>{ea7ffa46-6a8b-4698-b1cf-c94e1c382370}</Project>
+      <Project>{a98b2a53-fee5-411e-8a25-b7bed8bc6902}</Project>
       <Name>EL</Name>
     </ProjectReference>
     <ProjectReference Include="..\IO\IO.csproj">
-      <Project>{f2db6db5-a059-420f-86a7-5a73b6ef76b1}</Project>
+      <Project>{441b815f-ec00-41de-aa95-7e3434f3fea0}</Project>
       <Name>IO</Name>
     </ProjectReference>
   </ItemGroup>
