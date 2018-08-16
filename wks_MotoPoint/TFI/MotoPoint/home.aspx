@@ -5,9 +5,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<link href="~/Content/css/home.css" rel="Stylesheet" type="text/css" />
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
+<link href="~/Content/css/home.css" rel="Stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="~/Scripts/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>MotoPoint!</title>

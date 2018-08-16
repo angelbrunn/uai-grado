@@ -46,7 +46,7 @@ namespace MotoPoint
                 // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
                 resultadoConsistenciaUsuarios = interfazNegocioUsuario.VerificarConsistenciaUsuarioBD();
                 // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
-                resultadoConsistenciaBitacora = interfazNegocioBitacora.VerificarConsistenciaBD();
+                resultadoConsistenciaBitacora = interfazNegocioBitacora.VerificarConsistenciaBitacoraBD();
 
                 if (resultadoConsistenciaUsuarios == false || resultadoConsistenciaBitacora == false)
                 {

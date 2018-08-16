@@ -93,7 +93,7 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool VerificarConsistenciaBD()
+        public bool VerificarConsistenciaBitacoraBD()
         {
             bool estado = false;
             string IdDB = "DB";

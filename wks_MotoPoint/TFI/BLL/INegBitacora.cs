@@ -53,7 +53,7 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
-        bool VerificarConsistenciaBD();
+        bool VerificarConsistenciaBitacoraBD();
         /// <summary>
         /// 
         /// </summary>
