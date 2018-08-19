@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="Content/css/home.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" >
 
     <!-- FIXME:DESCOMENTAR UNA VEZ ARREGLADO -->
     <!--
@@ -22,7 +23,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body>
@@ -107,26 +108,25 @@
 
                 <!-- Grid column -->
                 <div class="col-md-6 col-lg-7 text-center text-md-right">
-
                     <!-- Facebook -->
                     <a class="fb-ic">
-                        <i class="fa fa-facebook white-text mr-4"></i>
+                        <i class="fa fa-facebook white-text mr-4" style="color:#FF8D00;"></i>
                     </a>
                     <!-- Twitter -->
                     <a class="tw-ic">
-                        <i class="fa fa-twitter white-text mr-4"></i>
+                        <i class="fa fa-twitter white-text mr-4" style="color:#FF8D00;"></i>
                     </a>
                     <!-- Google +-->
                     <a class="gplus-ic">
-                        <i class="fa fa-google-plus white-text mr-4"></i>
+                        <i class="fa fa-google-plus white-text mr-4" style="color:#FF8D00;"></i>
                     </a>
                     <!--Linkedin -->
                     <a class="li-ic">
-                        <i class="fa fa-linkedin white-text mr-4"></i>
+                        <i class="fa fa-linkedin white-text mr-4" style="color:#FF8D00;"></i>
                     </a>
                     <!--Instagram-->
                     <a class="ins-ic">
-                        <i class="fa fa-instagram white-text"></i>
+                        <i class="fa fa-instagram white-text" style="color:#FF8D00;"></i>
                     </a>
                 </div>
                 <!-- Grid column -->
@@ -146,7 +146,7 @@
 
                 <!-- Content -->
                 <h6 class="text-uppercase font-weight-bold">Compañia</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background:#FF8D00;">
                 <p>
                     2017-2019. MotoPoint.com.ar S.R.L. Todos los derechos reservados. - Evt: MotoPoint.com.ar - Legajo: 8362 - Disp: 1350/93 - Cuit Nº 30-65951462-8.El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley Nº 25.326. 
                     La Dirección Nacional de Protección de Datos de Personas, Órgano de Control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.
@@ -160,15 +160,15 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Productos</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background:#FF8D00;">
                 <p>
-                    <a href="#!">Ofertas</a>
+                    <a href="#!" style="color:#FF8D00;">Ofertas</a>
                 </p>
                 <p>
-                    <a href="#!">Expertos</a>
+                    <a href="#!" style="color:#FF8D00;">Expertos</a>
                 </p>
                 <p>
-                    <a href="#!">Membresias</a>
+                    <a href="#!" style="color:#FF8D00;">Membresias</a>
                 </p>
             </div>
             <!-- Grid column -->
@@ -178,15 +178,15 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Links Utiles</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background:#FF8D00;">
                 <p>
-                    <a href="#!">Su cuenta</a>
+                    <a href="#!" style="color:#FF8D00;">Su cuenta</a>
                 </p>
                 <p>
-                    <a href="#!">Cambie plan</a>
+                    <a href="#!" style="color:#FF8D00;">Cambie plan</a>
                 </p>
                 <p>
-                    <a href="#!">Ayuda</a>
+                    <a href="#!" style="color:#FF8D00;">Ayuda</a>
                 </p>
 
             </div>
@@ -197,7 +197,7 @@
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold">Contacto</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background:#FF8D00;">
                 <p>
                     <i class="fa fa-home mr-3"></i>New York, NY 10012, US
                 </p>
@@ -215,9 +215,9 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">
+    <div class="footer-copyright text-center py-3" style="background:#ECEFEA;">
         © 2018 Copyright:
-      <a href="https://motopoint.com.ar/">MotoPoint.com</a>
+      <a href="https://motopoint.com.ar/" style="color:#FF8D00;">MotoPoint.com</a>
     </div>
     <!-- FIN - FOOTER DE LA WEBAPP -->
     <!-- FIN - FOOTER DE LA WEBAPP -->
