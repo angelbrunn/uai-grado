@@ -68,12 +68,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="actividades.aspx" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="eventos.aspx" />
+    <Content Include="expertos.aspx" />
+    <Content Include="MasterHome.Master" />
     <None Include="packages.config" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -84,6 +88,8 @@
     <Content Include="Content\css\home.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\webmaster.css" />
+    <Content Include="ofertas.aspx" />
+    <Content Include="rutas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -98,7 +104,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="eventos.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -113,17 +118,52 @@
     <Content Include="webmasterGestionPerfiles.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="home.aspx" />
+    <Content Include="home_bkp.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="actividades.aspx.cs">
+      <DependentUpon>actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="actividades.aspx.designer.cs">
+      <DependentUpon>actividades.aspx</DependentUpon>
+    </Compile>
     <Compile Include="eventos.aspx.cs">
       <DependentUpon>eventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="eventos.aspx.designer.cs">
       <DependentUpon>eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="expertos.aspx.cs">
+      <DependentUpon>expertos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="expertos.aspx.designer.cs">
+      <DependentUpon>expertos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterHome.Master.cs">
+      <DependentUpon>MasterHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterHome.Master.designer.cs">
+      <DependentUpon>MasterHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ofertas.aspx.cs">
+      <DependentUpon>ofertas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ofertas.aspx.designer.cs">
+      <DependentUpon>ofertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rutas.aspx.cs">
+      <DependentUpon>rutas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rutas.aspx.designer.cs">
+      <DependentUpon>rutas.aspx</DependentUpon>
     </Compile>
     <Compile Include="webmasterContingencia.aspx.cs">
       <DependentUpon>webmasterContingencia.aspx</DependentUpon>
@@ -149,12 +189,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="home_bkp.aspx.cs">
+      <DependentUpon>home_bkp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="home_bkp.aspx.designer.cs">
+      <DependentUpon>home_bkp.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

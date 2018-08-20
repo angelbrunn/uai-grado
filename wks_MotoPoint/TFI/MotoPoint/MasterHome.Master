@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs"
-    Inherits="MotoPoint.home" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterHome.master.cs" 
+    Inherits="MotoPoint.MasterHome" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
     <title>MotoPoint!</title>
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,23 +25,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-
 </head>
 <body>
     <form id="frmHome" runat="server">
         <!-- INI - NAVEGADOR01 WEBAPP -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="eventos.aspx">LOGO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Expertos</a>
+                        <a class="nav-link" href="expertos.aspx">Expertos</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Ofertas</a>
+                        <a class="nav-link" href="ofertas.aspx">Ofertas</a>
                     </li>
                 </ul>
                 <div id="actPerfil">
@@ -50,7 +50,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Mi Perfil</a>
-                                <a class="dropdown-item" href="#">Salir!</a>
+                                <a class="dropdown-item" href="#" onclick="ExCodeBehindLogOffEvent()";>Salir!</a>
                             </div>
                         </li>
                     </ul>
@@ -69,29 +69,25 @@
                         <a class="nav-link" href="eventos.aspx">Eventos <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Rutas</a>
+                        <a class="nav-link" href="rutas.aspx">Rutas</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Actividades</a>
+                        <a class="nav-link" href="actividades.aspx">Actividades</a>
                     </li>
                 </ul>
             </div>
         </nav>
-
         <br />
         <br />
-        <!-- INI - BODY DE LA WEBAPP -->
-        <div class="container">
-            <h3>Aca desarrollar el home de eventos</h3>
-            <p>Basicamente aqui estaran los eventos en curso que ya estan proximos a realizarse o que se estan realizando.</p>
-        </div>
-        <!-- INI - BODY DE LA WEBAPP -->
+        <!-- BODY DE LA WEBAPP -->
+        <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+        <!-- BODY DE LA WEBAPP -->
         <br />
         <br />
     </form>
 </body>
 </html>
-<!-- INI - FOOTER DE LA WEBAPP 6351ce-->
+<!-- INI - FOOTER DE LA WEBAPP -->
 <footer class="page-footer font-small unique-color-dark">
 
     <div id="footerHeader">
@@ -219,7 +215,6 @@
         © 2018 Copyright:
       <a href="https://motopoint.com.ar/" style="color:#FF8D00;">MotoPoint.com</a>
     </div>
-    <!-- FIN - FOOTER DE LA WEBAPP -->
     <!-- FIN - FOOTER DE LA WEBAPP -->
 </footer>
 <script>

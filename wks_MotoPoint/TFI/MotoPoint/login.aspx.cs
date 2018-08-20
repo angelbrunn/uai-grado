@@ -104,7 +104,7 @@ namespace MotoPoint
                 {
                     //SI USUARIO ES JERARQUICO O USUARIO -> PANTALLA HOME
                     Session["loginEstado"] = 0;
-                    Response.Redirect("home.aspx");
+                    Response.Redirect("eventos.aspx");
                 }
             }
             else

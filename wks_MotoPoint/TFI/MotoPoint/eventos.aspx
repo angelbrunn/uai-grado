@@ -1,18 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="eventos.aspx.cs" 
-    Inherits="MotoPoint.eventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterHome.Master" AutoEventWireup="true" CodeBehind="eventos.aspx.cs"
+    Inherits="MotoPoint.Eventos" %>
 
-<!DOCTYPE html>
+<asp:Content ID="MasterNavBar" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            Eventos!
-        </div>
-    </form>
-</body>
-</html>
+
+<asp:Content ID="MasterContenidoEventos" ContentPlaceHolderID="body" runat="server">
+    <div>
+        Eventos!
+    </div>
+</asp:Content>

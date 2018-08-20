@@ -10,6 +10,6 @@
 namespace MotoPoint {
     
     
-    public partial class Eventos {
+    public partial class actividades {
     }
 }
