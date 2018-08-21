@@ -35,7 +35,7 @@ namespace MotoPoint
             if (User.IsInRole("Usuario"))
             {
                 //SI EL USUARIO NO TIENE PERMISOS LO SACO DE LA WEBMASTER PAGE!
-                Response.Redirect("home.aspx");
+                Response.Redirect("eventos.aspx");
             }
             else {
                 // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
@@ -138,7 +138,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void LinkHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("home.aspx");
+            Response.Redirect("eventos.aspx");
         }
         /// <summary>
         ///  ARQ.BASE: GESTION DE PERFILES

@@ -19,7 +19,7 @@ namespace MotoPoint
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnLogOff_Click(object sender, EventArgs e)
+        protected void btnSalir_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
