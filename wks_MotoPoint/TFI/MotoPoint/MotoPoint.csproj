@@ -76,8 +76,11 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\css\feedback.css" />
     <Content Include="eventos.aspx" />
     <Content Include="expertos.aspx" />
+    <Content Include="isError.aspx" />
+    <Content Include="isOk.aspx" />
     <Content Include="MasterHome.Master" />
     <None Include="packages.config" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -152,6 +155,20 @@
     </Compile>
     <Compile Include="expertos.aspx.designer.cs">
       <DependentUpon>expertos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="isError.aspx.cs">
+      <DependentUpon>isError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="isError.aspx.designer.cs">
+      <DependentUpon>isError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="isOk.aspx.cs">
+      <DependentUpon>isOk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="isOk.aspx.designer.cs">
+      <DependentUpon>isOk.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterHome.Master.cs">
       <DependentUpon>MasterHome.Master</DependentUpon>
