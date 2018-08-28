@@ -77,6 +77,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\css\feedback.css" />
+    <Content Include="Content\image\feedback_negativo.svg" />
+    <Content Include="Content\image\feedback_positivo.svg" />
     <Content Include="eventos.aspx" />
     <Content Include="expertos.aspx" />
     <Content Include="isError.aspx" />
@@ -238,9 +240,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{7107c084-3424-4de8-916b-36bc6a16807d}</Project>

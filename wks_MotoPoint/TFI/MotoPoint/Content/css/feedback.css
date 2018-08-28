@@ -23,6 +23,10 @@ body {
     margin: auto;
 }
 
+#mensajeFeedback {
+    font-size: 30px;
+}
+
 #bodyFeedback {
     position: relative;
     z-index: 1;
@@ -52,3 +56,12 @@ body {
     #formFeedback #btnVolver:hover, #btnVolver input:active, #btnVolver input:focus {
         background: #272525;
     }
+
+#btnVolver {
+    border-radius: 10px;
+}
+
+#imgFeedback {
+    height : 210px;
+    width:270px;
+}

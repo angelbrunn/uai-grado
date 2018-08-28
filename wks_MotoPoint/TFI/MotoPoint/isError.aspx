@@ -12,12 +12,10 @@
 <body>
     <form id="formFeedback" runat="server">
         <div id="bodyFeedback">
+            <div id="mensajeFeedback">
             Lo sentimos!
-            <br />
-            <br />
-            <br />
-            aca viene a imagen de ok
-            <br />
+            </div>
+            <img id="imgFeedback" src="Content/image/feedback_negativo.svg" alt="Smiley face" />
             <br />
             <br />
             <asp:Button runat="server" ID="btnVolver" Text="Volver" />
