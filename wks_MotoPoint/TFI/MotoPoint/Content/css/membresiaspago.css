@@ -5,23 +5,18 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-
-.container {
-    margin-top: 40px;
+body {
+    margin: 50px auto;
+    width: 600px;
 }
 
-.card-text {
-    font-size: 14px;
+.col-md-offset-4 {
+    margin-left: 100px;
 }
 
-#btnSeleccionarBronce {
-    font-size: 14px;
-}
-
-#btnSeleccionarPlata {
-    font-size: 14px;
-}
-
-#btnSeleccionarOro {
-    font-size: 14px;
+#lblNumeroTarjeta, #lblCvc, #lblTitularTarjeta, #lblFechaExpiracion {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
 }

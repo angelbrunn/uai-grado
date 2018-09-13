@@ -77,6 +77,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\css\feedback.css" />
+    <Content Include="Content\css\membresiaspago.css" />
     <Content Include="Content\css\membresias.css" />
     <Content Include="Content\image\feedback_negativo.svg" />
     <Content Include="Content\image\feedback_positivo.svg" />
@@ -96,6 +97,7 @@
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\webmaster.css" />
     <Content Include="membresias.aspx" />
+    <Content Include="membresiaspago.aspx" />
     <Content Include="miPerfil.aspx" />
     <Content Include="ofertas.aspx" />
     <Content Include="rutas.aspx" />
@@ -186,6 +188,13 @@
     </Compile>
     <Compile Include="membresias.aspx.designer.cs">
       <DependentUpon>membresias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="membresiaspago.aspx.cs">
+      <DependentUpon>membresiaspago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="membresiaspago.aspx.designer.cs">
+      <DependentUpon>membresiaspago.aspx</DependentUpon>
     </Compile>
     <Compile Include="miPerfil.aspx.cs">
       <DependentUpon>miPerfil.aspx</DependentUpon>

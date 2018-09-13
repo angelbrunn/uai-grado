@@ -10,42 +10,60 @@
 namespace MotoPoint {
     
     
-    public partial class membresias {
+    public partial class membresiaspago {
         
         /// <summary>
-        /// Control frm_membresias.
+        /// Control frm_membresiaspago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frm_membresias;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frm_membresiaspago;
         
         /// <summary>
-        /// Control btnSeleccionarBronce.
+        /// Control lblNumeroTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeleccionarBronce;
+        protected global::System.Web.UI.WebControls.Label lblNumeroTarjeta;
         
         /// <summary>
-        /// Control btnSeleccionarPlata.
+        /// Control lblFechaExpiracion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeleccionarPlata;
+        protected global::System.Web.UI.WebControls.Label lblFechaExpiracion;
         
         /// <summary>
-        /// Control btnSeleccionarOro.
+        /// Control lblCvc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeleccionarOro;
+        protected global::System.Web.UI.WebControls.Label lblCvc;
+        
+        /// <summary>
+        /// Control lblTitularTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitularTarjeta;
+        
+        /// <summary>
+        /// Control btnPagar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPagar;
     }
 }
