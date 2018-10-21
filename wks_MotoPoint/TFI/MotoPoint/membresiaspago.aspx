@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <asp:Label ID="lblNumeroTarjeta" runat="server" Text="NUMERO TARJETA"></asp:Label>
                                         <div class="input-group">
-                                            <input type="tel" class="form-control" placeholder="Numero de tarjeta" />
+                                            <asp:TextBox runat="server" ID="txtNumeroTarjeta" TabIndex="2" placeholder="Numero de tarjeta" class="form-control"></asp:TextBox>
                                             <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                         </div>
                                     </div>
@@ -44,13 +44,13 @@
                                 <div class="col-xs-7 col-md-7">
                                     <div class="form-group">
                                         <asp:Label ID="lblFechaExpiracion" runat="server" Text="FECHA EXPIRACION"></asp:Label>
-                                        <input type="tel" class="form-control" placeholder="MM / YY" />
+                                        <asp:TextBox runat="server" ID="txtFecha" TabIndex="2" placeholder="MM / YY" class="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-xs-5 col-md-5 pull-right">
                                     <div class="form-group">
                                         <asp:Label ID="lblCvc" runat="server" Text="Codigo CVC"></asp:Label>
-                                        <input type="tel" class="form-control" placeholder="CVC" />
+                                        <asp:TextBox runat="server" ID="txtCvc" TabIndex="2" placeholder="CVC" class="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <asp:Label ID="lblTitularTarjeta" runat="server" Text="TITULAR TARJETA"></asp:Label>
-                                        <input type="text" class="form-control" placeholder="Titular de la tarjeta" />
+                                        <asp:TextBox runat="server" ID="txtTitularTarjeta" TabIndex="2" placeholder="Titular de la tarjeta" class="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

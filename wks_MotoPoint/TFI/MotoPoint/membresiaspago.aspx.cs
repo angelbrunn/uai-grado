@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
+using System.Xml;
 
 namespace MotoPoint
 {
@@ -22,6 +24,27 @@ namespace MotoPoint
         protected void btnPagar_Click(object sender, EventArgs e)
         {
             //VALIDO EL PAGO VIA WEBSERVICES
+            var operacion = new localhost.Service();
+
+            string numeroTarjeta = txtNumeroTarjeta.Text;
+            string numeroSeguridad = txtCvc.Text;
+            string fechaValidez = txtFecha.Text;
+            string nombreTitular = txtTitularTarjeta.Text;
+
+            Boolean resultadoPago = false;
+
+            resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
+
+            if (resultadoPago == true)
+            {
+                resultadoPago = false;
+                Response.Redirect("isOk.aspx");
+            }
+            else
+            {
+                resultadoPago = false;
+                Response.Redirect("isError.aspx");
+            }
 
         }
     }

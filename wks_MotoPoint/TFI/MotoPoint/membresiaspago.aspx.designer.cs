@@ -31,6 +31,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblNumeroTarjeta;
         
         /// <summary>
+        /// Control txtNumeroTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroTarjeta;
+        
+        /// <summary>
         /// Control lblFechaExpiracion.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFechaExpiracion;
+        
+        /// <summary>
+        /// Control txtFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
         /// Control lblCvc.
@@ -49,6 +67,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblCvc;
         
         /// <summary>
+        /// Control txtCvc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCvc;
+        
+        /// <summary>
         /// Control lblTitularTarjeta.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitularTarjeta;
+        
+        /// <summary>
+        /// Control txtTitularTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTitularTarjeta;
         
         /// <summary>
         /// Control btnPagar.
