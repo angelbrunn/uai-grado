@@ -18,5 +18,20 @@ namespace MotoPoint
         {
 
         }
+
+        protected void btnSeleccionarBronce_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("membresiaspago.aspx");
+        }
+
+        protected void btnSeleccionarPlata_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("membresiaspago.aspx");
+        }
+
+        protected void btnSeleccionarOro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("membresiaspago.aspx");
+        }
     }
 }

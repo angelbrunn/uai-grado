@@ -18,7 +18,7 @@
             <img id="imgFeedback" src="Content/image/feedback_negativo.svg" alt="Smiley face" />
             <br />
             <br />
-            <asp:Button runat="server" ID="btnVolver" Text="Volver" />
+            <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" />
             <br />
         </div>
     </form>

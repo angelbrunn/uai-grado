@@ -26,7 +26,7 @@
                         <p class="card-text">Aca viene las descripcion del plan bronce.</p>
                     </div>
                     <div class="card-footer">
-                        <asp:Button class="btn btn-primary" ID="btnSeleccionarBronce" runat="server" Text="Seleccionar Bronce" />
+                        <asp:Button class="btnSeleccion" ID="btnSeleccionarBronce" runat="server" Text="Seleccionar Bronce" OnClick="btnSeleccionarBronce_Click" />
                     </div>
                 </div>
                 <div class="card my-3">
@@ -36,7 +36,7 @@
                         <p class="card-text">Aca viene las descripcion del plan plata.</p>
                     </div>
                     <div class="card-footer">
-                        <asp:Button class="btn btn-primary" ID="btnSeleccionarPlata" runat="server" Text="Seleccionar Plata" />
+                        <asp:Button class="btnSeleccion" ID="btnSeleccionarPlata" runat="server" Text="Seleccionar Plata" OnClick="btnSeleccionarPlata_Click" />
                     </div>
                 </div>
                 <div class="card my-3">
@@ -46,7 +46,7 @@
                         <p class="card-text">Aca viene las descripcion del plan oro.</p>
                     </div>
                     <div class="card-footer">
-                        <asp:Button class="btn btn-primary" ID="btnSeleccionarOro" runat="server" Text="Seleccionar Oro" />
+                        <asp:Button class="btnSeleccion" ID="btnSeleccionarOro" runat="server" Text="Seleccionar Oro" OnClick="btnSeleccionarOro_Click" />
                     </div>
                 </div>
             </div>

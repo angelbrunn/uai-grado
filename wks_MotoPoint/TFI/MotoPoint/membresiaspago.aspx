@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <asp:Label ID="lblNumeroTarjeta" runat="server" Text="NUMERO TARJETA"></asp:Label>
                                         <div class="input-group">
-                                            <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                                            <input type="tel" class="form-control" placeholder="Numero de tarjeta" />
                                             <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-xs-5 col-md-5 pull-right">
                                     <div class="form-group">
-                                        <asp:Label ID="lblCvc" runat="server" Text="CVC CODE"></asp:Label>
+                                        <asp:Label ID="lblCvc" runat="server" Text="Codigo CVC"></asp:Label>
                                         <input type="tel" class="form-control" placeholder="CVC" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <asp:Label ID="lblTitularTarjeta" runat="server" Text="TITULAR TARJETA"></asp:Label>
-                                        <input type="text" class="form-control" placeholder="Card Owner Names" />
+                                        <input type="text" class="form-control" placeholder="Titular de la tarjeta" />
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                         <div class="panel-footer">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <asp:Button class="btn btn-warning btn-lg btn-block" ID="btnPagar" runat="server" Text="Proceso Pago" />
+                                    <asp:Button class="btn btn-warning btn-lg btn-block" ID="btnPagar" runat="server" Text="Proceso Pago" OnClick="btnPagar_Click" />
                                 </div>
                             </div>
                         </div>

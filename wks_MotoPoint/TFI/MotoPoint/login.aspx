@@ -7,7 +7,7 @@
 <head runat="server">
 <link href="~/Content/css/login.css" rel="Stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Login</title>
+    <title>Ingreso</title>
 </head>
 <body>
     <form id="formLogin" runat="server">
@@ -24,9 +24,9 @@
             <div id="loginEstado">
                 <p><font color="red">Usuario invalido! </font></p>
             </div>
-            <asp:LinkButton ID="linkRegistrarse" runat="server">Registrarse</asp:LinkButton>
+            <asp:LinkButton ID="linkRegistrarse" runat="server" OnClick="linkRegistrarse_Click">Registrarse</asp:LinkButton>
              |
-            <asp:LinkButton ID="linkRecordar" runat="server">Recordar</asp:LinkButton>
+            <asp:LinkButton ID="linkRecordar" runat="server" OnClick="linkRecordar_Click">Recordar</asp:LinkButton>
             </div>
         </div>
     </div>

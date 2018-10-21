@@ -13,5 +13,10 @@ namespace MotoPoint
         {
 
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("membresiaspago.aspx");
+        }
     }
 }

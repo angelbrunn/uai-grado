@@ -76,6 +76,8 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\css\recordar.css" />
+    <Content Include="Content\css\registro.css" />
     <Content Include="Content\css\feedback.css" />
     <Content Include="Content\css\membresiaspago.css" />
     <Content Include="Content\css\membresias.css" />
@@ -100,6 +102,8 @@
     <Content Include="membresiaspago.aspx" />
     <Content Include="miPerfil.aspx" />
     <Content Include="ofertas.aspx" />
+    <Content Include="recordar.aspx" />
+    <Content Include="registro.aspx" />
     <Content Include="rutas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -209,6 +213,20 @@
     </Compile>
     <Compile Include="ofertas.aspx.designer.cs">
       <DependentUpon>ofertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recordar.aspx.cs">
+      <DependentUpon>recordar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recordar.aspx.designer.cs">
+      <DependentUpon>recordar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registro.aspx.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registro.aspx.designer.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="rutas.aspx.cs">
       <DependentUpon>rutas.aspx</DependentUpon>

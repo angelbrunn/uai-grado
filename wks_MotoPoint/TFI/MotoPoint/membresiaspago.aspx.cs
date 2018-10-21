@@ -18,5 +18,11 @@ namespace MotoPoint
         {
 
         }
+
+        protected void btnPagar_Click(object sender, EventArgs e)
+        {
+            //VALIDO EL PAGO VIA WEBSERVICES
+
+        }
     }
 }

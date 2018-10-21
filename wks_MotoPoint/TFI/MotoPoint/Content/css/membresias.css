@@ -5,6 +5,29 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+body {
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #FF6600, #FF6600);
+    background: -moz-linear-gradient(right, #FF6600, #FF6600);
+    background: -o-linear-gradient(right, #FF6600, #FF6600);
+    background: linear-gradient(to left, #FF6600, #FF6600);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.btnSeleccion {
+    width: 165px;
+    background-color: #333;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #464242;
+}
 
 .container {
     margin-top: 40px;

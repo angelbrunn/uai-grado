@@ -115,5 +115,15 @@ namespace MotoPoint
                 Response.Redirect("login.aspx");
             }
         }
+
+        protected void linkRegistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registro.aspx");
+        }
+
+        protected void linkRecordar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("recordar.aspx");
+        }
     }
 }
