@@ -13,6 +13,24 @@ namespace MotoPoint
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            
+            var loginEstado = Session["loginEstado"];
+            var loginUsuario = Session["loginUsuario"];
+
+            if (loginEstado.ToString() == "0" && loginUsuario.ToString() != "NuevoUsuario")
+            {
+                Session["loginEstado"] = 0;
+            }
+            else if (loginEstado.ToString() == "1")
+            {
+                //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
+                Session["loginEstado"] = 1;
+                FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
+            }
+
+
+
         }
         /// <summary>
         /// 

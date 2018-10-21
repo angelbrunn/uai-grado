@@ -18,7 +18,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="botonesEnviar">
-                        <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" />
+                        <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
                     </div>
                 </div>
             </div>

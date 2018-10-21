@@ -21,15 +21,18 @@ public class Service : System.Web.Services.WebService
     [WebMethod]
     public Boolean PagoMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular) {
         Boolean resultadoPago;
+        String estadoTrans;
 
         //VALIDAR QUE TODOS LOS CAMPOS ESTEN CORRECTOS
         if (numeroTarjeta != "" && numeroSeguridad != "" && fechaValidez != "" && nombreTitular != "")
         {
             resultadoPago = true;
+            estadoTrans = "PAGO REALIZADO CON EXITO";
         }
         else
         {
             resultadoPago = false;
+            estadoTrans = "PAGO RECHAZADO";
         }
 
         XmlTextWriter miEscritor = new XmlTextWriter("C:\\MotoPoint\\pagos.xml", null);
@@ -49,6 +52,10 @@ public class Service : System.Web.Services.WebService
 
         miEscritor.WriteStartElement("EstadoTransaccion");
         miEscritor.WriteString(resultadoPago.ToString());
+        miEscritor.WriteEndElement();
+
+        miEscritor.WriteStartElement("DescripcionTransaccion");
+        miEscritor.WriteString(estadoTrans);
         miEscritor.WriteEndElement();
 
         miEscritor.WriteEndDocument();

@@ -98,12 +98,14 @@ namespace MotoPoint
                 {
                     //SI USUARIO ADMIN -> PANTALLA ADMIN
                     Session["loginEstado"] = 0;
+                    Session["loginUsuario"] = user.usuario;
                     Response.Redirect("webmaster.aspx");
                 }
                 else
                 {
                     //SI USUARIO ES JERARQUICO O USUARIO -> PANTALLA HOME
                     Session["loginEstado"] = 0;
+                    Session["loginUsuario"] = user.usuario;
                     Response.Redirect("eventos.aspx");
                 }
             }
@@ -118,12 +120,48 @@ namespace MotoPoint
 
         protected void linkRegistrarse_Click(object sender, EventArgs e)
         {
+            //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
+            crearTicketUsuarioNoRegistrado();
+
+            Session["loginEstado"] = 1;
+            Session["loginUsuario"] = "NuevoUsuario";
+
             Response.Redirect("registro.aspx");
         }
 
         protected void linkRecordar_Click(object sender, EventArgs e)
         {
+            //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
+            crearTicketUsuarioNoRegistrado();
+
+            Session["loginEstado"] = 1;
+            Session["loginUsuario"] = "NuevoUsuario";
+
             Response.Redirect("recordar.aspx");
+        }
+
+        protected void crearTicketUsuarioNoRegistrado() {
+            // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
+            FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+            1, // Ticket version
+            "NuevoUsuario", // Username associated with ticket
+            DateTime.Now, // Date/time issued
+            DateTime.Now.AddMinutes(30), // Date/time to expire
+            true, // "true" for a persistent user cookie
+            "", // User-data, in this case the roles
+            FormsAuthentication.FormsCookiePath);// Path cookie valid for
+
+            // Encrypt the cookie using the machine key for secure transport
+            string hash = FormsAuthentication.Encrypt(ticket);
+            HttpCookie loginCookie = new HttpCookie(
+            FormsAuthentication.FormsCookieName, // Name of auth cookie
+            hash); // Hashed ticket
+
+            // Set the cookie's expiration time to the tickets expiration time
+            if (ticket.IsPersistent) loginCookie.Expires = ticket.Expiration;
+
+            // Add the cookie to the list for outgoing response
+            Response.Cookies.Add(loginCookie);
         }
     }
 }
