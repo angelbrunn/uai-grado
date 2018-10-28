@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+    border-radius:4px;
     position: relative;
     z-index: 1;
     background: #FFFFFF;
@@ -23,6 +24,7 @@ body {
 }
 
 .botonesEnviar {
+    border-radius:4px;
     margin-top: 10px;
     padding: 1px 15px;
 }

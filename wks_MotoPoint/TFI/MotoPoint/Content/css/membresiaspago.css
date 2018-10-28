@@ -6,6 +6,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body {
+    overflow-x: hidden;
+    overflow-y: hidden;
     margin: 50px auto;
     width: 600px;
     background: #000000; /* fallback for old browsers */

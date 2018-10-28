@@ -9,7 +9,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="fromAdministradorPerfiles" runat="server">
         <div>
             Administracion y gestion perfiles!
         </div>

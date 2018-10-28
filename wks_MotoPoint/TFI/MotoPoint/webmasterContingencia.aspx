@@ -9,7 +9,7 @@
     <title>WebMaster</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="fromAdministradorContingencia" runat="server">
         <div class="SistemaLogHeader">
             <div id="abmUser">
             <asp:Label ID="lblContingencia" runat="server" Text="Errores criticos reportados del Sistema"></asp:Label>

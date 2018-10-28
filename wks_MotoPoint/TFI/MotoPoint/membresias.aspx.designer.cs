@@ -13,13 +13,13 @@ namespace MotoPoint {
     public partial class membresias {
         
         /// <summary>
-        /// Control frm_membresias.
+        /// Control frmMembresias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frm_membresias;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmMembresias;
         
         /// <summary>
         /// Control btnSeleccionarBronce.

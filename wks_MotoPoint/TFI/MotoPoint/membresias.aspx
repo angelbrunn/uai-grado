@@ -16,11 +16,11 @@
     <title>MotoPoint - Seleccionar Membresias</title>
 </head>
 <body>
-    <form id="frm_membresias" runat="server">
+    <form id="frmMembresias" runat="server">
         <div class="container">
             <div class="card-deck">
                 <div class="card my-3">
-                    <img src="http://placehold.it/560x560" class="card-img-top" />
+                    <img src="Content/image/idCardBronce.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">Membresia Bronce</h4>
                         <p class="card-text">Aca viene las descripcion del plan bronce.</p>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="card my-3">
-                    <img src="http://placehold.it/560x560" class="card-img-top" />
+                    <img src="Content/image/idCardPlata.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">Membresia Plata</h4>
                         <p class="card-text">Aca viene las descripcion del plan plata.</p>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="card my-3">
-                    <img src="http://placehold.it/560x560" class="card-img-top" />
+                    <img src="Content/image/idCardOro.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">Membresia Oro</h4>
                         <p class="card-text">Aca viene las descripcion del plan oro.</p>

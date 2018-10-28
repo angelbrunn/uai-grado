@@ -8,4 +8,3 @@ C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BE\bin\Debug\
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BE\obj\Debug\BE.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BE\obj\Debug\BE.pdb
-C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache

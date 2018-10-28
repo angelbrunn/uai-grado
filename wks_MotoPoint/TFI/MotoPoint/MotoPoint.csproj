@@ -83,6 +83,12 @@
     <Content Include="Content\css\membresias.css" />
     <Content Include="Content\image\feedback_negativo.svg" />
     <Content Include="Content\image\feedback_positivo.svg" />
+    <Content Include="Content\image\idCardBronce.svg" />
+    <Content Include="Content\image\idCardOro.svg" />
+    <Content Include="Content\image\idCardPlata.svg" />
+    <Content Include="Content\image\membresiaBronce.svg" />
+    <Content Include="Content\image\membresiaOro.svg" />
+    <Content Include="Content\image\membresiaPlata.svg" />
     <Content Include="eventos.aspx" />
     <Content Include="expertos.aspx" />
     <Content Include="isError.aspx" />
