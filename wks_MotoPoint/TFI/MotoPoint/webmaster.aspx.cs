@@ -376,5 +376,10 @@ namespace MotoPoint
             Response.Redirect("webmaster.aspx");
         }
 
+        protected void btnTinfo_Click(object sender, EventArgs e)
+        {
+            //LISTAR XML DE CONTROL DE TRANSACCION
+            Response.Redirect("webmasterpagos.aspx");
+        }
     }
 }

@@ -12,14 +12,23 @@ using System.Xml;
 
 public class Service : System.Web.Services.WebService
 {
-    public Service () {
+    /// <summary>
+    /// 
+    /// </summary>
+    String ruta = "C:\\MotoPoint\\pagos.xml";
+    /// <summary>
+    /// 
+    /// </summary>
+    public Service()
+    {
 
         //Elimine la marca de comentario de la línea siguiente si utiliza los componentes diseñados 
         //InitializeComponent(); 
     }
 
     [WebMethod]
-    public Boolean PagoMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular) {
+    public Boolean PagoMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular)
+    {
         Boolean resultadoPago;
         String estadoTrans;
 
@@ -35,34 +44,60 @@ public class Service : System.Web.Services.WebService
             estadoTrans = "PAGO RECHAZADO";
         }
 
-        XmlTextWriter miEscritor = new XmlTextWriter("C:\\MotoPoint\\pagos.xml", null);
-        miEscritor.Formatting = Formatting.Indented;
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(ruta);
 
-        miEscritor.WriteStartDocument();
-        miEscritor.WriteComment("Registros pago via web!");
-        miEscritor.WriteStartElement("TransaccionesPago");
+        XmlNode transferencia = this.CrearNodoXml(xmlDoc,numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular, estadoTrans);
 
-        miEscritor.WriteStartElement("NumeroTarjeta");
-        miEscritor.WriteString(numeroTarjeta);
-        miEscritor.WriteEndElement();
+        //Obtenemos el nodo raiz del documento.
+        XmlNode nodoRaiz = xmlDoc.DocumentElement;
 
-        miEscritor.WriteStartElement("FechaTransaccion");
-        miEscritor.WriteString(DateTime.Now.ToString());
-        miEscritor.WriteEndElement();
+        //Insertamos el nodo transferencia al final del archivo
+        nodoRaiz.InsertAfter(transferencia, nodoRaiz.LastChild);
 
-        miEscritor.WriteStartElement("EstadoTransaccion");
-        miEscritor.WriteString(resultadoPago.ToString());
-        miEscritor.WriteEndElement();
-
-        miEscritor.WriteStartElement("DescripcionTransaccion");
-        miEscritor.WriteString(estadoTrans);
-        miEscritor.WriteEndElement();
-
-        miEscritor.WriteEndDocument();
-        miEscritor.Flush();
-        miEscritor.Close();
+        xmlDoc.Save(ruta);
 
         return resultadoPago;
     }
-    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="numeroTarjeta"></param>
+    /// <param name="numeroSeguridad"></param>
+    /// <param name="fechaValidez"></param>
+    /// <param name="nombreTitular"></param>
+    /// <param name="estadoTrans"></param>
+    /// <returns></returns>
+    private XmlNode CrearNodoXml(XmlDocument xmlDoc,string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular, string estadoTrans)
+    {
+        //Creamos el nodo que deseamos insertar.
+        XmlElement transaccionPago = xmlDoc.CreateElement("Transacciones");
+
+        //Creamos el elemento numeroTarjeta.
+        XmlElement numTarjeta = xmlDoc.CreateElement("numeroTarjeta");
+        numTarjeta.InnerText = numeroTarjeta;
+        transaccionPago.AppendChild(numTarjeta);
+
+        //Creamos el elemento numeroSeguridad.
+        XmlElement numSeguridad = xmlDoc.CreateElement("numeroSeguridad");
+        numSeguridad.InnerText = numeroSeguridad;
+        transaccionPago.AppendChild(numSeguridad);
+
+        //Creamos el elemento fechaValidez.
+        XmlElement fecValidez = xmlDoc.CreateElement("fechaValidez");
+        fecValidez.InnerText = fechaValidez;
+        transaccionPago.AppendChild(fecValidez);
+
+        //Creamos el elemento nombreTitular.
+        XmlElement nomTitular = xmlDoc.CreateElement("nombreTitular");
+        nomTitular.InnerText = nombreTitular;
+        transaccionPago.AppendChild(nomTitular);
+
+        //Creamos el elemento estadoTrans.
+        XmlElement estado = xmlDoc.CreateElement("estadoTrans");
+        estado.InnerText = estadoTrans;
+        transaccionPago.AppendChild(estado);
+
+        return transaccionPago;
+    }
 }
