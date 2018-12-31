@@ -4,7 +4,7 @@ using System.Data;
 namespace SIS.BUSINESS
 {
     /// <summary>
-    /// 
+    /// FacadeBitacora | https://www.dofactory.com/net/facade-design-pattern
     /// </summary>
     public class NegBitacora : INegBitacora
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SIS.BUSINESS
 {
     /// <summary>
-    /// 
+    /// FacadeMultiUsuari | https://www.dofactory.com/net/facade-design-pattern
     /// </summary>
     public class NegMultiUsuario : INegMultiUsuario
     {

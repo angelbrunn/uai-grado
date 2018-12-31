@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SIS.BUSINESS
 {
     /// <summary>
-    /// 
+    /// FacadeMultiIdioma | https://www.dofactory.com/net/facade-design-pattern
     /// </summary>
     public class NegMultiIdioma : INegMultiIdioma
     {

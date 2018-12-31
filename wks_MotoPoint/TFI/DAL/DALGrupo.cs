@@ -6,12 +6,14 @@ using System.Data.SqlClient;
 
 namespace SIS.DATOS
 {
+    /// <summary>
+    /// ADO.NET MODO: DESCONECTADO
+    /// </summary>
     public class DALGrupo
     {
         /// <summary>
-        /// 
+        /// ADO.NET MODO: DESCONECTADO
         /// </summary>
-        /// <returns></returns>
         public List<Grupo> ObtenerGrupos()
         {
             List<Grupo> listGrupo = new List<Grupo>();

@@ -5,9 +5,8 @@ using System.IO;
 namespace SIS.BUSINESS
 {
     /// <summary>
-    ///     ''' 
-    ///     ''' </summary>
-    ///     ''' <remarks></remarks>
+    /// FacadeBackup | https://www.dofactory.com/net/facade-design-pattern
+    /// </summary>
     public class NegBackup : INegBackup
     {
         /// <summary>

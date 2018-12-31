@@ -52,6 +52,8 @@ namespace MotoPoint
             //EVALUO EL RESULTDO DEL LOGIN | SI ES 0 NO EXISTE -> CREAR USUARIO
             if (resultadoLogin != 0)
             {
+                SingletonConeccion coneccion = SingletonConeccion.Instance;
+
                 //BUSCO EL USUARIO POR SU ID
                 var usuario = interfazNegocioUsuario.ObtenerUsuario(resultadoLogin);
                 //GUARDO EL USUARIO CONECTADO EN SESSION
@@ -60,6 +62,9 @@ namespace MotoPoint
                 Session["UsuarioLoginFecha"] = DateTime.Now;
                 Session["UsuarioHost"] = Request.UserHostAddress;
                 Session["UsuarioAgent"] = Request.Browser.Browser + "-" + Request.Browser.Version;
+                //NOS ASEGURAMOS QUE SOLO SE USARA UNA CONECCION PARA CADA USUARIO
+                Session["UsuarioInstaciaConeccion"] = coneccion;
+
                 //ME GUARDO LOS GRUPOS PARA EL USUARIO LOGEADO
                 List<SIS.ENTIDAD.Grupo> lstGrupos = usuario.ListadoGrupos;
                 //NIVEL DE ACCESO DEL USUARIO LOGEADO
@@ -163,5 +168,32 @@ namespace MotoPoint
             // Add the cookie to the list for outgoing response
             Response.Cookies.Add(loginCookie);
         }
+        /// <summary>
+        /// SINGLETON | https://codeburst.io/singleton-design-pattern-implementation-in-c-62a8daf3d115
+        /// </summary>
+        public sealed class SingletonConeccion
+        {
+            SingletonConeccion()
+            {
+            }
+            private static readonly object padlock = new object();
+            private static SingletonConeccion instance = null;
+            public static SingletonConeccion Instance
+            {
+                get
+                {
+                    lock (padlock)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new SingletonConeccion();
+                        }
+                        return instance;
+                    }
+                }
+            }
+        }
+
+
     }
 }

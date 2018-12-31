@@ -7,6 +7,9 @@ using System.Web.Services;
 
 namespace SIS.BUSINESS
 {
+    /// <summary>
+    ///  FacadeNegocio | https://www.dofactory.com/net/facade-design-pattern
+    /// </summary>
     public class NegNegocio : INegNegocio
     {
         //ESTE SERVICIO WEB DA SERVICIO DE COBRO

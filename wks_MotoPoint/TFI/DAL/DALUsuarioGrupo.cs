@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 
 namespace SIS.DATOS
 {
+    /// <summary>
+    /// ADO.NET MODO: DESCONECTADO
+    /// </summary>
     public class DALUsuarioGrupo
     {
         /// <summary>
