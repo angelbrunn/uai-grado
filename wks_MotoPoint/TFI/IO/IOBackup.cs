@@ -36,11 +36,13 @@ namespace SIS.ESCRITURA
                             string[] vec = linea.Split(delim);
                             ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
                             oUsuario.IdUsuario = System.Convert.ToString(vec[0]);
-                            oUsuario.usuario = System.Convert.ToString(vec[1]);
-                            oUsuario.Password = System.Convert.ToString(vec[2]);
-                            oUsuario.Legajo = System.Convert.ToString(vec[3]);
-                            oUsuario.Idioma = System.Convert.ToString(vec[4]);
-                            oUsuario.DigitoVerificador = System.Convert.ToString(vec[5]);
+                            oUsuario.NombreApellido = System.Convert.ToString(vec[1]);
+                            oUsuario.FechaNacimiento = System.Convert.ToString(vec[2]);
+                            oUsuario.CategoriaMoto = System.Convert.ToString(vec[3]);
+                            oUsuario.usuario = System.Convert.ToString(vec[4]);
+                            oUsuario.Password = System.Convert.ToString(vec[5]);
+                            oUsuario.Idioma = System.Convert.ToString(vec[6]);
+                            oUsuario.DigitoVerificador = System.Convert.ToString(vec[7]);
                             lista.Add(oUsuario);
                         }
                     }
@@ -329,8 +331,8 @@ namespace SIS.ESCRITURA
             IEnumerator<ENTIDAD.Usuario> enumC = listaUsuario.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.usuario
-               + delim + enumC.Current.Password + delim + enumC.Current.Legajo + delim + enumC.Current.Idioma + delim + enumC.Current.DigitoVerificador;
+                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.NombreApellido + delim + enumC.Current.FechaNacimiento + delim + enumC.Current.CategoriaMoto + enumC.Current.usuario
+               + delim + enumC.Current.Password + delim + delim + enumC.Current.Idioma + delim + enumC.Current.DigitoVerificador;
 
                 sw.WriteLine(linea);
             }

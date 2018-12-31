@@ -28,6 +28,60 @@ namespace SIS.ENTIDAD
         /// <summary>
         /// 
         /// </summary>
+        private string nombreApellidoField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string NombreApellido
+        {
+            get
+            {
+                return nombreApellidoField;
+            }
+            set
+            {
+                nombreApellidoField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private string fechaNacimientoField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string FechaNacimiento
+        {
+            get
+            {
+                return fechaNacimientoField;
+            }
+            set
+            {
+                fechaNacimientoField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private string categoriaMotoField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CategoriaMoto
+        {
+            get
+            {
+                return categoriaMotoField;
+            }
+            set
+            {
+                categoriaMotoField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string usuarioField;
         /// <summary>
         /// 
@@ -59,24 +113,6 @@ namespace SIS.ENTIDAD
             set
             {
                 passwordField = value;
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        private string legajoField;
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Legajo
-        {
-            get
-            {
-                return legajoField;
-            }
-            set
-            {
-                legajoField = value;
             }
         }
         /// <summary>

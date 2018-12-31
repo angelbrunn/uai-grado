@@ -398,12 +398,14 @@ namespace SIS.DATOS
                     con.Open();
                     foreach (Usuario element in listaUsuarios)
                     {
-                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (IdUsuario,usuario,Password,Legajo,Idioma,DigitoVerificador) VALUES (@IdUsuario,@usuario,@Password,@Legajo,@Idioma,@DigitoVerificador)", con);
+                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (IdUsuario,NombreApellido,FechaNacimiento,CategoriaMoto,Usuario,Password,Idioma,DigitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Idioma,@DigitoVerificador)", con);
 
                         cmdInsert.Parameters.AddWithValue("@IdUsuario", element.IdUsuario);
+                        cmdInsert.Parameters.AddWithValue("@Legajo", element.NombreApellido);
+                        cmdInsert.Parameters.AddWithValue("@Legajo", element.FechaNacimiento);
+                        cmdInsert.Parameters.AddWithValue("@Legajo", element.CategoriaMoto);
                         cmdInsert.Parameters.AddWithValue("@usuario", element.usuario);
                         cmdInsert.Parameters.AddWithValue("@Password", element.Password);
-                        cmdInsert.Parameters.AddWithValue("@Legajo", element.Legajo);
                         cmdInsert.Parameters.AddWithValue("@Idioma", element.Idioma);
                         cmdInsert.Parameters.AddWithValue("@DigitoVerificador", element.DigitoVerificador);
                         cmdInsert.ExecuteNonQuery();

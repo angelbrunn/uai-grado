@@ -58,7 +58,7 @@ namespace SIS.IO
             string digiVerif = "ERROR";
 
             string cadena;
-            cadena = oUsuario.IdUsuario.ToString() + oUsuario.usuario + oUsuario.Password + oUsuario.Legajo.ToString() + oUsuario.Idioma.ToString();
+            cadena = oUsuario.IdUsuario.ToString() + oUsuario.NombreApellido.ToString() + oUsuario.FechaNacimiento.ToString() + oUsuario.CategoriaMoto.ToString() + oUsuario.usuario + oUsuario.Password + oUsuario.Idioma.ToString();
 
             digiVerif = this.ObtenerHash(cadena);
 
@@ -95,7 +95,7 @@ namespace SIS.IO
             {
                 cadena = "";
                 cadenaHasheada = "";
-                cadena = enu.Current.IdUsuario.ToString() + enu.Current.usuario + enu.Current.Password + enu.Current.Legajo + enu.Current.Idioma;
+                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Idioma;
                 cadenaHasheada = this.ObtenerHash(cadena);
                 hashVerificador = enu.Current.DigitoVerificador;
 
@@ -107,19 +107,25 @@ namespace SIS.IO
             // #################### DIGITO VERIFICADOR VERTICAL ####################
             int bandera = 1;
 
+            string columnaNombreApellido = "";
+            string columnaFechaNacimiento = "";
+            string columnaCategoriaMoto = "";
             string columnaUsuario = "";
             string columnaPassword = "";
-            string columnaLegajo = "";
             string columnaIdioma = "";
 
+            string columnaNombreApellidoHasheada = "";
+            string columnaFechaNacimientoHasheada = "";
+            string columnaCategoriaMotoHasheada = "";
             string columnaUsuarioHasheada = "";
             string columnaPasswordHasheada = "";
-            string columnaLegajoHasheada = "";
             string columnaIdiomaHasheada = "";
 
+            string columDigiNombreApellido = "";
+            string columDigiFechaNacimiento = "";
+            string columDigiCategoriaMoto = "";
             string columDigiUsuario = "";
             string columDigiPassword = "";
-            string columDigiLegajo = "";
             string columDigiIdioma = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
@@ -128,19 +134,38 @@ namespace SIS.IO
                 if (bandera == 1)
                 {
                     columDigiUsuario = enuVert.Current.usuario;
+                    columDigiNombreApellido= enuVert.Current.NombreApellido.ToString();
+                    columDigiFechaNacimiento = enuVert.Current.FechaNacimiento.ToString();
+                    columDigiCategoriaMoto = enuVert.Current.CategoriaMoto.ToString();
                     columDigiPassword = enuVert.Current.Password;
-                    columDigiLegajo = enuVert.Current.Legajo.ToString();
                     columDigiIdioma = enuVert.Current.Idioma.ToString();
                     bandera = 2;
                 }
                 else
                 {
+                    columnaNombreApellido = columnaNombreApellido + enuVert.Current.NombreApellido.ToString();
+                    columnaFechaNacimiento = columnaFechaNacimiento + enuVert.Current.FechaNacimiento.ToString();
+                    columnaCategoriaMoto = columnaCategoriaMoto + enuVert.Current.CategoriaMoto.ToString();
                     columnaUsuario = columnaUsuario + enuVert.Current.usuario;
                     columnaPassword = columnaPassword + enuVert.Current.Password;
-                    columnaLegajo = columnaLegajo + enuVert.Current.Legajo.ToString();
                     columnaIdioma = columnaIdioma + enuVert.Current.Idioma.ToString();
                 }
             }
+
+            columnaNombreApellidoHasheada = this.ObtenerHash(columnaNombreApellido);
+            resultado = columnaNombreApellidoHasheada.CompareTo(columDigiNombreApellido);
+            if (resultado == 1)
+                contadorErroneo = contadorErroneo + 1;
+
+            columnaFechaNacimientoHasheada = this.ObtenerHash(columnaFechaNacimiento);
+            resultado = columnaFechaNacimientoHasheada.CompareTo(columnaFechaNacimiento);
+            if (resultado == 1)
+                contadorErroneo = contadorErroneo + 1;
+
+            columnaCategoriaMotoHasheada = this.ObtenerHash(columnaCategoriaMoto);
+            resultado = columnaCategoriaMotoHasheada.CompareTo(columnaCategoriaMoto);
+            if (resultado == 1)
+                contadorErroneo = contadorErroneo + 1;
 
             columnaUsuarioHasheada = this.ObtenerHash(columnaUsuario);
             resultado = columnaUsuarioHasheada.CompareTo(columDigiUsuario);
@@ -152,10 +177,6 @@ namespace SIS.IO
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
-            columnaLegajoHasheada = this.ObtenerHash(columnaLegajo);
-            resultado = columnaLegajoHasheada.CompareTo(columDigiLegajo);
-            if (resultado == 1)
-                contadorErroneo = contadorErroneo + 1;
 
             columnaIdiomaHasheada = this.ObtenerHash(columnaIdioma);
             resultado = columnaIdiomaHasheada.CompareTo(columDigiIdioma);
@@ -295,15 +316,18 @@ namespace SIS.IO
             
             // #################### DIGITO VERIFICADOR VERTICAL ####################
             string columnaIdUsuario = "";
+            string columnaNombreApellido = "";
+            string columnaFechaNacimiento = "";
+            string columnaCategoriaMoto = "";
+
             string columnaUsuario = "";
             string columnaPassword = "";
-            string columnaLegajo = "";
             string columnaIdioma = "";
 
             string columDigiIdUsuario = "";
+            string columDigiNombreApellido = "";
             string columDigiUsuario = "";
             string columDigiPassword = "";
-            string columDigiLegajo = "";
             string columDigiIdioma = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
@@ -314,9 +338,11 @@ namespace SIS.IO
                 }
                 else
                 {
+                    columnaNombreApellido = columnaNombreApellido + enuVert.Current.NombreApellido.ToString();
+                    columnaFechaNacimiento = columnaFechaNacimiento + enuVert.Current.FechaNacimiento.ToString();
+                    columnaCategoriaMoto = columnaCategoriaMoto + enuVert.Current.CategoriaMoto.ToString();
                     columnaUsuario = columnaUsuario + enuVert.Current.usuario;
                     columnaPassword = columnaPassword + enuVert.Current.Password;
-                    columnaLegajo = columnaLegajo + enuVert.Current.Legajo.ToString();
                     columnaIdioma = columnaIdioma + enuVert.Current.Idioma.ToString();
                 }
             }
@@ -327,9 +353,11 @@ namespace SIS.IO
                 if (enuVert2.Current.IdUsuario == "1")
                 {
                     // No hay digito verificador de la PK
+                    enuVert2.Current.NombreApellido = this.ObtenerHash(columnaNombreApellido);
+                    enuVert2.Current.FechaNacimiento = this.ObtenerHash(columnaFechaNacimiento);
+                    enuVert2.Current.CategoriaMoto = this.ObtenerHash(columnaCategoriaMoto);
                     enuVert2.Current.usuario = this.ObtenerHash(columnaUsuario);
                     enuVert2.Current.Password = this.ObtenerHash(columnaPassword);
-                    enuVert2.Current.Legajo = this.ObtenerHash(columnaLegajo);
                     enuVert2.Current.Idioma = this.ObtenerHash(columnaIdioma);
                 }
             }
@@ -345,7 +373,7 @@ namespace SIS.IO
             {
                 cadena = "";
                 cadenaHasheada = "";
-                cadena = enu.Current.IdUsuario.ToString() + enu.Current.usuario + enu.Current.Password + enu.Current.Legajo + enu.Current.Idioma;
+                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Idioma;
                 cadenaHasheada = this.ObtenerHash(cadena);
                 enu.Current.DigitoVerificador = cadenaHasheada;
             }

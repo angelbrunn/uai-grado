@@ -53,9 +53,11 @@ namespace SIS.BUSINESS
             {
                 ENTIDAD.Usuario oUsuarioColumnHash = new ENTIDAD.Usuario();
                 oUsuarioColumnHash.IdUsuario = "1";
+                oUsuarioColumnHash.NombreApellido = "a";
+                oUsuarioColumnHash.FechaNacimiento = "a";
+                oUsuarioColumnHash.CategoriaMoto = "a";
                 oUsuarioColumnHash.usuario = "a";
                 oUsuarioColumnHash.Password = "a";
-                oUsuarioColumnHash.Legajo = "a";
                 oUsuarioColumnHash.Idioma = "es";
                 listaUsuarios.Add(oUsuarioColumnHash);
             }
@@ -151,13 +153,13 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="legajo"></param>
         /// <returns></returns>
-        public ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int legajo)
+        public ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int categoriaMoto)
         {
             ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
 
             DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
 
-            oUsuario = oDalUsuario.ObtenerUsuarioPorLegajo(System.Convert.ToString(legajo));
+            oUsuario = oDalUsuario.ObtenerUsuarioPorCategoriaMoto(System.Convert.ToString(categoriaMoto));
 
             // Instancio el objeto UsuarioGrupo para buscar los grupos de ese usuario
             DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();

@@ -10,9 +10,6 @@
 </head>
 <body>
     <form id="fromAdministradorPerfiles" runat="server">
-        <div>
-            Administracion y gestion perfiles!
-        </div>
     </form>
 </body>
 </html>
