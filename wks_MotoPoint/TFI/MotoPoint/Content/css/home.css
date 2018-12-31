@@ -18,7 +18,6 @@
     color: #f8f9fa;
 }
 
-
 /*ESTILOS VISTA: RUTAS*/
 #contenedorRutas {
     margin: 0 10px;
@@ -37,6 +36,12 @@
 
 /*ESTILOS VISTA: EXPERTOS*/
 #contenedorExpertos {
+    margin: 0 10px;
+    overflow-x: hidden;
+}
+
+/*ESTILOS VISTA: ACTIVIDADES*/
+#contenedorActividades {
     margin: 0 10px;
     overflow-x: hidden;
 }
