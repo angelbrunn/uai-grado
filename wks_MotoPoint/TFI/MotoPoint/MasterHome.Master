@@ -27,7 +27,7 @@
 
 </head>
 <body>
-    <form id="frmHomeBody" runat="server">
+    <form id="frmHomeBody" runat="server" >
         <!-- INI - NAVEGADOR01 WEBAPP -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="eventos.aspx">LOGO</a>
@@ -194,7 +194,7 @@
                     <h6 class="text-uppercase font-weight-bold">Contacto</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background: #FF8D00;">
                     <p>
-                        <i class="fa fa-home mr-3"></i>New York, NY 10012, US
+                        <i class="fa fa-home mr-3"></i>Buenos Aires, 10012, ARG
                     </p>
                     <p>
                         <i class="fa fa-envelope mr-3"></i>motopoint@gmail.com

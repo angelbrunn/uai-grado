@@ -1,5 +1,9 @@
 ﻿@charset "utf-8";
 
+.frmHomeBody {
+    overflow-x: hidden;
+}
+
 /* ESTILO ASOCIADOS A EL NAV */
 #actPerfil {
     margin-left: auto;
@@ -12,4 +16,27 @@
 
 #footerMsg {
     color: #f8f9fa;
+}
+
+
+/*ESTILOS VISTA: RUTAS*/
+#contenedorRutas {
+    margin: 0 10px;
+    overflow-x: hidden;
+}
+
+/*ESTILOS VISTA: OFERTAS*/
+#contenedorOfertas {
+    margin: 0 10px;
+    overflow-x: hidden;
+}
+
+.CardOfertas {
+    margin-top: 15px;
+}
+
+/*ESTILOS VISTA: EXPERTOS*/
+#contenedorExpertos {
+    margin: 0 10px;
+    overflow-x: hidden;
 }

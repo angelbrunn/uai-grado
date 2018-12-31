@@ -81,6 +81,10 @@
     <Content Include="Content\css\feedback.css" />
     <Content Include="Content\css\membresiaspago.css" />
     <Content Include="Content\css\membresias.css" />
+    <Content Include="Content\expertos\EXP1.png" />
+    <Content Include="Content\expertos\EXP2.jpeg" />
+    <Content Include="Content\expertos\EXP3.jpeg" />
+    <Content Include="Content\expertos\EXP4.jpeg" />
     <Content Include="Content\image\feedback_negativo.svg" />
     <Content Include="Content\image\feedback_positivo.svg" />
     <Content Include="Content\image\idCardBronce.svg" />
@@ -89,6 +93,18 @@
     <Content Include="Content\image\membresiaBronce.svg" />
     <Content Include="Content\image\membresiaOro.svg" />
     <Content Include="Content\image\membresiaPlata.svg" />
+    <Content Include="Content\ofertas\ACA.jpg" />
+    <Content Include="Content\ofertas\ATALAYA.png" />
+    <Content Include="Content\ofertas\AUTOMOTORESDELSUR.png" />
+    <Content Include="Content\ofertas\HONDA.jpg" />
+    <Content Include="Content\ofertas\PIRELLI.jpg" />
+    <Content Include="Content\ofertas\YAMAHA.png" />
+    <Content Include="Content\ofertas\YPF.jpeg" />
+    <Content Include="Content\ofertas\ZANELLA.jpg" />
+    <Content Include="Content\rutas\ATALAYA.jpg" />
+    <Content Include="Content\rutas\CORDOBA.jpg" />
+    <Content Include="Content\rutas\MDQ.jpg" />
+    <Content Include="Content\rutas\ROS.jpg" />
     <Content Include="eventos.aspx" />
     <Content Include="expertos.aspx" />
     <Content Include="isError.aspx" />
@@ -338,6 +354,7 @@
       <CachedSettingsPropName>MotoPoint_localhost_Service</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
