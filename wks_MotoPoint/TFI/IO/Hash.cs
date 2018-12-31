@@ -158,12 +158,12 @@ namespace SIS.IO
                 contadorErroneo = contadorErroneo + 1;
 
             columnaFechaNacimientoHasheada = this.ObtenerHash(columnaFechaNacimiento);
-            resultado = columnaFechaNacimientoHasheada.CompareTo(columnaFechaNacimiento);
+            resultado = columnaFechaNacimientoHasheada.CompareTo(columDigiFechaNacimiento);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
             columnaCategoriaMotoHasheada = this.ObtenerHash(columnaCategoriaMoto);
-            resultado = columnaCategoriaMotoHasheada.CompareTo(columnaCategoriaMoto);
+            resultado = columnaCategoriaMotoHasheada.CompareTo(columDigiCategoriaMoto);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 
