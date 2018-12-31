@@ -57,6 +57,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -89,6 +92,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -120,6 +126,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -151,6 +160,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -182,6 +194,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }
@@ -213,6 +228,9 @@ namespace SIS.BIT
             catch (Exception ex)
             {
                 ESCRITURA.IOBitacora oIOBitacora = new ESCRITURA.IOBitacora();
+                //ERROR 0 | ES CUANDO AL GRABAR LANZA ERROR
+                oBitacora.IdEvento = 0;
+                oBitacora.Descripcion = ex.Message.ToString();
                 oIOBitacora.RegistrarEnBitacoraIO(oBitacora);
             }
         }

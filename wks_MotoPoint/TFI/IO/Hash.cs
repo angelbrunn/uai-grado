@@ -315,7 +315,6 @@ namespace SIS.IO
             List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
             
             // #################### DIGITO VERIFICADOR VERTICAL ####################
-            string columnaIdUsuario = "";
             string columnaNombreApellido = "";
             string columnaFechaNacimiento = "";
             string columnaCategoriaMoto = "";
@@ -323,12 +322,6 @@ namespace SIS.IO
             string columnaUsuario = "";
             string columnaPassword = "";
             string columnaIdioma = "";
-
-            string columDigiIdUsuario = "";
-            string columDigiNombreApellido = "";
-            string columDigiUsuario = "";
-            string columDigiPassword = "";
-            string columDigiIdioma = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
             while (enuVert.MoveNext())
@@ -402,7 +395,6 @@ namespace SIS.IO
             string columnaIdUsuario = "";
             string columnaDescripcion = "";
             string columnaFecha = "";
-            string columnaDigitoVerficador = "";
             string columnaIdUsuarioHasheada = "";
             string columnaDescripciondHasheada = "";
             string columnaFechaHasheada = "";
