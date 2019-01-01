@@ -58,7 +58,7 @@ namespace SIS.BUSINESS
                 oUsuarioColumnHash.CategoriaMoto = "a";
                 oUsuarioColumnHash.usuario = "a";
                 oUsuarioColumnHash.Password = "a";
-                oUsuarioColumnHash.Idioma = "es";
+                oUsuarioColumnHash.Estado = "es";
                 listaUsuarios.Add(oUsuarioColumnHash);
             }
 

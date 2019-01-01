@@ -118,19 +118,19 @@ namespace SIS.ENTIDAD
         /// <summary>
         /// 
         /// </summary>
-        private string idiomaField;
+        private string estadoField;
         /// <summary>
         /// 
         /// </summary>
-        public string Idioma
+        public string Estado
         {
             get
             {
-                return idiomaField;
+                return estadoField;
             }
             set
             {
-                idiomaField = value;
+                estadoField = value;
             }
         }
         /// <summary>

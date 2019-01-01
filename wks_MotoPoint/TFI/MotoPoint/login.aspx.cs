@@ -56,70 +56,73 @@ namespace MotoPoint
 
                 //BUSCO EL USUARIO POR SU ID
                 var usuario = interfazNegocioUsuario.ObtenerUsuario(resultadoLogin);
-                //GUARDO EL USUARIO CONECTADO EN SESSION
-                Session["Usuario"] = usuario.usuario;
-                Session["UsuarioId"] = usuario.IdUsuario;
-                Session["UsuarioLoginFecha"] = DateTime.Now;
-                Session["UsuarioHost"] = Request.UserHostAddress;
-                Session["UsuarioAgent"] = Request.Browser.Browser + "-" + Request.Browser.Version;
-                //NOS ASEGURAMOS QUE SOLO SE USARA UNA CONECCION PARA CADA USUARIO
-                Session["UsuarioInstaciaConeccion"] = coneccion;
-
-                //ME GUARDO LOS GRUPOS PARA EL USUARIO LOGEADO
-                List<SIS.ENTIDAD.Grupo> lstGrupos = usuario.ListadoGrupos;
-                //NIVEL DE ACCESO DEL USUARIO LOGEADO
-                var nVisibilidad = "";
-
-                foreach (SIS.ENTIDAD.Grupo g in lstGrupos)
+                if (usuario.Estado == "Activo")
                 {
-                    //TOMO LA VISIBILIDAD ASIGNADA A DICHO USUARIO
-                    nVisibilidad = g.grupo;
-                }
+                    //GUARDO EL USUARIO CONECTADO EN SESSION
+                    Session["Usuario"] = usuario.usuario;
+                    Session["UsuarioId"] = usuario.IdUsuario;
+                    Session["UsuarioLoginFecha"] = DateTime.Now;
+                    Session["UsuarioHost"] = Request.UserHostAddress;
+                    Session["UsuarioAgent"] = Request.Browser.Browser + "-" + Request.Browser.Version;
+                    //NOS ASEGURAMOS QUE SOLO SE USARA UNA CONECCION PARA CADA USUARIO
+                    Session["UsuarioInstaciaConeccion"] = coneccion;
 
-                // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
-                FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
-                1, // Ticket version
-                user.usuario, // Username associated with ticket
-                DateTime.Now, // Date/time issued
-                DateTime.Now.AddMinutes(30), // Date/time to expire
-                true, // "true" for a persistent user cookie
-                nVisibilidad, // User-data, in this case the roles
-                FormsAuthentication.FormsCookiePath);// Path cookie valid for
+                    //ME GUARDO LOS GRUPOS PARA EL USUARIO LOGEADO
+                    List<SIS.ENTIDAD.Grupo> lstGrupos = usuario.ListadoGrupos;
+                    //NIVEL DE ACCESO DEL USUARIO LOGEADO
+                    var nVisibilidad = "";
 
-                // Encrypt the cookie using the machine key for secure transport
-                string hash = FormsAuthentication.Encrypt(ticket);
-                HttpCookie loginCookie = new HttpCookie(
-                FormsAuthentication.FormsCookieName, // Name of auth cookie
-                hash); // Hashed ticket
+                    foreach (SIS.ENTIDAD.Grupo g in lstGrupos)
+                    {
+                        //TOMO LA VISIBILIDAD ASIGNADA A DICHO USUARIO
+                        nVisibilidad = g.grupo;
+                    }
 
-                // Set the cookie's expiration time to the tickets expiration time
-                if (ticket.IsPersistent) loginCookie.Expires = ticket.Expiration;
+                    // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
+                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                    1, // Ticket version
+                    user.usuario, // Username associated with ticket
+                    DateTime.Now, // Date/time issued
+                    DateTime.Now.AddMinutes(30), // Date/time to expire
+                    true, // "true" for a persistent user cookie
+                    nVisibilidad, // User-data, in this case the roles
+                    FormsAuthentication.FormsCookiePath);// Path cookie valid for
 
-                // Add the cookie to the list for outgoing response
-                Response.Cookies.Add(loginCookie);
+                    // Encrypt the cookie using the machine key for secure transport
+                    string hash = FormsAuthentication.Encrypt(ticket);
+                    HttpCookie loginCookie = new HttpCookie(
+                    FormsAuthentication.FormsCookieName, // Name of auth cookie
+                    hash); // Hashed ticket
+
+                    // Set the cookie's expiration time to the tickets expiration time
+                    if (ticket.IsPersistent) loginCookie.Expires = ticket.Expiration;
+
+                    // Add the cookie to the list for outgoing response
+                    Response.Cookies.Add(loginCookie);
 
 
-                if (nVisibilidad == "Admin")
-                {
-                    //SI USUARIO ADMIN -> PANTALLA ADMIN
-                    Session["loginEstado"] = 0;
-                    Session["loginUsuario"] = user.usuario;
-                    Response.Redirect("webmaster.aspx");
+                    if (nVisibilidad == "Admin")
+                    {
+                        //SI USUARIO ADMIN -> PANTALLA ADMIN
+                        Session["loginEstado"] = 0;
+                        Session["loginUsuario"] = user.usuario;
+                        Response.Redirect("webmaster.aspx");
+                    }
+                    else
+                    {
+                        //SI USUARIO ES JERARQUICO O USUARIO -> PANTALLA HOME
+                        Session["loginEstado"] = 0;
+                        Session["loginUsuario"] = user.usuario;
+                        Response.Redirect("eventos.aspx");
+                    }
                 }
                 else
                 {
-                    //SI USUARIO ES JERARQUICO O USUARIO -> PANTALLA HOME
-                    Session["loginEstado"] = 0;
-                    Session["loginUsuario"] = user.usuario;
-                    Response.Redirect("eventos.aspx");
+                    //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
+                    Session["loginEstado"] = 1;
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
                 }
-            }
-            else
-            {
-                //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
-                Session["loginEstado"] = 1;
-                FormsAuthentication.SignOut();
-                Response.Redirect("login.aspx");
             }
         }
 

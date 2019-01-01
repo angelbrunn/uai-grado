@@ -398,7 +398,7 @@ namespace SIS.DATOS
                     con.Open();
                     foreach (Usuario element in listaUsuarios)
                     {
-                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (IdUsuario,NombreApellido,FechaNacimiento,CategoriaMoto,Usuario,Password,Idioma,DigitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Idioma,@DigitoVerificador)", con);
+                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (IdUsuario,NombreApellido,FechaNacimiento,CategoriaMoto,Usuario,Password,Estado,DigitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Estado,@DigitoVerificador)", con);
 
                         cmdInsert.Parameters.AddWithValue("@IdUsuario", element.IdUsuario);
                         cmdInsert.Parameters.AddWithValue("@Legajo", element.NombreApellido);
@@ -406,7 +406,7 @@ namespace SIS.DATOS
                         cmdInsert.Parameters.AddWithValue("@Legajo", element.CategoriaMoto);
                         cmdInsert.Parameters.AddWithValue("@usuario", element.usuario);
                         cmdInsert.Parameters.AddWithValue("@Password", element.Password);
-                        cmdInsert.Parameters.AddWithValue("@Idioma", element.Idioma);
+                        cmdInsert.Parameters.AddWithValue("@Estado", element.Estado);
                         cmdInsert.Parameters.AddWithValue("@DigitoVerificador", element.DigitoVerificador);
                         cmdInsert.ExecuteNonQuery();
                     }
