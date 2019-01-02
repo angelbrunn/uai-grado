@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hash.cs" />
-    <Compile Include="IHash.cs" />
     <Compile Include="IOBackup.cs" />
     <Compile Include="IOBitacora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

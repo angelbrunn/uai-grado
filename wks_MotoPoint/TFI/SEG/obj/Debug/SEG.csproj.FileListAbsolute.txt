@@ -1,0 +1,15 @@
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\SEG.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\SEG.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\BE.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\DAL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\EL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\IO.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\BE.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\DAL.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\EL.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\bin\Debug\IO.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\obj\Debug\SEG.csprojAssemblyReference.cache
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\obj\Debug\SEG.csproj.CoreCompileInputs.cache
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\obj\Debug\SEG.csproj.CopyComplete
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\obj\Debug\SEG.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\SEG\obj\Debug\SEG.pdb

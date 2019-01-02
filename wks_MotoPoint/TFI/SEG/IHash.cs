@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SIS.IO
+namespace SIS.SEG
 {
     /// <summary>
     /// 

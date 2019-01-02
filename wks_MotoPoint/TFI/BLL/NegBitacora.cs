@@ -11,7 +11,7 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        IO.IHash interfazHash = new IO.Hash();
+        SEG.IHash interfazHash = new SEG.Hash();
         /// <summary>
         /// 
         /// </summary>

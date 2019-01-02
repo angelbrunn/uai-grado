@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace SIS.IO
+namespace SIS.SEG
 {
     /// <summary>
     /// 

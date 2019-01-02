@@ -38,8 +38,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WS001", "WS001\", "{04A05FD
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51295"
+		SlnRelativePath = "WS001\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEG", "SEG\SEG.csproj", "{3800C85E-FF61-4459-B5B6-ED2EEFE32D00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +82,10 @@ Global
 		{04A05FD8-5DA1-4AA0-9CAF-2FEB6F38BF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04A05FD8-5DA1-4AA0-9CAF-2FEB6F38BF13}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{04A05FD8-5DA1-4AA0-9CAF-2FEB6F38BF13}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3800C85E-FF61-4459-B5B6-ED2EEFE32D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3800C85E-FF61-4459-B5B6-ED2EEFE32D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3800C85E-FF61-4459-B5B6-ED2EEFE32D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3800C85E-FF61-4459-B5B6-ED2EEFE32D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

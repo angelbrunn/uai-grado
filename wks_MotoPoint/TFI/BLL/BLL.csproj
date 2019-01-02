@@ -92,6 +92,10 @@
       <Project>{441b815f-ec00-41de-aa95-7e3434f3fea0}</Project>
       <Name>IO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SEG\SEG.csproj">
+      <Project>{3800c85e-ff61-4459-b5b6-ed2eefe32d00}</Project>
+      <Name>SEG</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
