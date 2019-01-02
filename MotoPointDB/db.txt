@@ -1,1 +1,7 @@
 database
+
+User:WebMaster
+Pass:4gY7-k
+
+User:angelbrunn
+Pass:4gY7-k
