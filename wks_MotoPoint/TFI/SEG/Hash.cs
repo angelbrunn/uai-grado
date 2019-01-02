@@ -95,7 +95,7 @@ namespace SIS.SEG
             {
                 cadena = "";
                 cadenaHasheada = "";
-                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Estado;
+                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Email + enu.Current.Estado;
                 cadenaHasheada = this.ObtenerHash(cadena);
                 hashVerificador = enu.Current.DigitoVerificador;
 
@@ -112,6 +112,7 @@ namespace SIS.SEG
             string columnaCategoriaMoto = "";
             string columnaUsuario = "";
             string columnaPassword = "";
+            string columnaEmail = "";
             string columnaEstado = "";
 
             string columnaNombreApellidoHasheada = "";
@@ -119,6 +120,7 @@ namespace SIS.SEG
             string columnaCategoriaMotoHasheada = "";
             string columnaUsuarioHasheada = "";
             string columnaPasswordHasheada = "";
+            string columnaEmailHasheada = "";
             string columnaEstadoHasheada = "";
 
             string columDigiNombreApellido = "";
@@ -126,6 +128,7 @@ namespace SIS.SEG
             string columDigiCategoriaMoto = "";
             string columDigiUsuario = "";
             string columDigiPassword = "";
+            string columDigiEmail = "";
             string columDigiEstado = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
@@ -138,6 +141,7 @@ namespace SIS.SEG
                     columDigiFechaNacimiento = enuVert.Current.FechaNacimiento.ToString();
                     columDigiCategoriaMoto = enuVert.Current.CategoriaMoto.ToString();
                     columDigiPassword = enuVert.Current.Password;
+                    columDigiEmail = enuVert.Current.Email.ToString();
                     columDigiEstado = enuVert.Current.Estado.ToString();
                     bandera = 2;
                 }
@@ -148,6 +152,7 @@ namespace SIS.SEG
                     columnaCategoriaMoto = columnaCategoriaMoto + enuVert.Current.CategoriaMoto.ToString();
                     columnaUsuario = columnaUsuario + enuVert.Current.usuario;
                     columnaPassword = columnaPassword + enuVert.Current.Password;
+                    columnaEmail = columnaEmail + enuVert.Current.Email;
                     columnaEstado = columnaEstado + enuVert.Current.Estado.ToString();
                 }
             }
@@ -174,6 +179,11 @@ namespace SIS.SEG
 
             columnaPasswordHasheada = this.ObtenerHash(columnaPassword);
             resultado = columnaPasswordHasheada.CompareTo(columDigiPassword);
+            if (resultado == 1)
+                contadorErroneo = contadorErroneo + 1;
+
+            columnaEmailHasheada = this.ObtenerHash(columnaEmail);
+            resultado = columnaEmailHasheada.CompareTo(columDigiEmail);
             if (resultado == 1)
                 contadorErroneo = contadorErroneo + 1;
 

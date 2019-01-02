@@ -118,6 +118,24 @@ namespace SIS.ENTIDAD
         /// <summary>
         /// 
         /// </summary>
+        private string emailField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Email
+        {
+            get
+            {
+                return emailField;
+            }
+            set
+            {
+                emailField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string estadoField;
         /// <summary>
         /// 

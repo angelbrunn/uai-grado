@@ -47,7 +47,7 @@ namespace SIS.DATOS
             String nombreApellido = "";
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT legajo FROM tbl_Usuario WHERE idUsuario=@IdUsuario", con))
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT nombreApellido FROM tbl_Usuario WHERE idUsuario=@IdUsuario", con))
                 {
                     try
                     {
@@ -88,6 +88,7 @@ namespace SIS.DATOS
                             oUsuario.FechaNacimiento = reader["fechaNacimiento"].ToString();
                             oUsuario.usuario = reader["usuario"].ToString();
                             oUsuario.Password = reader["password"].ToString();
+                            oUsuario.Email = reader["email"].ToString();
                             oUsuario.Estado = reader["estado"].ToString();
                             oUsuario.DigitoVerificador = reader["digitoVerificador"].ToString();
                         }
@@ -127,6 +128,7 @@ namespace SIS.DATOS
                             oUsuario.CategoriaMoto = reader["categoriaMoto"].ToString();
                             oUsuario.usuario = reader["usuario"].ToString();
                             oUsuario.Password = reader["password"].ToString();
+                            oUsuario.Email = reader["email"].ToString();
                             oUsuario.Estado = reader["estado"].ToString();
                             oUsuario.DigitoVerificador = reader["digitoVerificador"].ToString();
                         }
@@ -195,6 +197,7 @@ namespace SIS.DATOS
                                 oUsuario.CategoriaMoto = reader["categoriaMoto"].ToString();
                                 oUsuario.usuario = reader["usuario"].ToString();
                                 oUsuario.Password = reader["password"].ToString();
+                                oUsuario.Email = reader["email"].ToString();
                                 oUsuario.Estado = reader["estado"].ToString();
                                 oUsuario.DigitoVerificador = reader["digitoVerificador"].ToString();
                                 listadoUsuarios.Add(oUsuario);
@@ -276,7 +279,7 @@ namespace SIS.DATOS
                     con.Open();
                     foreach (Usuario element in listaUsuarios)
                     {
-                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (idUsuario,nombreApellido,fechaNacimiento,categoriaMoto,usuario,password,estado,digitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Estado,@DigitoVerificador)", con);
+                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (idUsuario,nombreApellido,fechaNacimiento,categoriaMoto,usuario,password,email,estado,digitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Email,@Estado,@DigitoVerificador)", con);
 
                         cmdInsert.Parameters.AddWithValue("@IdUsuario", element.IdUsuario);
                         cmdInsert.Parameters.AddWithValue("@NombreApellido", element.NombreApellido);
@@ -284,6 +287,7 @@ namespace SIS.DATOS
                         cmdInsert.Parameters.AddWithValue("@CategoriaMoto", element.CategoriaMoto);
                         cmdInsert.Parameters.AddWithValue("@Usuario", element.usuario);
                         cmdInsert.Parameters.AddWithValue("@Password", element.Password);
+                        cmdInsert.Parameters.AddWithValue("@Email", element.Email);
                         cmdInsert.Parameters.AddWithValue("@Estado", element.Estado);
                         cmdInsert.Parameters.AddWithValue("@DigitoVerificador", element.DigitoVerificador);
 
@@ -325,6 +329,7 @@ namespace SIS.DATOS
                     dr["categoriaMoto"] = ColumnaVerificadora.CategoriaMoto.ToString();
                     dr["usuario"] = ColumnaVerificadora.usuario.ToString();
                     dr["password"] = ColumnaVerificadora.Password.ToString();
+                    dr["email"] = ColumnaVerificadora.Email.ToString();
                     dr["estado"] = ColumnaVerificadora.Estado.ToString();
                     dr["digitoVerificador"] = ColumnaVerificadora.DigitoVerificador.ToString();
                 }
@@ -343,8 +348,9 @@ namespace SIS.DATOS
                             enu.Current[3] = listaUsuarios[0].FechaNacimiento;
                             enu.Current[4] = listaUsuarios[0].CategoriaMoto;
                             enu.Current[5] = listaUsuarios[0].Password;
-                            enu.Current[6] = listaUsuarios[0].Estado;
-                            enu.Current[7] = listaUsuarios[0].DigitoVerificador;
+                            enu.Current[6] = listaUsuarios[0].Email;
+                            enu.Current[7] = listaUsuarios[0].Estado;
+                            enu.Current[8] = listaUsuarios[0].DigitoVerificador;
                         }
 
                     }
@@ -361,6 +367,7 @@ namespace SIS.DATOS
                 dr2["categoriaMoto"] = oUsuario2.CategoriaMoto.ToString();
                 dr2["usuario"] = oUsuario2.usuario.ToString();
                 dr2["password"] = oUsuario2.Password.ToString();
+                dr2["email"] = oUsuario2.Email.ToString();
                 dr2["estado"] = oUsuario2.Estado.ToString();
                 dr2["digitoVerificador"] = oUsuario2.DigitoVerificador.ToString();
                 ds.Tables["Usuario"].Rows.Add(dr2);
