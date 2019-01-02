@@ -321,8 +321,7 @@ namespace SIS.ESCRITURA
         public void EscribirArchivoUsuario(string ruta, string delim, List<ENTIDAD.Usuario> listaUsuario)
         {
 
-            // idUsuario;usuario;password;legajo;idioma;digitoVerificador
-            string cabecera = "idUsuario;usuario;password;legajo;idioma;digitoVerificador";
+            string cabecera = "idUsuario;nombreApellido;fechaNacimiento;categoriaMoto;usuario;password;estado;digitoVerificador";
 
             StreamWriter sw = new StreamWriter(ruta);
             sw.WriteLine(cabecera);
@@ -331,8 +330,8 @@ namespace SIS.ESCRITURA
             IEnumerator<ENTIDAD.Usuario> enumC = listaUsuario.GetEnumerator();
             while ((enumC.MoveNext()))
             {
-                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.NombreApellido + delim + enumC.Current.FechaNacimiento + delim + enumC.Current.CategoriaMoto + enumC.Current.usuario
-               + delim + enumC.Current.Password + delim + delim + enumC.Current.Estado + delim + enumC.Current.DigitoVerificador;
+                linea = enumC.Current.IdUsuario.ToString() + delim + enumC.Current.NombreApellido + delim + enumC.Current.FechaNacimiento + delim + enumC.Current.CategoriaMoto + delim + enumC.Current.usuario
+               + delim + enumC.Current.Password + delim  + enumC.Current.Estado + delim + enumC.Current.DigitoVerificador;
 
                 sw.WriteLine(linea);
             }
