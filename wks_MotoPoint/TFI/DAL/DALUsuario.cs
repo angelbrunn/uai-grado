@@ -67,6 +67,45 @@ namespace SIS.DATOS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public Usuario ObtenerUsuarioPorEmail(String email)
+        {
+            Usuario oUsuario = new Usuario();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_Usuario WHERE email=@Email", con);
+                    cmdSelect.Parameters.AddWithValue("@Email", email);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            oUsuario.IdUsuario = reader["idUsuario"].ToString();
+                            oUsuario.NombreApellido = reader["nombreApellido"].ToString();
+                            oUsuario.FechaNacimiento = reader["fechaNacimiento"].ToString();
+                            oUsuario.usuario = reader["usuario"].ToString();
+                            oUsuario.Password = reader["password"].ToString();
+                            oUsuario.Email = reader["email"].ToString();
+                            oUsuario.Estado = reader["estado"].ToString();
+                            oUsuario.DigitoVerificador = reader["digitoVerificador"].ToString();
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return oUsuario;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="idUsuario"></param>
         /// <returns></returns>
         public Usuario ObtenerUsuarioPorId(String idUsuario)

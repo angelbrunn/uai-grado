@@ -26,9 +26,15 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        ENTIDAD.Usuario ObtenerUsuarioPorEmail(string email);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="legajo"></param>
         /// <returns></returns>
-        ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int legajo);
+        ENTIDAD.Usuario ObtenerUsuarioPorCategoriaMoto(int categoriaMoto);
         /// <summary>
         /// 
         /// </summary>

@@ -151,9 +151,59 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        public ENTIDAD.Usuario ObtenerUsuarioPorEmail(string email)
+        {
+            // Instancio el usuario que voy a pasar por parametro
+            ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
+
+            // Instancio DAL Usuario para obtener el usuario
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            oUsuario = oDalUsuario.ObtenerUsuarioPorEmail(System.Convert.ToString(email));
+
+            // Instancio el objeto UsuarioGrupo para buscar los grupos de ese usuario
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
+            listaUsuarioGrupo = oDalUsuarioGrupo.ObtenerGrupoPorIdUsuario(System.Convert.ToInt16(oUsuario.IdUsuario));
+
+            // Instancio una lista de grupos para el usuario
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
+            List<ENTIDAD.Permiso> listaPermisos = new List<ENTIDAD.Permiso>();
+
+            // Recorro la lista y obtengo los objetos Grupo
+            IEnumerator<ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+                DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+                oGrupo = oDalGrupo.ObtenerGrupoPorId(enu.Current.IdGrupo);
+
+                DATOS.DALGrupoPermiso oDalGrupoPermiso = new DATOS.DALGrupoPermiso();
+                List<ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<ENTIDAD.GrupoPermiso>();
+                listadoGrupoPermisos = oDalGrupoPermiso.ObtenerPermisosPorIdGrupo(oGrupo.IdGrupo);
+
+                IEnumerator<ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
+                while (enu2.MoveNext())
+                {
+                    DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
+                    ENTIDAD.Permiso oPermiso;
+                    oPermiso = oDalPermiso.ObtenerPermisoPorId(enu2.Current.IdPermiso);
+                    listaPermisos.Add(oPermiso);
+                    oGrupo.ListadoPermisos = listaPermisos;
+                }
+                listaGrupo.Add(oGrupo);
+            }
+            oUsuario.ListadoGrupos = listaGrupo;
+
+            return oUsuario;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="legajo"></param>
         /// <returns></returns>
-        public ENTIDAD.Usuario ObtenerUsuarioPorLegajo(int categoriaMoto)
+        public ENTIDAD.Usuario ObtenerUsuarioPorCategoriaMoto(int categoriaMoto)
         {
             ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
 
