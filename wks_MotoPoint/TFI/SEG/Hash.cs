@@ -58,7 +58,7 @@ namespace SIS.SEG
             string digiVerif = "ERROR";
 
             string cadena;
-            cadena = oUsuario.IdUsuario.ToString() + oUsuario.NombreApellido.ToString() + oUsuario.FechaNacimiento.ToString() + oUsuario.CategoriaMoto.ToString() + oUsuario.usuario + oUsuario.Password + oUsuario.Estado.ToString();
+            cadena = oUsuario.IdUsuario.ToString() + oUsuario.NombreApellido.ToString() + oUsuario.FechaNacimiento.ToString() + oUsuario.CategoriaMoto.ToString() + oUsuario.usuario + oUsuario.Password + oUsuario.Email + oUsuario.Estado.ToString();
 
             digiVerif = this.ObtenerHash(cadena);
 
@@ -315,11 +315,10 @@ namespace SIS.SEG
             return resultadoVerificacion;
         }
         /// <summary>
-        ///         ''' 
-        ///         ''' </summary>
-        ///         ''' <param name="listaUsuarios"></param>
-        ///         ''' <returns></returns>
-        ///         ''' <remarks></remarks>
+        /// 
+        /// </summary>
+        /// <param name="listaUsuarios"></param>
+        /// <returns></returns>
         public List<ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuarios)
         {
             List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
@@ -331,6 +330,7 @@ namespace SIS.SEG
 
             string columnaUsuario = "";
             string columnaPassword = "";
+            string columnaEmail = "";
             string columnaEstado = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
@@ -346,6 +346,7 @@ namespace SIS.SEG
                     columnaCategoriaMoto = columnaCategoriaMoto + enuVert.Current.CategoriaMoto.ToString();
                     columnaUsuario = columnaUsuario + enuVert.Current.usuario;
                     columnaPassword = columnaPassword + enuVert.Current.Password;
+                    columnaEmail = columnaEmail + enuVert.Current.Email;
                     columnaEstado = columnaEstado + enuVert.Current.Estado.ToString();
                 }
             }
@@ -361,6 +362,7 @@ namespace SIS.SEG
                     enuVert2.Current.CategoriaMoto = this.ObtenerHash(columnaCategoriaMoto);
                     enuVert2.Current.usuario = this.ObtenerHash(columnaUsuario);
                     enuVert2.Current.Password = this.ObtenerHash(columnaPassword);
+                    enuVert2.Current.Email = this.ObtenerHash(columnaEmail);
                     enuVert2.Current.Estado = this.ObtenerHash(columnaEstado);
                 }
             }
@@ -376,7 +378,7 @@ namespace SIS.SEG
             {
                 cadena = "";
                 cadenaHasheada = "";
-                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Estado;
+                cadena = enu.Current.IdUsuario.ToString() + enu.Current.NombreApellido + enu.Current.FechaNacimiento + enu.Current.CategoriaMoto + enu.Current.usuario + enu.Current.Password + enu.Current.Email + enu.Current.Estado;
                 cadenaHasheada = this.ObtenerHash(cadena);
                 enu.Current.DigitoVerificador = cadenaHasheada;
             }

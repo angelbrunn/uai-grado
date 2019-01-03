@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net.Mail;
 using System.Collections.Generic;
+using System.Text;
 
 namespace SIS.BUSINESS
 {
@@ -79,6 +81,40 @@ namespace SIS.BUSINESS
                 oUsuarioGrupo.IdGrupo = enu.Current.IdGrupo;
                 oDalUsuarioGrupo.InsertarUsuarioGrupo(oUsuarioGrupo);
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oUsuario"></param>
+        public void ActualizarUsuario(ENTIDAD.Usuario oUsuario)
+        {
+            string passHasheada;
+            string digiVerificador;
+            string IdHASH = "HASH";
+
+            DATOS.DALUsuario oDalUsuaio = new DATOS.DALUsuario();
+            // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            try
+            {
+                passHasheada = interfazHash.ObtenerHash(oUsuario.Password);
+                oUsuario.Password = passHasheada;
+
+                digiVerificador = interfazHash.ObtenerHashUsuario(oUsuario);
+                oUsuario.DigitoVerificador = digiVerificador;
+
+                //UPDATE AL USUARIO CON SU NUEVA CLAVE
+                oDalUsuaio.ActualizarUsuarioPorId(oUsuario);
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdHASH, oExBLL);
+            }
+            // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            
+            //TODO: RE-CALCULAR LOS DIGITO VERIFICADORES DE USUARIOS
+
+
         }
         /// <summary>
         /// 
@@ -378,6 +414,43 @@ namespace SIS.BUSINESS
             catch (EXCEPCIONES.SEGExcepcion ex)
             {
                 interfazNegocioBitacora.RegistrarEnBitacora_SEG(IdDB, ex);
+            }
+
+            return estado;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool EnviarRecordatorioPassword(string destinatarioEmail, string contraseñaRecuperada)
+        {
+            bool estado = false;
+            string IdSys = "SYS";
+
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("motopointserviciocontacto@gmail.com");
+            mail.To.Add(destinatarioEmail);
+
+            mail.Subject = "Sistema de recuperacion de contraseña - MOTOPOINT";
+            mail.Body = "Su contraseña es: " + contraseñaRecuperada;
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
+            SmtpServer.EnableSsl = true;
+
+
+            try
+            {
+                estado = true;
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                estado = false;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
             }
 
             return estado;

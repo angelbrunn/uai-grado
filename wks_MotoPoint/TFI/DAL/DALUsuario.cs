@@ -86,6 +86,7 @@ namespace SIS.DATOS
                             oUsuario.IdUsuario = reader["idUsuario"].ToString();
                             oUsuario.NombreApellido = reader["nombreApellido"].ToString();
                             oUsuario.FechaNacimiento = reader["fechaNacimiento"].ToString();
+                            oUsuario.CategoriaMoto = reader["categoriaMoto"].ToString();
                             oUsuario.usuario = reader["usuario"].ToString();
                             oUsuario.Password = reader["password"].ToString();
                             oUsuario.Email = reader["email"].ToString();
@@ -340,6 +341,41 @@ namespace SIS.DATOS
                     throw new EXCEPCIONES.DALExcepcion(ex.Message);
                 }
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public int ActualizarUsuarioPorId(Usuario usuario)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_Usuario SET nombreApellido=@NombreApellido, fechaNacimiento=@FechaNacimiento, categoriaMoto=@CategoriaMoto, usuario=@Usuario, password=@Password, email=@Email, estado=@Estado, digitoVerificador=@DigitoVerificador WHERE usuario=@IdUsuario", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdUpdate.Parameters.AddWithValue("@IdUsuario", usuario.IdUsuario);
+                        cmdUpdate.Parameters.AddWithValue("@NombreApellido", usuario.NombreApellido);
+                        cmdUpdate.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
+                        cmdUpdate.Parameters.AddWithValue("@CategoriaMoto", usuario.CategoriaMoto);
+                        cmdUpdate.Parameters.AddWithValue("@Usuario", usuario.usuario);
+                        cmdUpdate.Parameters.AddWithValue("@Password", usuario.Password);
+                        cmdUpdate.Parameters.AddWithValue("@Email", usuario.Email);
+                        cmdUpdate.Parameters.AddWithValue("@Estado", usuario.Estado);
+                        cmdUpdate.Parameters.AddWithValue("@DigitoVerificador", usuario.DigitoVerificador);
+                        resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
         }
         /// <summary>
         /// 

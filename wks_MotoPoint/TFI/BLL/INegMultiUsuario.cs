@@ -15,6 +15,11 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="oUsuario"></param>
+        void ActualizarUsuario(ENTIDAD.Usuario oUsuario);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         int ObtenerIdParaUsuario();
         /// <summary>
@@ -82,5 +87,10 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         bool VerificarConsistenciaUsuarioBD();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        bool EnviarRecordatorioPassword(string destinatarioEmail, string contraseñaRecuperada);
     }
 }
