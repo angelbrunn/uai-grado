@@ -30,6 +30,7 @@ namespace MotoPoint
 
         protected void btnCancelarRegistro_Click(object sender, EventArgs e)
         {
+            Session["loginEstado"] = 0;
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }

@@ -23,9 +23,12 @@ namespace MotoPoint
             if (loginEstado == null)
             {
                 Session["loginEstado"] = 0;
-            } else if (loginEstado.ToString() == "0") {
+            }
+            else if (loginEstado.ToString() == "0")
+            {
                 Session["loginEstado"] = 0;
-            } else if (loginEstado.ToString() == "1")
+            }
+            else if (loginEstado.ToString() == "1")
             {
                 Session["loginEstado"] = 1;
             }
@@ -124,6 +127,8 @@ namespace MotoPoint
                     Response.Redirect("login.aspx");
                 }
             }
+            //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
+            Session["loginEstado"] = 1;
         }
 
         protected void linkRegistrarse_Click(object sender, EventArgs e)
@@ -148,7 +153,8 @@ namespace MotoPoint
             Response.Redirect("recordar.aspx");
         }
 
-        protected void crearTicketUsuarioNoRegistrado() {
+        protected void crearTicketUsuarioNoRegistrado()
+        {
             // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
             1, // Ticket version

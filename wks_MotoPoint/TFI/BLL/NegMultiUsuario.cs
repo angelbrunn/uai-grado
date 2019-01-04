@@ -111,9 +111,15 @@ namespace SIS.BUSINESS
                 interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdHASH, oExBLL);
             }
             // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            
-            //TODO: RE-CALCULAR LOS DIGITO VERIFICADORES DE USUARIOS
 
+            //RE-CALCULAR LOS DIGITO VERIFICADORES DE USUARIOS | RESTABLECEMOS BKP CON NUEVOS DATOS
+            List<ENTIDAD.Usuario> lstUsuarios = new List<ENTIDAD.Usuario>();
+            lstUsuarios = oDalUsuaio.ObtenerTablaUsuario();
+
+            List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
+            listaUsuarioHash = interfazHash.CalcularHashTablaUsuario(lstUsuarios);
+
+            oDalUsuaio.InsertarUsuarioDesdeBackup(listaUsuarioHash);
 
         }
         /// <summary>

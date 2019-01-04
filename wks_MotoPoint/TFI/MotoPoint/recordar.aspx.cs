@@ -23,6 +23,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["usuarioOk"] = 0;
             var loginEstado = Session["loginEstado"];
             var loginUsuario = Session["loginUsuario"];
 
@@ -44,17 +45,27 @@ namespace MotoPoint
             SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
             oUsuario = interfazNegocioUsuario.ObtenerUsuarioPorEmail(email);
 
-            //0# - SETEO PASSWORD POR DEFECTO
-            oUsuario.Password = passwordDefault;
+            if (oUsuario.IdUsuario != null)
+            {
+                Session["loginEstado"] = 0;
+                Session["usuarioOk"] = 0;
+                //0# - SETEO PASSWORD POR DEFECTO
+                oUsuario.Password = passwordDefault;
 
-            //1# - ACTUALIZO EL USUARIO EN LA DB
-            interfazNegocioUsuario.ActualizarUsuario(oUsuario);
+                //1# - ACTUALIZO EL USUARIO EN LA DB
+                interfazNegocioUsuario.ActualizarUsuario(oUsuario);
 
-            //2# ENVIAR POR EMAIL EN UN EMAIL GENERICO
-            estado = interfazNegocioUsuario.EnviarRecordatorioPassword(email, passwordDefault);
+                //2# ENVIAR POR EMAIL EN UN EMAIL GENERICO
+                estado = interfazNegocioUsuario.EnviarRecordatorioPassword(email, passwordDefault);
 
-            FormsAuthentication.SignOut();
-            Response.Redirect("login.aspx");
+                FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                Session["usuarioOk"] = 1;
+            }
+
         }
     }
 }

@@ -13,9 +13,12 @@
     <form id="frmRecordar" runat="server">
         <div class="container">
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Ingrese su correo electronico" class="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Ingrese su correo electronico" class="form-control" required title="El email es requerido!"></asp:TextBox>
             </div>
             <div class="form-group">
+                <div id="usuarioOk">
+                    <p><font color="red">Usuario no existe! </font></p>
+                </div>
                 <div class="row">
                     <div class="botonesEnviar">
                         <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
@@ -23,6 +26,15 @@
                 </div>
             </div>
         </div>
+
     </form>
 </body>
 </html>
+<script>
+    var dbEstadousuario = '<%= Session["usuarioOk"].ToString() %>';
+    if (dbEstadousuario == 1) {
+        document.getElementById("usuarioOk").style.display = 'inline';
+    } else {
+        document.getElementById("usuarioOk").style.display = 'none';
+    }
+</script>
