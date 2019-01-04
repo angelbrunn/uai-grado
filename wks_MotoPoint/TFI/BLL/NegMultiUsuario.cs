@@ -119,7 +119,7 @@ namespace SIS.BUSINESS
             List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
             listaUsuarioHash = interfazHash.CalcularHashTablaUsuario(lstUsuarios);
 
-            oDalUsuaio.InsertarUsuarioDesdeBackup(listaUsuarioHash);
+            oDalUsuaio.InsertarUsuarioHaseados(listaUsuarioHash);
 
         }
         /// <summary>

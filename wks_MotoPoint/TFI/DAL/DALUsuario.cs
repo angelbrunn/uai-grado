@@ -345,6 +345,57 @@ namespace SIS.DATOS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="listaUsuarios"></param>
+        public void InsertarUsuarioHaseados(List<Usuario> listaUsuarios)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdDelete = new SqlCommand("DELETE FROM [MotoPoint].[dbo].[tbl_Usuario]", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdDelete.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new SIS.EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+
+                try
+                {
+                    con.Open();
+                    foreach (Usuario element in listaUsuarios)
+                    {
+                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_Usuario (idUsuario,nombreApellido,fechaNacimiento,categoriaMoto,usuario,password,email,estado,digitoVerificador) VALUES (@IdUsuario,@NombreApellido,@FechaNacimiento,@CategoriaMoto,@Usuario,@Password,@Email,@Estado,@DigitoVerificador)", con);
+
+                        cmdInsert.Parameters.AddWithValue("@IdUsuario", element.IdUsuario);
+                        cmdInsert.Parameters.AddWithValue("@NombreApellido", element.NombreApellido);
+                        cmdInsert.Parameters.AddWithValue("@FechaNacimiento", element.FechaNacimiento);
+                        cmdInsert.Parameters.AddWithValue("@CategoriaMoto", element.CategoriaMoto);
+                        cmdInsert.Parameters.AddWithValue("@Usuario", element.usuario);
+                        cmdInsert.Parameters.AddWithValue("@Password", element.Password);
+                        cmdInsert.Parameters.AddWithValue("@Email", element.Email);
+                        cmdInsert.Parameters.AddWithValue("@Estado", element.Estado);
+                        cmdInsert.Parameters.AddWithValue("@DigitoVerificador", element.DigitoVerificador);
+
+                        cmdInsert.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
         public int ActualizarUsuarioPorId(Usuario usuario)

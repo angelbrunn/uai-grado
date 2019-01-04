@@ -25,6 +25,17 @@ namespace MotoPoint
 
         protected void btnGuardarRegistro_Click(object sender, EventArgs e)
         {
+            SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
+
+            oUsuario.NombreApellido = txtNombre.Text;
+            //oUsuario.CategoriaMoto = SelectCatMoto.SelectedIndex.ToString();
+            oUsuario.usuario = txtEmail.Text.ToString().Substring(0, txtEmail.Text.ToString().IndexOf("@"));
+            oUsuario.Password = txtContraseña.Text;
+            oUsuario.Email = txtEmail.Text;
+            oUsuario.Estado = "Inactivo";
+
+            
+
             Response.Redirect("membresias.aspx");
         }
 

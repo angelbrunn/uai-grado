@@ -19,7 +19,7 @@
                 <asp:TextBox runat="server" ID="txtFechaNacimiento" TabIndex="2" placeholder="Fecha Nacimiento  -- / -- / --" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <select class="form-control">
+                <select id="SelectCatMoto" class="form-control">
                     <optgroup label="Elija su categoria de moto">
                         <option value="0cc ">HASTA 150</option>
                         <option value="150cc">HASTA 250</option>
