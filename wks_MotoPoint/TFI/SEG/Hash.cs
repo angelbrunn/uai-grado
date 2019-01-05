@@ -322,7 +322,7 @@ namespace SIS.SEG
         public List<ENTIDAD.Usuario> CalcularHashTablaUsuario(List<ENTIDAD.Usuario> listaUsuarios)
         {
             List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
-            
+
             // #################### DIGITO VERIFICADOR VERTICAL ####################
             string columnaNombreApellido = "";
             string columnaFechaNacimiento = "";
@@ -332,6 +332,8 @@ namespace SIS.SEG
             string columnaPassword = "";
             string columnaEmail = "";
             string columnaEstado = "";
+
+            string columnaDigVerificador = "";
 
             IEnumerator<ENTIDAD.Usuario> enuVert = listaUsuarios.GetEnumerator();
             while (enuVert.MoveNext())
@@ -348,6 +350,7 @@ namespace SIS.SEG
                     columnaPassword = columnaPassword + enuVert.Current.Password;
                     columnaEmail = columnaEmail + enuVert.Current.Email;
                     columnaEstado = columnaEstado + enuVert.Current.Estado.ToString();
+                    columnaDigVerificador = columnaDigVerificador + enuVert.Current.DigitoVerificador.ToString();
                 }
             }
 
@@ -364,6 +367,7 @@ namespace SIS.SEG
                     enuVert2.Current.Password = this.ObtenerHash(columnaPassword);
                     enuVert2.Current.Email = this.ObtenerHash(columnaEmail);
                     enuVert2.Current.Estado = this.ObtenerHash(columnaEstado);
+                    enuVert2.Current.DigitoVerificador = this.ObtenerHash(columnaDigVerificador);
                 }
             }
 

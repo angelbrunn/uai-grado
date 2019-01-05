@@ -65,7 +65,7 @@ namespace SIS.BUSINESS
             List<ENTIDAD.Usuario> listaUsuariosConDigitosVerif = new List<ENTIDAD.Usuario>();
             listaUsuariosConDigitosVerif = interfazHash.CalcularHashTablaUsuario(listaUsuarios);
 
-            oDalUsuaio.InsertarUsuario(listaUsuariosConDigitosVerif);
+            oDalUsuaio.InsertarUsuarioHaseados(listaUsuariosConDigitosVerif);
 
             DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
             List<ENTIDAD.Grupo> listadoGruposAUsuario = oUsuario.ListadoGrupos;
