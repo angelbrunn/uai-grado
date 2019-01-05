@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,17 @@ namespace SIS.BUSINESS
         {
             Boolean realizarPagoResultado;
             realizarPagoResultado = ws_001.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<CategoriaMoto> ObtenerCategoriaMoto()
+        {
+            List<CategoriaMoto> listadoCategoriaMoto = new List<CategoriaMoto>();
+            DATOS.DALCategoriaMoto oDalCategoriaMoto = new DATOS.DALCategoriaMoto();
+            listadoCategoriaMoto = oDalCategoriaMoto.ObtenerTablaCategoriaMoto();
+            return listadoCategoriaMoto;
         }
     }
 }

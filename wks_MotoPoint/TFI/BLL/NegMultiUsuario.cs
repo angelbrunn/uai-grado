@@ -28,11 +28,6 @@ namespace SIS.BUSINESS
             string digiVerificador;
             string IdHASH = "HASH";
 
-            // passHasheada = interfazHash.obtenerHash(oUsuario.password)
-            // oUsuario.password = passHasheada
-
-            // digiVerificador = interfazHash.obtenerHashUsuario(oUsuario)
-            // oUsuario.digitoVerificador = digiVerificador
             // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             try
             {
@@ -55,12 +50,13 @@ namespace SIS.BUSINESS
             {
                 ENTIDAD.Usuario oUsuarioColumnHash = new ENTIDAD.Usuario();
                 oUsuarioColumnHash.IdUsuario = "1";
-                oUsuarioColumnHash.NombreApellido = "a";
-                oUsuarioColumnHash.FechaNacimiento = "a";
-                oUsuarioColumnHash.CategoriaMoto = "a";
-                oUsuarioColumnHash.usuario = "a";
-                oUsuarioColumnHash.Password = "a";
-                oUsuarioColumnHash.Estado = "es";
+                oUsuarioColumnHash.NombreApellido = "abc";
+                oUsuarioColumnHash.FechaNacimiento = "abc";
+                oUsuarioColumnHash.CategoriaMoto = "abc";
+                oUsuarioColumnHash.usuario = "abc";
+                oUsuarioColumnHash.Password = "abc";
+                oUsuarioColumnHash.Email = "abc";
+                oUsuarioColumnHash.Estado = "Inactivo";
                 listaUsuarios.Add(oUsuarioColumnHash);
             }
 

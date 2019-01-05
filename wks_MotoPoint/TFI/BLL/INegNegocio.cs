@@ -1,4 +1,7 @@
-﻿namespace SIS.BUSINESS
+﻿using SIS.ENTIDAD;
+using System.Collections.Generic;
+
+namespace SIS.BUSINESS
 {
     public interface INegNegocio
     {
@@ -10,5 +13,9 @@
         /// <param name="fechaValidez"></param>
         /// <param name="nombreTitular"></param>
         void RealizarCobroMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular);
+        /// <summary>
+        /// 
+        /// </summary>
+        List<CategoriaMoto> ObtenerCategoriaMoto();
     }
 }

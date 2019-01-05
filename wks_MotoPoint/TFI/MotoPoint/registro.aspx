@@ -19,19 +19,14 @@
                 <asp:TextBox runat="server" ID="txtFechaNacimiento" TabIndex="2" placeholder="Fecha Nacimiento  -- / -- / --" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <select id="SelectCatMoto" class="form-control">
-                    <optgroup label="Elija su categoria de moto">
-                        <option value="0cc ">HASTA 150</option>
-                        <option value="150cc">HASTA 250</option>
-                        <option value="300cc">MAS DE 300</option>
-                    </optgroup>
-                </select>
+                <asp:DropDownList ID="CategoriaMotoList" runat="server" class="form-control">
+                </asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Correo Electronico" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtContraseña" TabIndex="2" placeholder="Contraseña" class="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtContraseña" TabIndex="2" type="password" placeholder="Contraseña" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <div class="row">
