@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.BUSINESS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,10 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
+        private INegBitacora interfazNegocioBitacora = new NegBitacora();
+        /// <summary>
+        /// 
+        /// </summary>
         String lockBusqueda = "0";
         /// <summary>
         /// 
@@ -29,6 +34,7 @@ namespace MotoPoint
         {
             Session["habilitacionBusqueda"] = 0;
             Session["busquedaEstado"] = 0;
+            Session["guardadoEstado"] = 0;
 
             if (User.IsInRole("Usuario"))
             {
@@ -50,6 +56,7 @@ namespace MotoPoint
                         txtCatMoto.Enabled = false;
                         txtUsuario.Enabled = false;
                         txtPassword.Enabled = false;
+                        txtEmail.Enabled = false;
                     }
                 }
             }
@@ -113,7 +120,7 @@ namespace MotoPoint
                 //MUESTRO LA FECHA DE NACIMIENTO
                 string dia = oUsuario.FechaNacimiento.Substring(0, 2);
                 string mes = oUsuario.FechaNacimiento.Substring(2, 2);
-                string año = oUsuario.FechaNacimiento.Substring(4, 2);
+                string año = oUsuario.FechaNacimiento.Substring(4, 4);
                 txtFecNac.Text = dia + "-" + mes + "-" + año;
                 //MUESTO LA CATEGORIA DE MOTO ASOCIADA AL USUARIO
                 string catMoto = oUsuario.CategoriaMoto;
@@ -134,6 +141,7 @@ namespace MotoPoint
                 }
                 txtUsuario.Text = oUsuario.usuario;
                 txtPassword.Text = oUsuario.Password;
+                txtEmail.Text = oUsuario.Email;
                 //SELECCIONO EL ESTADO DEL USUARIO SI ES ACTIVO O INACTIVO
                 string estado = oUsuario.Estado;
                 if (estado == "Activo")
@@ -152,7 +160,7 @@ namespace MotoPoint
             else
             {
                 //BUSQUEDA FALLIDA | NO EXISTE USUARIO
-                 Session["busquedaEstado"] = 1;
+                Session["busquedaEstado"] = 1;
             }
 
         }
@@ -167,6 +175,7 @@ namespace MotoPoint
             txtCatMoto.Enabled = true;
             txtUsuario.Enabled = true;
             txtPassword.Enabled = true;
+            txtEmail.Enabled = true;
         }
         /// <summary>
         /// 
@@ -177,10 +186,67 @@ namespace MotoPoint
         {
             Response.Redirect("registro.aspx");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
+            oUsuario.IdUsuario = txtIdUsuario.Text;
+            if (oUsuario.IdUsuario != "")
+            {
+                oUsuario.NombreApellido = txtNombreApellido.Text;
+                //SETEAMOS LA FECHA
+                string fechaNacimiento = txtFecNac.Text;
+                string dia = fechaNacimiento.Substring(0, 2);
+                string mes = fechaNacimiento.Substring(3, 2);
+                string año = fechaNacimiento.Substring(6, 4);
+                oUsuario.FechaNacimiento = dia + mes + año;
+                //SETEAMOS LA CATEGORIA 
+                string catMoto = txtCatMoto.Text;
+                switch (catMoto)
+                {
+                    case "0cc - 150cc":
+                        oUsuario.CategoriaMoto = "1";
+                        break;
+                    case "150cc - 250cc":
+                        oUsuario.CategoriaMoto = "2";
+                        break;
+                    case "+300cc":
+                        oUsuario.CategoriaMoto = "3";
+                        break;
+                    default:
+                        oUsuario.CategoriaMoto = "999";
+                        break;
+                }
 
+                oUsuario.usuario = txtUsuario.Text;
+                oUsuario.Password = txtPassword.Text;
+                oUsuario.Email = txtEmail.Text;
+                //SETEAMOS EL ESTADO
+                if (rdaActivo.Checked)
+                {
+                    oUsuario.Estado = "Activo";
+                }
+                else
+                {
+                    oUsuario.Estado = "Inactivo";
+                }
+                try
+                {
+                    Session["guardadoEstado"] = 1;
+                    //ARQ.BASE MULTIUSUARIO | ACTUALIZAMOS EL USUARIO
+                    interfazNegocioUsuario.ActualizarUsuario(oUsuario);
+                }
+                catch (Exception ex)
+                {
+                    Session["guardadoEstado"] = 2;
+                    SIS.EXCEPCIONES.UIExcepcion oExUI = new SIS.EXCEPCIONES.UIExcepcion(ex.Message);
+                    interfazNegocioBitacora.RegistrarEnBitacora_UI(oUsuario.IdUsuario, oExUI);
+                }
+            }
         }
         /// <summary>
         /// 

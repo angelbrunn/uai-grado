@@ -404,7 +404,7 @@ namespace SIS.DATOS
             int resultadoValidacion = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_Usuario SET nombreApellido=@NombreApellido, fechaNacimiento=@FechaNacimiento, categoriaMoto=@CategoriaMoto, usuario=@Usuario, password=@Password, email=@Email, estado=@Estado, digitoVerificador=@DigitoVerificador WHERE usuario=@IdUsuario", con))
+                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_Usuario SET nombreApellido=@NombreApellido, fechaNacimiento=@FechaNacimiento, categoriaMoto=@CategoriaMoto, usuario=@Usuario, password=@Password, email=@Email, estado=@Estado, digitoVerificador=@DigitoVerificador WHERE idUsuario=@IdUsuario", con))
                 {
                     try
                     {
@@ -419,6 +419,7 @@ namespace SIS.DATOS
                         cmdUpdate.Parameters.AddWithValue("@Estado", usuario.Estado);
                         cmdUpdate.Parameters.AddWithValue("@DigitoVerificador", usuario.DigitoVerificador);
                         resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+
                     }
                     catch (Exception ex)
                     {

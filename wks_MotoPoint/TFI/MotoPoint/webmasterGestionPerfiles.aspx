@@ -39,6 +39,9 @@
                 <div class="form-group">
                     <asp:TextBox runat="server" ID="txtPassword" TabIndex="2" placeholder="Contraseña" class="form-control"></asp:TextBox>
                 </div>
+                <div class="form-group">
+                    <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Email" class="form-control"></asp:TextBox>
+                </div>
             </div>
             <div class="form-group">
                 <label class="radio-inline">
@@ -64,9 +67,16 @@
 </html>
 <script>
     var busquedaEstado = '<%= Session["busquedaEstado"].ToString() %>';
+    var guardadoEstado = '<%= Session["guardadoEstado"].ToString() %>';
     if (busquedaEstado == 1) {
         document.getElementById("busquedaEstado").style.display = 'inline';
     } else {
         document.getElementById("busquedaEstado").style.display = 'none';
+    }
+    if (guardadoEstado == 1) {
+        alert("La actualizacion se realizo de forma correcta!");
+    }
+    if (guardadoEstado == 2) {
+        alert("La actualizacion ha fallado!");
     }
 </script>
