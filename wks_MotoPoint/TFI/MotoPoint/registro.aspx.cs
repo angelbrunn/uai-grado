@@ -49,8 +49,11 @@ namespace MotoPoint
             //SI ES UN USUARIO REGISTRADO O VALIDO LO SACO
             if (loginEstado.ToString() == "0" || loginUsuario.ToString() != "NuevoUsuario")
             {
-                FormsAuthentication.SignOut();
-                Response.Redirect("login.aspx");
+                if (loginUsuario.ToString() != "WebMaster")
+                {
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
+                }
             }
         }
         /// <summary>
@@ -64,7 +67,7 @@ namespace MotoPoint
             List<Grupo> lstGrupo = new List<Grupo>();
             SIS.ENTIDAD.Grupo oGrupo = new SIS.ENTIDAD.Grupo();
 
-            if (txtNombre.Text != "" && txtFechaNacimiento.Text != "" && txtContraseña.Text !="" && txtEmail.Text!="")
+            if (txtNombre.Text != "" && txtFechaNacimiento.Text != "" && txtContraseña.Text != "" && txtEmail.Text != "")
             {
                 Session["registroEstado"] = 0;
                 oUsuario.NombreApellido = txtNombre.Text;

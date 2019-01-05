@@ -126,6 +126,7 @@ namespace SIS.DATOS
                             oUsuario.IdUsuario = reader["idUsuario"].ToString();
                             oUsuario.NombreApellido = reader["nombreApellido"].ToString();
                             oUsuario.FechaNacimiento = reader["fechaNacimiento"].ToString();
+                            oUsuario.CategoriaMoto = reader["categoriaMoto"].ToString();
                             oUsuario.usuario = reader["usuario"].ToString();
                             oUsuario.Password = reader["password"].ToString();
                             oUsuario.Email = reader["email"].ToString();

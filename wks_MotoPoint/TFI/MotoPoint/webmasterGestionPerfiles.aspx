@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido"  class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -42,20 +42,31 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    <input type="radio" name="optradio">Activo</label>
+                    <asp:RadioButton ID="rdaActivo" runat="server" Text="Activo" /></label>
                 <label class="radio-inline">
-                    <input type="radio" name="optradio">Inactivo</label>
+                    <asp:RadioButton ID="rdaInactivo" runat="server" Text="Inactivo" /></label>
+            </div>
+            <div id="busquedaEstado">
+                <p><font color="red">Usuario no existe! </font></p>
             </div>
             <div class="form-group">
-                <asp:Button ID="btnHabilitarBusqueda" runat="server" Text="Habilitar Busqueda" class="btn btn-primary" OnClick="btnHabilitarBusqueda_Click"/>
-                <asp:Button ID="btnBusqueda" runat="server" Text="Busqueda" class="btn btn-primary" OnClick="btnBusqueda_Click"/>
-                <asp:Button ID="btnAgregarUsuario" runat="server" Text="Nuevo Usuario" class="btn btn-success" OnClick="btnAgregarUsuario_Click"/>
+                <asp:Button ID="btnHabilitarBusqueda" runat="server" Text="Habilitar Busqueda" class="btn btn-primary" OnClick="btnHabilitarBusqueda_Click" />
+                <asp:Button ID="btnBusqueda" runat="server" Text="Busqueda" class="btn btn-primary" OnClick="btnBusqueda_Click" />
+                <asp:Button ID="btnAgregarUsuario" runat="server" Text="Nuevo Usuario" class="btn btn-success" OnClick="btnAgregarUsuario_Click" />
                 <br />
                 <br />
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click"/>
-                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click"/>
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click" />
+                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click" />
             </div>
         </div>
     </form>
 </body>
 </html>
+<script>
+    var busquedaEstado = '<%= Session["busquedaEstado"].ToString() %>';
+    if (busquedaEstado == 1) {
+        document.getElementById("busquedaEstado").style.display = 'inline';
+    } else {
+        document.getElementById("busquedaEstado").style.display = 'none';
+    }
+</script>
