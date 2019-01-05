@@ -23,13 +23,16 @@
                 </asp:DropDownList>
             </div>
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Correo Electronico" class="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:TextBox runat="server" ID="txtContraseña" TabIndex="2" type="password" placeholder="Contraseña" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <div class="row">
+                    <div id="registroEstado">
+                        <p><font color="red">Faltan datos! </font></p>
+                    </div>
                     <div class="botonesGuardar">
                         <asp:Button ID="btnGuardarRegistro" class="form-control btn btn-register" runat="server" Text="Guardar" OnClick="btnGuardarRegistro_Click" />
                     </div>
@@ -42,3 +45,11 @@
     </form>
 </body>
 </html>
+<script>
+    var registroEstado = '<%= Session["registroEstado"].ToString() %>';
+    if (registroEstado == 1) {
+        document.getElementById("registroEstado").style.display = 'inline';
+    } else {
+        document.getElementById("registroEstado").style.display = 'none';
+    }
+</script>

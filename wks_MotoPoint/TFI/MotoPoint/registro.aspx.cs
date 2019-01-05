@@ -32,6 +32,7 @@ namespace MotoPoint
             List<CategoriaMoto> listadoCategoriaMoto = new List<CategoriaMoto>();
             var loginEstado = Session["loginEstado"];
             var loginUsuario = Session["loginUsuario"];
+            Session["registroEstado"] = 0;
 
             //OBTENGO LAS CATEGORIAS DE MOTO
             listadoCategoriaMoto = interfazNegocio.ObtenerCategoriaMoto();
@@ -63,25 +64,33 @@ namespace MotoPoint
             List<Grupo> lstGrupo = new List<Grupo>();
             SIS.ENTIDAD.Grupo oGrupo = new SIS.ENTIDAD.Grupo();
 
-            oUsuario.NombreApellido = txtNombre.Text;
-            oUsuario.FechaNacimiento = txtFechaNacimiento.Text;
-            oUsuario.CategoriaMoto = CategoriaMotoList.SelectedValue.ToString();
-            oUsuario.usuario = txtEmail.Text.ToString().Substring(0, txtEmail.Text.ToString().IndexOf("@"));
-            oUsuario.Password = txtContraseña.Text;
-            oUsuario.Email = txtEmail.Text;
-            //ESTA INACTIVO HASTA QUE PAGUE LA MEMBRESIA
-            oUsuario.Estado = "Inactivo";
+            if (txtNombre.Text != "" && txtFechaNacimiento.Text != "" && txtContraseña.Text !="" && txtEmail.Text!="")
+            {
+                Session["registroEstado"] = 0;
+                oUsuario.NombreApellido = txtNombre.Text;
+                oUsuario.FechaNacimiento = txtFechaNacimiento.Text;
+                oUsuario.CategoriaMoto = CategoriaMotoList.SelectedValue.ToString();
+                oUsuario.usuario = txtEmail.Text.ToString().Substring(0, txtEmail.Text.ToString().IndexOf("@"));
+                oUsuario.Password = txtContraseña.Text;
+                oUsuario.Email = txtEmail.Text;
+                //ESTA INACTIVO HASTA QUE PAGUE LA MEMBRESIA
+                oUsuario.Estado = "Inactivo";
 
-            //ARQ.BASE MULTI-USUARIO | OBTENER ULTIMO ID y GRUPOS ASOCIADOS
-            oUsuario.IdUsuario = interfazNegocioUsuario.ObtenerIdParaUsuario().ToString();
-            oGrupo = interfazNegocioUsuario.ObtenerGrupoPorId(2);
-            lstGrupo.Add(oGrupo);
-            oUsuario.ListadoGrupos = lstGrupo;
+                //ARQ.BASE MULTI-USUARIO | OBTENER ULTIMO ID y GRUPOS ASOCIADOS
+                oUsuario.IdUsuario = interfazNegocioUsuario.ObtenerIdParaUsuario().ToString();
+                oGrupo = interfazNegocioUsuario.ObtenerGrupoPorId(2);
+                lstGrupo.Add(oGrupo);
+                oUsuario.ListadoGrupos = lstGrupo;
 
-            //ARQ.BASE MULTI-USUARIO | INSERTO USUARIO - RE-CALCULANDO LOS DIGITOS VERIFICADORES
-            interfazNegocioUsuario.InsertarUsuario(oUsuario);
+                //ARQ.BASE MULTI-USUARIO | INSERTO USUARIO - RE-CALCULANDO LOS DIGITOS VERIFICADORES
+                interfazNegocioUsuario.InsertarUsuario(oUsuario);
 
-            Response.Redirect("membresias.aspx");
+                Response.Redirect("membresias.aspx");
+            }
+            else
+            {
+                Session["registroEstado"] = 1;
+            }
         }
         /// <summary>
         /// 
