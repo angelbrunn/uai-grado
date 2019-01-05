@@ -15,20 +15,11 @@
             <div class="form-group">
 
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtIdUsuario" TabIndex="2" placeholder="Id Usuario" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtIdUsuario" TabIndex="2" placeholder="Id Usuario" class="form-control"></asp:TextBox>
-                </div>
-            </div>
-            <br />
-            <div class="form-group">
-                <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtCatMoto" TabIndex="2" placeholder="Categoria moto" class="form-control"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtUsuario" TabIndex="2" placeholder="Usuario" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido"  class="form-control"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -37,24 +28,32 @@
                     <asp:TextBox runat="server" ID="txtFecNac" TabIndex="2" placeholder="Fecha Nacimiento" class="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
+                    <asp:TextBox runat="server" ID="txtCatMoto" TabIndex="2" placeholder="Categoria moto" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="form-group">
+                    <asp:TextBox runat="server" ID="txtUsuario" TabIndex="2" placeholder="Usuario" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group">
                     <asp:TextBox runat="server" ID="txtPassword" TabIndex="2" placeholder="Contraseña" class="form-control"></asp:TextBox>
                 </div>
-                <br />
             </div>
-
             <div class="form-group">
-
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Activo</label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio">Inactivo</label>
             </div>
-
-
             <div class="form-group">
-                <button type="button" class="btn btn-primary">Habilitar Busqueda</button>
-                <button type="button" class="btn btn-primary">Busqueda</button>
-                <button type="button" class="btn btn-success">Nuevo Usuario</button>
+                <asp:Button ID="btnHabilitarBusqueda" runat="server" Text="Habilitar Busqueda" class="btn btn-primary" OnClick="btnHabilitarBusqueda_Click"/>
+                <asp:Button ID="btnBusqueda" runat="server" Text="Busqueda" class="btn btn-primary" OnClick="btnBusqueda_Click"/>
+                <asp:Button ID="btnAgregarUsuario" runat="server" Text="Nuevo Usuario" class="btn btn-success" OnClick="btnAgregarUsuario_Click"/>
                 <br />
                 <br />
-                <button type="button" class="btn btn-danger">Cancelar</button>
-                <button type="button" class="btn btn-warning">Guardar</button>
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click"/>
+                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click"/>
             </div>
         </div>
     </form>

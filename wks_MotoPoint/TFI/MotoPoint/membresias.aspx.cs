@@ -23,8 +23,13 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ESTAMOS DENTRO DEL PAGO DE LA MEMBRESIA
-            var estado = 1;
+            var usuario = Session["UsuarioId"];
+
+            if (usuario == null || usuario == "") {
+                //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
+                Session["loginEstado"] = 1;
+                Response.Redirect("login.aspx");
+            }
         }
 
         protected void btnSeleccionarBronce_Click(object sender, EventArgs e)

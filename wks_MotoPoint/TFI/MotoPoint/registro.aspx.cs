@@ -85,6 +85,10 @@ namespace MotoPoint
                 //ARQ.BASE MULTI-USUARIO | INSERTO USUARIO - RE-CALCULANDO LOS DIGITOS VERIFICADORES
                 interfazNegocioUsuario.InsertarUsuario(oUsuario);
 
+                //GUARDO USUARIO QUE ESTA OPERANDO EN SESSION
+                Session["UsuarioId"] = oUsuario.IdUsuario;
+                Session["Usuario"] = oUsuario.usuario;
+
                 Response.Redirect("membresias.aspx");
             }
             else
@@ -103,6 +107,5 @@ namespace MotoPoint
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }
-
     }
 }
