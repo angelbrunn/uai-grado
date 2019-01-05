@@ -55,8 +55,8 @@
                 <asp:Button ID="btnAgregarUsuario" runat="server" Text="Nuevo Usuario" class="btn btn-success" OnClick="btnAgregarUsuario_Click" />
                 <br />
                 <br />
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click" />
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click" />
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click" />
             </div>
         </div>
     </form>
