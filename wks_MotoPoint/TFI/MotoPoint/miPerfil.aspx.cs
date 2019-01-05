@@ -13,5 +13,14 @@ namespace MotoPoint
         {
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("eventos.aspx");
+        }
     }
 }
