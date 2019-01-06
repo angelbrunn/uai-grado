@@ -22,6 +22,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmMembresias;
         
         /// <summary>
+        /// Control lblPrecioBronce.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecioBronce;
+        
+        /// <summary>
         /// Control btnSeleccionarBronce.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Button btnSeleccionarBronce;
         
         /// <summary>
+        /// Control lblPrecioPlata.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecioPlata;
+        
+        /// <summary>
         /// Control btnSeleccionarPlata.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSeleccionarPlata;
+        
+        /// <summary>
+        /// Control lblPrecioOro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecioOro;
         
         /// <summary>
         /// Control btnSeleccionarOro.

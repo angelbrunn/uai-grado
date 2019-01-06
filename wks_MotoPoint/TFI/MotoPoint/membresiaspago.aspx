@@ -7,13 +7,10 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="~/Content/css/membresiaspago.css" rel="Stylesheet" type="text/css" />
-
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
     <title>MotoPoint - Pago Membresias</title>
 </head>
 <body>
@@ -31,6 +28,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblMontoPagar" runat="server" Text="MONTO A PAGAR"></asp:Label>
+                                        <div class="input-group">
+                                            <asp:TextBox runat="server" ID="txtMontoPagar" TabIndex="2" class="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <asp:Label ID="lblNumeroTarjeta" runat="server" Text="NUMERO TARJETA"></asp:Label>
                                         <div class="input-group">

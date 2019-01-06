@@ -9,15 +9,27 @@ using System.Xml;
 
 namespace MotoPoint
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class membresiaspago : System.Web.UI.Page
     {
         /// <summary>
         /// 
         /// </summary>
         SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            string idUsuario = Session["IdMembresia"].ToString();
+            string idMembresia = Session["UsuarioId"].ToString();
+            string precioMembresia = Session["valorMembresia"].ToString();
+
+            txtMontoPagar.Text = precioMembresia;
 
         }
 
@@ -37,6 +49,8 @@ namespace MotoPoint
 
             if (resultadoPago == true)
             {
+                //ACTIVAR USUARIO
+                //ENVIAR FACTURA
                 resultadoPago = false;
                 Response.Redirect("isOk.aspx");
             }

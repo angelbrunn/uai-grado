@@ -45,6 +45,7 @@
     <Compile Include="DALCategoriaMoto.cs" />
     <Compile Include="DALGrupo.cs" />
     <Compile Include="DALGrupoPermiso.cs" />
+    <Compile Include="DALMembresia.cs" />
     <Compile Include="DALMultiIdioma.cs" />
     <Compile Include="DALPermiso.cs" />
     <Compile Include="DALUsuario.cs" />
