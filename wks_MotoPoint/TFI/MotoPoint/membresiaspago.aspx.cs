@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 using System.Xml;
+using SIS.ENTIDAD;
 
 namespace MotoPoint
 {
@@ -15,9 +16,25 @@ namespace MotoPoint
     public partial class membresiaspago : System.Web.UI.Page
     {
         /// <summary>
-        /// 
+        /// NEGOCIO
         /// </summary>
         SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
+        /// <summary>
+        /// ARQ.BASE Instancio la clase de arquitectura base | MultiUsuario
+        /// </summary>
+        SIS.BUSINESS.INegMultiUsuario interfazNegocioUsuario = new SIS.BUSINESS.NegMultiUsuario();
+        /// <summary>
+        /// 
+        /// </summary>
+        string idUsuario;
+        /// <summary>
+        /// 
+        /// </summary>
+        string idMembresia;
+        /// <summary>
+        /// 
+        /// </summary>
+        string precioMembresia;
         /// <summary>
         /// 
         /// </summary>
@@ -25,9 +42,9 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idUsuario = Session["IdMembresia"].ToString();
-            string idMembresia = Session["UsuarioId"].ToString();
-            string precioMembresia = Session["valorMembresia"].ToString();
+            idUsuario = Session["IdMembresia"].ToString();
+            idMembresia = Session["UsuarioId"].ToString();
+            precioMembresia = Session["valorMembresia"].ToString();
 
             txtMontoPagar.Text = precioMembresia;
 
@@ -35,7 +52,7 @@ namespace MotoPoint
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
-            //VALIDO EL PAGO VIA WEBSERVICES
+            //NEGOCIO - VALIDO EL PAGO VIA WEBSERVICES
             var operacion = new localhost.Service();
 
             string numeroTarjeta = txtNumeroTarjeta.Text;
@@ -49,8 +66,12 @@ namespace MotoPoint
 
             if (resultadoPago == true)
             {
-                //ACTIVAR USUARIO
-                //ENVIAR FACTURA
+                //NEGOCIO - ACTIVAR USUARIO CUANDO EL PAGO SE REALIZA DE FORMA CORRECTA
+                Usuario oUsuaio = new Usuario();
+                oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
+                oUsuaio.Estado = "Activo";
+                interfazNegocioUsuario.ActualizarUsuario(oUsuaio);
+                //NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
                 resultadoPago = false;
                 Response.Redirect("isOk.aspx");
             }
@@ -59,7 +80,6 @@ namespace MotoPoint
                 resultadoPago = false;
                 Response.Redirect("isError.aspx");
             }
-
         }
     }
 }
