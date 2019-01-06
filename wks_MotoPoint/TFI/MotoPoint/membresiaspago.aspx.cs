@@ -71,7 +71,9 @@ namespace MotoPoint
                 oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
                 oUsuaio.Estado = "Activo";
                 interfazNegocioUsuario.ActualizarUsuario(oUsuaio);
-                //NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
+                // NEGOCIO - ACTUALIZAR PAGOUSUARIOS ID, IDUSUARIO,NOMBREAPELLIDO,DESCRIPCION,NUMERO DE ORDEN,MONTO,FECHA
+                // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
+                // TODO . . . LE EMBIAMOS POR EMAIL EN EL BODY COMO SI FUERA UN TK
                 resultadoPago = false;
                 Response.Redirect("isOk.aspx");
             }
