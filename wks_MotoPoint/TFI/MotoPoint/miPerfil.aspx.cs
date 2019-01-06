@@ -66,6 +66,7 @@ namespace MotoPoint
                         break;
                 }
                 txtUsuario.Text = oUsuario.usuario;
+                Session["passwowrdOld"] = oUsuario.Password;
                 txtPassword.Text = oUsuario.Password;
                 txtEmail.Text = oUsuario.Email;
             }
@@ -88,6 +89,7 @@ namespace MotoPoint
         {
             SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
             oUsuario.IdUsuario = Session["UsuarioId"].ToString();
+            string passwordDefualt = "4gY7-k";
             if (oUsuario.IdUsuario != "")
             {
                 oUsuario.NombreApellido = txtNombreApellido.Text;
@@ -114,10 +116,16 @@ namespace MotoPoint
                         oUsuario.CategoriaMoto = "999";
                         break;
                 }
-
                 oUsuario.usuario = txtUsuario.Text;
-                var pwd = txtPassword.Text;
-                oUsuario.Password = txtPassword.Text;
+                string passwordOld = Session["passwowrdOld"].ToString();
+                if (passwordOld != txtPassword.Text)
+                {
+                    oUsuario.Password = txtPassword.Text;
+                }
+                else
+                {
+                    oUsuario.Password = passwordDefualt;
+                }
                 oUsuario.Email = txtEmail.Text;
                 //SETEAMOS EL ESTADO
                 oUsuario.Estado = Session["estadoUsuarioActual"].ToString();

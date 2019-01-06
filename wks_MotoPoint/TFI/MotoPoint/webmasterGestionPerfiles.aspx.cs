@@ -140,6 +140,7 @@ namespace MotoPoint
                         break;
                 }
                 txtUsuario.Text = oUsuario.usuario;
+                Session["passwowrdOld"] = oUsuario.Password;
                 txtPassword.Text = oUsuario.Password;
                 txtEmail.Text = oUsuario.Email;
                 //SELECCIONO EL ESTADO DEL USUARIO SI ES ACTIVO O INACTIVO
@@ -195,6 +196,7 @@ namespace MotoPoint
         {
             SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
             oUsuario.IdUsuario = txtIdUsuario.Text;
+            string passwordDefualt = "4gY7-k";
             if (oUsuario.IdUsuario != "")
             {
                 oUsuario.NombreApellido = txtNombreApellido.Text;
@@ -223,7 +225,15 @@ namespace MotoPoint
                 }
 
                 oUsuario.usuario = txtUsuario.Text;
-                oUsuario.Password = txtPassword.Text;
+                string passwordOld = Session["passwowrdOld"].ToString();
+                if (passwordOld != txtPassword.Text)
+                {
+                    oUsuario.Password = txtPassword.Text;
+                }
+                else
+                {
+                    oUsuario.Password = passwordDefualt;
+                }
                 oUsuario.Email = txtEmail.Text;
                 //SETEAMOS EL ESTADO
                 if (rdaActivo.Checked)
