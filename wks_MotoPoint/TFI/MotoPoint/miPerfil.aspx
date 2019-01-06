@@ -18,6 +18,12 @@
                 <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control"></asp:TextBox>
                 <br />
                 <asp:TextBox runat="server" ID="txtFecNac" TabIndex="2" placeholder="Fecha Nacimiento" class="form-control"></asp:TextBox>
+                <div id="estadoUsuarioActivo">
+                    <p><font color="green">Usuario Activo! </font></p>
+                </div>
+                <div id="estadoUsuarioInactivo">
+                    <p><font color="red">Usuario Inactivo! </font></p>
+                </div>
             </div>
             <br />
             <br />
@@ -38,11 +44,28 @@
             <div class="form-group">
                 <div id="accionesPerfil">
                     <asp:Button ID="btnVolver" runat="server" Text="Volver" class="btn btn-primary" OnClick="btnVolver_Click" />
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" />
-                    <asp:Button ID="btnMembresia" runat="server" Text="Cambiar Membresia" class="btn btn-success" />
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnMembresia" runat="server" Text="Cambiar Membresia" class="btn btn-success" OnClick="btnMembresia_Click" />
                 </div>
             </div>
         </div>
     </form>
 </body>
 </html>
+<script>
+    var estadoUsuario = '<%= Session["estadoUsuario"].ToString() %>';
+    var guardadoEstado = '<%= Session["guardadoEstado"].ToString() %>';
+    if (estadoUsuario == 1) {
+        document.getElementById("estadoUsuarioActivo").style.display = 'inline';
+        document.getElementById("estadoUsuarioInactivo").style.display = 'none';
+    } else {
+        document.getElementById("estadoUsuarioInactivo").style.display = 'none';
+        document.getElementById("estadoUsuarioActivo").style.display = 'inline';
+    }
+    if (guardadoEstado == 1) {
+        alert("La actualizacion se realizo de forma correcta!");
+    }
+    if (guardadoEstado == 2) {
+        alert("La actualizacion ha fallado!");
+    }
+</script>

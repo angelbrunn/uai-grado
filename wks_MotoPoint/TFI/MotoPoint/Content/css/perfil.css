@@ -68,3 +68,9 @@ body {
 #accionesPerfil {
     float: left;
 }
+
+
+p {
+    float: left;
+    margin: 10px 0px;
+}
