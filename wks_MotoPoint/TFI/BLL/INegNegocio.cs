@@ -36,5 +36,44 @@ namespace SIS.BUSINESS
         /// <param name="idMembresia"></param>
         /// <returns></returns>
         int ObtenerMembresiaPrecio(string idMembresia);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="nombreApellido"></param>
+        /// <param name="descipcion"></param>
+        /// <param name="monto"></param>
+        /// <param name="fechaPago"></param>
+        /// <returns></returns>
+        int RegistrarPagoUsuario(string idUsuario, string nombreApellido, string descipcion, string monto);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="numeroOrden"></param>
+        /// <param name="destinatarioEmail"></param>
+        /// <param name="estadoPago"></param>
+        /// <returns></returns>
+        bool EnviarTicketConfirmacionPago(string idUsuario, int numeroOrden, string destinatarioEmail,string estadoPago);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        int ObtenerCodigoMembresiaUsuario(string idUsuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="idMembresia"></param>
+        /// <returns></returns>
+        int RegistrarMembresiaUsuario(string idUsuario, string idMembresia);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="idMembresia"></param>
+        /// <returns></returns>
+        int ActualizarMembresiaUsuario(string idUsuario, string idMembresia);
     }
 }

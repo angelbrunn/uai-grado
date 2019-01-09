@@ -46,6 +46,7 @@
     <Compile Include="CategoriaMoto.cs" />
     <Compile Include="MembresiaUsuario.cs" />
     <Compile Include="MultiIdioma.cs" />
+    <Compile Include="PagoUsuario.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
