@@ -26,6 +26,7 @@ namespace MotoPoint
                 //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
                 Session["loginEstado"] = 1;
                 FormsAuthentication.SignOut();
+                Session.Clear();
                 Response.Redirect("login.aspx");
             }
 

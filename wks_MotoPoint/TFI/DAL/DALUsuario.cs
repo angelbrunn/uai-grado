@@ -190,12 +190,13 @@ namespace SIS.DATOS
         /// <param name="usuario"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public int ValidarUsuario(String usuario, String password)
+        public int ValidarUsuario(string usuario, string password)
         {
             int resultadoValidacion = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT [idUsuario] FROM tbl_Usuario WHERE usuario=@Usuario AND password=@Password", con))
+
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT idUsuario FROM tbl_Usuario WHERE usuario=@Usuario AND password=@Password", con))
                 {
                     try
                     {
@@ -203,6 +204,7 @@ namespace SIS.DATOS
                         cmdSelect.Parameters.AddWithValue("@Usuario", usuario);
                         cmdSelect.Parameters.AddWithValue("@Password", password);
                         resultadoValidacion = (int)cmdSelect.ExecuteScalar();
+                        con.Close();
                     }
                     catch (Exception ex)
                     {
@@ -210,7 +212,7 @@ namespace SIS.DATOS
                         throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
-            }
+            }   
             return resultadoValidacion;
         }
         /// <summary>
@@ -436,6 +438,7 @@ namespace SIS.DATOS
         /// <param name="listaUsuarios"></param>
         public void InsertarUsuario(List<Usuario> listaUsuarios)
         {
+            /*
             String conexString = ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString;
             string sqlQuery = "SELECT * FROM tbl_Usuario";
             SqlDataAdapter adaptador = new SqlDataAdapter(sqlQuery, conexString);
@@ -500,12 +503,13 @@ namespace SIS.DATOS
                 dr2["digitoVerificador"] = oUsuario2.DigitoVerificador.ToString();
                 ds.Tables["Usuario"].Rows.Add(dr2);
                 adaptador.Update(ds, "Usuario");
+
             }
             catch (Exception ex)
             {
                 throw new EXCEPCIONES.DALExcepcion(ex.Message);
             }
-
+                            */
         }
     }
 }

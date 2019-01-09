@@ -58,7 +58,11 @@ namespace MotoPoint
             txtMontoPagar.Text = precioMembresia;
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnPagar_Click(object sender, EventArgs e)
         {
             //NEGOCIO - VALIDO EL PAGO VIA WEBSERVICES

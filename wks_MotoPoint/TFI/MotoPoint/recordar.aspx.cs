@@ -34,7 +34,11 @@ namespace MotoPoint
                 Response.Redirect("login.aspx");
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             //RECUPERAR LA CONTRASEÑA DE USUARIO E ENVIARLA AL MAIL INDICADO
