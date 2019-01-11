@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="actividades.aspx" />
     <Content Include="ayuda.aspx" />
+    <Content Include="blockUsuario.aspx" />
     <Content Include="Content\actividades\CHASCO.jpg" />
     <Content Include="Content\actividades\COR.jpg" />
     <Content Include="Content\actividades\MDQ.jpg" />
@@ -80,6 +81,7 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\css\blockUsuario.css" />
     <Content Include="Content\css\ayuda.css" />
     <Content Include="Content\css\perfil.css" />
     <Content Include="Content\css\recordar.css" />
@@ -92,6 +94,7 @@
     <Content Include="Content\expertos\EXP2.jpeg" />
     <Content Include="Content\expertos\EXP3.jpeg" />
     <Content Include="Content\expertos\EXP4.jpeg" />
+    <Content Include="Content\image\BlockUsuario.png" />
     <Content Include="Content\image\feedback_negativo.svg" />
     <Content Include="Content\image\feedback_positivo.svg" />
     <Content Include="Content\image\idCardBronce.svg" />
@@ -193,6 +196,13 @@
     </Compile>
     <Compile Include="ayuda.aspx.designer.cs">
       <DependentUpon>ayuda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blockUsuario.aspx.cs">
+      <DependentUpon>blockUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blockUsuario.aspx.designer.cs">
+      <DependentUpon>blockUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="eventos.aspx.cs">
       <DependentUpon>eventos.aspx</DependentUpon>
