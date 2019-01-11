@@ -310,6 +310,7 @@ namespace SIS.BUSINESS
             sb.AppendLine("                           MOTOPOINT                                     ");
             sb.AppendLine("-------------------------------------------------------------------------");
             sb.AppendLine("CONSULTA TIPO: " + tipo);
+            sb.AppendLine("USUARIO NOMBRE Y APELLIDO: " + nombreApellido);
             sb.AppendLine("USUARIO EMAIL: " + email);
             sb.AppendLine("-------------------------------------------------------------------------");
             sb.AppendLine("DESCRIPCION: " + descripcion);

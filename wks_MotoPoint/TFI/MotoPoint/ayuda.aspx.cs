@@ -94,7 +94,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("eventos.aspx");
         }
     }
 }

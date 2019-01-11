@@ -14,10 +14,10 @@
     <form id="frmAyuda" runat="server">
         <div class="container">
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtNombre" TabIndex="2" placeholder="Ingrese su nombre y apellido" class="form-control" required title="El nombre es requerido!"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtNombre" TabIndex="2" placeholder="Ingrese su nombre y apellido" class="form-control" ></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtDescripcion" TabIndex="2" placeholder="Ingrese su consulta" class="form-control" required title="El nombre es requerido!" Rows="15" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtDescripcion" TabIndex="2" placeholder="Ingrese su consulta" class="form-control" Rows="15" TextMode="MultiLine"></asp:TextBox>
             </div>
             <div class="form-group">
                 <label class="radio-inline">
