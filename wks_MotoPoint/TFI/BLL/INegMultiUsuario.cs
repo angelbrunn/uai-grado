@@ -20,6 +20,11 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="oUsuario"></param>
+        void ActualizarUsuarioEstado(ENTIDAD.Usuario oUsuario);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         int ObtenerIdParaUsuario();
         /// <summary>

@@ -63,20 +63,14 @@ namespace MotoPoint
                 if (rdaTecnica.Checked == true)
                 {
                     tipoConsulta = "CONSULTA TECNICA";
-                    rdaAdministrativa.Checked = false;
-                    rdaSugerencia.Checked = false;
                 }
                 else if (rdaAdministrativa.Checked == true)
                 {
                     tipoConsulta = "CONSULTA ADMINISTRATIVA";
-                    rdaTecnica.Checked = false;
-                    rdaSugerencia.Checked = false;
                 }
                 else if (rdaSugerencia.Checked == true)
                 {
                     tipoConsulta = "CONSULTA SUGERENCIA";
-                    rdaAdministrativa.Checked = false;
-                    rdaTecnica.Checked = false;
                 }
                 //ARQ.BASE - SETEO ESTADOS PARA USUARIO
                 Session["loginEstado"] = 0;
@@ -92,6 +86,15 @@ namespace MotoPoint
                 Session["usuarioOk"] = 1;
                 Response.Redirect("isError.aspx");
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
         }
     }
 }

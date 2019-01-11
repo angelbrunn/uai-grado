@@ -21,16 +21,21 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    <asp:RadioButton ID="rdaTecnica" runat="server" Text="Consulta Tecnica" /></label>
+                    <asp:RadioButton ID="rdaTecnica" runat="server" GroupName="grpConsulta" Text="Consulta Tecnica" /></label>
                 <label class="radio-inline">
-                    <asp:RadioButton ID="rdaAdministrativa" runat="server" Text="Consulta Administrativa" /></label>
+                    <asp:RadioButton ID="rdaAdministrativa" runat="server" GroupName="grpConsulta" Text="Consulta Administrativa" /></label>
                 <label class="radio-inline">
-                    <asp:RadioButton ID="rdaSugerencia" runat="server" Text="Sugerencia" /></label>
+                    <asp:RadioButton ID="rdaSugerencia" runat="server" GroupName="grpConsulta" Text="Sugerencia" />
+                </label>
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="botonesEnviar">
                         <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
+                    </div>
+                    <br />
+                    <div class="botonesEnviar">
+                        <asp:Button ID="btnCancelar" class="form-control btn btn-register" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
                     </div>
                 </div>
             </div>

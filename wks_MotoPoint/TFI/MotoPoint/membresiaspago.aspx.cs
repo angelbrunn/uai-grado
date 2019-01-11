@@ -67,7 +67,6 @@ namespace MotoPoint
         {
             //NEGOCIO - VALIDO EL PAGO VIA WEBSERVICES
             var operacion = new localhost.Service();
-            var passwordDefault = "4gY7-k";
             string numeroTarjeta = txtNumeroTarjeta.Text;
             string numeroSeguridad = txtCvc.Text;
             string fechaValidez = txtFecha.Text;
@@ -83,8 +82,7 @@ namespace MotoPoint
                 Usuario oUsuaio = new Usuario();
                 oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
                 oUsuaio.Estado = "Activo";
-                oUsuaio.Password = passwordDefault;
-                interfazNegocioUsuario.ActualizarUsuario(oUsuaio);
+                interfazNegocioUsuario.ActualizarUsuarioEstado(oUsuaio);
                 // NEGOCIO - ACTUALIZAR PAGOUSUARIOS, IDUSUARIO,NOMBREAPELLIDO,DESCRIPCION,NUMERO DE ORDEN,MONTO,FECHA
                 string estadoPago = "";
                 string descipcion = "PAGO DE MEMBRESIA " + tipoMembresia;

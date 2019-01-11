@@ -121,6 +121,43 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="oUsuario"></param>
+        public void ActualizarUsuarioEstado(ENTIDAD.Usuario oUsuario)
+        {
+            string digiVerificador;
+            string IdHASH = "HASH";
+
+            DATOS.DALUsuario oDalUsuaio = new DATOS.DALUsuario();
+            // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            try
+            {
+
+                digiVerificador = interfazHash.ObtenerHashUsuario(oUsuario);
+                oUsuario.DigitoVerificador = digiVerificador;
+
+                //UPDATE AL USUARIO CON SU NUEVA CLAVE
+                oDalUsuaio.ActualizarUsuarioPorId(oUsuario);
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdHASH, oExBLL);
+            }
+            // ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+            //RE-CALCULAR LOS DIGITO VERIFICADORES DE USUARIOS | RESTABLECEMOS BKP CON NUEVOS DATOS
+            List<ENTIDAD.Usuario> lstUsuarios = new List<ENTIDAD.Usuario>();
+            lstUsuarios = oDalUsuaio.ObtenerTablaUsuario();
+
+            List<ENTIDAD.Usuario> listaUsuarioHash = new List<ENTIDAD.Usuario>();
+            listaUsuarioHash = interfazHash.CalcularHashTablaUsuario(lstUsuarios);
+
+            oDalUsuaio.InsertarUsuarioHaseados(listaUsuarioHash);
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         public int ObtenerIdParaUsuario()
         {
