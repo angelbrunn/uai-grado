@@ -80,6 +80,7 @@
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\css\ayuda.css" />
     <Content Include="Content\css\perfil.css" />
     <Content Include="Content\css\recordar.css" />
     <Content Include="Content\css\abmusuario.css" />

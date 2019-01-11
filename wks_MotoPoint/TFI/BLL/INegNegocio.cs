@@ -75,5 +75,13 @@ namespace SIS.BUSINESS
         /// <param name="idMembresia"></param>
         /// <returns></returns>
         int ActualizarMembresiaUsuario(string idUsuario, string idMembresia);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreApellido"></param>
+        /// <param name="email"></param>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
+        bool EnviarConsulta(string nombreApellido, string email, string tipo, string descripcion);
     }
 }

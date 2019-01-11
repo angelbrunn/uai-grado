@@ -45,7 +45,7 @@ namespace MotoPoint
             var email = txtEmail.Text;
             var estado = false;
             var passwordDefault = "4gY7-k";
-            //ACA YA TENEMOS EL USUARIO CON TODOS SUS DATOS
+            //ARQ.BASE - ACA YA TENEMOS EL USUARIO CON TODOS SUS DATOS
             SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
             oUsuario = interfazNegocioUsuario.ObtenerUsuarioPorEmail(email);
 
@@ -69,7 +69,6 @@ namespace MotoPoint
             {
                 Session["usuarioOk"] = 1;
             }
-
         }
     }
 }

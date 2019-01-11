@@ -184,9 +184,10 @@ namespace SIS.BUSINESS
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("-------------------------------------------------------------------------");
-            sb.AppendLine("                       MOTOPOINT                          ");
+            sb.AppendLine("                       MOTOPOINT                                         ");
             sb.AppendLine("-------------------------------------------------------------------------");
-            sb.AppendLine("DIRECCION: xxxxxxxxxxxxxxxxxx");
+            sb.AppendLine("DIRECCION: Buenos Aires, 10012, ARG");
+            sb.AppendLine("TELEFONO: + 0800 100 28745");
             sb.AppendLine("EMAIL: motopointserviciocontacto@gmail.com");
             sb.AppendLine("-------------------------------------------------------------------------");
             sb.AppendLine("MONTO: " + oPagoUsuario.Monto.ToString());
@@ -281,6 +282,57 @@ namespace SIS.BUSINESS
                 interfazNegocioBitacora.RegistrarEnBitacora_BLL(idUsuario, oExBLL);
             }
             return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreApellido"></param>
+        /// <param name="email"></param>
+        /// <param name="tipo"></param>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
+        public bool EnviarConsulta(string nombreApellido, string email, string tipo, string descripcion)
+        {
+            bool estado = false;
+            string IdSys = "SYS";
+            string contacService = "motopointserviciocontacto@gmail.com";
+
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("motopointserviciocontacto@gmail.com");
+            mail.To.Add(contacService);
+
+            mail.Subject = "Sistema de ayuda - MOTOPOINT";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("                           MOTOPOINT                                     ");
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("CONSULTA TIPO: " + tipo);
+            sb.AppendLine("USUARIO EMAIL: " + email);
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("DESCRIPCION: " + descripcion);
+            sb.AppendLine("-------------------------------------------------------------------------");
+            mail.Body = sb.ToString(); ;
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
+            SmtpServer.EnableSsl = true;
+
+            try
+            {
+                estado = true;
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                estado = false;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+
+            return estado;
         }
     }
 }

@@ -26,15 +26,6 @@
                 </div>
             </div>
         </div>
-
     </form>
 </body>
 </html>
-<script>
-    var dbEstadousuario = '<%= Session["usuarioOk"].ToString() %>';
-    if (dbEstadousuario == 1) {
-        document.getElementById("usuarioOk").style.display = 'inline';
-    } else {
-        document.getElementById("usuarioOk").style.display = 'none';
-    }
-</script>
