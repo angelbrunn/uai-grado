@@ -172,6 +172,7 @@ namespace SIS.DATOS
                         cmdUpdate.Parameters.AddWithValue("@IdMembresia", idMembresia);
                         cmdUpdate.Parameters.AddWithValue("@IdUsuario", idUsuario);
                         resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+                        con.Close();
                     }
                     catch (Exception ex)
                     {

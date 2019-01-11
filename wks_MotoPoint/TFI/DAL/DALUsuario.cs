@@ -275,6 +275,7 @@ namespace SIS.DATOS
                         con.Open();
                         cmdSelect.Parameters.AddWithValue("@Usuario", usuario);
                         resultadoValidacion = (int)cmdSelect.ExecuteScalar();
+                        con.Close();
                     }
                     catch (Exception ex)
                     {
@@ -421,7 +422,7 @@ namespace SIS.DATOS
                         cmdUpdate.Parameters.AddWithValue("@Estado", usuario.Estado);
                         cmdUpdate.Parameters.AddWithValue("@DigitoVerificador", usuario.DigitoVerificador);
                         resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
-
+                        con.Close();
                     }
                     catch (Exception ex)
                     {
@@ -437,8 +438,7 @@ namespace SIS.DATOS
         /// </summary>
         /// <param name="listaUsuarios"></param>
         public void InsertarUsuario(List<Usuario> listaUsuarios)
-        {
-            /*
+        {         
             String conexString = ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString;
             string sqlQuery = "SELECT * FROM tbl_Usuario";
             SqlDataAdapter adaptador = new SqlDataAdapter(sqlQuery, conexString);
@@ -509,7 +509,7 @@ namespace SIS.DATOS
             {
                 throw new EXCEPCIONES.DALExcepcion(ex.Message);
             }
-                            */
+                            
         }
     }
 }

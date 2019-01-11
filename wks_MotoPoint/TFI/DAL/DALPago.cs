@@ -27,6 +27,7 @@ namespace SIS.DATOS
                     {
                         con.Open();
                         ultimoNumeroOrden = (int)cmdSelect.ExecuteScalar();
+                        con.Close();
                     }
                     catch (Exception ex)
                     {

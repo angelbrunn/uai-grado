@@ -35,11 +35,8 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
             string idUsuario = Session["UsuarioId"].ToString();
             //NEGOCIO: VALIDO SI YA TIENE UNA MEMBRESIA DICHO USUARIO | SI TIENE UNA MEMBRESIA EN VEZ 
-            //DE INSERTAR UN NUEVO REGISTRO EN MEMBRESIAUSUARIO ACTUALIZO EL QUE TIENE
-            //....
             //NEGOCIO: ACTUALIZO LOS VALORES DE LAS MEMBRESIAS
             precioBronce = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("3"));
             precioPlata = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("2"));
@@ -65,8 +62,6 @@ namespace MotoPoint
             string idMembresia = interfazNegocio.ObtenerMembresiaSegunTipo("Bronce").ToString();
             string idUsuario = Session["UsuarioId"].ToString();
             // NEGOCIO - GUARDO LA MEMBRESIA SELECCIONADA PARA EL USUARIO O ACTUALIZO MEMBRESIA ACTUAL
-            // TODO . . .
-            // int resulado = interfazNegocio.RegistrarMembresiaParaUsuario(idMembresia, idUsuario);
             Session["IdMembresia"] = idMembresia;
             Session["UsuarioId"] = idUsuario;
             Session["valorMembresia"] = precioBronce;
@@ -85,8 +80,6 @@ namespace MotoPoint
             string idMembresia = interfazNegocio.ObtenerMembresiaSegunTipo("Plata").ToString();
             string idUsuario = Session["UsuarioId"].ToString();
             // NEGOCIO - GUARDO LA MEMBRESIA SELECCIONADA PARA EL USUARIO O ACTUALIZO MEMBRESIA ACTUAL
-            // TODO . . .
-            int resulado = interfazNegocio.RegistrarMembresiaParaUsuario(idMembresia, idUsuario);
             Session["IdMembresia"] = idMembresia;
             Session["UsuarioId"] = idUsuario;
             Session["valorMembresia"] = precioPlata;
@@ -105,8 +98,6 @@ namespace MotoPoint
             string idMembresia = interfazNegocio.ObtenerMembresiaSegunTipo("Oro").ToString();
             string idUsuario = Session["UsuarioId"].ToString();
             // NEGOCIO - GUARDO LA MEMBRESIA SELECCIONADA PARA EL USUARIO O ACTUALIZO MEMBRESIA ACTUAL
-            // TODO . . .
-            int resulado = interfazNegocio.RegistrarMembresiaParaUsuario(idMembresia, idUsuario);
             Session["IdMembresia"] = idMembresia;
             Session["UsuarioId"] = idUsuario;
             Session["valorMembresia"] = precioOro;
