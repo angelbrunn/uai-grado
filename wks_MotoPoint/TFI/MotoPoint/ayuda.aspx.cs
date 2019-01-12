@@ -32,14 +32,24 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["usuarioOk"] = 0;
-            var loginEstado = Session["loginEstado"];
-            var loginUsuario = Session["loginUsuario"];
-            idUsuario = Session["UsuarioId"].ToString();
-
-            //SI ES UN USUARIO REGISTRADO O VALIDO LO SACO
-            if (loginEstado.ToString() != "0" || loginUsuario.ToString() == "NuevoUsuario")
+            if (Session["loginUsuario"] != null)
             {
+                Session["usuarioOk"] = 0;
+                string loginEstado = Session["loginEstado"].ToString();
+                string loginUsuario = Session["loginUsuario"].ToString();
+                idUsuario = Session["UsuarioId"].ToString();
+
+                //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
+                if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
+                {
+                    Session["loginEstado"] = 1;
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
+                }
+            }
+            else
+            {
+                Session.Clear();
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }

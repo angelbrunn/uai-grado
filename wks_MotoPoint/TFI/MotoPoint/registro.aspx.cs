@@ -29,31 +29,39 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<CategoriaMoto> listadoCategoriaMoto = new List<CategoriaMoto>();
-            var loginEstado = Session["loginEstado"];
-            var loginUsuario = Session["loginUsuario"];
-            Session["registroEstado"] = 0;
-
-            //OBTENGO LAS CATEGORIAS DE MOTO
-            listadoCategoriaMoto = interfazNegocio.ObtenerCategoriaMoto();
-
-            //CARGO EL DROPDWONLIST CON LAS CATEGORIAS DE LAS MOTOS
-            IEnumerator<CategoriaMoto> enu = listadoCategoriaMoto.GetEnumerator();
-            while (enu.MoveNext())
+            if (Session["loginUsuario"] != null)
             {
-                ListItem oItem = new ListItem(enu.Current.Descripcion.ToString(), enu.Current.idCategoriaMoto.ToString());
-                CategoriaMotoList.Items.Add(oItem);
+                List<CategoriaMoto> listadoCategoriaMoto = new List<CategoriaMoto>();
 
-            }
+                string loginEstado = Session["loginEstado"].ToString();
+                string loginUsuario = Session["loginUsuario"].ToString();
+                Session["registroEstado"] = 0;
 
-            //SI ES UN USUARIO REGISTRADO O VALIDO LO SACO
-            if (loginEstado.ToString() == "0" || loginUsuario.ToString() != "NuevoUsuario")
-            {
-                if (loginUsuario.ToString() != "WebMaster")
+                //OBTENGO LAS CATEGORIAS DE MOTO
+                listadoCategoriaMoto = interfazNegocio.ObtenerCategoriaMoto();
+
+                //CARGO EL DROPDWONLIST CON LAS CATEGORIAS DE LAS MOTOS
+                IEnumerator<CategoriaMoto> enu = listadoCategoriaMoto.GetEnumerator();
+                while (enu.MoveNext())
                 {
+                    ListItem oItem = new ListItem(enu.Current.Descripcion.ToString(), enu.Current.idCategoriaMoto.ToString());
+                    CategoriaMotoList.Items.Add(oItem);
+
+                }
+
+                //ARQ.BASE - SINO ES UN USUARIO NUEVO LO SACO
+                if (loginUsuario != "NuevoUsuario")
+                {
+                    Session.Clear();
                     FormsAuthentication.SignOut();
                     Response.Redirect("login.aspx");
                 }
+            }
+            else
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
             }
         }
         /// <summary>
@@ -107,6 +115,7 @@ namespace MotoPoint
         protected void btnCancelarRegistro_Click(object sender, EventArgs e)
         {
             Session["loginEstado"] = 0;
+            Session.Clear();
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -29,51 +30,60 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (txtNombreApellido.Text == "")
+            if (Session["loginUsuario"] != null)
             {
-                Session["guardadoEstado"] = 0;
-                string idUsuario = Session["UsuarioId"].ToString();
-                Session["guardadoPerfil"] = interfazNegocio.ObtenerCodigoMembresiaUsuario(idUsuario);
-                SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
-                oUsuario = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
-                //GUARDO EL ESTADO DEL USUARIO
-                if (oUsuario.Estado == "Activo")
+                if (txtNombreApellido.Text == "")
                 {
-                    Session["estadoUsuario"] = 1;
-                    Session["estadoUsuarioActual"] = oUsuario.Estado;
+                    Session["guardadoEstado"] = 0;
+                    string idUsuario = Session["UsuarioId"].ToString();
+                    Session["guardadoPerfil"] = interfazNegocio.ObtenerCodigoMembresiaUsuario(idUsuario);
+                    SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
+                    oUsuario = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
+                    //GUARDO EL ESTADO DEL USUARIO
+                    if (oUsuario.Estado == "Activo")
+                    {
+                        Session["estadoUsuario"] = 1;
+                        Session["estadoUsuarioActual"] = oUsuario.Estado;
+                    }
+                    else
+                    {
+                        Session["estadoUsuario"] = 0;
+                        Session["estadoUsuarioActual"] = oUsuario.Estado;
+                    }
+                    txtNombreApellido.Text = oUsuario.NombreApellido;
+                    //MUESTRO LA FECHA DE NACIMIENTO
+                    string dia = oUsuario.FechaNacimiento.Substring(0, 2);
+                    string mes = oUsuario.FechaNacimiento.Substring(2, 2);
+                    string año = oUsuario.FechaNacimiento.Substring(4, 4);
+                    txtFecNac.Text = dia + "-" + mes + "-" + año;
+                    //MUESTO LA CATEGORIA DE MOTO ASOCIADA AL USUARIO
+                    string catMoto = oUsuario.CategoriaMoto;
+                    switch (catMoto)
+                    {
+                        case "1":
+                            txtCatMoto.Text = "0cc - 150cc";
+                            break;
+                        case "2":
+                            txtCatMoto.Text = "150cc - 250cc";
+                            break;
+                        case "3":
+                            txtCatMoto.Text = "+300cc";
+                            break;
+                        default:
+                            txtCatMoto.Text = "NO TIENE MOTO ASOCIADA";
+                            break;
+                    }
+                    txtUsuario.Text = oUsuario.usuario;
+                    Session["passwowrdOld"] = oUsuario.Password;
+                    txtPassword.Text = oUsuario.Password;
+                    txtEmail.Text = oUsuario.Email;
                 }
-                else
-                {
-                    Session["estadoUsuario"] = 0;
-                    Session["estadoUsuarioActual"] = oUsuario.Estado;
-                }
-                txtNombreApellido.Text = oUsuario.NombreApellido;
-                //MUESTRO LA FECHA DE NACIMIENTO
-                string dia = oUsuario.FechaNacimiento.Substring(0, 2);
-                string mes = oUsuario.FechaNacimiento.Substring(2, 2);
-                string año = oUsuario.FechaNacimiento.Substring(4, 4);
-                txtFecNac.Text = dia + "-" + mes + "-" + año;
-                //MUESTO LA CATEGORIA DE MOTO ASOCIADA AL USUARIO
-                string catMoto = oUsuario.CategoriaMoto;
-                switch (catMoto)
-                {
-                    case "1":
-                        txtCatMoto.Text = "0cc - 150cc";
-                        break;
-                    case "2":
-                        txtCatMoto.Text = "150cc - 250cc";
-                        break;
-                    case "3":
-                        txtCatMoto.Text = "+300cc";
-                        break;
-                    default:
-                        txtCatMoto.Text = "NO TIENE MOTO ASOCIADA";
-                        break;
-                }
-                txtUsuario.Text = oUsuario.usuario;
-                Session["passwowrdOld"] = oUsuario.Password;
-                txtPassword.Text = oUsuario.Password;
-                txtEmail.Text = oUsuario.Email;
+            }
+            else
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
             }
         }
         /// <summary>

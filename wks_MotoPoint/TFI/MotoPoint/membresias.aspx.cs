@@ -35,18 +35,28 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            string idUsuario = Session["UsuarioId"].ToString();
-            //NEGOCIO: VALIDO SI YA TIENE UNA MEMBRESIA DICHO USUARIO | SI TIENE UNA MEMBRESIA EN VEZ 
             //NEGOCIO: ACTUALIZO LOS VALORES DE LAS MEMBRESIAS
-            precioBronce = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("3"));
-            precioPlata = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("2"));
-            precioOro = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("1"));
-            lblPrecioBronce.Text = precioBronce;
-            lblPrecioPlata.Text = precioPlata;
-            lblPrecioOro.Text = precioOro;
-            //ARQ.BASE MULTI-USUARIO | VALIDO USUARIO
-            if (idUsuario == null || idUsuario == "") {
-                //ARQ.BASE LOGIN MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
+            if (Session["UsuarioId"].ToString() != null)
+            {
+                //NEGOCIO: VALIDO SI YA TIENE UNA MEMBRESIA DICHO USUARIO | SI TIENE UNA MEMBRESIA EN VEZ 
+                string idUsuario = Session["UsuarioId"].ToString();
+                precioBronce = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("3"));
+                precioPlata = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("2"));
+                precioOro = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("1"));
+                lblPrecioBronce.Text = precioBronce;
+                lblPrecioPlata.Text = precioPlata;
+                lblPrecioOro.Text = precioOro;
+                //ARQ.BASE MULTI-USUARIO | VALIDO USUARIO
+                if (idUsuario == null || idUsuario == "")
+                {
+                    //ARQ.BASE LOGIN MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
+                    Session["loginEstado"] = 1;
+                    Response.Redirect("login.aspx");
+                }
+            }
+            else
+            {
+                //ARQ.BASE LOGIN MOSTRAR PANTALLA LOGIN | NO EXISTE USUARIO VALIDO
                 Session["loginEstado"] = 1;
                 Response.Redirect("login.aspx");
             }

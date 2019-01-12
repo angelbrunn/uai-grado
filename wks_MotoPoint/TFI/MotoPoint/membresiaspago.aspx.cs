@@ -50,13 +50,21 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            idMembresia = Session["IdMembresia"].ToString();
-            idUsuario = Session["UsuarioId"].ToString();
-            precioMembresia = Session["valorMembresia"].ToString();
-            tipoMembresia = Session["tipoMembresia"].ToString();
-            codigoMembresia = Session["codigoMembresia"].ToString();
-            txtMontoPagar.Text = precioMembresia;
-
+            if (Session["UsuarioId"] != null && Session["IdMembresia"] != null)
+            {
+                idMembresia = Session["IdMembresia"].ToString();
+                idUsuario = Session["UsuarioId"].ToString();
+                precioMembresia = Session["valorMembresia"].ToString();
+                tipoMembresia = Session["tipoMembresia"].ToString();
+                codigoMembresia = Session["codigoMembresia"].ToString();
+                txtMontoPagar.Text = precioMembresia;
+            }
+            else
+            {
+                //ARQ.BASE LOGIN MOSTRAR PANTALLA LOGIN | NO EXISTE USUARIO VALIDO
+                Session["loginEstado"] = 1;
+                Response.Redirect("login.aspx");
+            }
         }
         /// <summary>
         /// 
@@ -89,9 +97,11 @@ namespace MotoPoint
                 string monto = Session["valorMembresia"].ToString();
                 int numeroOrden = interfazNegocio.RegistrarPagoUsuario(oUsuaio.IdUsuario, oUsuaio.NombreApellido, descipcion, monto);
                 // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
-                if (numeroOrden != 1) {
+                if (numeroOrden != 1)
+                {
                     estadoPago = "PAGO REGISTRADO CORRECTAMENTE!";
-                } else
+                }
+                else
                 {
                     estadoPago = "FALLO AL REGISTRAR EL PAGO!";
                 }

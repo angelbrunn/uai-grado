@@ -23,13 +23,22 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["usuarioOk"] = 0;
-            var loginEstado = Session["loginEstado"];
-            var loginUsuario = Session["loginUsuario"];
-
-            //SI ES UN USUARIO REGISTRADO O VALIDO LO SACO
-            if (loginEstado.ToString() == "0" || loginUsuario.ToString() != "NuevoUsuario")
+            if (Session["loginUsuario"] != null)
             {
+                string loginEstado = Session["loginEstado"].ToString();
+                string loginUsuario = Session["loginUsuario"].ToString();
+
+                //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
+                if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
+                {
+                    Session["loginEstado"] = 1;
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
+                }
+            }
+            else
+            {
+                Session.Clear();
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
@@ -62,6 +71,7 @@ namespace MotoPoint
                 //2# ENVIAR POR EMAIL EN UN EMAIL GENERICO
                 estado = interfazNegocioUsuario.EnviarRecordatorioPassword(email, passwordDefault);
 
+                Session.Clear();
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }

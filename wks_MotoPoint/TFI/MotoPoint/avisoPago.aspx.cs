@@ -16,10 +16,16 @@ namespace MotoPoint
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
-        {
-            var loginEstado = Session["loginEstado"];
-            var loginUsuario = Session["loginUsuario"];
-            Session["registroEstado"] = 0;
+        {    
+            string loginEstado = Session["loginEstado"].ToString();
+            string idUsuario = Session["UsuarioId"].ToString();
+
+            if (loginEstado == "1" || idUsuario == null)
+            {
+                Session["loginEstado"] = 1;
+                FormsAuthentication.SignOut();
+                Response.Redirect("login.aspx");
+            }
         }
         /// <summary>
         /// 
@@ -37,8 +43,8 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
-            Session["loginEstado"] = 1;
+            //ARQ.BASE - MOSTRAR PANTALLA LOGIN
+            Session.Clear();
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }

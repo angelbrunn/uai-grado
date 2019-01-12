@@ -132,6 +132,7 @@ namespace MotoPoint
                     {
                         //ARQ.BASE - CASO B: USUARIO INACTIVO POR BLOQUEADO MAX RE-INTENTOS
                         crearTicketUsuarioNoRegistrado();
+                        Session["UsuarioId"] = usuario.IdUsuario;
                         Response.Redirect("blockUsuario.aspx");
                     }
                     else
@@ -184,7 +185,7 @@ namespace MotoPoint
             //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
             crearTicketUsuarioNoRegistrado();
 
-            Session["loginEstado"] = 1;
+            Session["loginEstado"] = 0;
             Session["loginUsuario"] = "NuevoUsuario";
 
             Response.Redirect("registro.aspx");

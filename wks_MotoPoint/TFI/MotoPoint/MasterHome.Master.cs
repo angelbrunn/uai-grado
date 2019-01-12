@@ -10,10 +10,13 @@ namespace MotoPoint
 {
     public partial class MasterHome : System.Web.UI.MasterPage
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            
             var loginEstado = Session["loginEstado"];
             var loginUsuario = Session["loginUsuario"];
 
@@ -29,9 +32,6 @@ namespace MotoPoint
                 Session.Clear();
                 Response.Redirect("login.aspx");
             }
-
-
-
         }
         /// <summary>
         /// 
@@ -40,6 +40,7 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnSalir_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }

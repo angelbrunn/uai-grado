@@ -10,14 +10,28 @@ namespace MotoPoint
 {
     public partial class expertos : System.Web.UI.Page
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            var loginEstado = Session["loginEstado"];
-            var loginUsuario = Session["loginUsuario"];
-
-            if (loginEstado.ToString() == "1" || loginUsuario.ToString() == "NuevoUsuario")
+            if (Session["loginUsuario"] != null)
             {
-                Session["loginEstado"] = 1;
+                string loginEstado = Session["loginEstado"].ToString();
+                string loginUsuario = Session["loginUsuario"].ToString();
+
+                //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
+                if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
+                {
+                    Session["loginEstado"] = 1;
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
+                }
+            }
+            else
+            {
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
