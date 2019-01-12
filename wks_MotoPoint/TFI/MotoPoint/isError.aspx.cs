@@ -17,13 +17,20 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            string loginEstado = Session["loginEstado"].ToString();
-            string idUsuario = Session["UsuarioId"].ToString();
-
-            if (loginEstado == "1" || idUsuario == null)
+            if (Session["registroEstado"] != null)
             {
-                FormsAuthentication.SignOut();
-                Response.Redirect("login.aspx");
+                string loginEstado = Session["loginEstado"].ToString();
+                string idUsuario = Session["UsuarioId"].ToString();
+
+                if (loginEstado == "1" || idUsuario == null)
+                {
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("eventos.aspx");
             }
         }
         /// <summary>

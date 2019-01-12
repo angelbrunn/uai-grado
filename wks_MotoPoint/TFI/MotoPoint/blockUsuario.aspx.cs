@@ -17,14 +17,26 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            string loginEstado = Session["loginEstado"].ToString();
-            string idUsuario = Session["UsuarioId"].ToString();
-
-            if (loginEstado == "1" || idUsuario == null)
+            if (Session["loginUsuario"] != null)
             {
-                Session["loginEstado"] = 1;
-                FormsAuthentication.SignOut();
-                Response.Redirect("login.aspx");
+                string usuarioEstado = Session["UsuarioEstado"].ToString();
+
+                if (usuarioEstado != "Activo")
+                {
+                    string loginEstado = Session["loginEstado"].ToString();
+                    string idUsuario = Session["UsuarioId"].ToString();
+
+                    if (loginEstado == "1" || idUsuario == null)
+                    {
+                        Session.Clear();
+                        FormsAuthentication.SignOut();
+                        Response.Redirect("login.aspx");
+                    }
+                }
+                else
+                {
+                    Response.Redirect("eventos.aspx");
+                }
             }
         }
         /// <summary>
@@ -34,8 +46,8 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
-            Session["loginEstado"] = 1;
+            //ARQ.BASE - MOSTRAR PANTALLA LOGIN
+            Session.Clear();
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }

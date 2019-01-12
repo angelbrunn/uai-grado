@@ -29,3 +29,11 @@
     </form>
 </body>
 </html>
+<script>
+    var dbEstadoUsuario = '<%= Session["usuarioOk"].ToString() %>';
+    if (dbEstadoUsuario == 1) {
+        document.getElementById("usuarioOk").style.display = 'inline';
+    } else {
+        document.getElementById("usuarioOk").style.display = 'none';
+    }
+</script>

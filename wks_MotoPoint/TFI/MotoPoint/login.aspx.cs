@@ -73,6 +73,7 @@ namespace MotoPoint
                     Session["UsuarioAgent"] = Request.Browser.Browser + "-" + Request.Browser.Version;
                     //NOS ASEGURAMOS QUE SOLO SE USARA UNA CONECCION PARA CADA USUARIO
                     Session["UsuarioInstaciaConeccion"] = coneccion;
+                    Session["UsuarioEstado"] = usuario.Estado;
 
                     //ME GUARDO LOS GRUPOS PARA EL USUARIO LOGEADO
                     List<SIS.ENTIDAD.Grupo> lstGrupos = usuario.ListadoGrupos;
@@ -132,6 +133,7 @@ namespace MotoPoint
                     {
                         //ARQ.BASE - CASO B: USUARIO INACTIVO POR BLOQUEADO MAX RE-INTENTOS
                         crearTicketUsuarioNoRegistrado();
+                        Session["UsuarioEstado"] = usuario.Estado;
                         Session["UsuarioId"] = usuario.IdUsuario;
                         Response.Redirect("blockUsuario.aspx");
                     }
@@ -139,6 +141,7 @@ namespace MotoPoint
                     {
                         //ARQ.BASE - CASO A: USUARIO INACTIVO FALTA DE PAGO
                         crearTicketUsuarioNoRegistrado();
+                        Session["UsuarioEstado"] = usuario.Estado;
                         Session["UsuarioId"] = usuario.IdUsuario;
                         Response.Redirect("avisoPago.aspx");
                     }
@@ -199,9 +202,7 @@ namespace MotoPoint
         {
             //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
             crearTicketUsuarioNoRegistrado();
-
-            Session["loginEstado"] = 1;
-            Session["loginUsuario"] = "NuevoUsuario";
+            Session["loginUsuario"] = "UsuarioRecordar";
 
             Response.Redirect("recordar.aspx");
         }
