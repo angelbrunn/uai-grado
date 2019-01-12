@@ -14,7 +14,7 @@
         <div class="container">
             <div id="bodyFeedback">
                 <div id="mensajeFeedback">
-                    Solo falta el ultimo paso, Adquiera su Membresia!
+                    Solo falta el ultimo paso, <br />Adquiera su Membresia!
                 </div>
                 <img id="imgFeedback" src="Content/image/faltaPago.svg" alt="Smiley face" />
                 <br />
