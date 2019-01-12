@@ -647,7 +647,7 @@ namespace SIS.DATOS
         /// <param name="IdUsuario"></param>
         /// <param name="cantidadReitento"></param>
         /// <param name="fecha"></param>
-        public int InsertarConeccionesConteo(string IdUsuario, string cantidadReitento, string fecha)
+        public int InsertarUsuarioConecciones(string IdUsuario, string cantidadReitento, string fecha)
         {
             int resultadoValidacion = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))

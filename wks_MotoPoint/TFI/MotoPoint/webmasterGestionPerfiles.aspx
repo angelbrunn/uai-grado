@@ -45,9 +45,9 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    <asp:RadioButton ID="rdaActivo" runat="server" Text="Activo" /></label>
+                    <asp:RadioButton ID="rdaActivo" runat="server" GroupName="grpEstado" Text="Activo" /></label>
                 <label class="radio-inline">
-                    <asp:RadioButton ID="rdaInactivo" runat="server" Text="Inactivo" /></label>
+                    <asp:RadioButton ID="rdaInactivo" runat="server" GroupName="grpEstado" Text="Inactivo" /></label>
             </div>
             <div id="busquedaEstado">
                 <p><font color="red">Usuario no existe! </font></p>

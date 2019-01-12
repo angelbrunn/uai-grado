@@ -77,6 +77,11 @@ namespace SIS.BUSINESS
                 oUsuarioGrupo.IdGrupo = enu.Current.IdGrupo;
                 oDalUsuarioGrupo.InsertarUsuarioGrupo(oUsuarioGrupo);
             }
+
+            //ARQ.BASE - INSERTO USUARIO EN CONECCIONES
+            string inicialReitento = "0";
+            oDalUsuaio.InsertarUsuarioConecciones(oUsuario.IdUsuario, inicialReitento, DateTime.Now.ToString());
+
         }
         /// <summary>
         /// 
