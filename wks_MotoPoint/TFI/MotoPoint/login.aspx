@@ -22,7 +22,7 @@
             <br />
             <div id="mensajeLogin">
             <div id="loginEstado">
-                <p><font color="red">Usuario invalido! </font></p>
+                <p><font color="red">Usuario no existe! </font></p>
             </div>
             <asp:LinkButton ID="linkRegistrarse" runat="server" OnClick="linkRegistrarse_Click">Registrarse</asp:LinkButton>
              |

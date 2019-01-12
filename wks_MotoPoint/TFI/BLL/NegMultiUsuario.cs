@@ -327,6 +327,56 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <param name="usuario"></param>
+        /// <returns></returns>
+        public ENTIDAD.Usuario ObtenerUsuarioPorNombreUsuario(string usuario)
+        {
+            ENTIDAD.Usuario oUsuario = new ENTIDAD.Usuario();
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+
+            oUsuario = oDalUsuario.ObtenerUsuarioPorNombreUsuario(usuario);
+
+            // Instancio el objeto UsuarioGrupo para buscar los grupos de ese usuario
+            DATOS.DALUsuarioGrupo oDalUsuarioGrupo = new DATOS.DALUsuarioGrupo();
+            List<ENTIDAD.UsuarioGrupo> listaUsuarioGrupo;
+
+            listaUsuarioGrupo = oDalUsuarioGrupo.ObtenerGrupoPorIdUsuario(System.Convert.ToInt32(oUsuario.IdUsuario));
+
+            // Instancio una lista de grupos para el usuario
+            List<ENTIDAD.Grupo> listaGrupo = new List<ENTIDAD.Grupo>();
+            List<ENTIDAD.Permiso> listaPermisos = new List<ENTIDAD.Permiso>();
+
+            // Recorro la lista y obtengo los objetos Grupo
+            IEnumerator<ENTIDAD.UsuarioGrupo> enu = listaUsuarioGrupo.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                ENTIDAD.Grupo oGrupo = new ENTIDAD.Grupo();
+                DATOS.DALGrupo oDalGrupo = new DATOS.DALGrupo();
+                oGrupo = oDalGrupo.ObtenerGrupoPorId(enu.Current.IdGrupo);
+
+                DATOS.DALGrupoPermiso oDalGrupoPermiso = new DATOS.DALGrupoPermiso();
+                List<ENTIDAD.GrupoPermiso> listadoGrupoPermisos = new List<ENTIDAD.GrupoPermiso>();
+                listadoGrupoPermisos = oDalGrupoPermiso.ObtenerPermisosPorIdGrupo(oGrupo.IdGrupo);
+
+                IEnumerator<ENTIDAD.GrupoPermiso> enu2 = listadoGrupoPermisos.GetEnumerator();
+                while (enu2.MoveNext())
+                {
+                    DATOS.DALPermiso oDalPermiso = new DATOS.DALPermiso();
+                    ENTIDAD.Permiso oPermiso;
+                    oPermiso = oDalPermiso.ObtenerPermisoPorId(enu2.Current.IdPermiso);
+                    listaPermisos.Add(oPermiso);
+                    oGrupo.ListadoPermisos = listaPermisos;
+                }
+                listaGrupo.Add(oGrupo);
+            }
+            oUsuario.ListadoGrupos = listaGrupo;
+
+            return oUsuario;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
         /// <param name="password"></param>
         /// <returns></returns>
         public int Login(string usuario, string password)
@@ -342,6 +392,87 @@ namespace SIS.BUSINESS
             {
                 passHasheada = interfazHash.ObtenerHash(password);
                 resultadoValidacion = oDalUsuario.ValidarUsuario(usuario, passHasheada);
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdDB, oExBLL);
+            }
+
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdUsuario"></param>
+        /// <returns></returns>
+        public int ContarReIntento(string IdUsuario, int cantidadReitento)
+        {
+            int resultadoValidacion = 0;
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            string IdDB = "DB";
+            string fecha = DateTime.Now.ToString();
+
+            try
+            {
+                //ARQ.BASE - RE INTENTOS - VERIFICO SI EL USUARIO EXISTE
+                resultadoValidacion = oDalUsuario.ValidarConeccionesConteo(IdUsuario);
+                cantidadReitento = cantidadReitento + 1;
+
+                if (resultadoValidacion > 0 )
+                {
+                    //ARQ.BASE - UPDATE RE INTENTO
+                    resultadoValidacion = oDalUsuario.UpdateConeccionesConteo(IdUsuario, cantidadReitento.ToString(), fecha);
+                }
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdDB, oExBLL);
+            }
+
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public bool ValidarUsuario(string usuario)
+        {
+            bool resultadoValidacion = false;
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            string IdDB = "DB";
+
+            try
+            {
+                resultadoValidacion = oDalUsuario.ValidarExistenciaUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdDB, oExBLL);
+            }
+
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        public int ConsultarReIntento(string idUsuario)
+        {
+            int resultadoValidacion = 0;
+
+            DATOS.DALUsuario oDalUsuario = new DATOS.DALUsuario();
+            string IdDB = "DB";
+
+            try
+            {
+                resultadoValidacion = oDalUsuario.ConsultarReIntento(idUsuario);
             }
             catch (Exception ex)
             {

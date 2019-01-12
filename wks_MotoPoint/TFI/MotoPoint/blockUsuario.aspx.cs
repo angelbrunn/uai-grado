@@ -12,6 +12,9 @@ namespace MotoPoint
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var loginEstado = Session["loginEstado"];
+            var loginUsuario = Session["loginUsuario"];
+            Session["registroEstado"] = 0;
 
         }
         /// <summary>

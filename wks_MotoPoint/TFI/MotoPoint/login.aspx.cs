@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
@@ -41,6 +42,7 @@ namespace MotoPoint
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             var resultadoLogin = 0;
+            bool existeUsuario = false;
             SIS.ENTIDAD.Usuario user = new SIS.ENTIDAD.Usuario();
 
             user.usuario = txtUsuario.Text;
@@ -48,12 +50,14 @@ namespace MotoPoint
 
             if (txtUsuario.Text != null && txtContrasenia.Text != null)
             {
-                //OBTENGO ID DEL USER SI EXISTE
+                //ARQ.BASE - VALIDO SI EXISTE USUARIO | REITENTOS
+                existeUsuario = interfazNegocioUsuario.ValidarUsuario(user.usuario.ToString());
+                //ARQ.BASE - OBTENGO ID DEL USER SI EXISTE
                 resultadoLogin = interfazNegocioUsuario.Login(user.usuario, user.Password);
             }
 
-            //EVALUO EL RESULTDO DEL LOGIN | SI ES 0 NO EXISTE -> CREAR USUARIO
-            if (resultadoLogin != 0)
+            //EVALUO EL RESULTDO DEL LOGIN | SI ES 0 Y NO EXISTE USUARIO -> CREAR USUARIO
+            if (resultadoLogin != 0 && existeUsuario == true)
             {
                 SingletonConeccion coneccion = SingletonConeccion.Instance;
 
@@ -121,16 +125,60 @@ namespace MotoPoint
                 }
                 else
                 {
-                    //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
-                    Session["loginEstado"] = 1;
-                    FormsAuthentication.SignOut();
-                    Response.Redirect("login.aspx");
+                    //ARQ.BASE - ESTADO INACTIVO PERO USUARIO EXISTENTE | A: INACTIVO POR FALTA DE PAGO O B:INACTIVO POR REITENTO
+                    int cantidadReitento = interfazNegocioUsuario.ConsultarReIntento(usuario.IdUsuario);
+
+                    if (cantidadReitento == 3)
+                    {
+                        //ARQ.BASE - CASO B: USUARIO INACTIVO POR BLOQUEADO MAX RE-INTENTOS
+                        crearTicketUsuarioNoRegistrado();
+                        Response.Redirect("blockUsuario.aspx");
+                    }
+                    else
+                    {
+                        //ARQ.BASE - CASO A: USUARIO INACTIVO FALTA DE PAGO
+                        crearTicketUsuarioNoRegistrado();
+                        Session["UsuarioId"] = usuario.IdUsuario;
+                        Response.Redirect("avisoPago.aspx");
+                    }
+                }
+            }
+            else if (resultadoLogin == 0 && existeUsuario == true)
+            {
+                Usuario oUsuario = new Usuario();
+                //ARQ.BASE - BUSCO EL USUARIO POR NOMBRE DE USUARIO Y COBRO REITENTO
+                oUsuario = interfazNegocioUsuario.ObtenerUsuarioPorNombreUsuario(txtUsuario.Text);
+
+                //ARQ.BASE - VERIFICO SI TIENE MENOS DE 3 INTENTOS | SINO ESTA BLOQUEADO POR RE-INTENTOS
+                int cantidadReitento = interfazNegocioUsuario.ConsultarReIntento(oUsuario.IdUsuario);
+
+                if (cantidadReitento < 2)
+                {
+                    //ARQ.BASE - BUSCAR SI TIENE INSERTADO REGISTRO EN REITENTOS
+                    interfazNegocioUsuario.ContarReIntento(oUsuario.IdUsuario, cantidadReitento);
+                }else if (cantidadReitento == 2)
+                {
+                    //ARQ.BASE - TERCER REITENTO
+                    interfazNegocioUsuario.ContarReIntento(oUsuario.IdUsuario, cantidadReitento);
+                    //ARQ.BASE - INACTIVAR USUARIO
+                    oUsuario.Estado = "Inactivo";
+                    interfazNegocioUsuario.ActualizarUsuarioEstado(oUsuario);
+                }
+                else
+                {
+                    //ARQ.BASE - USUARIO BLOQUEADO MAX RE-INTENTOS
+                    crearTicketUsuarioNoRegistrado();
+                    Response.Redirect("blockUsuario.aspx");
                 }
             }
             //MOSTRAR PANTALLA LOGIN | AVISAR USER INVALIDO
             Session["loginEstado"] = 1;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void linkRegistrarse_Click(object sender, EventArgs e)
         {
             //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
@@ -141,7 +189,11 @@ namespace MotoPoint
 
             Response.Redirect("registro.aspx");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void linkRecordar_Click(object sender, EventArgs e)
         {
             //CREO UN TK TEMPORAL PARA UN USUARIO INVALIDO O NO REGISTRADO
@@ -152,7 +204,9 @@ namespace MotoPoint
 
             Response.Redirect("recordar.aspx");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         protected void crearTicketUsuarioNoRegistrado()
         {
             // CREO UN TICKET DE AUTENTIFICACION Y LO ENCRYPTO: ARQ.BASE.WEBSEGURITY
@@ -202,7 +256,5 @@ namespace MotoPoint
                 }
             }
         }
-
-
     }
 }

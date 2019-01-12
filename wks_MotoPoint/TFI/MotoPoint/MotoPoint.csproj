@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="actividades.aspx" />
+    <Content Include="avisoPago.aspx" />
     <Content Include="ayuda.aspx" />
     <Content Include="blockUsuario.aspx" />
     <Content Include="Content\actividades\CHASCO.jpg" />
@@ -83,6 +84,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\css\blockUsuario.css" />
     <Content Include="Content\css\ayuda.css" />
+    <Content Include="Content\css\avisopago.css" />
     <Content Include="Content\css\perfil.css" />
     <Content Include="Content\css\recordar.css" />
     <Content Include="Content\css\abmusuario.css" />
@@ -95,6 +97,7 @@
     <Content Include="Content\expertos\EXP3.jpeg" />
     <Content Include="Content\expertos\EXP4.jpeg" />
     <Content Include="Content\image\BlockUsuario.png" />
+    <Content Include="Content\image\faltaPago.svg" />
     <Content Include="Content\image\feedback_negativo.svg" />
     <Content Include="Content\image\feedback_positivo.svg" />
     <Content Include="Content\image\idCardBronce.svg" />
@@ -189,6 +192,13 @@
     </Compile>
     <Compile Include="actividades.aspx.designer.cs">
       <DependentUpon>actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="avisoPago.aspx.cs">
+      <DependentUpon>avisoPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="avisoPago.aspx.designer.cs">
+      <DependentUpon>avisoPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="ayuda.aspx.cs">
       <DependentUpon>ayuda.aspx</DependentUpon>

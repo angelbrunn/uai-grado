@@ -50,6 +50,12 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
+        ENTIDAD.Usuario ObtenerUsuarioPorNombreUsuario(string usuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         bool ValidarExistenciaUsuario(string usuario);
         /// <summary>
         /// 
@@ -90,6 +96,12 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        bool ValidarUsuario(string usuario);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         bool VerificarConsistenciaUsuarioBD();
         /// <summary>
@@ -97,5 +109,17 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         bool EnviarRecordatorioPassword(string destinatarioEmail, string contraseñaRecuperada);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        int ConsultarReIntento(string idUsuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        int ContarReIntento(string idUsuario, int cantidadReitento);
     }
 }

@@ -188,6 +188,46 @@ namespace SIS.DATOS
         /// 
         /// </summary>
         /// <param name="usuario"></param>
+        /// <returns></returns>
+        public Usuario ObtenerUsuarioPorNombreUsuario(string usuario)
+        {
+            Usuario oUsuario = new Usuario();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmdSelect = new SqlCommand("SELECT * FROM tbl_Usuario WHERE usuario=@Usuario", con);
+                    cmdSelect.Parameters.AddWithValue("@Usuario", usuario);
+                    using (var reader = cmdSelect.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            oUsuario.IdUsuario = reader["idUsuario"].ToString();
+                            oUsuario.NombreApellido = reader["nombreApellido"].ToString();
+                            oUsuario.FechaNacimiento = reader["fechaNacimiento"].ToString();
+                            oUsuario.CategoriaMoto = reader["categoriaMoto"].ToString();
+                            oUsuario.usuario = reader["usuario"].ToString();
+                            oUsuario.Password = reader["password"].ToString();
+                            oUsuario.Email = reader["email"].ToString();
+                            oUsuario.Estado = reader["estado"].ToString();
+                            oUsuario.DigitoVerificador = reader["digitoVerificador"].ToString();
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    con.Close();
+                    throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                }
+                return oUsuario;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
         /// <param name="password"></param>
         /// <returns></returns>
         public int ValidarUsuario(string usuario, string password)
@@ -212,7 +252,36 @@ namespace SIS.DATOS
                         throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
-            }   
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        public int ConsultarReIntento(string idUsuario)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT reitento FROM ConeccionesUsuario WHERE idUsuario=@IdUsuario", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        resultadoValidacion = (int)cmdSelect.ExecuteScalar();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
             return resultadoValidacion;
         }
         /// <summary>
@@ -286,11 +355,11 @@ namespace SIS.DATOS
                 //VALIDO EXISTENCIA
                 if (!(resultadoValidacion == 0))
                 {
-                    resultado = false;
+                    resultado = true;
                 }
                 else
                 {
-                    resultado = true;
+                    resultado = false;
                 }
             }
             return resultado;
@@ -438,7 +507,7 @@ namespace SIS.DATOS
         /// </summary>
         /// <param name="listaUsuarios"></param>
         public void InsertarUsuario(List<Usuario> listaUsuarios)
-        {         
+        {
             String conexString = ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString;
             string sqlQuery = "SELECT * FROM tbl_Usuario";
             SqlDataAdapter adaptador = new SqlDataAdapter(sqlQuery, conexString);
@@ -509,7 +578,100 @@ namespace SIS.DATOS
             {
                 throw new EXCEPCIONES.DALExcepcion(ex.Message);
             }
-                            
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <returns></returns>
+        public int ValidarConeccionesConteo(string idUsuario)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT [idUsuario] FROM ConeccionesUsuario WHERE idUsuario=@IdUsuario", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        resultadoValidacion = (int)cmdSelect.ExecuteScalar();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        resultadoValidacion = 0;
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdUsuario"></param>
+        /// <param name="cantidadReitento"></param>
+        /// <param name="fecha"></param>
+        /// <returns></returns>
+        public int UpdateConeccionesConteo(string IdUsuario, string cantidadReitento, string fecha)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE ConeccionesUsuario SET reitento=@Reitento, fecha=@Fecha WHERE idUsuario=@IdUsuario", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdUpdate.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+                        cmdUpdate.Parameters.AddWithValue("@reitento", cantidadReitento);
+                        cmdUpdate.Parameters.AddWithValue("@Fecha", fecha);
+                        resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdUsuario"></param>
+        /// <param name="cantidadReitento"></param>
+        /// <param name="fecha"></param>
+        public int InsertarConeccionesConteo(string IdUsuario, string cantidadReitento, string fecha)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO ConeccionesUsuario (IdUsuario,CantidadReitento,Fecha) VALUES (@IdUsuario,@CantidadReitento,@Fecha)", con))
+                {
+                    cmdInsert.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+                    cmdInsert.Parameters.AddWithValue("@CantidadReitento", cantidadReitento);
+                    cmdInsert.Parameters.AddWithValue("@Fecha", fecha);
+
+                    try
+                    {
+                        con.Open();
+                        resultadoValidacion = (int)cmdInsert.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
         }
     }
 }
