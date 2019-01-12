@@ -12,7 +12,15 @@
     <form id="frmPerfil" runat="server">
         <div class="container">
             <div id="imagenAvatar">
-                <img src="Content/image/perfilBronce.svg" alt="Avatar" class="avatar" />
+                <div id="idPerfilBronce">
+                    <img src="Content/image/perfilBronce.svg" alt="Avatar" class="avatar" />
+                </div>
+                <div id="idPerfilPlata">
+                    <img src="Content/image/perfilPlata.svg" alt="Avatar" class="avatar" />
+                </div>
+                <div id="idPerfilOro">
+                    <img src="Content/image/perfilOro.svg" alt="Avatar" class="avatar" />
+                </div>
             </div>
             <div id="datosAvatar" class="form-group">
                 <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control"></asp:TextBox>
@@ -55,6 +63,7 @@
 <script>
     var estadoUsuario = '<%= Session["estadoUsuario"].ToString() %>';
     var guardadoEstado = '<%= Session["guardadoEstado"].ToString() %>';
+    var guardadoPerfil = '<%= Session["guardadoPerfil"].ToString() %>';
     if (estadoUsuario == 1) {
         document.getElementById("estadoUsuarioActivo").style.display = 'inline';
         document.getElementById("estadoUsuarioInactivo").style.display = 'none';
@@ -67,5 +76,12 @@
     }
     if (guardadoEstado == 2) {
         alert("La actualizacion ha fallado!");
+    }
+    if (guardadoPerfil == 3) {
+        document.getElementById("idPerfilBronce").style.display = 'inline';
+    } else if (guardadoPerfil == 2) {
+        document.getElementById("idPerfilPlata").style.display = 'inline';
+    } else if (guardadoPerfil == 1) {
+        document.getElementById("idPerfilOro").style.display = 'inline';
     }
 </script>

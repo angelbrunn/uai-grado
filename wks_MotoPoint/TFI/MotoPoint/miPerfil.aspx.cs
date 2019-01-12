@@ -15,6 +15,10 @@ namespace MotoPoint
         /// </summary>
         SIS.BUSINESS.INegMultiUsuario interfazNegocioUsuario = new SIS.BUSINESS.NegMultiUsuario();
         /// <summary>
+        /// Instancio la clase de arquitectura base | MultiUsuario
+        /// </summary>
+        SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
+        /// <summary>
         /// 
         /// </summary>
         private INegBitacora interfazNegocioBitacora = new NegBitacora();
@@ -29,6 +33,7 @@ namespace MotoPoint
             {
                 Session["guardadoEstado"] = 0;
                 string idUsuario = Session["UsuarioId"].ToString();
+                Session["guardadoPerfil"] = interfazNegocio.ObtenerCodigoMembresiaUsuario(idUsuario);
                 SIS.ENTIDAD.Usuario oUsuario = new SIS.ENTIDAD.Usuario();
                 oUsuario = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
                 //GUARDO EL ESTADO DEL USUARIO
