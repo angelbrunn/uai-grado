@@ -47,6 +47,7 @@
     <Compile Include="DALGrupoPermiso.cs" />
     <Compile Include="DALMembresia.cs" />
     <Compile Include="DALMultiIdioma.cs" />
+    <Compile Include="DALNegocio.cs" />
     <Compile Include="DALPago.cs" />
     <Compile Include="DALPermiso.cs" />
     <Compile Include="DALUsuario.cs" />

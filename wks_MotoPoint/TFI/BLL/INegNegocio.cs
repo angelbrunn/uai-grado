@@ -83,5 +83,35 @@ namespace SIS.BUSINESS
         /// <param name="descripcion"></param>
         /// <returns></returns>
         bool EnviarConsulta(string nombreApellido, string email, string tipo, string descripcion);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        bool ConsultarLikeUsuario(string codRuta, string usuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        int RegistrarLikeUsuario(int idRutaLikeUsuario, string codRuta, string usuario, string fechaRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <returns></returns>
+        string ObtenerFechaRuta(string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        int ObtenerIdLikeUsuario();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        void RegistrarVotacionRuta(string codRuta);
     }
 }

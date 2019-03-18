@@ -335,5 +335,114 @@ namespace SIS.BUSINESS
 
             return estado;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public bool ConsultarLikeUsuario(string codRuta, string usuario)
+        {
+            bool resultado = true;
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                resultado = oDalNegocio.ValidarLikeUsuario(codRuta,usuario);
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+
+            return resultado;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <param name="usuario"></param>
+        /// <param name="fechaRuta"></param>
+        /// <returns></returns>
+        public int RegistrarLikeUsuario(int idRutaLikeUsuario, string codRuta, string usuario, string fechaRuta)
+        {
+            int resultadoValidacion = 0;
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.RegistrarLike(idRutaLikeUsuario, codRuta, usuario, fechaRuta);
+            }
+            catch (Exception ex)
+            {
+                resultadoValidacion = 1;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <returns></returns>
+        public string ObtenerFechaRuta(string codRuta)
+        {
+            string fecha = "";
+            string user = "UI";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                fecha = oDalNegocio.ObtenerFecha(codRuta);
+            }
+            catch (Exception ex)
+            {
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(user, oExBLL);
+            }
+            return fecha;
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int ObtenerIdLikeUsuario()
+        {
+            int ultimoIdUsuario = 1;
+
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+            ultimoIdUsuario = oDalNegocio.ObtenerUltimoIdLikeUsuario();
+
+            if (ultimoIdUsuario == 0)
+                ultimoIdUsuario = 1;
+
+            ultimoIdUsuario = ultimoIdUsuario + 1;
+
+            return ultimoIdUsuario;
+        }
+
+
+        public void RegistrarVotacionRuta(string codRuta)
+        {
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.RegistrarVotacion(codRuta);
+            }
+            catch (Exception ex)
+            {
+                
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+        }
+
+
+
+
     }
 }

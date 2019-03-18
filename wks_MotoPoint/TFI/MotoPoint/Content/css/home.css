@@ -1,5 +1,4 @@
-﻿@charset "utf-8";
-
+﻿
 .frmHomeBody {
     overflow-x: hidden;
 }
@@ -22,6 +21,24 @@
 #contenedorRutas {
     margin: 0 10px;
     overflow-x: hidden;
+}
+
+.btnLike {
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #333;
+    width: 40%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    float: left;
+    margin-top: 35px;
 }
 
 /*ESTILOS VISTA: OFERTAS*/

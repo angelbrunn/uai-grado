@@ -11,6 +11,10 @@ namespace MotoPoint
     public partial class rutas : System.Web.UI.Page
     {
         /// <summary>
+        /// Instancio la clase de negocio motopoint | interfazNegocio
+        /// </summary>
+        SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
@@ -36,6 +40,50 @@ namespace MotoPoint
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnLikeMDQ_Click(object sender, EventArgs e)
+        {
+            // TODO: guardar un like con usuario conectado
+            // VALIAR QUE EL USUARIO NO HAYA ECHO LIKE ANTES
+            // GUARDAR UNA LISTA CON LOS USUARIOS PARA DICHO EVENTO
+
+            //RESULTADO POR DEFAULT | TRUE YA EXISTE LIKE OR FALSE AUN NO TIENE LIKE
+            Boolean resultado = true;
+
+            //OBTENGO USUARIO LOGEADO
+            string usuario = Session["loginUsuario"].ToString();
+
+            //OBTENGO LA RUTA SELECCIONADA
+            string codRuta = ((((Button)sender).ID).ToString()).Substring(7, 3);
+
+            //CONSULTO LIKE DE USUARIO CORRIENTE
+            resultado = interfazNegocio.ConsultarLikeUsuario(codRuta, usuario);
+
+            //REGISTRO LIKE PARA ESTE USUARIO
+            if (resultado == false)
+            {
+                //OBTENGO FECHA DEL EVENTO
+                string fechaRuta = interfazNegocio.ObtenerFechaRuta(codRuta);
+
+                int idRutaLikeUsuario = interfazNegocio.ObtenerIdLikeUsuario();
+
+                //REGISTRO LIKE DEL USUARIO
+                interfazNegocio.RegistrarLikeUsuario(idRutaLikeUsuario, codRuta, usuario, fechaRuta);
+
+                //REGISTRO VOTACION DEL USUARIO
+                interfazNegocio.RegistrarVotacionRuta(codRuta);
+            }
+            else
+            {
+                //USUARIO YA VOTO ESTA RUTA
+            }
+
+
         }
     }
 }
