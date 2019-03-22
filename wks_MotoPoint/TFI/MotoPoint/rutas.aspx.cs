@@ -48,10 +48,6 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnLikeMDQ_Click(object sender, EventArgs e)
         {
-            // TODO: guardar un like con usuario conectado
-            // VALIAR QUE EL USUARIO NO HAYA ECHO LIKE ANTES
-            // GUARDAR UNA LISTA CON LOS USUARIOS PARA DICHO EVENTO
-
             //RESULTADO POR DEFAULT | TRUE YA EXISTE LIKE OR FALSE AUN NO TIENE LIKE
             Boolean resultado = true;
 
@@ -59,7 +55,7 @@ namespace MotoPoint
             string usuario = Session["loginUsuario"].ToString();
 
             //OBTENGO LA RUTA SELECCIONADA
-            string codRuta = ((((Button)sender).ID).ToString()).Substring(7, 3);
+            string codRuta = ((((Button)sender).ID).ToString()).Substring(7, 5);
 
             //CONSULTO LIKE DE USUARIO CORRIENTE
             resultado = interfazNegocio.ConsultarLikeUsuario(codRuta, usuario);
@@ -81,9 +77,9 @@ namespace MotoPoint
             else
             {
                 //USUARIO YA VOTO ESTA RUTA
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModal()", true);
+
             }
-
-
         }
     }
 }

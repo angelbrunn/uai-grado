@@ -24,7 +24,7 @@ namespace SIS.DATOS
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
 
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT usuario FROM RutaUsuario WHERE codRuta=@CodRuta AND usuario=@Usuario", con))
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id FROM RutaUsuario WHERE codRuta=@CodRuta AND usuario=@Usuario", con))
                 {
                     try
                     {
@@ -147,7 +147,6 @@ namespace SIS.DATOS
             int resultadoValidacion = 0;
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                //TEST EL INCREMENTO DE VOTACION
                 using (SqlCommand cmdUpdate = new SqlCommand("UPDATE RutaVotacion SET cantUsuario=CantUsuario+1 WHERE codRuta=@CodRuta", con))
                 {
                     try

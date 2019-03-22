@@ -348,7 +348,7 @@ namespace SIS.BUSINESS
             try
             {
                 DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
-                resultado = oDalNegocio.ValidarLikeUsuario(codRuta,usuario);
+                resultado = oDalNegocio.ValidarLikeUsuario(codRuta, usuario);
             }
             catch (Exception ex)
             {
@@ -423,8 +423,10 @@ namespace SIS.BUSINESS
 
             return ultimoIdUsuario;
         }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
         public void RegistrarVotacionRuta(string codRuta)
         {
             string IdSys = "BLL";
@@ -435,14 +437,10 @@ namespace SIS.BUSINESS
             }
             catch (Exception ex)
             {
-                
+
                 EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
                 interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
             }
         }
-
-
-
-
     }
 }

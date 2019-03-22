@@ -13,39 +13,39 @@ namespace MotoPoint {
     public partial class rutas {
         
         /// <summary>
-        /// Control btnLikeMDQ.
+        /// Control btnLikeMDQ01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLikeMDQ;
+        protected global::System.Web.UI.WebControls.Button btnLikeMDQ01;
         
         /// <summary>
-        /// Control btnLikeAtalaya.
+        /// Control btnLikeATA01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLikeAtalaya;
+        protected global::System.Web.UI.WebControls.Button btnLikeATA01;
         
         /// <summary>
-        /// Control btnLikeCordoba.
+        /// Control btnLikeCOD01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLikeCordoba;
+        protected global::System.Web.UI.WebControls.Button btnLikeCOD01;
         
         /// <summary>
-        /// Control btnLikeRosario.
+        /// Control btnLikeROS01.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLikeRosario;
+        protected global::System.Web.UI.WebControls.Button btnLikeROS01;
     }
 }

@@ -54,7 +54,7 @@ namespace SIS.BUSINESS
         /// <param name="destinatarioEmail"></param>
         /// <param name="estadoPago"></param>
         /// <returns></returns>
-        bool EnviarTicketConfirmacionPago(string idUsuario, int numeroOrden, string destinatarioEmail,string estadoPago);
+        bool EnviarTicketConfirmacionPago(string idUsuario, int numeroOrden, string destinatarioEmail, string estadoPago);
         /// <summary>
         /// 
         /// </summary>
