@@ -29,7 +29,7 @@
                     <br />
                     <br />
                     <p>
-                        <asp:Button ID="btnLikeATA01" class="btnLike" runat="server" Text="Like" />
+                        <asp:Button ID="btnLikeATA01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeATA01_Click" />
                     </p>
                 </div>
                 <div class="card-footer">
@@ -42,7 +42,7 @@
                     <h5 class="card-title">BS AS - CORDOBA</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p>
-                        <asp:Button ID="btnLikeCOD01" class="btnLike" runat="server" Text="Like" />
+                        <asp:Button ID="btnLikeCOD01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeCOD01_Click" />
                     </p>
                 </div>
                 <div class="card-footer">
@@ -55,7 +55,7 @@
                     <h5 class="card-title">BS AS - ROSARIO</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p>
-                        <asp:Button ID="btnLikeROS01" class="btnLike" runat="server" Text="Like" />
+                        <asp:Button ID="btnLikeROS01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeROS01_Click" />
                     </p>
                 </div>
                 <div class="card-footer">

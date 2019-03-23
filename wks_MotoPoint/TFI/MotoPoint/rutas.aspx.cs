@@ -48,6 +48,41 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnLikeMDQ_Click(object sender, EventArgs e)
         {
+            EvaluarLike(sender);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnLikeATA01_Click(object sender, EventArgs e)
+        {
+            EvaluarLike(sender);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnLikeCOD01_Click(object sender, EventArgs e)
+        {
+            EvaluarLike(sender);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnLikeROS01_Click(object sender, EventArgs e)
+        {
+            EvaluarLike(sender);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        protected void EvaluarLike(object sender)
+        {
             //RESULTADO POR DEFAULT | TRUE YA EXISTE LIKE OR FALSE AUN NO TIENE LIKE
             Boolean resultado = true;
 
@@ -66,6 +101,7 @@ namespace MotoPoint
                 //OBTENGO FECHA DEL EVENTO
                 string fechaRuta = interfazNegocio.ObtenerFechaRuta(codRuta);
 
+                //OBTENER ULTIMO ID RUTASUSUARIO
                 int idRutaLikeUsuario = interfazNegocio.ObtenerIdLikeUsuario();
 
                 //REGISTRO LIKE DEL USUARIO
