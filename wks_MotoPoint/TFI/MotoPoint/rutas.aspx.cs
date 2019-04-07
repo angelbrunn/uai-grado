@@ -254,6 +254,13 @@ namespace MotoPoint
             string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
 
             //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+            Ruta detalleRuta = new Ruta();
+            detalleRuta = interfazNegocio.ObtenerDetalleRuta(codRuta);
+
+            lblDetaDesde.Text = detalleRuta.Desde;
+            lblDetaHasta.Text = detalleRuta.Hasta;
+            lblDetaCantMin.Text = detalleRuta.MinMotos;
+            lblDetaCantMax.Text = detalleRuta.MaxMotos;
 
             //SHOW DETALLE
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
@@ -272,6 +279,13 @@ namespace MotoPoint
             string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
 
             //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+            Ruta detalleRuta = new Ruta();
+            detalleRuta = interfazNegocio.ObtenerDetalleRuta(codRuta);
+
+            lblDetaDesde.Text = detalleRuta.Desde;
+            lblDetaHasta.Text = detalleRuta.Hasta;
+            lblDetaCantMin.Text = detalleRuta.MinMotos;
+            lblDetaCantMax.Text = detalleRuta.MaxMotos;
 
             //SHOW DETALLE
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
@@ -290,6 +304,13 @@ namespace MotoPoint
             string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
 
             //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+            Ruta detalleRuta = new Ruta();
+            detalleRuta = interfazNegocio.ObtenerDetalleRuta(codRuta);
+
+            lblDetaDesde.Text = detalleRuta.Desde;
+            lblDetaHasta.Text = detalleRuta.Hasta;
+            lblDetaCantMin.Text = detalleRuta.MinMotos;
+            lblDetaCantMax.Text = detalleRuta.MaxMotos; 
 
             //SHOW DETALLE
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
@@ -308,6 +329,13 @@ namespace MotoPoint
             string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
 
             //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+            Ruta detalleRuta = new Ruta();
+            detalleRuta = interfazNegocio.ObtenerDetalleRuta(codRuta);
+
+            lblDetaDesde.Text = detalleRuta.Desde;
+            lblDetaHasta.Text = detalleRuta.Hasta;
+            lblDetaCantMin.Text = detalleRuta.MinMotos;
+            lblDetaCantMax.Text = detalleRuta.MaxMotos;
 
             //SHOW DETALLE
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);

@@ -44,6 +44,42 @@
         /// <summary>
         /// 
         /// </summary>
+        private string desdeField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Desde
+        {
+            get
+            {
+                return desdeField;
+            }
+            set
+            {
+                desdeField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private string hastaField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Hasta
+        {
+            get
+            {
+                return hastaField;
+            }
+            set
+            {
+                hastaField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string usuarioField;
         /// <summary>
         /// 

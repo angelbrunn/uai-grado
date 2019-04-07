@@ -332,26 +332,30 @@ namespace SIS.DATOS
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="codRuta"></param>
         /// <returns></returns>
-        public List<RutaVotacion> ObtenerDetalleRuta()
+        public Ruta ObtenerDetalleRuta(string codRuta)
         {
-            List<RutaVotacion> listadoEstadoVotaciones = new List<RutaVotacion>();
-
+            Ruta oDetalleRuta = new Ruta();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,estado FROM RutaVotacion", con))
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,codRuta,desde,hasta,minMotos,maxMotos,fecha FROM Ruta WHERE codRuta=@CodRuta", con))
                 {
                     try
                     {
                         con.Open();
+                        cmdSelect.Parameters.AddWithValue("@CodRuta", codRuta);
                         using (var reader = cmdSelect.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                RutaVotacion oEstadoVotacion = new RutaVotacion();
-                                oEstadoVotacion.CodRuta = reader["codRuta"].ToString();
-                                oEstadoVotacion.Estado = reader["estado"].ToString();
-                                listadoEstadoVotaciones.Add(oEstadoVotacion);
+                                oDetalleRuta.IdRuta = reader["id"].ToString();
+                                oDetalleRuta.CodRuta = reader["codRuta"].ToString();
+                                oDetalleRuta.Desde = reader["desde"].ToString();
+                                oDetalleRuta.Hasta = reader["hasta"].ToString();
+                                oDetalleRuta.MinMotos = reader["minMotos"].ToString();
+                                oDetalleRuta.MaxMotos = reader["maxMotos"].ToString();
+                                oDetalleRuta.Fecha = reader["fecha"].ToString();
                             }
                         }
                         con.Close();
@@ -362,7 +366,7 @@ namespace SIS.DATOS
                         throw new EXCEPCIONES.DALExcepcion(ex.Message);
                     }
                 }
-                return listadoEstadoVotaciones;
+                return oDetalleRuta;
             }
         }
     }

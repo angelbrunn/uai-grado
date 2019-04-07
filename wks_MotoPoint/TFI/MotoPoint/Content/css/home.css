@@ -29,6 +29,15 @@
     float: right;
 }
 
+.lblDetalle{
+    font-weight:bold;
+}
+
+.tituloDetalle {
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
 .btnLike {
     border-radius: 4px;
     font-family: "Roboto", sans-serif;

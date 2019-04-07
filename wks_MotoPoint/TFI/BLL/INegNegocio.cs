@@ -141,5 +141,10 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         List<RutaVotacion> EstadoVotacion();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Ruta ObtenerDetalleRuta(string codRuta);
     }
 }
