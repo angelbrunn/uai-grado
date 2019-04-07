@@ -505,5 +505,17 @@ namespace SIS.BUSINESS
             listadoDatosRuta = oDalNegocio.ObtenerDatosRutas();
             return listadoDatosRuta;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<RutaVotacion> EstadoVotacion()
+        {
+            List<RutaVotacion> listadoEstadoVotacion = new List<RutaVotacion>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoEstadoVotacion = oDalNegocio.ObtenerEstadoVotaciones();
+            return listadoEstadoVotacion;
+        }
     }
 }

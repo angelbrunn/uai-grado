@@ -136,5 +136,10 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         List<RutaVotacion> DatosRutas();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<RutaVotacion> EstadoVotacion();
     }
 }

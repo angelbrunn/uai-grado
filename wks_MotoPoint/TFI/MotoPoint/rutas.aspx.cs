@@ -46,6 +46,9 @@ namespace MotoPoint
                 //OBTENGO DATOS PRIMARIOS DE EL EVENTO
                 OtenerDatosRutas();
 
+                //EVALUAR ESTADO DE LAS VOTACIONES
+                EvaluarEstadoVotacion();
+
                 //VALIDO A CUALES EVENTOS LE HIZO LIKE EL USUARIO LOGEADO
                 EvaluarLikeUsuario(loginUsuario);
 
@@ -91,6 +94,80 @@ namespace MotoPoint
                 else if (enu.Current.CodRuta.ToString() == rROS)
                 {
                     btnLikeROS01.Text = "Unlike";
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void EvaluarEstadoVotacion()
+        {
+            List<RutaVotacion> listadoEstadoVotacion = new List<RutaVotacion>();
+            listadoEstadoVotacion = interfazNegocio.EstadoVotacion();
+
+            //EVALUO EL ESTADO DE LAS RUTAS
+            IEnumerator<RutaVotacion> enu = listadoEstadoVotacion.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                if (enu.Current.CodRuta.ToString() == rMDQ)
+                {
+                    if (enu.Current.Estado.ToString() == "ABIERTO")
+                    {
+                        btnLikeMDQ01.Enabled = true;
+                    }
+                    else
+                    {
+                        btnLikeMDQ01.CssClass = "btnLikeDisabled";
+                        btnLikeMDQ01.Enabled = false;
+                        lblMDQ01CantMotos.Text = "";
+                        lblMDQ01FechaLimite.Text = "";
+                        lblMDQ01Estado.Text = "cerrado";
+                    }
+                }
+                else if (enu.Current.CodRuta.ToString() == rATA)
+                {
+                    if (enu.Current.Estado.ToString() == "ABIERTO")
+                    {
+                        btnLikeATA01.Enabled = true;
+                    }
+                    else
+                    {
+                        btnLikeATA01.CssClass = "btnLikeDisabled";
+                        btnLikeATA01.Enabled = false;
+                        lblATA01CantMotos.Text = "";
+                        lblATA01FechaLimite.Text = "";
+                        lblATA01Estado.Text = "cerrado";
+                    }
+                }
+                else if (enu.Current.CodRuta.ToString() == rCOD)
+                {
+                    if (enu.Current.Estado.ToString() == "ABIERTO")
+                    {
+                        btnLikeCOD01.Enabled = true;
+                    }
+                    else
+                    {
+                        btnLikeCOD01.CssClass = "btnLikeDisabled";
+                        btnLikeCOD01.Enabled = false;
+                        lblCOD01CantMotos.Text = "";
+                        lblCOD01FechaLimite.Text = "";
+                        lblCOD01Estado.Text = "cerrado";
+                    }
+                }
+                else if (enu.Current.CodRuta.ToString() == rROS)
+                {
+                    if (enu.Current.Estado.ToString() == "ABIERTO")
+                    {
+                        btnLikeROS01.Enabled = true;
+                    }
+                    else
+                    {
+                        btnLikeROS01.CssClass = "btnLikeDisabled";
+                        btnLikeROS01.Enabled = false;
+                        lblROS01CantMotos.Text = "";
+                        lblROS01FechaLimite.Text = "";
+                        lblROS01Estado.Text = "cerrado";
+                    }
                 }
             }
         }
@@ -162,6 +239,97 @@ namespace MotoPoint
         protected void btnLikeROS01_Click(object sender, EventArgs e)
         {
             EvaluarLike(sender);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnDetaMDQ_Click(object sender, EventArgs e)
+        {
+            //INICIALIZO LOS ESTADOS DE LA RUTA
+            InicializarEstadoRuta();
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
+
+            //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnDetaATA_Click(object sender, EventArgs e)
+        {
+            //INICIALIZO LOS ESTADOS DE LA RUTA
+            InicializarEstadoRuta();
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
+
+            //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnDetaCOD_Click(object sender, EventArgs e)
+        {
+            //INICIALIZO LOS ESTADOS DE LA RUTA
+            InicializarEstadoRuta();
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
+
+            //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnDetaROS_Click(object sender, EventArgs e)
+        {
+            //INICIALIZO LOS ESTADOS DE LA RUTA
+            InicializarEstadoRuta();
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
+
+            //OBTENER DATOS DE LA RUTA - SHOW EN DIALOG
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalDetalle()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void InicializarEstadoRuta() {
+
+            lblMDQ01CantMotos.Text = "Motoqueros:";
+            lblMDQ01FechaLimite.Text = "Cierre:";
+
+            lblATA01CantMotos.Text = "Motoqueros:";
+            lblATA01FechaLimite.Text = "Cierre:";
+
+            lblCOD01CantMotos.Text = "Motoqueros:";
+            lblCOD01FechaLimite.Text = "Cierre:";
+
+            lblROS01CantMotos.Text = "Motoqueros:";
+            lblROS01FechaLimite.Text = "Cierre:";
+
+            OtenerDatosRutas();
         }
         /// <summary>
         /// 

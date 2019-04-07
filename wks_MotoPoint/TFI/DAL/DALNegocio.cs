@@ -293,5 +293,77 @@ namespace SIS.DATOS
                 return listadoDatosRutas;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<RutaVotacion> ObtenerEstadoVotaciones()
+        {
+            List<RutaVotacion> listadoEstadoVotaciones = new List<RutaVotacion>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,estado FROM RutaVotacion", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                RutaVotacion oEstadoVotacion = new RutaVotacion();
+                                oEstadoVotacion.CodRuta = reader["codRuta"].ToString();
+                                oEstadoVotacion.Estado = reader["estado"].ToString();
+                                listadoEstadoVotaciones.Add(oEstadoVotacion);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoEstadoVotaciones;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<RutaVotacion> ObtenerDetalleRuta()
+        {
+            List<RutaVotacion> listadoEstadoVotaciones = new List<RutaVotacion>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,estado FROM RutaVotacion", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                RutaVotacion oEstadoVotacion = new RutaVotacion();
+                                oEstadoVotacion.CodRuta = reader["codRuta"].ToString();
+                                oEstadoVotacion.Estado = reader["estado"].ToString();
+                                listadoEstadoVotaciones.Add(oEstadoVotacion);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoEstadoVotaciones;
+            }
+        }
     }
 }

@@ -13,6 +13,15 @@ namespace MotoPoint {
     public partial class rutas {
         
         /// <summary>
+        /// Control btnDetaMDQ01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDetaMDQ01;
+        
+        /// <summary>
         /// Control btnLikeMDQ01.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,24 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMDQ01FechaLimite;
+        
+        /// <summary>
+        /// Control lblMDQ01Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMDQ01Estado;
+        
+        /// <summary>
+        /// Control btnDetaATA01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDetaATA01;
         
         /// <summary>
         /// Control btnLikeATA01.
@@ -67,6 +94,24 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblATA01FechaLimite;
         
         /// <summary>
+        /// Control lblATA01Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblATA01Estado;
+        
+        /// <summary>
+        /// Control btnDetaCOD01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDetaCOD01;
+        
+        /// <summary>
         /// Control btnLikeCOD01.
         /// </summary>
         /// <remarks>
@@ -94,6 +139,24 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblCOD01FechaLimite;
         
         /// <summary>
+        /// Control lblCOD01Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCOD01Estado;
+        
+        /// <summary>
+        /// Control btnDetaROS01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnDetaROS01;
+        
+        /// <summary>
         /// Control btnLikeROS01.
         /// </summary>
         /// <remarks>
@@ -119,5 +182,14 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblROS01FechaLimite;
+        
+        /// <summary>
+        /// Control lblROS01Estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblROS01Estado;
     }
 }

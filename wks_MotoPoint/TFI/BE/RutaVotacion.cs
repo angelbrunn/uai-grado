@@ -98,6 +98,24 @@
         /// <summary>
         /// 
         /// </summary>
+        private string estadoField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Estado
+        {
+            get
+            {
+                return estadoField;
+            }
+            set
+            {
+                estadoField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string fechaLimiteField;
         /// <summary>
         /// 
