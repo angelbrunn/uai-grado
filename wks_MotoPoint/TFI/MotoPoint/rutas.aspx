@@ -11,29 +11,32 @@
                 <img class="card-img-top" src="Content/rutas/MDQ.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - MDQ</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <br />
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p>
                         <asp:Button ID="btnLikeMDQ01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeMDQ_Click" />
                     </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblMDQ01CantMotos" class="lblCantMotos" runat="server" Text="Motoqueros:"></asp:Label>
+                        <asp:Label ID="lblMDQ01FechaLimite" class="lblFechaCierre" runat="server" Text="Cierre:"></asp:Label>
+                    </small>
                 </div>
             </div>
             <div class="card">
                 <img class="card-img-top" src="Content/rutas/ATALAYA.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - ATALAYA</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <br />
-                    <br />
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p>
                         <asp:Button ID="btnLikeATA01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeATA01_Click" />
                     </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblATA01CantMotos" class="lblCantMotos" runat="server" Text="Motoqueros:"></asp:Label>
+                        <asp:Label ID="lblATA01FechaLimite" class="lblFechaCierre" runat="server" Text="Cierre:"></asp:Label>
+                    </small>
                 </div>
             </div>
             <div class="card">
@@ -46,7 +49,10 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblCOD01CantMotos" class="lblCantMotos" runat="server" Text="Motoqueros:"></asp:Label>
+                        <asp:Label ID="lblCOD01FechaLimite" class="lblFechaCierre" runat="server" Text="Cierre:"></asp:Label>
+                    </small>
                 </div>
             </div>
             <div class="card">
@@ -59,7 +65,10 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblROS01CantMotos" class="lblCantMotos" runat="server" Text="Motoqueros:"></asp:Label>
+                        <asp:Label ID="lblROS01FechaLimite" class="lblFechaCierre" runat="server" Text="Cierre:"></asp:Label>
+                    </small>
                 </div>
             </div>
         </div>

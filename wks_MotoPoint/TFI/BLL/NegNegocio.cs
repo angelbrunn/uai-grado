@@ -442,5 +442,68 @@ namespace SIS.BUSINESS
                 interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public List<Ruta> VotacionesUsuario(string usuario)
+        {
+            List<Ruta> listadoVotacionesUsuario = new List<Ruta>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoVotacionesUsuario = oDalNegocio.ObtenerVotacionesUsuario(usuario);
+            return listadoVotacionesUsuario;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        public void BorrarVotacionRutaUsuario(string usuario,string codRuta)
+        {
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.BorrarVotacion(usuario,codRuta);
+            }
+            catch (Exception ex)
+            {
+
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        public void DecrementarVotacionRuta(string codRuta)
+        {
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.DecrementarVotacion(codRuta);
+            }
+            catch (Exception ex)
+            {
+
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<RutaVotacion> DatosRutas()
+        {
+            List<RutaVotacion> listadoDatosRuta = new List<RutaVotacion>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoDatosRuta = oDalNegocio.ObtenerDatosRutas();
+            return listadoDatosRuta;
+        }
     }
 }

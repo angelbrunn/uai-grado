@@ -1,4 +1,5 @@
 ﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
 
 namespace SIS.BUSINESS
@@ -113,5 +114,27 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="codRuta"></param>
         void RegistrarVotacionRuta(string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        List<Ruta> VotacionesUsuario(string usuario);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="codRuta"></param>
+        void BorrarVotacionRutaUsuario(string usuario,string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        void DecrementarVotacionRuta(string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<RutaVotacion> DatosRutas();
     }
 }

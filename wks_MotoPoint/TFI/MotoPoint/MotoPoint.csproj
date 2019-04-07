@@ -109,6 +109,7 @@
     <Content Include="Content\image\perfilBronce.svg" />
     <Content Include="Content\image\perfilOro.svg" />
     <Content Include="Content\image\perfilPlata.svg" />
+    <Content Include="Content\image\supplier.svg" />
     <Content Include="Content\ofertas\ACA.jpg" />
     <Content Include="Content\ofertas\ATALAYA.png" />
     <Content Include="Content\ofertas\AUTOMOTORESDELSUR.png" />

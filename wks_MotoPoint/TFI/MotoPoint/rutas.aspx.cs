@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,22 @@ namespace MotoPoint
 {
     public partial class rutas : System.Web.UI.Page
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        String rMDQ = "MDQ01";
+        /// <summary>
+        /// 
+        /// </summary>
+        String rATA = "ATA01";
+        /// <summary>
+        /// 
+        /// </summary>
+        String rCOD = "COD01";
+        /// <summary>
+        /// 
+        /// </summary>
+        String rROS = "ROS01";
         /// <summary>
         /// Instancio la clase de negocio motopoint | interfazNegocio
         /// </summary>
@@ -26,6 +43,12 @@ namespace MotoPoint
                 string loginEstado = Session["loginEstado"].ToString();
                 string loginUsuario = Session["loginUsuario"].ToString();
 
+                //OBTENGO DATOS PRIMARIOS DE EL EVENTO
+                OtenerDatosRutas();
+
+                //VALIDO A CUALES EVENTOS LE HIZO LIKE EL USUARIO LOGEADO
+                EvaluarLikeUsuario(loginUsuario);
+
                 //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
                 if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
                 {
@@ -39,6 +62,69 @@ namespace MotoPoint
                 Session.Clear();
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        protected void EvaluarLikeUsuario(string usuario)
+        {
+            List<Ruta> listadoVotacionesUsuario = new List<Ruta>();
+            listadoVotacionesUsuario = interfazNegocio.VotacionesUsuario(usuario);
+
+            IEnumerator<Ruta> enu = listadoVotacionesUsuario.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                if (enu.Current.CodRuta.ToString() == rMDQ)
+                {
+                    btnLikeMDQ01.Text = "Unlike";
+                }
+                else if (enu.Current.CodRuta.ToString() == rATA)
+                {
+                    btnLikeATA01.Text = "Unlike";
+                }
+                else if (enu.Current.CodRuta.ToString() == rCOD)
+                {
+                    btnLikeCOD01.Text = "Unlike";
+                }
+                else if (enu.Current.CodRuta.ToString() == rROS)
+                {
+                    btnLikeROS01.Text = "Unlike";
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void OtenerDatosRutas()
+        {
+            List<RutaVotacion> listadoDatosRuta = new List<RutaVotacion>();
+            listadoDatosRuta = interfazNegocio.DatosRutas();
+
+            IEnumerator<RutaVotacion> enu = listadoDatosRuta.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                if (enu.Current.CodRuta.ToString() == rMDQ)
+                {
+                    lblMDQ01CantMotos.Text = lblMDQ01CantMotos.Text + " " + enu.Current.cantUsuario;
+                    lblMDQ01FechaLimite.Text = lblMDQ01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
+                }
+                else if (enu.Current.CodRuta.ToString() == rATA)
+                {
+                    lblATA01CantMotos.Text = lblATA01CantMotos.Text + " " + enu.Current.cantUsuario;
+                    lblATA01FechaLimite.Text = lblATA01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
+                }
+                else if (enu.Current.CodRuta.ToString() == rCOD)
+                {
+                    lblCOD01CantMotos.Text = lblCOD01CantMotos.Text + " " + enu.Current.cantUsuario;
+                    lblCOD01FechaLimite.Text = lblCOD01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
+                }
+                else if (enu.Current.CodRuta.ToString() == rROS)
+                {
+                    lblROS01CantMotos.Text = lblROS01CantMotos.Text + " " + enu.Current.cantUsuario;
+                    lblROS01FechaLimite.Text = lblROS01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
+                }
             }
         }
         /// <summary>
@@ -92,29 +178,47 @@ namespace MotoPoint
             //OBTENGO LA RUTA SELECCIONADA
             string codRuta = ((((Button)sender).ID).ToString()).Substring(7, 5);
 
+            //OBTENGO EL ESTADO LIKE|UNLIKE
+            string estadoBtn = ((((Button)sender).Text).ToString());
+
             //CONSULTO LIKE DE USUARIO CORRIENTE
             resultado = interfazNegocio.ConsultarLikeUsuario(codRuta, usuario);
 
             //REGISTRO LIKE PARA ESTE USUARIO
-            if (resultado == false)
+            if (estadoBtn == "Like")
             {
-                //OBTENGO FECHA DEL EVENTO
-                string fechaRuta = interfazNegocio.ObtenerFechaRuta(codRuta);
+                if (resultado == false)
+                {
+                    //OBTENGO FECHA DEL EVENTO
+                    string fechaRuta = interfazNegocio.ObtenerFechaRuta(codRuta);
 
-                //OBTENER ULTIMO ID RUTASUSUARIO
-                int idRutaLikeUsuario = interfazNegocio.ObtenerIdLikeUsuario();
+                    //OBTENER ULTIMO ID RUTASUSUARIO
+                    int idRutaLikeUsuario = interfazNegocio.ObtenerIdLikeUsuario();
 
-                //REGISTRO LIKE DEL USUARIO
-                interfazNegocio.RegistrarLikeUsuario(idRutaLikeUsuario, codRuta, usuario, fechaRuta);
+                    //REGISTRO LIKE DEL USUARIO
+                    interfazNegocio.RegistrarLikeUsuario(idRutaLikeUsuario, codRuta, usuario, fechaRuta);
 
-                //REGISTRO VOTACION DEL USUARIO
-                interfazNegocio.RegistrarVotacionRuta(codRuta);
+                    //REGISTRO VOTACION DEL USUARIO
+                    interfazNegocio.RegistrarVotacionRuta(codRuta);
+
+                    Response.Redirect(Request.RawUrl);
+                }
+                else
+                {
+                    //USUARIO YA VOTO ESTA RUTA | VALIDACION E AVISO
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModal()", true);
+
+                }
             }
-            else
+            else if (estadoBtn == "Unlike")
             {
-                //USUARIO YA VOTO ESTA RUTA
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModal()", true);
+                //DECREMENTAR VOTACION DE DICHA RUTA
+                interfazNegocio.DecrementarVotacionRuta(codRuta);
 
+                //BORRAR BOTACION DEL USUARIO PARA DICHA RUTA
+                interfazNegocio.BorrarVotacionRutaUsuario(usuario, codRuta);
+
+                Response.Redirect(Request.RawUrl);
             }
         }
     }

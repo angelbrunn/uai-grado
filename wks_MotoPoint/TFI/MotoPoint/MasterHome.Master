@@ -30,7 +30,7 @@
     <form id="frmHomeBody" runat="server" >
         <!-- INI - NAVEGADOR01 WEBAPP -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="eventos.aspx">LOGO</a>
+            <a class="navbar-brand" href="eventos.aspx"><img height="24" src="Content/image/supplier.svg" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -211,7 +211,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3" style="background: #ECEFEA;">
-            © 2018 Copyright:
+            © 2019 Copyright:
       <a href="https://motopoint.com.ar/" style="color: #FF8D00;">MotoPoint.com</a>
         </div>
         <!-- FIN - FOOTER DE LA WEBAPP -->

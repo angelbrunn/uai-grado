@@ -29,7 +29,7 @@
     text-transform: uppercase;
     outline: 0;
     background: #333;
-    width: 40%;
+    width: 43%;
     border: 0;
     padding: 15px;
     color: #FFFFFF;
@@ -39,6 +39,16 @@
     cursor: pointer;
     float: left;
     margin-top: 35px;
+}
+
+.lblCantMotos {
+    float: left;
+    color: green;
+}
+
+.lblFechaCierre {
+    float: right;
+    color: red
 }
 
 /*ESTILOS VISTA: OFERTAS*/

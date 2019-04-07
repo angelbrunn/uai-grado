@@ -49,6 +49,8 @@
     <Compile Include="PagoUsuario.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ruta.cs" />
+    <Compile Include="RutaVotacion.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioGrupo.cs" />
   </ItemGroup>

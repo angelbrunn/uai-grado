@@ -165,5 +165,133 @@ namespace SIS.DATOS
             }
             return resultadoValidacion;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public List<Ruta> ObtenerVotacionesUsuario(string usuario)
+        {
+            List<Ruta> listadoVotacionesUsuario = new List<Ruta>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta FROM RutaUsuario WHERE usuario=@Usuario", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@Usuario", usuario);
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Ruta oRuta = new Ruta();
+                                oRuta.CodRuta = reader["codRuta"].ToString();
+                                listadoVotacionesUsuario.Add(oRuta);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoVotacionesUsuario;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="codRuta"></param>
+        public void BorrarVotacion(string usuario, string codRuta)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdDelete = new SqlCommand("DELETE FROM [MotoPoint].[dbo].[RutaUsuario] WHERE usuario=@Usuario AND codRuta=@CodRuta", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdDelete.Parameters.AddWithValue("@Usuario", usuario);
+                        cmdDelete.Parameters.AddWithValue("@CodRuta", codRuta);
+                        cmdDelete.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        public int DecrementarVotacion(string codRuta)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE RutaVotacion SET cantUsuario=CantUsuario-1 WHERE codRuta=@CodRuta", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdUpdate.Parameters.AddWithValue("@CodRuta", codRuta);
+                        resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<RutaVotacion> ObtenerDatosRutas()
+        {
+            List<RutaVotacion> listadoDatosRutas = new List<RutaVotacion>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,cantUsuario,fechaLimite FROM RutaVotacion", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                RutaVotacion oRutaVotacion = new RutaVotacion();
+                                oRutaVotacion.CodRuta = reader["codRuta"].ToString();
+                                oRutaVotacion.cantUsuario = reader["cantUsuario"].ToString();
+                                oRutaVotacion.FechaLimite = reader["fechaLimite"].ToString();
+                                listadoDatosRutas.Add(oRutaVotacion);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoDatosRutas;
+            }
+        }
     }
 }
