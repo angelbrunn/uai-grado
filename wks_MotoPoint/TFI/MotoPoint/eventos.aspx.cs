@@ -22,6 +22,7 @@ namespace MotoPoint
                 string loginEstado = Session["loginEstado"].ToString();
                 string loginUsuario = Session["loginUsuario"].ToString();
 
+
                 //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
                 if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
                 {
