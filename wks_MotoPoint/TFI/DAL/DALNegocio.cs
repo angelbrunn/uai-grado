@@ -266,7 +266,7 @@ namespace SIS.DATOS
 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,cantUsuario,fechaLimite FROM RutaVotacion", con))
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT codRuta,cantUsuario,detalleRutaVotacion,fechaLimite FROM RutaVotacion", con))
                 {
                     try
                     {
@@ -278,6 +278,7 @@ namespace SIS.DATOS
                                 RutaVotacion oRutaVotacion = new RutaVotacion();
                                 oRutaVotacion.CodRuta = reader["codRuta"].ToString();
                                 oRutaVotacion.cantUsuario = reader["cantUsuario"].ToString();
+                                oRutaVotacion.DetalleRutaVotacion = reader["detalleRutaVotacion"].ToString();
                                 oRutaVotacion.FechaLimite = reader["fechaLimite"].ToString();
                                 listadoDatosRutas.Add(oRutaVotacion);
                             }
@@ -303,7 +304,7 @@ namespace SIS.DATOS
 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
             {
-                using (SqlCommand cmdSelect = new SqlCommand("SELECT TOP (6) [id],[codEvento],[desde],[hasta],[cantidadMinimaUsuarios],[cantidadActualUsuarios],[cantidadMaximaUsuarios],[estado],[fecha] FROM Evento WHERE estado='ABIERTO' ORDER BY [id] DESC", con))
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT TOP (6) [id],[codEvento],[desde],[hasta],[cantidadMinimaUsuarios],[cantidadActualUsuarios],[cantidadMaximaUsuarios],[estado],[detalleEvento],[fecha] FROM Evento WHERE estado='ABIERTO' ORDER BY [id] DESC", con))
                 {
                     try
                     {
@@ -321,6 +322,7 @@ namespace SIS.DATOS
                                 oEvento.ActualMotos = reader["cantidadActualUsuarios"].ToString();
                                 oEvento.MaxMotos = reader["cantidadMaximaUsuarios"].ToString();
                                 oEvento.Estado = reader["estado"].ToString();
+                                oEvento.DetalleEvento = reader["detalleEvento"].ToString();
                                 oEvento.Fecha = reader["fecha"].ToString();
                                 listadoDatosEventos.Add(oEvento);
                             }

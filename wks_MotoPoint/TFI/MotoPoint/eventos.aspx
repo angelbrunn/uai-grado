@@ -10,50 +10,84 @@
     <div id="contenedorEventos">
         <div class="card-deck">
 
-            <div id="Mapa1" class="card">
+            <div id="Mapa1" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map1" style="width: 100%; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 1 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento1" runat="server" /></h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento1" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento1" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
 
-            <div id="Mapa2" class="card">
+            <div id="Mapa2" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map2" style="width: 100%; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 2 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento2" runat="server" />
+                    </h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento2" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento2" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
 
-            <div id="weather" class="card">
+            <div id="weather" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div class="card-body">
-                    <h5 class="card-title">INFORMACION DEL CLIMA </h5>
+                    <div id="weatherTitle">
+                        <asp:Label ID="lblWeatherTitle" Text="Informacion del Clima" runat="server" />
+                    </div>
                     <div class="card-text">
-                         <div>
-                                <asp:Image ID="imgWeatherIcon" runat="server" />
-                                <asp:Label ID="lblCity_Country" runat="server" />
-                                <asp:Image ID="imgCountryFlag" runat="server" />
-                                <asp:Label ID="lblDescription" runat="server" />
-                            Humidity:
-                                <asp:Label ID="lblHumidity" runat="server" />
+                        <div id="dataWeatherHeader">
+                            [
+                            <asp:Label ID="lblWeatherHeaderCity" Text="Min" runat="server" />
+                            <asp:Label ID="lblWeatherHeaderTempMin" Text="Min" runat="server" />
+                            <asp:Label ID="lblWeatherHeaderTempMax" Text="Max" runat="server" />
+                            <asp:Label ID="lblWeatherHeaderTmp" Text="Tmp" runat="server" />
+                            <asp:Label ID="lblWeatherHeaderHum" Text="Hum (%)" runat="server" />
+                            ]
                         </div>
-                        <div>
-                            Temperature: (
-                            Min:
-                                <asp:Label ID="lblTempMin" runat="server" />
-                            Max:
-                                <asp:Label ID="lblTempMax" runat="server" />
-                            Dia:
-                                <asp:Label ID="lblTempDay" runat="server" />)
+                        <div id="dataWeatherBue">
+                            <asp:Image ID="imgCountryFlagBue" runat="server" />
+                            <asp:Label ID="lblCityBue" runat="server" />
+                            <asp:Label ID="lblBueTempMin" runat="server" />
+                            <asp:Label ID="lblBueTempMax" runat="server" />
+                            <asp:Label ID="lblBueTempDay" runat="server" />
+                            <asp:Label ID="lblBueHumidity" runat="server" />
+                            <asp:Image ID="imgWeatherIconBue" runat="server" />
+                        </div>
+
+                        <div id="dataWeatherCor">
+                            <asp:Image ID="imgCountryFlagMen" runat="server" />
+                            <asp:Label ID="lblCityCMen" runat="server" />
+                            <asp:Label ID="lblMenTempMin" runat="server" />
+                            <asp:Label ID="lblMenTempMax" runat="server" />
+                            <asp:Label ID="lblMenTempDay" runat="server" />
+                            <asp:Label ID="lblMenHumidity" runat="server" />
+                            <asp:Image ID="imgWeatherIconMen" runat="server" />
+                        </div>
+
+                        <div id="dataWeatherRos">
+                            <asp:Image ID="imgCountryFlagRos" runat="server" />
+                            <asp:Label ID="lblCityRos" runat="server" />
+                            <asp:Label ID="lblRosTempMin" runat="server" />
+                            <asp:Label ID="lblRosTempMax" runat="server" />
+                            <asp:Label ID="lblRosTempDay" runat="server" />
+                            <asp:Label ID="lblRosHumidity" runat="server" />
+                            <asp:Image ID="imgWeatherIconRos" runat="server" />
                         </div>
                     </div>
                 </div>
@@ -61,53 +95,77 @@
         </div>
         </br>
         <div class="card-deck">
-            <div id="Mapa3" class="card">
+            <div id="Mapa3" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map3" style="width: 100%; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 3 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento3" runat="server" />
+                    </h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento3" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento3" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
 
-            <div id="Mapa4" class="card">
+            <div id="Mapa4" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map4" style="width: 100%; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 4 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento4" runat="server" />
+                    </h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento4" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento4" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
 
-            <div id="Mapa5" class="card">
+            <div id="Mapa5" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map5" style="width: 345px; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 5 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento5" runat="server" />
+                    </h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento5" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento5" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
         </div>
         </br>
         <div class="card-deck">
-            <div id="Mapa6" class="card">
+            <div id="Mapa6" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div id="map6" style="width: 100%; height: 207px;"></div>
                 <div class="card-body">
 
-                    <h5 class="card-title">Evento 6 </h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">
+                        <asp:Label ID="lblCodigoEvento6" runat="server" />
+                    </h5>
+                    <p class="card-text">
+                        <asp:Label ID="lblDetalleEvento6" runat="server" />
+                    </p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">footer</small>
+                    <small class="text-muted">
+                        <asp:Label ID="lblFechaEvento6" class="lblFechaEvento" runat="server"></asp:Label>
+                    </small>
                 </div>
             </div>
         </div>

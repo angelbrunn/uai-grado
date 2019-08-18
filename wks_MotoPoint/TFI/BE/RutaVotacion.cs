@@ -116,6 +116,24 @@
         /// <summary>
         /// 
         /// </summary>
+        private string detalleRutaVotacionField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string DetalleRutaVotacion
+        {
+            get
+            {
+                return detalleRutaVotacionField;
+            }
+            set
+            {
+                detalleRutaVotacionField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string fechaLimiteField;
         /// <summary>
         /// 

@@ -64,6 +64,39 @@ namespace MotoPoint
                 string origen = "map" + i + "Origen";
                 string destino = "map" + i + "Destino";
                 string show = "map" + i + "Show";
+                switch (i)
+                {
+                    case 1:
+                        lblCodigoEvento1.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento1.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento1.Text = enu.Current.Fecha.ToString();
+                        break;
+                    case 2:
+                        lblCodigoEvento2.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento2.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento2.Text = enu.Current.Fecha.ToString();
+                        break;
+                    case 3:
+                        lblCodigoEvento3.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento3.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento3.Text = enu.Current.Fecha.ToString();
+                        break;
+                    case 4:
+                        lblCodigoEvento4.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento4.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento4.Text = enu.Current.Fecha.ToString();
+                        break;
+                    case 5:
+                        lblCodigoEvento5.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento5.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento5.Text = enu.Current.Fecha.ToString();
+                        break;
+                    case 6:
+                        lblCodigoEvento6.Text = "Evento " + enu.Current.CodEvento.ToString();
+                        lblDetalleEvento6.Text = enu.Current.DetalleEvento.ToString();
+                        lblFechaEvento6.Text = enu.Current.Fecha.ToString();
+                        break;
+                }
                 Session[origen] = enu.Current.Desde.ToString();
                 Session[destino] = enu.Current.Hasta.ToString();
                 Session[show] = 1;
@@ -83,68 +116,50 @@ namespace MotoPoint
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         protected void GetWeatherInfo()
         {
-            string city = "Buenos Aires,AR";
-            string appId = "5171e1f430812085869f09a6b14b57b6";
-            //string url = string.Format("http://api.openweathermap.org/data/2.5/forecast/daily?q={0}&units=metric&cnt=1&APPID={1}", city.Trim(), appId);
-
-            string url = "http://api.openweathermap.org/data/2.5/forecast?id=3435910&units=metric&cnt=1&APPID=5171e1f430812085869f09a6b14b57b6";
+            string urlbue = "http://api.openweathermap.org/data/2.5/forecast?id=3435910&units=metric&cnt=1&APPID=5171e1f430812085869f09a6b14b57b6";
+            string urlmen = "http://api.openweathermap.org/data/2.5/forecast?id=3844421&units=metric&cnt=1&APPID=5171e1f430812085869f09a6b14b57b6";
+            string urlros = "http://api.openweathermap.org/data/2.5/forecast?id=3838583&units=metric&cnt=1&APPID=5171e1f430812085869f09a6b14b57b6";
 
             using (WebClient client = new WebClient())
             {
-                string json = client.DownloadString(url);
+                string jsonBUE = client.DownloadString(urlbue);
+                string jsonMEN = client.DownloadString(urlmen);
+                string jsonROS = client.DownloadString(urlros);
 
-                WeatherInfo weatherInfo = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(json);
-                
-                lblCity_Country.Text = weatherInfo.city.name + "," + weatherInfo.city.country;
-                imgCountryFlag.ImageUrl = string.Format("http://openweathermap.org/images/flags/{0}.png", weatherInfo.city.country.ToLower());
-                lblDescription.Text = weatherInfo.list[0].weather[0].description;
-                imgWeatherIcon.ImageUrl = string.Format("http://openweathermap.org/img/w/{0}.png", weatherInfo.list[0].weather[0].icon);
+                WeatherInfo weatherInfoBUE = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(jsonBUE);
+                WeatherInfo weatherInfoMEN = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(jsonMEN);
+                WeatherInfo weatherInfoROS = (new JavaScriptSerializer()).Deserialize<WeatherInfo>(jsonROS);
 
-                lblTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp_min, 1));
-                lblTempDay.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp, 1));
-                lblTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfo.list[0].main.temp_max, 1));
-                lblHumidity.Text = weatherInfo.list[0].main.humidity.ToString();
-
+                //BUENOS AIRES
+                imgCountryFlagBue.ImageUrl = string.Format("http://openweathermap.org/images/flags/{0}.png", weatherInfoBUE.city.country.ToLower());
+                lblCityBue.Text = weatherInfoBUE.city.name;
+                lblBueTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfoBUE.list[0].main.temp_min, 1));
+                lblBueTempDay.Text = string.Format("{0}°С", Math.Round(weatherInfoBUE.list[0].main.temp, 1));
+                lblBueTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfoBUE.list[0].main.temp_max, 1));
+                lblBueHumidity.Text = weatherInfoBUE.list[0].main.humidity.ToString();
+                imgWeatherIconBue.ImageUrl = string.Format("http://openweathermap.org/img/w/{0}.png", weatherInfoBUE.list[0].weather[0].icon);
+                //MENDOZA
+                imgCountryFlagMen.ImageUrl = string.Format("http://openweathermap.org/images/flags/{0}.png", weatherInfoMEN.city.country.ToLower());
+                lblCityCMen.Text = weatherInfoMEN.city.name;
+                lblMenTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfoMEN.list[0].main.temp_min, 1));
+                lblMenTempDay.Text = string.Format("{0}°С", Math.Round(weatherInfoMEN.list[0].main.temp, 1));
+                lblMenTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfoMEN.list[0].main.temp_max, 1));
+                lblMenHumidity.Text = weatherInfoMEN.list[0].main.humidity.ToString();
+                imgWeatherIconMen.ImageUrl = string.Format("http://openweathermap.org/img/w/{0}.png", weatherInfoMEN.list[0].weather[0].icon);
+                //ROSARIO
+                imgCountryFlagRos.ImageUrl = string.Format("http://openweathermap.org/images/flags/{0}.png", weatherInfoROS.city.country.ToLower());
+                lblCityRos.Text = weatherInfoROS.city.name;
+                lblRosTempMin.Text = string.Format("{0}°С", Math.Round(weatherInfoROS.list[0].main.temp_min, 1));
+                lblRosTempDay.Text = string.Format("{0}°С", Math.Round(weatherInfoROS.list[0].main.temp, 1));
+                lblRosTempMax.Text = string.Format("{0}°С", Math.Round(weatherInfoROS.list[0].main.temp_max, 1));
+                lblRosHumidity.Text = weatherInfoROS.list[0].main.humidity.ToString();
+                imgWeatherIconRos.ImageUrl = string.Format("http://openweathermap.org/img/w/{0}.png", weatherInfoROS.list[0].weather[0].icon);
             }
-        }
-
-        public class WeatherInfo
-        {
-            public City city { get; set; }
-            public List<List> list { get; set; }
-        }
-
-        public class City
-        {
-            public string name { get; set; }
-            public string country { get; set; }
-        }
-
-        public class Main
-        {
-            public double temp { get; set; }
-            public double temp_min { get; set; }
-            public double temp_max { get; set; }
-            public double pressure { get; set; }
-            public double sea_level { get; set; }
-            public double grnd_level { get; set; }
-            public double humidity { get; set; }
-        }
-
-        public class Weather
-        {
-            public string description { get; set; }
-            public string icon { get; set; }
-        }
-
-        public class List
-        {
-            //public int humidity { get; set; }
-            public Main main { get; set; }
-            public List<Weather> weather { get; set; }
         }
     }
 }

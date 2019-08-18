@@ -13,6 +13,15 @@ namespace MotoPoint {
     public partial class rutas {
         
         /// <summary>
+        /// Control lblDetalleRutaVotacionMDQ.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleRutaVotacionMDQ;
+        
+        /// <summary>
         /// Control btnDetaMDQ01.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMDQ01Estado;
+        
+        /// <summary>
+        /// Control lblDetalleRutaVotacionATA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleRutaVotacionATA;
         
         /// <summary>
         /// Control btnDetaATA01.
@@ -103,6 +121,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblATA01Estado;
         
         /// <summary>
+        /// Control lblDetalleRutaVotacionCOR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleRutaVotacionCOR;
+        
+        /// <summary>
         /// Control btnDetaCOD01.
         /// </summary>
         /// <remarks>
@@ -146,6 +173,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCOD01Estado;
+        
+        /// <summary>
+        /// Control lblDetalleRutaVotacionROS.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleRutaVotacionROS;
         
         /// <summary>
         /// Control btnDetaROS01.
@@ -193,6 +229,24 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblROS01Estado;
         
         /// <summary>
+        /// Control lblDetalleEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetalleEvento;
+        
+        /// <summary>
+        /// Control lblLugarSalida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLugarSalida;
+        
+        /// <summary>
         /// Control lblDetaDesde.
         /// </summary>
         /// <remarks>
@@ -200,6 +254,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDetaDesde;
+        
+        /// <summary>
+        /// Control lblLugarLlegada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLugarLlegada;
         
         /// <summary>
         /// Control lblDetaHasta.
@@ -211,6 +274,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblDetaHasta;
         
         /// <summary>
+        /// Control lblCantMinMont.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCantMinMont;
+        
+        /// <summary>
         /// Control lblDetaCantMin.
         /// </summary>
         /// <remarks>
@@ -220,6 +292,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblDetaCantMin;
         
         /// <summary>
+        /// Control lblCantMaxMont.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCantMaxMont;
+        
+        /// <summary>
         /// Control lblDetaCantMax.
         /// </summary>
         /// <remarks>
@@ -227,5 +308,14 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDetaCantMax;
+        
+        /// <summary>
+        /// Control lblNotificacionEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotificacionEvento;
     }
 }

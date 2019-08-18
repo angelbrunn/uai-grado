@@ -11,7 +11,7 @@
                 <img class="card-img-top" src="Content/rutas/MDQ.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - MDQ </h5>
-                    <p class="card-text">Disfruta del clásicos en moto turismo de la Argentina, Partimos como siempre desde nuestro famus point de encuentro la <strong> YPF de Ruta Panamericana 3802</strong> (también ACA) desde las <strong>7 a las 9 check, 9.30 Go!</strong></p><span><asp:ImageButton id="btnDetaMDQ01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaMDQ_Click" /></span>
+                    <p class="card-text"><asp:Label ID="lblDetalleRutaVotacionMDQ" runat="server"></asp:Label></p><span><asp:ImageButton id="btnDetaMDQ01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaMDQ_Click" /></span>
                     <p>
                         <asp:Button ID="btnLikeMDQ01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeMDQ_Click" />
                     </p>
@@ -28,7 +28,7 @@
                 <img class="card-img-top" src="Content/rutas/ATALAYA.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - ATALAYA</h5>
-                    <p class="card-text">Aquí otro de los clásicos en moto turismo,Sin alejarte de tanto de casa.Partimos como siempre desde nuestro famus point de encuentro la <strong> YPF de Ruta Panamericana 3802</strong> desde las <strong>7 a las 9 check, 9.30 Go!</strong></p><span><asp:ImageButton id="btnDetaATA01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaATA_Click" /></span>
+                    <p class="card-text"><asp:Label ID="lblDetalleRutaVotacionATA" runat="server"></asp:Label></p><span><asp:ImageButton id="btnDetaATA01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaATA_Click" /></span>
                     <p>
                         <asp:Button ID="btnLikeATA01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeATA01_Click" />
                     </p>
@@ -45,7 +45,7 @@
                 <img class="card-img-top" src="Content/rutas/CORDOBA.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - CORDOBA</h5>
-                    <p class="card-text">Viaja al interior de tu país,con uno de los paisajes mas hermosos.Partimos como siempre desde nuestro famus point de encuentro la <strong> YPF de Ruta Panamericana 3802</strong> desde las <strong>7 a las 9 check, 9.30 Go!</strong></p><span><asp:ImageButton id="btnDetaCOD01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaCOD_Click" /></span>
+                    <p class="card-text"><asp:Label ID="lblDetalleRutaVotacionCOR" runat="server"></asp:Label></p><span><asp:ImageButton id="btnDetaCOD01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaCOD_Click" /></span>
                     <p>
                         <asp:Button ID="btnLikeCOD01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeCOD01_Click" />
                     </p>
@@ -62,7 +62,7 @@
                 <img class="card-img-top" src="Content/rutas/ROS.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - ROSARIO</h5>
-                    <p class="card-text">Que mejor manera de conocer el monumento a la bandera.Recorriendo paisajes sobre la ruta 9,desde nuestro famus point de encuentro la <strong> YPF de Ruta Panamericana 3802</strong> desde las <strong>7 a las 9 check, 9.30 Go!</strong></p><span><asp:ImageButton id="btnDetaROS01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaROS_Click" /></span>
+                    <p class="card-text"><asp:Label ID="lblDetalleRutaVotacionROS" runat="server"></asp:Label></p><span><asp:ImageButton id="btnDetaROS01" class="detalleIcon" runat="server" imageUrl="~/Content/image/rutaDetalle.svg" onClick ="btnDetaROS_Click" /></span>
                     <p>
                         <asp:Button ID="btnLikeROS01" class="btnLike" runat="server" Text="Like" OnClick="btnLikeROS01_Click" />
                     </p>
@@ -107,14 +107,14 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="tituloDetalle">Detalle del evento:</div>
+                    <div class="tituloDetalle"><asp:Label ID="lblDetalleEvento"  Text="Detalle del evento:" runat="server"></asp:Label></div>
                     <br />
-                    <div>Lugar de Salida: <span><asp:Label ID="lblDetaDesde" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
-                    <div>Lugar de Llegada: <span><asp:Label ID="lblDetaHasta" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
-                    <div>Cantidad Minima de motoqueros: <span><asp:Label ID="lblDetaCantMin" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
-                    <div>Cantidad Maxima de motoqueros: <span><asp:Label ID="lblDetaCantMax" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
+                    <div><asp:Label ID="lblLugarSalida"  Text="Lugar de Salida: " runat="server"></asp:Label><span><asp:Label ID="lblDetaDesde" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
+                    <div><asp:Label ID="lblLugarLlegada"  Text="Lugar de Llegada: " runat="server"></asp:Label><span><asp:Label ID="lblDetaHasta" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
+                    <div><asp:Label ID="lblCantMinMont"  Text="Cantidad Minima de motoqueros: " runat="server"></asp:Label><span><asp:Label ID="lblDetaCantMin" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
+                    <div><asp:Label ID="lblCantMaxMont"  Text="Cantidad Maxima de motoqueros: " runat="server"></asp:Label><span><asp:Label ID="lblDetaCantMax" class="lblDetalle" runat="server" Text=""></asp:Label></span></div>
                     <br />
-                    <p>Como siempre cuando se llegue al cupo minimo de la ruta se lanzara el evento, lugar de salida y horario seran enviados via Email!</p>
+                    <p><asp:Label ID="lblNotificacionEvento"  Text="Como siempre cuando se llegue al cupo minimo de la ruta se lanzara el evento, lugar de salida y horario seran enviados via Email!" runat="server"></asp:Label></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

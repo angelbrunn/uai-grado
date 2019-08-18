@@ -149,6 +149,24 @@
         /// <summary>
         /// 
         /// </summary>
+        private string detalleEventoField;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string DetalleEvento
+        {
+            get
+            {
+                return detalleEventoField;
+            }
+            set
+            {
+                detalleEventoField = value;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private string fechaField;
         /// <summary>
         /// 

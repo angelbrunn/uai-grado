@@ -29,8 +29,8 @@
     float: right;
 }
 
-.lblDetalle{
-    font-weight:bold;
+.lblDetalle {
+    font-weight: bold;
 }
 
 .tituloDetalle {
@@ -108,5 +108,47 @@
 /*ESTILOS VISTA: EVENTOS*/
 #contenedorEventos {
     margin: 0 10px;
+    padding: 0px 15px;
     overflow-x: hidden;
+}
+
+#weatherTitle {
+    font-size: 22px;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+#dataWeatherHeader {
+    font-size: 16px;
+    text-align: center;
+}
+
+#dataWeatherBue {
+    font-size: 14px;
+    text-align: center;
+}
+
+#dataWeatherCor {
+    font-size: 14px;
+    text-align: center;
+}
+
+#dataWeatherRos {
+    font-size: 14px;
+    text-align: center;
+}
+
+.lblFechaEvento {
+    float: right;
+    color: #04dc04;
+}
+
+#dataWeatherHeader {
+    border-style: none none dotted;
+    border-width: 1px;
+    margin: 5px 0 5px 0;
+    padding: 10px;
 }
