@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="GrupoPermiso.cs" />
     <Compile Include="CategoriaMoto.cs" />

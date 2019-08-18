@@ -509,6 +509,18 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
+        public List<Evento> DatosEventos()
+        {
+            List<Evento> listadoDatosEventos = new List<Evento>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoDatosEventos = oDalNegocio.ObtenerDatosEventos();
+            return listadoDatosEventos;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<RutaVotacion> EstadoVotacion()
         {
             List<RutaVotacion> listadoEstadoVotacion = new List<RutaVotacion>();

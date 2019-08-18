@@ -297,6 +297,49 @@ namespace SIS.DATOS
         /// 
         /// </summary>
         /// <returns></returns>
+        public List<Evento> ObtenerDatosEventos()
+        {
+            List<Evento> listadoDatosEventos = new List<Evento>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT TOP (6) [id],[codEvento],[desde],[hasta],[cantidadMinimaUsuarios],[cantidadActualUsuarios],[cantidadMaximaUsuarios],[estado],[fecha] FROM Evento WHERE estado='ABIERTO' ORDER BY [id] DESC", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Evento oEvento = new Evento();
+                                oEvento.IdEvento = reader["id"].ToString();
+                                oEvento.CodEvento = reader["codEvento"].ToString();
+                                oEvento.Desde = reader["desde"].ToString();
+                                oEvento.Hasta = reader["hasta"].ToString();
+                                oEvento.MinMotos = reader["cantidadMinimaUsuarios"].ToString();
+                                oEvento.ActualMotos = reader["cantidadActualUsuarios"].ToString();
+                                oEvento.MaxMotos = reader["cantidadMaximaUsuarios"].ToString();
+                                oEvento.Estado = reader["estado"].ToString();
+                                oEvento.Fecha = reader["fecha"].ToString();
+                                listadoDatosEventos.Add(oEvento);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoDatosEventos;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<RutaVotacion> ObtenerEstadoVotaciones()
         {
             List<RutaVotacion> listadoEstadoVotaciones = new List<RutaVotacion>();

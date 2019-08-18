@@ -140,6 +140,11 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <returns></returns>
+        List<Evento> DatosEventos();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<RutaVotacion> EstadoVotacion();
         /// <summary>
         /// 
