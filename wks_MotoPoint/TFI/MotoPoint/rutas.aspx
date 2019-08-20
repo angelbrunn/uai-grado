@@ -7,7 +7,7 @@
 <asp:Content ID="MasterContenidoRutas" ContentPlaceHolderID="body" runat="server">
     <div id="contenedorRutas">
         <div class="card-deck">
-            <div class="card">
+            <div class="card" style="box-shadow: 10px 10px 5px grey;">
                 <img class="card-img-top" src="Content/rutas/MDQ.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - MDQ </h5>
@@ -24,7 +24,7 @@
                     </small>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="box-shadow: 10px 10px 5px grey;">
                 <img class="card-img-top" src="Content/rutas/ATALAYA.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - ATALAYA</h5>
@@ -41,7 +41,7 @@
                     </small>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="box-shadow: 10px 10px 5px grey;">
                 <img class="card-img-top" src="Content/rutas/CORDOBA.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - CORDOBA</h5>
@@ -58,7 +58,7 @@
                     </small>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="box-shadow: 10px 10px 5px grey;">
                 <img class="card-img-top" src="Content/rutas/ROS.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">BS AS - ROSARIO</h5>
