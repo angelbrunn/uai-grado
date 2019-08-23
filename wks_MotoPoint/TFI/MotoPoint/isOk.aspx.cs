@@ -31,7 +31,14 @@ namespace MotoPoint
             }
             else
             {
-                Response.Redirect("eventos.aspx");
+                string isCompraActividad = Session["CompraActividad"].ToString();
+                if (isCompraActividad == "0")
+                {
+                    Response.Redirect("eventos.aspx");
+                }else if (isCompraActividad == "1")
+                {
+                    Response.Redirect("actividades.aspx");
+                }
             }
         }
         /// <summary>
@@ -41,7 +48,15 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("eventos.aspx");
+            string isCompraActividad = Session["CompraActividad"].ToString();
+            if (isCompraActividad == "0")
+            {
+                Response.Redirect("eventos.aspx");
+            }
+            else if (isCompraActividad == "1")
+            {
+                Response.Redirect("actividades.aspx");
+            }
         }
     }
 }

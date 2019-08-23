@@ -78,6 +78,7 @@ namespace MotoPoint
             Session["codigoMembresia"] = "3";
             Session["tipoMembresia"] = "BRONCE";
             Session["registroEstado"] = 0;
+            Session["CompraActividad"] = 0;
             Response.Redirect("membresiaspago.aspx");
         }
         /// <summary>
@@ -97,6 +98,7 @@ namespace MotoPoint
             Session["tipoMembresia"] = "PLATA";
             Session["codigoMembresia"] = "2";
             Session["registroEstado"] = 0;
+            Session["CompraActividad"] = 0;
             Response.Redirect("membresiaspago.aspx");
         }
         /// <summary>
@@ -116,6 +118,7 @@ namespace MotoPoint
             Session["tipoMembresia"] = "ORO";
             Session["codigoMembresia"] = "1";
             Session["registroEstado"] = 0;
+            Session["CompraActividad"] = 0;
             Response.Redirect("membresiaspago.aspx");
         }
     }

@@ -295,9 +295,15 @@ namespace MotoPoint
         {
 
             //GO TO COMPRAR
-           int valorCompra = Int32.Parse(lblResultSumatoria.Text);
+            Session["CompraActividad"] = 1;
+            Session["CompraMonto"] = Int32.Parse(lblResultSumatoria.Text);
+            string idUsuario = Session["UsuarioId"].ToString();
+            Session["IdMembresia"] = interfazNegocio.ObtenerCodigoMembresiaUsuario(idUsuario).ToString();
 
-
+            if (Session["CompraMonto"].ToString() != "0")
+            {
+                Response.Redirect("membresiaspago.aspx");
+            }
         }
         /// <summary>
         /// 

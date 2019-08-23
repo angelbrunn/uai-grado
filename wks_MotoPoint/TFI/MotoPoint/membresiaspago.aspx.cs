@@ -52,12 +52,22 @@ namespace MotoPoint
         {
             if (Session["UsuarioId"] != null && Session["IdMembresia"] != null)
             {
-                idMembresia = Session["IdMembresia"].ToString();
-                idUsuario = Session["UsuarioId"].ToString();
-                precioMembresia = Session["valorMembresia"].ToString();
-                tipoMembresia = Session["tipoMembresia"].ToString();
-                codigoMembresia = Session["codigoMembresia"].ToString();
-                txtMontoPagar.Text = precioMembresia;
+                string isCompraActividad = Session["CompraActividad"].ToString();
+                if (isCompraActividad == "0")
+                {
+                    idMembresia = Session["IdMembresia"].ToString();
+                    idUsuario = Session["UsuarioId"].ToString();
+                    precioMembresia = Session["valorMembresia"].ToString();
+                    tipoMembresia = Session["tipoMembresia"].ToString();
+                    codigoMembresia = Session["codigoMembresia"].ToString();
+                    txtMontoPagar.Text = precioMembresia;
+                }
+                else if (isCompraActividad == "1")
+                {
+                    Session["registroEstado"] = 0;
+                    idUsuario = Session["UsuarioId"].ToString();
+                    txtMontoPagar.Text = Session["CompraMonto"].ToString();
+                }
             }
             else
             {
@@ -84,48 +94,91 @@ namespace MotoPoint
 
             resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
 
-            if (resultadoPago == true)
+            string isCompraActividad = Session["CompraActividad"].ToString();
+
+
+            if (isCompraActividad == "0")
             {
-                // NEGOCIO - ACTIVAR USUARIO CUANDO EL PAGO SE REALIZA DE FORMA CORRECTA
-                Usuario oUsuaio = new Usuario();
-                oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
-                oUsuaio.Estado = "Activo";
-                interfazNegocioUsuario.ActualizarUsuarioEstado(oUsuaio);
-                // NEGOCIO - ACTUALIZAR PAGOUSUARIOS, IDUSUARIO,NOMBREAPELLIDO,DESCRIPCION,NUMERO DE ORDEN,MONTO,FECHA
-                string estadoPago = "";
-                string descipcion = "PAGO DE MEMBRESIA " + tipoMembresia;
-                string monto = Session["valorMembresia"].ToString();
-                int numeroOrden = interfazNegocio.RegistrarPagoUsuario(oUsuaio.IdUsuario, oUsuaio.NombreApellido, descipcion, monto);
-                // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
-                if (numeroOrden != 1)
+                if (resultadoPago == true)
                 {
-                    estadoPago = "PAGO REGISTRADO CORRECTAMENTE!";
+                    // NEGOCIO - ACTIVAR USUARIO CUANDO EL PAGO SE REALIZA DE FORMA CORRECTA
+                    Usuario oUsuaio = new Usuario();
+                    oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
+                    oUsuaio.Estado = "Activo";
+                    interfazNegocioUsuario.ActualizarUsuarioEstado(oUsuaio);
+                    // NEGOCIO - ACTUALIZAR PAGOUSUARIOS, IDUSUARIO,NOMBREAPELLIDO,DESCRIPCION,NUMERO DE ORDEN,MONTO,FECHA
+                    string estadoPago = "";
+                    string descipcion = "PAGO DE MEMBRESIA " + tipoMembresia;
+                    string monto = Session["valorMembresia"].ToString();
+                    int numeroOrden = interfazNegocio.RegistrarPagoUsuario(oUsuaio.IdUsuario, oUsuaio.NombreApellido, descipcion, monto);
+                    // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
+                    if (numeroOrden != 1)
+                    {
+                        estadoPago = "PAGO REGISTRADO CORRECTAMENTE!";
+                    }
+                    else
+                    {
+                        estadoPago = "FALLO AL REGISTRAR EL PAGO!";
+                    }
+                    // NEGOCIO - LE EMBIAMOS POR EMAIL EN EL BODY COMO SI FUERA UN TK
+                    interfazNegocio.EnviarTicketConfirmacionPago(oUsuaio.IdUsuario, numeroOrden, oUsuaio.Email, estadoPago);
+                    // NEGOCIO - INSERTO MEMBRESIAUSUARIO SI ES NUEVO | SI EXISTE LO ACTUALIZO
+                    int codigoMembresiaUsuario = interfazNegocio.ObtenerCodigoMembresiaUsuario(oUsuaio.IdUsuario);
+                    if (codigoMembresiaUsuario == 0)
+                    {
+                        // NEGOCIO - codigoMembresiaUsuario == 0 ENTONCES NUEVO USUARIO - INSERTO
+                        interfazNegocio.RegistrarMembresiaUsuario(oUsuaio.IdUsuario, codigoMembresia);
+                    }
+                    else
+                    {
+                        //NEGOCIO - codigoMembresiaUsuario != 0 ENTONCES USUARIO YA EXISTE ACTUALIZO SU MEMBRESIA
+                        interfazNegocio.ActualizarMembresiaUsuario(oUsuaio.IdUsuario, codigoMembresia);
+                    }
+                    resultadoPago = false;
+                    Response.Redirect("isOk.aspx");
                 }
                 else
                 {
-                    estadoPago = "FALLO AL REGISTRAR EL PAGO!";
+                    resultadoPago = false;
+                    Response.Redirect("isError.aspx");
                 }
-                // NEGOCIO - LE EMBIAMOS POR EMAIL EN EL BODY COMO SI FUERA UN TK
-                interfazNegocio.EnviarTicketConfirmacionPago(oUsuaio.IdUsuario, numeroOrden, oUsuaio.Email, estadoPago);
-                // NEGOCIO - INSERTO MEMBRESIAUSUARIO SI ES NUEVO | SI EXISTE LO ACTUALIZO
-                int codigoMembresiaUsuario = interfazNegocio.ObtenerCodigoMembresiaUsuario(oUsuaio.IdUsuario);
-                if (codigoMembresiaUsuario == 0)
-                {
-                    // NEGOCIO - codigoMembresiaUsuario == 0 ENTONCES NUEVO USUARIO - INSERTO
-                    interfazNegocio.RegistrarMembresiaUsuario(oUsuaio.IdUsuario, codigoMembresia);
-                }
-                else
-                {
-                    //NEGOCIO - codigoMembresiaUsuario != 0 ENTONCES USUARIO YA EXISTE ACTUALIZO SU MEMBRESIA
-                    interfazNegocio.ActualizarMembresiaUsuario(oUsuaio.IdUsuario, codigoMembresia);
-                }
-                resultadoPago = false;
-                Response.Redirect("isOk.aspx");
+                //ENTRO A PAGAR LAS ACTIVIADES
             }
-            else
+            else if (isCompraActividad == "1")
             {
-                resultadoPago = false;
-                Response.Redirect("isError.aspx");
+                //PAGO ACTIVIDADES | REGISTRO DE PAGO OK
+                if (resultadoPago == true)
+                {
+                    Usuario oUsuaio = new Usuario();
+                    oUsuaio = interfazNegocioUsuario.ObtenerUsuario(System.Convert.ToInt16(idUsuario));
+
+                    string estadoPago = "";
+                    string descipcion = "ACTIVIDADES";
+                    string monto = Session["CompraMonto"].ToString();
+
+                    int numeroOrden = interfazNegocio.RegistrarPagoUsuario(oUsuaio.IdUsuario, oUsuaio.NombreApellido, descipcion, monto);
+
+                    // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
+                    if (numeroOrden != 1)
+                    {
+                        estadoPago = "PAGO REGISTRADO CORRECTAMENTE!";
+                    }
+                    else
+                    {
+                        estadoPago = "FALLO EL PAGO!";
+                    }
+
+                    // NEGOCIO - LE EMBIAMOS POR EMAIL EN EL BODY COMO SI FUERA UN TK
+                    interfazNegocio.EnviarTicketConfirmacionPago(oUsuaio.IdUsuario, numeroOrden, oUsuaio.Email, estadoPago);
+
+                    resultadoPago = false;
+                    Response.Redirect("isOk.aspx");
+                }
+                else
+                {
+                    resultadoPago = false;
+                    Response.Redirect("isError.aspx");
+                }
             }
         }
     }
