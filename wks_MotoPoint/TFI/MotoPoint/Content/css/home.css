@@ -57,6 +57,21 @@
     margin-top: 35px;
 }
 
+.btnVer {
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #333;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
 .btnLikeDisabled {
     border-radius: 4px;
     font-family: "Roboto", sans-serif;
@@ -103,6 +118,7 @@
 /*ESTILOS VISTA: ACTIVIDADES*/
 #contenedorActividades {
     margin: 0 10px;
+    padding: 15px 15px;
     overflow-x: hidden;
 }
 

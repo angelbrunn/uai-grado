@@ -19,8 +19,10 @@
                 <div class="card my-3">
                     <img src="Content/image/idCardBronce.svg" class="card-img-top" />
                     <div class="card-body">
-                        <h4 class="card-title">Membresia Bronce</h4>
-                        <p class="card-text">Aca viene las descripcion del plan bronce.</p>
+                        <h4 class="card-title">
+                            <asp:Label ID="lblMembresiaBronce" Text="Membresia Bronce" runat="server"></asp:Label></h4>
+                        <p class="card-text">
+                            <asp:Label ID="lblDescMembresiaBronce" Text="Aca viene las descripcion del plan bronce." runat="server"></asp:Label></p>
                         <asp:Label ID="lblPrecioBronce" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">
@@ -30,8 +32,10 @@
                 <div class="card my-3">
                     <img src="Content/image/idCardPlata.svg" class="card-img-top" />
                     <div class="card-body">
-                        <h4 class="card-title">Membresia Plata</h4>
-                        <p class="card-text">Aca viene las descripcion del plan plata.</p>
+                        <h4 class="card-title">
+                            <asp:Label ID="lblMembresiaPlata" Text="Membresia Plata" runat="server"></asp:Label></h4>
+                        <p class="card-text">
+                            <asp:Label ID="lblDescMembresiaPlata" Text="Aca viene las descripcion del plan plata." runat="server"></asp:Label></p>
                         <asp:Label ID="lblPrecioPlata" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">
@@ -41,8 +45,10 @@
                 <div class="card my-3">
                     <img src="Content/image/idCardOro.svg" class="card-img-top" />
                     <div class="card-body">
-                        <h4 class="card-title">Membresia Oro</h4>
-                        <p class="card-text">Aca viene las descripcion del plan oro.</p>
+                        <h4 class="card-title">
+                            <asp:Label ID="lblMembresiaOro" Text="Membresia Oro" runat="server"></asp:Label></h4>
+                        <p class="card-text">
+                            <asp:Label ID="lblDescMembresiaOro" Text="Aca viene las descripcion del plan oro." runat="server"></asp:Label></p>
                         <asp:Label ID="lblPrecioOro" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">

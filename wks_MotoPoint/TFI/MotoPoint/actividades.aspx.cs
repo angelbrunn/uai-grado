@@ -37,5 +37,73 @@ namespace MotoPoint
                 Response.Redirect("login.aspx");
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnActivROS01_Click(object sender, EventArgs e)
+        {
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = "ROS01";
+
+            //OBTENER ACTIVIDADES PARA ROSARIO - SHOW EN DIALOG
+
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalActividad()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnActivCHS01_Click(object sender, EventArgs e)
+        {
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = "CHS01";
+
+            //OBTENER ACTIVIDADES PARA ROSARIO - SHOW EN DIALOG
+
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalActividad()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnActivMDQ01_Click(object sender, EventArgs e)
+        {
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = "MDQ01";
+
+            //OBTENER ACTIVIDADES PARA ROSARIO - SHOW EN DIALOG
+
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalActividad()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnActivCOR01_Click(object sender, EventArgs e)
+        {
+
+            //OBTENGO LA RUTA A BUSCAR DEALLE
+            string codRuta = "COR01";
+
+            //OBTENER ACTIVIDADES PARA ROSARIO - SHOW EN DIALOG
+
+
+            //SHOW DETALLE
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalActividad()", true);
+        }
     }
 }
