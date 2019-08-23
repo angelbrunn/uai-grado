@@ -85,6 +85,7 @@
     <Content Include="Content\css\blockUsuario.css" />
     <Content Include="Content\css\ayuda.css" />
     <Content Include="Content\css\avisopago.css" />
+    <Content Include="Content\image\bill.svg" />
     <Content Include="Content\image\rutaDetalle.svg" />
     <Content Include="Content\css\perfil.css" />
     <Content Include="Content\css\recordar.css" />
@@ -110,6 +111,7 @@
     <Content Include="Content\image\perfilBronce.svg" />
     <Content Include="Content\image\perfilOro.svg" />
     <Content Include="Content\image\perfilPlata.svg" />
+    <Content Include="Content\image\shopping-bag.svg" />
     <Content Include="Content\image\supplier.svg" />
     <Content Include="Content\ofertas\ACA.jpg" />
     <Content Include="Content\ofertas\ATALAYA.png" />

@@ -414,5 +414,84 @@ namespace SIS.DATOS
                 return oDetalleRuta;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <returns></returns>
+        public Actividad ObtenerActividad(string codRuta)
+        {
+            Actividad oActividad = new Actividad();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,codRuta,titulo,descripcion,codAct FROM Actividad WHERE codRuta=@CodRuta", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@CodRuta", codRuta);
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                oActividad.IdActividad = reader["id"].ToString();
+                                oActividad.CodRuta = reader["codRuta"].ToString();
+                                oActividad.TituloActividad = reader["titulo"].ToString();
+                                oActividad.Descripcion = reader["descripcion"].ToString();
+                                oActividad.CodAct = reader["codAct"].ToString();
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return oActividad;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CodAct"></param>
+        /// <returns></returns>
+        public List<ActividadPrecio> ObtenerPrecioActividades(string CodAct)
+        {
+            List<ActividadPrecio> listadoActividadPrecio = new List<ActividadPrecio>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,codAct,tituloActividad,descripcion,precio FROM ActividadPrecio WHERE codAct=@CodAct", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@CodAct", CodAct);
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ActividadPrecio oActividadPrecio = new ActividadPrecio();
+                                oActividadPrecio.IdActividadPrecio = reader["id"].ToString();
+                                oActividadPrecio.CodAct = reader["codAct"].ToString();
+                                oActividadPrecio.TituloActividad = reader["tituloActividad"].ToString();
+                                oActividadPrecio.Descripcion = reader["descripcion"].ToString();
+                                oActividadPrecio.Precio = reader["precio"].ToString();
+                                listadoActividadPrecio.Add(oActividadPrecio);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoActividadPrecio;
+            }
+        }
     }
 }

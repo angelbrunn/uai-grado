@@ -151,5 +151,15 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         Ruta ObtenerDetalleRuta(string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Actividad ObtenerActividad(string codRuta);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<ActividadPrecio> ObtenerPrecioActividades(string CodAct);
     }
 }

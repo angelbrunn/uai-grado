@@ -121,93 +121,165 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Button btnDetalleActROS01;
         
         /// <summary>
-        /// Control lblDetalleActividades.
+        /// Control lblListActiv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetalleActividades;
+        protected global::System.Web.UI.WebControls.Label lblListActiv;
         
         /// <summary>
-        /// Control lblLugarSalida.
+        /// Control lblListDeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLugarSalida;
+        protected global::System.Web.UI.WebControls.Label lblListDeta;
         
         /// <summary>
-        /// Control lblDetaDesde.
+        /// Control chkAct1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetaDesde;
+        protected global::System.Web.UI.WebControls.CheckBox chkAct1;
         
         /// <summary>
-        /// Control lblLugarLlegada.
+        /// Control lblAct1Precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLugarLlegada;
+        protected global::System.Web.UI.WebControls.Label lblAct1Precio;
         
         /// <summary>
-        /// Control lblDetaHasta.
+        /// Control imgAct1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetaHasta;
+        protected global::System.Web.UI.WebControls.ImageButton imgAct1;
         
         /// <summary>
-        /// Control lblCantMinMont.
+        /// Control chkAct2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantMinMont;
+        protected global::System.Web.UI.WebControls.CheckBox chkAct2;
         
         /// <summary>
-        /// Control lblDetaCantMin.
+        /// Control lblAct2Precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetaCantMin;
+        protected global::System.Web.UI.WebControls.Label lblAct2Precio;
         
         /// <summary>
-        /// Control lblCantMaxMont.
+        /// Control imgAct2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantMaxMont;
+        protected global::System.Web.UI.WebControls.ImageButton imgAct2;
         
         /// <summary>
-        /// Control lblDetaCantMax.
+        /// Control chkAct3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetaCantMax;
+        protected global::System.Web.UI.WebControls.CheckBox chkAct3;
         
         /// <summary>
-        /// Control lblNotificacionEvento.
+        /// Control lblAct3Precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotificacionEvento;
+        protected global::System.Web.UI.WebControls.Label lblAct3Precio;
+        
+        /// <summary>
+        /// Control imgAct3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAct3;
+        
+        /// <summary>
+        /// Control chkAct4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAct4;
+        
+        /// <summary>
+        /// Control lblAct4Precio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAct4Precio;
+        
+        /// <summary>
+        /// Control imgAct4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAct4;
+        
+        /// <summary>
+        /// Control lblActResult.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblActResult;
+        
+        /// <summary>
+        /// Control lblResultSumatoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultSumatoria;
+        
+        /// <summary>
+        /// Control btnCerrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrar;
+        
+        /// <summary>
+        /// Control imgComprar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgComprar;
     }
 }

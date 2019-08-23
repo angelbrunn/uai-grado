@@ -542,5 +542,30 @@ namespace SIS.BUSINESS
             detalleRuta = oDalNegocio.ObtenerDetalleRuta(codRuta);
             return detalleRuta;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<ActividadPrecio> ObtenerPrecioActividades(string CodAct)
+        {
+            List<ActividadPrecio> listadoActividadPrecio = new List<ActividadPrecio>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoActividadPrecio = oDalNegocio.ObtenerPrecioActividades(CodAct);
+            return listadoActividadPrecio;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codRuta"></param>
+        /// <returns></returns>
+        public Actividad ObtenerActividad(string codRuta)
+        {
+            Actividad detalleActividad = new Actividad();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            detalleActividad = oDalNegocio.ObtenerActividad(codRuta);
+            return detalleActividad;
+        }
     }
 }
