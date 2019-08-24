@@ -567,5 +567,81 @@ namespace SIS.BUSINESS
             detalleActividad = oDalNegocio.ObtenerActividad(codRuta);
             return detalleActividad;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Ofertas> ObtenerOfertas()
+        {
+            List<Ofertas> listadoOfertas = new List<Ofertas>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoOfertas = oDalNegocio.ObteneOfetasDisponibles();
+            return listadoOfertas;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreApellido"></param>
+        /// <param name="emailExperto"></param>
+        /// <param name="email"></param>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
+        public bool EnviarConsultaExperto(string nombreApellido, string emailExperto, string email, string descripcion)
+        {
+            bool estado = false;
+            string IdSys = "SYS";
+            string contacService = emailExperto;
+
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("motopointserviciocontacto@gmail.com");
+            mail.To.Add(contacService);
+
+            mail.Subject = "Sistema de Experto - MOTOPOINT";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("                           MOTOPOINT                                     ");
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("USUARIO NOMBRE Y APELLIDO: " + nombreApellido);
+            sb.AppendLine("USUARIO EMAIL: " + email);
+            sb.AppendLine("-------------------------------------------------------------------------");
+            sb.AppendLine("MENSAJE DE LA CONSULTA: " + descripcion);
+            sb.AppendLine("-------------------------------------------------------------------------");
+            mail.Body = sb.ToString(); ;
+
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
+            SmtpServer.EnableSsl = true;
+
+            try
+            {
+                estado = true;
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                estado = false;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
+
+            return estado;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codExp"></param>
+        /// <returns></returns>
+        public Experto ObtenerExperto(string codExp)
+        {
+            Experto detalleExperto = new Experto();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            detalleExperto = oDalNegocio.ObteneExperto(codExp);
+            return detalleExperto;
+        }
     }
 }

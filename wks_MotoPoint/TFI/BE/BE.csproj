@@ -44,11 +44,13 @@
     <Compile Include="ActividadPrecio.cs" />
     <Compile Include="Bitacora.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="Experto.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="GrupoPermiso.cs" />
     <Compile Include="CategoriaMoto.cs" />
     <Compile Include="MembresiaUsuario.cs" />
     <Compile Include="MultiIdioma.cs" />
+    <Compile Include="Ofertas.cs" />
     <Compile Include="PagoUsuario.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

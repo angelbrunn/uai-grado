@@ -161,5 +161,24 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         List<ActividadPrecio> ObtenerPrecioActividades(string CodAct);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<Ofertas> ObtenerOfertas();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreApellido"></param>
+        /// <param name="emailExperto"></param>
+        /// <param name="email"></param>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
+        bool EnviarConsultaExperto(string nombreApellido, string emailExperto, string email, string descripcion);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        Experto ObtenerExperto(string codExp);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,10 @@ namespace MotoPoint
 {
     public partial class expertos : System.Web.UI.Page
     {
+        /// <summary>
+        /// Instancio la clase de negocio motopoint | interfazNegocio
+        /// </summary>
+        SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
         /// <summary>
         /// 
         /// </summary>
@@ -35,6 +40,78 @@ namespace MotoPoint
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExperto1_Click(object sender, EventArgs e)
+        {
+            Session["codExp"] = "EXP01";
+            //SHOW CONTACTO EXPERTO
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalExperto()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExperto2_Click(object sender, EventArgs e)
+        {
+            Session["codExp"] = "EXP02";
+            //SHOW CONTACTO EXPERTO
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalExperto()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExperto3_Click(object sender, EventArgs e)
+        {
+            Session["codExp"] = "EXP03";
+            //SHOW CONTACTO EXPERTO
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalExperto()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExperto4_Click(object sender, EventArgs e)
+        {
+            Session["codExp"] = "EXP04";
+            //SHOW CONTACTO EXPERTO
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalExperto()", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Contactar(object sender, EventArgs e)
+        {
+            //SEND EMAIL TO EXPERT
+            Experto detalleExperto = new Experto();
+            string codExp = Session["codExp"].ToString();
+            detalleExperto = interfazNegocio.ObtenerExperto(codExp);
+
+            Boolean res = interfazNegocio.EnviarConsultaExperto(txtNombre.Text, detalleExperto.Email, txtEmail.Text, txtMensaje.Text);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Cerrar(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtEmail.Text = "";
+            txtMensaje.Text = "";
+            Session["codExp"] = "";
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "Close Modal", "closeModalExperto();", true);
         }
     }
 }

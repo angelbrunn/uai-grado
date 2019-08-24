@@ -493,5 +493,82 @@ namespace SIS.DATOS
                 return listadoActividadPrecio;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Ofertas> ObteneOfetasDisponibles()
+        {
+            List<Ofertas> listadoOfertas = new List<Ofertas>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,empresa,titulo,descripcion,fechaVigencia FROM [MotoPoint].[dbo].[Ofertas]", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Ofertas oOfertas = new Ofertas();
+                                oOfertas.IdOfertas = reader["id"].ToString();
+                                oOfertas.Empresa = reader["empresa"].ToString();
+                                oOfertas.TituloOferta = reader["titulo"].ToString();
+                                oOfertas.Descripcion = reader["descripcion"].ToString();
+                                oOfertas.Fecha = reader["fechaVigencia"].ToString();
+                                listadoOfertas.Add(oOfertas);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoOfertas;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codExp"></param>
+        /// <returns></returns>
+        public Experto ObteneExperto(string codExp)
+        {
+            Experto oExperto = new Experto();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,codExp,nombre,descripcion,email FROM [MotoPoint].[dbo].[Experto] WHERE codExp=@codExp", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdSelect.Parameters.AddWithValue("@codExp", codExp);
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                oExperto.IdExperto = reader["id"].ToString();
+                                oExperto.CodExp = reader["codExp"].ToString();
+                                oExperto.Nombre = reader["nombre"].ToString();
+                                oExperto.Descripcion = reader["descripcion"].ToString();
+                                oExperto.Email = reader["email"].ToString();
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return oExperto;
+            }
+        }
     }
 }
