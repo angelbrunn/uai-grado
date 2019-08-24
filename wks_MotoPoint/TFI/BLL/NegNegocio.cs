@@ -3,9 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Linq;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Services;
+using System.IO;
+using System.Web;
+using System.Net.Mime;
 
 namespace SIS.BUSINESS
 {
@@ -168,6 +174,9 @@ namespace SIS.BUSINESS
             bool estado = false;
             string IdSys = "SYS";
 
+            string filename = @"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf";
+            Attachment data = new Attachment(filename, MediaTypeNames.Application.Octet);
+
             //NEGOCIO - OBTENER PAGO REALIZADO POR EL CLIENTE
             PagoUsuario oPagoUsuario = new PagoUsuario();
             DATOS.DALPago oDalPago = new DATOS.DALPago();
@@ -206,6 +215,7 @@ namespace SIS.BUSINESS
             try
             {
                 estado = true;
+                mail.Attachments.Add(data);
                 SmtpServer.Send(mail);
             }
             catch (Exception ex)
@@ -216,6 +226,85 @@ namespace SIS.BUSINESS
             }
 
             return estado;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroOrden"></param>
+        /// <param name="nombre"></param>
+        /// <param name="desc"></param>
+        /// <param name="monto"></param>
+        public void CrearPDFVoucher(string numeroOrden, string nombre, string desc, string monto)
+        {
+            string imagepath = HttpContext.Current.Server.MapPath("Content\\image");
+
+            Document doc = new Document(PageSize.LETTER);
+            // Indicamos donde vamos a guardar el documento
+            PdfWriter writer = PdfWriter.GetInstance(doc,
+                                        new FileStream(@"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf", FileMode.Create));
+
+            doc.AddTitle("FACTURA -" + numeroOrden);
+            doc.AddCreator("MOTOPOINT S.A");
+
+            // Abrimos el archivo
+            doc.Open();
+
+            iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            // Escribimos el encabezamiento en el documento
+            doc.Add(new Paragraph("FACTURA - " + numeroOrden));
+            doc.Add(Chunk.NEWLINE);
+
+            Image tif = Image.GetInstance(imagepath + "/logo-pdf.png");
+            tif.ScalePercent(24f);
+
+            tif.SetAbsolutePosition(doc.PageSize.Width - 86f,
+                  doc.PageSize.Height - 70f);
+
+            doc.Add(tif);
+
+            // Creamos una tabla que contendrá el nombre, apellido y país
+            // de nuestros visitante.
+            PdfPTable tbFactura = new PdfPTable(3);
+            tbFactura.WidthPercentage = 100;
+
+            // Configuramos el título de las columnas de la tabla
+            PdfPCell clNombre = new PdfPCell(new Phrase("NOMBRE Y APELLIDO", _standardFont));
+            clNombre.BorderWidth = 0;
+            clNombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell clDescripcion = new PdfPCell(new Phrase("DESCRIPCION", _standardFont));
+            clDescripcion.BorderWidth = 0;
+            clDescripcion.BorderWidthBottom = 0.75f;
+
+            PdfPCell clMonto = new PdfPCell(new Phrase("MONTO ($ARS)", _standardFont));
+            clMonto.BorderWidth = 0;
+            clMonto.BorderWidthBottom = 0.75f;
+
+            // Añadimos las celdas a la tabla
+            tbFactura.AddCell(clNombre);
+            tbFactura.AddCell(clDescripcion);
+            tbFactura.AddCell(clMonto);
+
+            // Llenamos la tabla con información
+            clNombre = new PdfPCell(new Phrase(nombre, _standardFont));
+            clNombre.BorderWidth = 0;
+
+            clDescripcion = new PdfPCell(new Phrase(desc, _standardFont));
+            clDescripcion.BorderWidth = 0;
+
+            clMonto = new PdfPCell(new Phrase(monto, _standardFont));
+            clMonto.BorderWidth = 0;
+
+            // Añadimos las celdas a la tabla
+            tbFactura.AddCell(clNombre);
+            tbFactura.AddCell(clDescripcion);
+            tbFactura.AddCell(clMonto);
+
+            doc.Add(tbFactura);
+
+            doc.Close();
+            writer.Close();
         }
         /// <summary>
         /// 
@@ -459,13 +548,13 @@ namespace SIS.BUSINESS
         /// 
         /// </summary>
         /// <param name="codRuta"></param>
-        public void BorrarVotacionRutaUsuario(string usuario,string codRuta)
+        public void BorrarVotacionRutaUsuario(string usuario, string codRuta)
         {
             string IdSys = "BLL";
             try
             {
                 DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
-                oDalNegocio.BorrarVotacion(usuario,codRuta);
+                oDalNegocio.BorrarVotacion(usuario, codRuta);
             }
             catch (Exception ex)
             {
@@ -642,6 +731,18 @@ namespace SIS.BUSINESS
 
             detalleExperto = oDalNegocio.ObteneExperto(codExp);
             return detalleExperto;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Experto> ObtenerExpertoDisponibles()
+        {
+            List<Experto> listadoExpertos = new List<Experto>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+
+            listadoExpertos = oDalNegocio.ObteneExpertoDisponibles();
+            return listadoExpertos;
         }
     }
 }

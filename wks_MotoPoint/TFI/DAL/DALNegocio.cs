@@ -570,5 +570,44 @@ namespace SIS.DATOS
                 return oExperto;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Experto> ObteneExpertoDisponibles()
+        {
+            List<Experto> listadoExperto = new List<Experto>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT id,codExp,nombre,descripcion,email FROM Experto", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Experto oExperto = new Experto();
+                                oExperto.IdExperto = reader["id"].ToString();
+                                oExperto.CodExp = reader["codExp"].ToString();
+                                oExperto.Nombre = reader["nombre"].ToString();
+                                oExperto.Descripcion = reader["descripcion"].ToString();
+                                oExperto.Email = reader["email"].ToString();
+                                listadoExperto.Add(oExperto);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoExperto;
+            }
+        }
     }
 }

@@ -22,6 +22,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblExpertoName1;
         
         /// <summary>
+        /// Control lblExpertoDesc1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExpertoDesc1;
+        
+        /// <summary>
         /// Control btnContactoExp1.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblExpertoName2;
+        
+        /// <summary>
+        /// Control lblExpertoDesc2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExpertoDesc2;
         
         /// <summary>
         /// Control btnContactoExp2.
@@ -58,6 +76,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblExpertoName3;
         
         /// <summary>
+        /// Control lblExpertoDesc3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExpertoDesc3;
+        
+        /// <summary>
         /// Control btnContactoExp3.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblExpertoName4;
+        
+        /// <summary>
+        /// Control lblExpertoDesc4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExpertoDesc4;
         
         /// <summary>
         /// Control btnContactoExp4.

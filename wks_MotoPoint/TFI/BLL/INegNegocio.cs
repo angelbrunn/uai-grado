@@ -125,7 +125,7 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="codRuta"></param>
-        void BorrarVotacionRutaUsuario(string usuario,string codRuta);
+        void BorrarVotacionRutaUsuario(string usuario, string codRuta);
         /// <summary>
         /// 
         /// </summary>
@@ -180,5 +180,18 @@ namespace SIS.BUSINESS
         /// </summary>
         /// <returns></returns>
         Experto ObtenerExperto(string codExp);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<Experto> ObtenerExpertoDisponibles();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroOrden"></param>
+        /// <param name="nombre"></param>
+        /// <param name="desc"></param>
+        /// <param name="monto"></param>
+        void CrearPDFVoucher(string numeroOrden, string nombre, string desc, string monto);
     }
 }

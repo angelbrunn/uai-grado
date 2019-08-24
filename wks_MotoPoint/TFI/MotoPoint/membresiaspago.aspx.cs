@@ -161,6 +161,8 @@ namespace MotoPoint
                     // NEGOCIO - ENVIAR FACTURA AL CLIENTE SOBRE EL MONTO QUE PAGO
                     if (numeroOrden != 1)
                     {
+                        //CREAR PDF TK NUMERO DE ORDE | NOMBRE Y APELLIDO | DESC | MONTO
+                        interfazNegocio.CrearPDFVoucher(numeroOrden.ToString(), oUsuaio.NombreApellido, descipcion, monto);
                         estadoPago = "PAGO REGISTRADO CORRECTAMENTE!";
                     }
                     else

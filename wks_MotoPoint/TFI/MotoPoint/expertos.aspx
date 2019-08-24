@@ -11,7 +11,7 @@
                 <img class="card-img-top" src="Content/expertos/EXP1.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><asp:label ID="lblExpertoName1" Text="Pablo Imhoff" runat="server"></asp:label></h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><asp:label ID="lblExpertoDesc1" runat="server"></asp:label></p>
                 </div>
                 <asp:Button ID="btnContactoExp1" class="btnVer" runat="server" Text="CONTACTAR" OnClick="btnExperto1_Click" />
             </div>
@@ -19,7 +19,7 @@
                 <img class="card-img-top" src="Content/expertos/EXP2.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><asp:label ID="lblExpertoName2" Text="Fernando Picasso" runat="server"></asp:label></h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><asp:label ID="lblExpertoDesc2" runat="server"></asp:label></p>
                 </div>
                 <asp:Button ID="btnContactoExp2" class="btnVer" runat="server" Text="CONTACTAR" OnClick="btnExperto2_Click" />
             </div>
@@ -27,7 +27,7 @@
                 <img class="card-img-top" src="Content/expertos/EXP3.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><asp:label ID="lblExpertoName3" Text="Javier Pérez" runat="server"></asp:label></h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><asp:label ID="lblExpertoDesc3" runat="server"></asp:label></p>
                 </div>
                 <asp:Button ID="btnContactoExp3" class="btnVer" runat="server" Text="CONTACTAR" OnClick="btnExperto3_Click" />
             </div>
@@ -35,7 +35,7 @@
                 <img class="card-img-top" src="Content/expertos/EXP4.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><asp:label ID="lblExpertoName4" Text="Valeria Grinblat" runat="server"></asp:label></h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><asp:label ID="lblExpertoDesc4" runat="server"></asp:label></p>
                 </div>
                 <asp:Button ID="btnContactoExp4" class="btnVer" runat="server" Text="CONTACTAR" OnClick="btnExperto4_Click" />
             </div>

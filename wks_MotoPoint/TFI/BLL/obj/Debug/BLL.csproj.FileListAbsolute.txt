@@ -51,3 +51,4 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BLL\
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BLL\obj\Debug\BLL.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BLL\bin\Debug\SEG.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BLL\bin\Debug\SEG.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\BLL\bin\Debug\itextsharp.dll

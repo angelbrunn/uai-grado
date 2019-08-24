@@ -27,6 +27,8 @@ namespace MotoPoint
                 string loginEstado = Session["loginEstado"].ToString();
                 string loginUsuario = Session["loginUsuario"].ToString();
 
+                ObtenerExpertos();
+
                 //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
                 if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
                 {
@@ -51,6 +53,7 @@ namespace MotoPoint
             Session["codExp"] = "EXP01";
             //SHOW CONTACTO EXPERTO
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalExperto()", true);
+
         }
         /// <summary>
         /// 
@@ -112,6 +115,40 @@ namespace MotoPoint
             Session["codExp"] = "";
 
             ScriptManager.RegisterStartupScript(this, GetType(), "Close Modal", "closeModalExperto();", true);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected void ObtenerExpertos()
+        {
+            //OBTENER EXPERTOS
+            List<Experto> listadoExpertos = new List<Experto>();
+            listadoExpertos = interfazNegocio.ObtenerExpertoDisponibles();
+
+            //EVALUO EL ESTADO DE LAS RUTAS
+            IEnumerator<Experto> enu = listadoExpertos.GetEnumerator();
+            while (enu.MoveNext())
+            {
+                switch (enu.Current.IdExperto)
+                {
+                    case "1":
+                        lblExpertoName1.Text = enu.Current.Nombre.ToString();
+                        lblExpertoDesc1.Text = enu.Current.Descripcion.ToString();
+                        break;
+                    case "2":
+                        lblExpertoName2.Text = enu.Current.Nombre.ToString();
+                        lblExpertoDesc2.Text = enu.Current.Descripcion.ToString();
+                        break;
+                    case "3":
+                        lblExpertoName3.Text = enu.Current.Nombre.ToString();
+                        lblExpertoDesc3.Text = enu.Current.Descripcion.ToString();
+                        break;
+                    case "4":
+                        lblExpertoName4.Text = enu.Current.Nombre.ToString();
+                        lblExpertoDesc4.Text = enu.Current.Descripcion.ToString();
+                        break;
+                }
+            }
         }
     }
 }

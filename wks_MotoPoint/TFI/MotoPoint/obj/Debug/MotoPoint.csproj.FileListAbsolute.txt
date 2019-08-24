@@ -277,3 +277,4 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\Moto
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\itextsharp.dll
