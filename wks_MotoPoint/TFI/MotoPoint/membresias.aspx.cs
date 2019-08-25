@@ -43,9 +43,9 @@ namespace MotoPoint
                 precioBronce = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("3"));
                 precioPlata = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("2"));
                 precioOro = System.Convert.ToString(interfazNegocio.ObtenerMembresiaPrecio("1"));
-                lblPrecioBronce.Text = precioBronce;
-                lblPrecioPlata.Text = precioPlata;
-                lblPrecioOro.Text = precioOro;
+                lblPrecioBronce.Text = "$ " + precioBronce;
+                lblPrecioPlata.Text = "$ " + precioPlata;
+                lblPrecioOro.Text = "$ " + precioOro;
                 //ARQ.BASE MULTI-USUARIO | VALIDO USUARIO
                 if (idUsuario == null || idUsuario == "")
                 {

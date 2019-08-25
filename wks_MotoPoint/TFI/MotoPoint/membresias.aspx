@@ -16,40 +16,40 @@
     <form id="frmMembresias" runat="server">
         <div class="container">
             <div class="card-deck">
-                <div class="card my-3">
+                <div class="card my-3" style="box-shadow: 10px 10px 5px grey;">
                     <img src="Content/image/idCardBronce.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">
                             <asp:Label ID="lblMembresiaBronce" Text="Membresia Bronce" runat="server"></asp:Label></h4>
                         <p class="card-text">
                             <asp:Label ID="lblDescMembresiaBronce" Text="Aca viene las descripcion del plan bronce." runat="server"></asp:Label></p>
-                        <asp:Label ID="lblPrecioBronce" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblPrecioBronce" style="font-size:35px;" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">
                         <asp:Button class="btnSeleccion" ID="btnSeleccionarBronce" runat="server" Text="Seleccionar Bronce" OnClick="btnSeleccionarBronce_Click" />
                     </div>
                 </div>
-                <div class="card my-3">
+                <div class="card my-3" style="box-shadow: 10px 10px 5px grey;">
                     <img src="Content/image/idCardPlata.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">
                             <asp:Label ID="lblMembresiaPlata" Text="Membresia Plata" runat="server"></asp:Label></h4>
                         <p class="card-text">
                             <asp:Label ID="lblDescMembresiaPlata" Text="Aca viene las descripcion del plan plata." runat="server"></asp:Label></p>
-                        <asp:Label ID="lblPrecioPlata" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblPrecioPlata" style="font-size:35px;" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">
                         <asp:Button class="btnSeleccion" ID="btnSeleccionarPlata" runat="server" Text="Seleccionar Plata" OnClick="btnSeleccionarPlata_Click" />
                     </div>
                 </div>
-                <div class="card my-3">
+                <div class="card my-3" style="box-shadow: 10px 10px 5px grey;">
                     <img src="Content/image/idCardOro.svg" class="card-img-top" />
                     <div class="card-body">
                         <h4 class="card-title">
                             <asp:Label ID="lblMembresiaOro" Text="Membresia Oro" runat="server"></asp:Label></h4>
                         <p class="card-text">
                             <asp:Label ID="lblDescMembresiaOro" Text="Aca viene las descripcion del plan oro." runat="server"></asp:Label></p>
-                        <asp:Label ID="lblPrecioOro" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblPrecioOro" style="font-size:35px;" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="card-footer">
                         <asp:Button class="btnSeleccion" ID="btnSeleccionarOro" runat="server" Text="Seleccionar Oro" OnClick="btnSeleccionarOro_Click" />

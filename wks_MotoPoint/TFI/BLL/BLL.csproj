@@ -157,5 +157,8 @@
   <ItemGroup>
     <None Include="Web References\localhost\Service.disco" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="dlls\itextsharp.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
