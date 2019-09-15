@@ -35,8 +35,29 @@ public class Service : System.Web.Services.WebService
         //VALIDAR QUE TODOS LOS CAMPOS ESTEN CORRECTOS
         if (numeroTarjeta != "" && numeroSeguridad != "" && fechaValidez != "" && nombreTitular != "")
         {
-            resultadoPago = true;
-            estadoTrans = "PAGO REALIZADO CON EXITO";
+            switch (numeroTarjeta.Substring(0, 4))
+            {
+                case "4338":
+                    Console.WriteLine("PAGO CON VISA");
+                    resultadoPago = true;
+                    estadoTrans = "PAGO REALIZADO CON EXITO";
+                    break;
+                case "3777":
+                    Console.WriteLine("PAGO CON AMEX");
+                    resultadoPago = true;
+                    estadoTrans = "PAGO REALIZADO CON EXITO";
+                    break;
+                case "5323":
+                    Console.WriteLine("PAGO CON MS");
+                    resultadoPago = true;
+                    estadoTrans = "PAGO REALIZADO CON EXITO";
+                    break;
+                default:
+                    Console.WriteLine("Invalid Card");
+                    resultadoPago = false;
+                    estadoTrans = "PAGO RECHAZADO";
+                    break;
+            }
         }
         else
         {

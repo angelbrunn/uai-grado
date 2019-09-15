@@ -31,13 +31,13 @@
                                     <div class="form-group">
                                         <asp:Label ID="lblMontoPagar" runat="server" Text="MONTO A PAGAR"></asp:Label>
                                         <div class="input-group">
-                                            <asp:TextBox runat="server" ID="txtMontoPagar" TabIndex="2" class="form-control"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtMontoPagar" TabIndex="2" class="form-control" MaxLength="5"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <asp:Label ID="lblNumeroTarjeta" runat="server" Text="NUMERO TARJETA"></asp:Label>
                                         <div class="input-group">
-                                            <asp:TextBox runat="server" ID="txtNumeroTarjeta" TabIndex="2" placeholder="Numero de tarjeta" class="form-control"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtNumeroTarjeta" TabIndex="2" placeholder="Numero de tarjeta" class="form-control" MaxLength="16"></asp:TextBox>
                                             <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                 <div class="col-xs-5 col-md-5 pull-right">
                                     <div class="form-group">
                                         <asp:Label ID="lblCvc" runat="server" Text="Codigo CVC"></asp:Label>
-                                        <asp:TextBox runat="server" ID="txtCvc" TabIndex="2" placeholder="CVC" class="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtCvc" TabIndex="2" placeholder="CVC" class="form-control" MaxLength="4"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <asp:Label ID="lblTitularTarjeta" runat="server" Text="TITULAR TARJETA"></asp:Label>
-                                        <asp:TextBox runat="server" ID="txtTitularTarjeta" TabIndex="2" placeholder="Titular de la tarjeta" class="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtTitularTarjeta" TabIndex="2" placeholder="Titular de la tarjeta" class="form-control" MaxLength="45"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

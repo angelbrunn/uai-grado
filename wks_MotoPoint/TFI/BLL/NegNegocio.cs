@@ -236,75 +236,201 @@ namespace SIS.BUSINESS
         /// <param name="monto"></param>
         public void CrearPDFVoucher(string numeroOrden, string nombre, string desc, string monto)
         {
-            string imagepath = HttpContext.Current.Server.MapPath("Content\\image");
+            string orderNo = "0000" + numeroOrden;
+            string orderDate = DateTime.Now.ToString("dd MMM yyyy");
 
-            Document doc = new Document(PageSize.LETTER);
-            // Indicamos donde vamos a guardar el documento
-            PdfWriter writer = PdfWriter.GetInstance(doc,
-                                        new FileStream(@"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf", FileMode.Create));
+            /*
+            string accountNo = "0123456789012";
+            string accountName = "John Willion";
+            string branch = "Phahon Yothin Branch";
+            string bank = "Kasikorn Bank";
+            */
 
-            doc.AddTitle("FACTURA -" + numeroOrden);
-            doc.AddCreator("MOTOPOINT S.A");
+            string CustomerName = nombre;
+            string Address = "Buenos Aires,AR";
+
+            // Create a Document object
+            Document document = new Document(PageSize.A4, 70, 70, 70, 70);
+
+            PdfWriter writer = PdfWriter.GetInstance(document,
+                            new FileStream(@"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf", FileMode.Create));
+
+            document.AddTitle("FACTURA -" + numeroOrden);
+            document.AddCreator("MOTOPOINT S.A");
 
             // Abrimos el archivo
-            doc.Open();
+            document.Open();
 
-            iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            // First, create our fonts
+            var titleFont = FontFactory.GetFont("Arial", 14, Font.BOLD);
+            var boldTableFont = FontFactory.GetFont("Arial", 10, Font.BOLD);
+            var bodyFont = FontFactory.GetFont("Arial", 10, Font.NORMAL);
+            Rectangle pageSize = writer.PageSize;
 
-            // Escribimos el encabezamiento en el documento
-            doc.Add(new Paragraph("FACTURA - " + numeroOrden));
-            doc.Add(Chunk.NEWLINE);
+            #region Top table
+            // Create the header table 
+            PdfPTable headertable = new PdfPTable(3);
+            headertable.HorizontalAlignment = 0;
+            headertable.WidthPercentage = 100;
+            headertable.SetWidths(new float[] { 4, 2, 4 });  // then set the column's __relative__ widths
+            headertable.DefaultCell.Border = Rectangle.NO_BORDER;
 
-            Image tif = Image.GetInstance(imagepath + "/logo-pdf.png");
-            tif.ScalePercent(24f);
+            // DATOS DE MI COMPANIA
+            headertable.SpacingAfter = 30;
+            PdfPTable nested = new PdfPTable(1);
+            nested.DefaultCell.Border = Rectangle.BOX;
+            PdfPCell nextPostCell1 = new PdfPCell(new Phrase("MotoPoint .SRL", bodyFont));
+            nextPostCell1.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            nested.AddCell(nextPostCell1);
+            PdfPCell nextPostCell2 = new PdfPCell(new Phrase("Disp: 1350/93 , Cuit Nº 30-65951462-8", bodyFont));
+            nextPostCell2.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            nested.AddCell(nextPostCell2);
+            PdfPCell nextPostCell3 = new PdfPCell(new Phrase("Buenos Aires, 10012, ARG", bodyFont));
+            nextPostCell3.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            nested.AddCell(nextPostCell3);
+            PdfPCell nesthousing = new PdfPCell(nested);
+            nesthousing.Rowspan = 4;
+            nesthousing.Padding = 0f;
+            headertable.AddCell(nesthousing);
 
-            tif.SetAbsolutePosition(doc.PageSize.Width - 86f,
-                  doc.PageSize.Height - 70f);
+            // DATOS DE NRO DE OPERACION, FECHA Y DESTINATARIO
+            headertable.AddCell("");
+            PdfPCell invoiceCell = new PdfPCell(new Phrase("FACTURA - A", titleFont));
+            invoiceCell.HorizontalAlignment = 2;
+            invoiceCell.Border = Rectangle.NO_BORDER;
+            headertable.AddCell(invoiceCell);
+            PdfPCell noCell = new PdfPCell(new Phrase("Num :", bodyFont));
+            noCell.HorizontalAlignment = 2;
+            noCell.Border = Rectangle.NO_BORDER;
+            headertable.AddCell(noCell);
+            headertable.AddCell(new Phrase(orderNo, bodyFont));
+            PdfPCell dateCell = new PdfPCell(new Phrase("Fecha :", bodyFont));
+            dateCell.HorizontalAlignment = 2;
+            dateCell.Border = Rectangle.NO_BORDER;
+            headertable.AddCell(dateCell);
+            headertable.AddCell(new Phrase(orderDate, bodyFont));
+            PdfPCell billCell = new PdfPCell(new Phrase("Para :", bodyFont));
+            billCell.HorizontalAlignment = 2;
+            billCell.Border = Rectangle.NO_BORDER;
+            headertable.AddCell(billCell);
+            headertable.AddCell(new Phrase(CustomerName + "\n" + Address, bodyFont));
+            document.Add(headertable);
+            #endregion
 
-            doc.Add(tif);
+            #region Items Table
+            //Create body table
+            PdfPTable itemTable = new PdfPTable(3);
+            itemTable.HorizontalAlignment = 0;
+            itemTable.WidthPercentage = 100;
+            itemTable.SetWidths(new float[] { 30, 50, 20 });  // then set the column's __relative__ widths
+            itemTable.SpacingAfter = 40;
+            itemTable.DefaultCell.Border = Rectangle.BOX;
 
-            // Creamos una tabla que contendrá el nombre, apellido y país
-            // de nuestros visitante.
-            PdfPTable tbFactura = new PdfPTable(3);
-            tbFactura.WidthPercentage = 100;
 
-            // Configuramos el título de las columnas de la tabla
-            PdfPCell clNombre = new PdfPCell(new Phrase("NOMBRE Y APELLIDO", _standardFont));
-            clNombre.BorderWidth = 0;
-            clNombre.BorderWidthBottom = 0.75f;
+            PdfPCell cell1 = new PdfPCell(new Phrase("NOMBRE Y APELLIDO", boldTableFont));
+            cell1.HorizontalAlignment = 1;
+            itemTable.AddCell(cell1);
+            PdfPCell cell2 = new PdfPCell(new Phrase("DESCRIPCION", boldTableFont));
+            cell2.HorizontalAlignment = 1;
+            itemTable.AddCell(cell2);
+            PdfPCell cell3 = new PdfPCell(new Phrase("MONTO ($ARS)", boldTableFont));
+            cell3.HorizontalAlignment = 1;
+            itemTable.AddCell(cell3);
 
-            PdfPCell clDescripcion = new PdfPCell(new Phrase("DESCRIPCION", _standardFont));
-            clDescripcion.BorderWidth = 0;
-            clDescripcion.BorderWidthBottom = 0.75f;
 
-            PdfPCell clMonto = new PdfPCell(new Phrase("MONTO ($ARS)", _standardFont));
-            clMonto.BorderWidth = 0;
-            clMonto.BorderWidthBottom = 0.75f;
+            PdfPCell numberCell = new PdfPCell(new Phrase(nombre, bodyFont));
+            numberCell.HorizontalAlignment = 1;
+            numberCell.PaddingLeft = 10f;
+            numberCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            itemTable.AddCell(numberCell);
 
-            // Añadimos las celdas a la tabla
-            tbFactura.AddCell(clNombre);
-            tbFactura.AddCell(clDescripcion);
-            tbFactura.AddCell(clMonto);
+            PdfPCell descCell = new PdfPCell(new Phrase(desc, bodyFont));
+            descCell.HorizontalAlignment = 1;
+            descCell.PaddingLeft = 10f;
+            descCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            itemTable.AddCell(descCell);
 
-            // Llenamos la tabla con información
-            clNombre = new PdfPCell(new Phrase(nombre, _standardFont));
-            clNombre.BorderWidth = 0;
+            PdfPCell montoCell = new PdfPCell(new Phrase(monto, bodyFont));
+            montoCell.HorizontalAlignment = 1;
+            montoCell.PaddingLeft = 10f;
+            montoCell.Border = Rectangle.LEFT_BORDER | Rectangle.RIGHT_BORDER;
+            itemTable.AddCell(montoCell);
 
-            clDescripcion = new PdfPCell(new Phrase(desc, _standardFont));
-            clDescripcion.BorderWidth = 0;
 
-            clMonto = new PdfPCell(new Phrase(monto, _standardFont));
-            clMonto.BorderWidth = 0;
+            // Table footer
+            PdfPCell totalAmtCell1 = new PdfPCell(new Phrase(""));
+            totalAmtCell1.Border = Rectangle.LEFT_BORDER | Rectangle.TOP_BORDER;
+            itemTable.AddCell(totalAmtCell1);
+            PdfPCell totalAmtStrCell = new PdfPCell(new Phrase("TOTAL ($ARS)", boldTableFont));
+            totalAmtStrCell.Border = Rectangle.TOP_BORDER;   //Rectangle.NO_BORDER; //Rectangle.TOP_BORDER;
+            totalAmtStrCell.HorizontalAlignment = 1;
+            itemTable.AddCell(totalAmtStrCell);
+            PdfPCell totalAmtCell = new PdfPCell(new Phrase(monto, boldTableFont));
+            totalAmtCell.HorizontalAlignment = 1;
+            itemTable.AddCell(totalAmtCell);
 
-            // Añadimos las celdas a la tabla
-            tbFactura.AddCell(clNombre);
-            tbFactura.AddCell(clDescripcion);
-            tbFactura.AddCell(clMonto);
+            PdfPCell cell = new PdfPCell(new Phrase("*** Por favor, tener en cuenta que los montos de esta factura son en Pesos $ Argentinos ARS ***", bodyFont));
+            cell.Colspan = 4;
+            cell.HorizontalAlignment = 1;
+            itemTable.AddCell(cell);
+            document.Add(itemTable);
+            #endregion
 
-            doc.Add(tbFactura);
+            /*
+            Chunk transferBank = new Chunk("Your Bank Account:", boldTableFont);
+            transferBank.SetUnderline(0.1f, -2f); //0.1 thick, -2 y-location
+            document.Add(transferBank);
+            document.Add(Chunk.NEWLINE);
 
-            doc.Close();
+            // Bank Account Info
+            PdfPTable bottomTable = new PdfPTable(3);
+            bottomTable.HorizontalAlignment = 0;
+            bottomTable.TotalWidth = 300f;
+            bottomTable.SetWidths(new int[] { 90, 10, 200 });
+            bottomTable.LockedWidth = true;
+            bottomTable.SpacingBefore = 20;
+            bottomTable.DefaultCell.Border = Rectangle.NO_BORDER;
+            bottomTable.AddCell(new Phrase("Account No", bodyFont));
+            bottomTable.AddCell(":");
+            bottomTable.AddCell(new Phrase(accountNo, bodyFont));
+            bottomTable.AddCell(new Phrase("Account Name", bodyFont));
+            bottomTable.AddCell(":");
+            bottomTable.AddCell(new Phrase(accountName, bodyFont));
+            bottomTable.AddCell(new Phrase("Branch", bodyFont));
+            bottomTable.AddCell(":");
+            bottomTable.AddCell(new Phrase(branch, bodyFont));
+            bottomTable.AddCell(new Phrase("Bank", bodyFont));
+            bottomTable.AddCell(":");
+            bottomTable.AddCell(new Phrase(bank, bodyFont));
+            document.Add(bottomTable);
+            */
+
+            //Approved by
+            PdfContentByte cb = new PdfContentByte(writer);
+            BaseFont bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, true);
+            cb = writer.DirectContent;
+            cb.BeginText();
+            cb.SetFontAndSize(bf, 10);
+            cb.SetTextMatrix(pageSize.GetLeft(280), 200);
+            cb.ShowText("Aprobado!");
+            cb.EndText();
+
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath("~/Content/image/logo-pdf.png"));
+            logo.SetAbsolutePosition((PageSize.A4.Width - logo.ScaledWidth) / 2, (PageSize.A4.Height - logo.ScaledHeight) / 2);
+            document.Add(logo);
+
+            cb = new PdfContentByte(writer);
+            bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1250, true);
+            cb = writer.DirectContent;
+            cb.BeginText();
+            cb.SetFontAndSize(bf, 10);
+            cb.SetTextMatrix(pageSize.GetLeft(70), 100);
+            cb.ShowText("Gracias por la compra! Si tiene alguna pregunta sobre su pedido, contáctenos al 800-333-MOTOPOINT.");
+            cb.EndText();
+
+            document.Close();
             writer.Close();
+
         }
         /// <summary>
         /// 
