@@ -240,4 +240,7 @@
   <data name="txtNombreResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="lblAvisoModalLikeTituloResource1.Text" xml:space="preserve">
+    <value>Contacte al Experto</value>
+  </data>
 </root>

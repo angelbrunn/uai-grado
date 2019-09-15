@@ -143,9 +143,20 @@ namespace MotoPoint
         /// </summary>
         protected void ObtenerExpertos()
         {
+            string currentLang;
             //OBTENER EXPERTOS
             List<Experto> listadoExpertos = new List<Experto>();
             listadoExpertos = interfazNegocio.ObtenerExpertoDisponibles();
+
+            if (Session["lang"] == null)
+            {
+                currentLang = "es-ES";
+            }
+            else
+            {
+                currentLang = Session["lang"].ToString();
+
+            }
 
             //EVALUO EL ESTADO DE LAS RUTAS
             IEnumerator<Experto> enu = listadoExpertos.GetEnumerator();
@@ -155,19 +166,59 @@ namespace MotoPoint
                 {
                     case "1":
                         lblExpertoName1.Text = enu.Current.Nombre.ToString();
-                        lblExpertoDesc1.Text = enu.Current.Descripcion.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            string ExpDesc = GetLocalResourceObject("lblExpertoDesc1Resource1.Text") as string;
+                            lblExpertoDesc1.Text = ExpDesc;
+
+
+                        }
+                        else
+                        {
+                            lblExpertoDesc1.Text = enu.Current.Descripcion.ToString();
+                        }
                         break;
                     case "2":
                         lblExpertoName2.Text = enu.Current.Nombre.ToString();
-                        lblExpertoDesc2.Text = enu.Current.Descripcion.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            string ExpDesc = GetLocalResourceObject("lblExpertoDesc2Resource1.Text") as string;
+                            lblExpertoDesc2.Text = ExpDesc;
+
+
+                        }
+                        else
+                        {
+                            lblExpertoDesc2.Text = enu.Current.Descripcion.ToString();
+                        }
                         break;
                     case "3":
                         lblExpertoName3.Text = enu.Current.Nombre.ToString();
-                        lblExpertoDesc3.Text = enu.Current.Descripcion.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            string ExpDesc = GetLocalResourceObject("lblExpertoDesc3Resource1.Text") as string;
+                            lblExpertoDesc3.Text = ExpDesc;
+
+
+                        }
+                        else
+                        {
+                            lblExpertoDesc3.Text = enu.Current.Descripcion.ToString();
+                        }
                         break;
                     case "4":
                         lblExpertoName4.Text = enu.Current.Nombre.ToString();
-                        lblExpertoDesc4.Text = enu.Current.Descripcion.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            string ExpDesc = GetLocalResourceObject("lblExpertoDesc4Resource1.Text") as string;
+                            lblExpertoDesc4.Text = ExpDesc;
+
+
+                        }
+                        else
+                        {
+                            lblExpertoDesc4.Text = enu.Current.Descripcion.ToString();
+                        }
                         break;
                 }
             }

@@ -46,7 +46,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="AvisoModalLikeTitulo">Contacte al Experto</h5>
+                    <asp:Label class="modal-title" ID="AvisoModalLikeTitulo" Text="Contacte al Experto" runat="server" meta:resourcekey="lblAvisoModalLikeTituloResource1"></asp:Label>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

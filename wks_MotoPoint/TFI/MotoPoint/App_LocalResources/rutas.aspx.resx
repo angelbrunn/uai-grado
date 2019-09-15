@@ -324,4 +324,10 @@
   <data name="PageResource1.Title" xml:space="preserve">
     <value>MotoPoint!</value>
   </data>
+  <data name="lblModalDetalleTituloResource1.Text" xml:space="preserve">
+    <value>Detalle Ruta</value>
+  </data>
+  <data name="lblAvisoModalLikeTituloResource1.Text" xml:space="preserve">
+    <value>Aviso Votación</value>
+  </data>
 </root>

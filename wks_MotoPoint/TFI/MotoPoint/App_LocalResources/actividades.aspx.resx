@@ -300,4 +300,7 @@
   <data name="PageResource1.Title" xml:space="preserve">
     <value>MotoPoint!</value>
   </data>
+  <data name="lblAvisoModalDetalleTituloResource1.Text" xml:space="preserve">
+    <value>Detalle Actividades</value>
+  </data>
 </root>

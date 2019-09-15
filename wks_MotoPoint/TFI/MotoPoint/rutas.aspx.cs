@@ -198,8 +198,19 @@ namespace MotoPoint
         /// </summary>
         protected void OtenerDatosRutas()
         {
+            string currentLang;
             List<RutaVotacion> listadoDatosRuta = new List<RutaVotacion>();
             listadoDatosRuta = interfazNegocio.DatosRutas();
+
+            if (Session["lang"] == null)
+            {
+                currentLang = "es-ES";
+            }
+            else
+            {
+                currentLang = Session["lang"].ToString();
+
+            }
 
             IEnumerator<RutaVotacion> enu = listadoDatosRuta.GetEnumerator();
             while (enu.MoveNext())
@@ -207,25 +218,57 @@ namespace MotoPoint
                 if (enu.Current.CodRuta.ToString() == rMDQ)
                 {
                     lblMDQ01CantMotos.Text = lblMDQ01CantMotos.Text + " " + enu.Current.cantUsuario;
-                    lblDetalleRutaVotacionMDQ.Text = enu.Current.DetalleRutaVotacion;
+                    if (currentLang == "en-US")
+                    {
+                        string DescRuta = GetLocalResourceObject("lblDetalleRutaVotacionMDQResource1.Text") as string;
+                        lblDetalleRutaVotacionMDQ.Text = DescRuta.ToString();
+                    }
+                    else
+                    {
+                        lblDetalleRutaVotacionMDQ.Text = enu.Current.DetalleRutaVotacion;
+                    }
                     lblMDQ01FechaLimite.Text = lblMDQ01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
                 }
                 else if (enu.Current.CodRuta.ToString() == rATA)
                 {
                     lblATA01CantMotos.Text = lblATA01CantMotos.Text + " " + enu.Current.cantUsuario;
-                    lblDetalleRutaVotacionATA.Text = enu.Current.DetalleRutaVotacion;
+                    if (currentLang == "en-US")
+                    {
+                        string DescRuta = GetLocalResourceObject("lblDetalleRutaVotacionATAResource1.Text") as string;
+                        lblDetalleRutaVotacionATA.Text = DescRuta.ToString();
+                    }
+                    else
+                    {
+                        lblDetalleRutaVotacionATA.Text = enu.Current.DetalleRutaVotacion;
+                    }
                     lblATA01FechaLimite.Text = lblATA01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
                 }
                 else if (enu.Current.CodRuta.ToString() == rCOD)
                 {
                     lblCOD01CantMotos.Text = lblCOD01CantMotos.Text + " " + enu.Current.cantUsuario;
-                    lblDetalleRutaVotacionCOR.Text = enu.Current.DetalleRutaVotacion;
+                    if (currentLang == "en-US")
+                    {
+                        string DescRuta = GetLocalResourceObject("lblDetalleRutaVotacionCORResource1.Text") as string;
+                        lblDetalleRutaVotacionCOR.Text = DescRuta.ToString();
+                    }
+                    else
+                    {
+                        lblDetalleRutaVotacionCOR.Text = enu.Current.DetalleRutaVotacion;
+                    }
                     lblCOD01FechaLimite.Text = lblCOD01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
                 }
                 else if (enu.Current.CodRuta.ToString() == rROS)
                 {
                     lblROS01CantMotos.Text = lblROS01CantMotos.Text + " " + enu.Current.cantUsuario;
-                    lblDetalleRutaVotacionROS.Text = enu.Current.DetalleRutaVotacion;
+                    if (currentLang == "en-US")
+                    {
+                        string DescRuta = GetLocalResourceObject("lblDetalleRutaVotacionROSResource1.Text") as string;
+                        lblDetalleRutaVotacionROS.Text = DescRuta.ToString();
+                    }
+                    else
+                    {
+                        lblDetalleRutaVotacionROS.Text = enu.Current.DetalleRutaVotacion;
+                    }
                     lblROS01FechaLimite.Text = lblROS01FechaLimite.Text + " " + (enu.Current.FechaLimite).Substring(0, 6) + (enu.Current.FechaLimite).Substring(8, 2);
                 }
             }

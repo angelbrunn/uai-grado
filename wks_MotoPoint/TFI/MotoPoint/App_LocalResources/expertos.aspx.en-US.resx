@@ -160,25 +160,25 @@
     <value />
   </data>
   <data name="lblExpertoDesc1Resource1.Text" xml:space="preserve">
-    <value />
+    <value>Pablo is an expert in Argentine Mesopotamia, from Bs As to Misiones.</value>
   </data>
   <data name="lblExpertoDesc1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblExpertoDesc2Resource1.Text" xml:space="preserve">
-    <value />
+    <value>If you are looking for an experience in the Mendoza desert, Fernando is undoubtedly the right person.</value>
   </data>
   <data name="lblExpertoDesc2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblExpertoDesc3Resource1.Text" xml:space="preserve">
-    <value />
+    <value>Famous Route 40, Javier has been traveling it for years and without a doubt he knows it as the palm of his hand.</value>
   </data>
   <data name="lblExpertoDesc3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblExpertoDesc4Resource1.Text" xml:space="preserve">
-    <value />
+    <value>Valeria has been living the Bs As To Mendoza experience for more than 12 years, the mountains are her passion.</value>
   </data>
   <data name="lblExpertoDesc4Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -239,5 +239,8 @@
   </data>
   <data name="txtNombreResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="lblAvisoModalLikeTituloResource1.Text" xml:space="preserve">
+    <value>Contact to Expert</value>
   </data>
 </root>

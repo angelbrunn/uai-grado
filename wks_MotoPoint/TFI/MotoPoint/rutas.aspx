@@ -82,7 +82,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="AvisoModalLikeTitulo">Aviso Votación</h5>
+                    <asp:Label class="modal-title" ID="lblAvisoModalLikeTitulo" Text="Aviso Votación" runat="server" meta:resourcekey="lblAvisoModalLikeTituloResource1"></asp:Label>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -101,7 +101,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="AvisoModalDetalleTitulo">Detalle Ruta</h5>
+                    <asp:Label class="modal-title" ID="lblModalDetalleTitulo" Text="Detalle Ruta" runat="server" meta:resourcekey="lblModalDetalleTituloResource1"></asp:Label>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

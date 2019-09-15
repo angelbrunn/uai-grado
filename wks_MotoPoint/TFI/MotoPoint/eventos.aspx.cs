@@ -76,9 +76,20 @@ namespace MotoPoint
         /// </summary>
         protected void OtenerDatosEventos()
         {
+            string currentLang;
             List<Evento> listadoDatosEvento = new List<Evento>();
             listadoDatosEvento = interfazNegocio.DatosEventos();
             int i = 1;
+
+            if (Session["lang"] == null)
+            {
+                currentLang = "es-ES";
+            }
+            else
+            {
+                currentLang = Session["lang"].ToString();
+
+            }
 
             IEnumerator<Evento> enu = listadoDatosEvento.GetEnumerator();
             while (enu.MoveNext())
@@ -89,33 +100,93 @@ namespace MotoPoint
                 switch (i)
                 {
                     case 1:
-                        lblCodigoEvento1.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento1.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento1.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento1Resource1.Text") as string;
+                            lblDetalleEvento1.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento1.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento1.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento1.Text = enu.Current.Fecha.ToString();
                         break;
                     case 2:
-                        lblCodigoEvento2.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento2.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento2.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento2Resource1.Text") as string;
+                            lblDetalleEvento2.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento2.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento2.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento2.Text = enu.Current.Fecha.ToString();
                         break;
                     case 3:
-                        lblCodigoEvento3.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento3.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento3.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento3Resource1.Text") as string;
+                            lblDetalleEvento3.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento3.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento3.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento3.Text = enu.Current.Fecha.ToString();
                         break;
                     case 4:
-                        lblCodigoEvento4.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento4.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento4.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento4Resource1.Text") as string;
+                            lblDetalleEvento4.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento4.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento4.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento4.Text = enu.Current.Fecha.ToString();
                         break;
                     case 5:
-                        lblCodigoEvento5.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento5.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento5.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento5Resource1.Text") as string;
+                            lblDetalleEvento5.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento5.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento5.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento5.Text = enu.Current.Fecha.ToString();
                         break;
                     case 6:
-                        lblCodigoEvento6.Text = "Evento " + enu.Current.CodEvento.ToString();
-                        lblDetalleEvento6.Text = enu.Current.DetalleEvento.ToString();
+                        if (currentLang == "en-US")
+                        {
+                            lblCodigoEvento6.Text = "Event " + enu.Current.CodEvento.ToString();
+
+                            string DescEn = GetLocalResourceObject("lblDetalleEvento6Resource1.Text") as string;
+                            lblDetalleEvento6.Text = DescEn.ToString();
+                        }
+                        else
+                        {
+                            lblCodigoEvento6.Text = "Evento " + enu.Current.CodEvento.ToString();
+                            lblDetalleEvento6.Text = enu.Current.DetalleEvento.ToString();
+                        }
                         lblFechaEvento6.Text = enu.Current.Fecha.ToString();
                         break;
                 }

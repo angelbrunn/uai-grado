@@ -244,25 +244,25 @@
     <value />
   </data>
   <data name="lblDetalleRutaVotacionATAResource1.Text" xml:space="preserve">
-    <value />
+    <value>Here another of the classic motorcycle tourism, Without leaving so much from home. We start as always from our family meeting point YPF Pan American Route 3802 from 7 to 9 check, 9.30 Go!</value>
   </data>
   <data name="lblDetalleRutaVotacionATAResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblDetalleRutaVotacionCORResource1.Text" xml:space="preserve">
-    <value />
+    <value>Travel to the interior of your country, with one of the most beautiful landscapes. We depart as always from our famus point of encounter the YPF of Pan-American Route 3802 from 7 to 9 check, 9.30 Go!</value>
   </data>
   <data name="lblDetalleRutaVotacionCORResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblDetalleRutaVotacionMDQResource1.Text" xml:space="preserve">
-    <value />
+    <value>Enjoy the classic motorcycle touring of Argentina, We lost as always from our family meeting point the YPF of Pan-American Route 3802 (also ACA) from 7 to 9 check, 9.30 Go!</value>
   </data>
   <data name="lblDetalleRutaVotacionMDQResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblDetalleRutaVotacionROSResource1.Text" xml:space="preserve">
-    <value />
+    <value>What better way to get to know the monument to the flag. Touring landscapes on Route 9, from our famus point of encounter the YPF of Pan-American Route 3802 from 7 to 9 check, 9.30 Go!</value>
   </data>
   <data name="lblDetalleRutaVotacionROSResource1.ToolTip" xml:space="preserve">
     <value />
@@ -323,5 +323,11 @@
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value>MotoPoint!</value>
+  </data>
+  <data name="lblModalDetalleTituloResource1.Text" xml:space="preserve">
+    <value>Rute Details</value>
+  </data>
+  <data name="lblAvisoModalLikeTituloResource1.Text" xml:space="preserve">
+    <value>Voting Notice</value>
   </data>
 </root>
