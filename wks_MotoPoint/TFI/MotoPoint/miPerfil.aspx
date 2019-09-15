@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="miPerfil.aspx.cs" Inherits="MotoPoint.miPerfil" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="miPerfil.aspx.cs" Inherits="MotoPoint.miPerfil" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div id="datosAvatar" class="form-group">
-                <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtNombreApellido" TabIndex="2" placeholder="Nombre y Apellido" class="form-control" meta:resourcekey="txtNombreApellidoResource1"></asp:TextBox>
                 <br />
-                <asp:TextBox runat="server" ID="txtFecNac" TabIndex="2" placeholder="Fecha Nacimiento" class="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtFecNac" TabIndex="2" placeholder="Fecha Nacimiento" class="form-control" meta:resourcekey="txtFecNacResource1"></asp:TextBox>
                 <div id="estadoUsuarioActivo">
                     <p><font color="green">Usuario Activo! </font></p>
                 </div>
@@ -37,23 +37,23 @@
             <br />
             <div class="form-group">
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtCatMoto" TabIndex="2" placeholder="Categoria moto" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtCatMoto" TabIndex="2" placeholder="Categoria moto" class="form-control" meta:resourcekey="txtCatMotoResource1"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtUsuario" TabIndex="2" placeholder="Usuario" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtUsuario" TabIndex="2" placeholder="Usuario" class="form-control" meta:resourcekey="txtUsuarioResource1"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtPassword" TabIndex="2" placeholder="Contraseña" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPassword" TabIndex="2" placeholder="Contraseña" class="form-control" meta:resourcekey="txtPasswordResource1"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Email" class="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Email" class="form-control" meta:resourcekey="txtEmailResource1"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <div id="accionesPerfil">
-                    <asp:Button ID="btnVolver" runat="server" Text="Volver" class="btn btn-primary" OnClick="btnVolver_Click" />
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click" />
-                    <asp:Button ID="btnMembresia" runat="server" Text="Cambiar Membresia" class="btn btn-success" OnClick="btnMembresia_Click" />
+                    <asp:Button ID="btnVolver" runat="server" Text="Volver" class="btn btn-primary" OnClick="btnVolver_Click" meta:resourcekey="btnVolverResource1" />
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" class="btn btn-warning" OnClick="btnGuardar_Click" meta:resourcekey="btnGuardarResource1" />
+                    <asp:Button ID="btnMembresia" runat="server" Text="Cambiar Membresia" class="btn btn-success" OnClick="btnMembresia_Click" meta:resourcekey="btnMembresiaResource1" />
                 </div>
             </div>
         </div>

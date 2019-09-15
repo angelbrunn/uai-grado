@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="webmaster.aspx.cs" 
-    Inherits="MotoPoint.admin" %>
+    Inherits="MotoPoint.admin" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -13,25 +13,25 @@
     <form id="fromAdministrador" name="fromAdministrador" runat="server">
     <div id="dbEstado">
       <p>
-        <asp:Label ID="lblDbEstado" Text="DB - DIGITO VERIFICADOR - OK" value="1" runat="server"></asp:Label>
+        <asp:Label ID="lblDbEstado" Text="DB - DIGITO VERIFICADOR - OK" value="1" runat="server" meta:resourcekey="lblDbEstadoResource1"></asp:Label>
       </p>
     </div>
 
     <div id="abmUser">
-    <p>Administracion de Usuarios - ABM Perfiles - <asp:LinkButton ID="LinkGestionPerfiles" runat="server" OnClick="LinkGestionPerfiles_Click">Gestion Perfiles</asp:LinkButton></p>
-    <p>Ir a la WebSite MotoPoint! - <asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click">Ir a MotoPoint!</asp:LinkButton></p>
+    <p>Administracion de Usuarios - ABM Perfiles - <asp:LinkButton ID="LinkGestionPerfiles" runat="server" OnClick="LinkGestionPerfiles_Click" meta:resourcekey="LinkGestionPerfilesResource1">Gestion Perfiles</asp:LinkButton></p>
+    <p>Ir a la WebSite MotoPoint! - <asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click" meta:resourcekey="LinkHomeResource1">Ir a MotoPoint!</asp:LinkButton></p>
     </div>
     <div id="abmContingencia">
-    Se han producidos errores criticos - <asp:LinkButton ID="linkContingencia" runat="server" OnClick="linkContingencia_Click">Ver contingencia!</asp:LinkButton>
+    Se han producidos errores criticos - <asp:LinkButton ID="linkContingencia" runat="server" OnClick="linkContingencia_Click" meta:resourcekey="linkContingenciaResource1">Ver contingencia!</asp:LinkButton>
     </div>
     <br />
     <div>
-    <asp:Table ID="tbBitacora" runat="server" Height="102px" Width="100%">
-    <asp:TableRow>
-        <asp:TableCell>idEvento</asp:TableCell>
-        <asp:TableCell>idUsuario</asp:TableCell>
-        <asp:TableCell>descripcion</asp:TableCell>
-        <asp:TableCell>fecha</asp:TableCell>
+    <asp:Table ID="tbBitacora" runat="server" Height="102px" Width="100%" meta:resourcekey="tbBitacoraResource1">
+    <asp:TableRow meta:resourcekey="TableRowResource1">
+        <asp:TableCell meta:resourcekey="TableCellResource1">idEvento</asp:TableCell>
+        <asp:TableCell meta:resourcekey="TableCellResource2">idUsuario</asp:TableCell>
+        <asp:TableCell meta:resourcekey="TableCellResource3">descripcion</asp:TableCell>
+        <asp:TableCell meta:resourcekey="TableCellResource4">fecha</asp:TableCell>
     </asp:TableRow>
     </asp:Table>
     </div>
@@ -39,26 +39,26 @@
     <div id="admBackup">
     <p>Administracion de arquitectura Base - Resguardo y Restauracion.</p> 
         <p>
-        <asp:CheckBox ID="chkbxBitacora" Text="Bitacora" runat="server" />
-        <asp:CheckBox ID="chkbxUsuario" Text="Usuario" runat="server" />
-        <asp:CheckBox ID="chkbxGrupo" Text="Grupo" runat="server" />
-        <asp:CheckBox ID="chkbxGrupoPermiso" Text="GrupoPermisos" runat="server" />
-        <asp:CheckBox ID="chkbxPermiso" Text="Permiso" runat="server" />
-        <asp:CheckBox ID="chkbxMultiIdioma" Text="Multi-Idioma" runat="server" />
-        <asp:CheckBox ID="chkbxUsuarioGrupo" Text="UsuarioGrupo" runat="server" />
+        <asp:CheckBox ID="chkbxBitacora" Text="Bitacora" runat="server" meta:resourcekey="chkbxBitacoraResource1" />
+        <asp:CheckBox ID="chkbxUsuario" Text="Usuario" runat="server" meta:resourcekey="chkbxUsuarioResource1" />
+        <asp:CheckBox ID="chkbxGrupo" Text="Grupo" runat="server" meta:resourcekey="chkbxGrupoResource1" />
+        <asp:CheckBox ID="chkbxGrupoPermiso" Text="GrupoPermisos" runat="server" meta:resourcekey="chkbxGrupoPermisoResource1" />
+        <asp:CheckBox ID="chkbxPermiso" Text="Permiso" runat="server" meta:resourcekey="chkbxPermisoResource1" />
+        <asp:CheckBox ID="chkbxMultiIdioma" Text="Multi-Idioma" runat="server" meta:resourcekey="chkbxMultiIdiomaResource1" />
+        <asp:CheckBox ID="chkbxUsuarioGrupo" Text="UsuarioGrupo" runat="server" meta:resourcekey="chkbxUsuarioGrupoResource1" />
         </p>
         <p>
-        <asp:Button class="btn success" ID="btnExportar" Text="Exportar" runat="server" OnClick="btnExportar_Click"/>
-        <asp:Button class="btn success" ID="btnImportar" Text="Importar" runat="server" OnClick="btnImportar_Click"/>
+        <asp:Button class="btn success" ID="btnExportar" Text="Exportar" runat="server" OnClick="btnExportar_Click" meta:resourcekey="btnExportarResource1"/>
+        <asp:Button class="btn success" ID="btnImportar" Text="Importar" runat="server" OnClick="btnImportar_Click" meta:resourcekey="btnImportarResource1"/>
         </p>
         <br />
     </div>
     <div id="admDebug">
         <p>Administracion de arquitectura Base - Debug</p>
-        <asp:Button class="btn warning" ID="btnTbitacora" Text="Test Bitacora" runat="server" OnClick="btnTbitacora_Click"/>
-        <asp:Button class="btn warning" ID="btnTidioma" Text="Cambiar Idioma" runat="server"/>
-        <asp:Button class="btn info" ID="btnTinfo" Text="Informacion Pagos" runat="server" OnClick="btnTinfo_Click"/>
-        <asp:Button class="btn danger" ID="btnSalir" Text="Salir" runat="server" OnClick="btnSalir_Click"/>
+        <asp:Button class="btn warning" ID="btnTbitacora" Text="Test Bitacora" runat="server" OnClick="btnTbitacora_Click" meta:resourcekey="btnTbitacoraResource1"/>
+        <asp:Button class="btn warning" ID="btnTidioma" Text="Cambiar Idioma" runat="server" meta:resourcekey="btnTidiomaResource1"/>
+        <asp:Button class="btn info" ID="btnTinfo" Text="Informacion Pagos" runat="server" OnClick="btnTinfo_Click" meta:resourcekey="btnTinfoResource1"/>
+        <asp:Button class="btn danger" ID="btnSalir" Text="Salir" runat="server" OnClick="btnSalir_Click" meta:resourcekey="btnSalirResource1"/>
     </div>
     </form>
 </body>

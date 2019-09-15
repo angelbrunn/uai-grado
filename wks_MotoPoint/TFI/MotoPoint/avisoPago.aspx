@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="avisoPago.aspx.cs"
-    Inherits="MotoPoint.avisoPago" %>
+    Inherits="MotoPoint.avisoPago" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -18,9 +18,9 @@
                 </div>
                 <img id="imgFeedback" src="Content/image/faltaPago.svg" alt="Smiley face" />
                 <br />
-                <asp:Button runat="server" ID="btnPagar" Text="Contratar" OnClick="btnPagar_Click" />
+                <asp:Button runat="server" ID="btnPagar" Text="Contratar" OnClick="btnPagar_Click" meta:resourcekey="btnPagarResource1" />
                 <br />
-                <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" />
+                <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" meta:resourcekey="btnVolverResource1" />
                 <br />
             </div>
         </div>

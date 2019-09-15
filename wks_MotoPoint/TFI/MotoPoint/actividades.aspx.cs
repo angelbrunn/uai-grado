@@ -1,7 +1,9 @@
 ﻿using SIS.ENTIDAD;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -15,6 +17,10 @@ namespace MotoPoint
         /// 
         /// </summary>
         Boolean exitCode = false;
+        /// <summary>
+        /// 
+        /// </summary>
+        Boolean setCultureLang = false;
         /// <summary>
         /// Instancio la clase de negocio motopoint | interfazNegocio
         /// </summary>
@@ -42,6 +48,7 @@ namespace MotoPoint
                 //VALIDICION SI VIENE DE POSTBACK LO DEJO EN EL DIALOG
                 if (IsPostBack)
                 {
+                    if (!setCultureLang) { 
                     if (!exitCode)
                     {
                         //SHOW DETALLE
@@ -52,6 +59,11 @@ namespace MotoPoint
                         //HIDE DETALLE
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "closeModalActividad()", true);
                     }
+                    }
+                    else
+                    {
+                        setCultureLang = false;
+                    }
                 }
             }
             else
@@ -60,6 +72,24 @@ namespace MotoPoint
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void InitializeCulture()
+        {
+            if (Session["lang"] != null)
+            {
+                setCultureLang = true;
+                SetCulture(Session["lang"].ToString());
+                base.InitializeCulture();
+            }
+        }
+
+        private void SetCulture(string lang)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
         }
         /// <summary>
         /// 

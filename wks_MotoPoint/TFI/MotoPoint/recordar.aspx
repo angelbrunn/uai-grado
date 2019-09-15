@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="recordar.aspx.cs"
-    Inherits="MotoPoint.recordar" %>
+    Inherits="MotoPoint.recordar" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     <form id="frmRecordar" runat="server">
         <div class="container">
             <div class="form-group">
-                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Ingrese su correo electronico" class="form-control" required title="El email es requerido!"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtEmail" TabIndex="2" placeholder="Ingrese su correo electronico" class="form-control" required title="El email es requerido!" meta:resourcekey="txtEmailResource1"></asp:TextBox>
             </div>
             <div class="form-group">
                 <div id="usuarioOk">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="row">
                     <div class="botonesEnviar">
-                        <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" OnClick="btnEnviar_Click" />
+                        <asp:Button ID="btnEnviar" class="form-control btn btn-register" runat="server" Text="Enviar" OnClick="btnEnviar_Click" meta:resourcekey="btnEnviarResource1" />
                     </div>
                 </div>
             </div>

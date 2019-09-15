@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterHome.Master" AutoEventWireup="true" CodeBehind="eventos.aspx.cs"
-    Inherits="MotoPoint.Eventos" %>
+    Inherits="MotoPoint.Eventos" meta:resourcekey="PageResource1" %>
 
 <asp:Content ID="MasterNavBar" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -15,14 +15,14 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento1" runat="server" /></h5>
+                        <asp:Label ID="lblCodigoEvento1" runat="server" meta:resourcekey="lblCodigoEvento1Resource1" /></h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento1" runat="server" />
+                        <asp:Label ID="lblDetalleEvento1" runat="server" meta:resourcekey="lblDetalleEvento1Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento1" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento1" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento1Resource1"></asp:Label>
                     </small>
                 </div>
             </div>
@@ -32,15 +32,15 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento2" runat="server" />
+                        <asp:Label ID="lblCodigoEvento2" runat="server" meta:resourcekey="lblCodigoEvento2Resource1" />
                     </h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento2" runat="server" />
+                        <asp:Label ID="lblDetalleEvento2" runat="server" meta:resourcekey="lblDetalleEvento2Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento2" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento2" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento2Resource1"></asp:Label>
                     </small>
                 </div>
             </div>
@@ -48,46 +48,46 @@
             <div id="weather" class="card" style="box-shadow: 10px 10px 5px grey;">
                 <div class="card-body">
                     <div id="weatherTitle">
-                        <asp:Label ID="lblWeatherTitle" Text="Informacion del Clima" runat="server" />
+                        <asp:Label ID="lblWeatherTitle" Text="Informacion del Clima" runat="server" meta:resourcekey="lblWeatherTitleResource1" />
                     </div>
                     <div class="card-text">
                         <div id="dataWeatherHeader">
                             [
-                            <asp:Label ID="lblWeatherHeaderCity" Text="Min" runat="server" />
-                            <asp:Label ID="lblWeatherHeaderTempMin" Text="Min" runat="server" />
-                            <asp:Label ID="lblWeatherHeaderTempMax" Text="Max" runat="server" />
-                            <asp:Label ID="lblWeatherHeaderTmp" Text="Tmp" runat="server" />
-                            <asp:Label ID="lblWeatherHeaderHum" Text="Hum (%)" runat="server" />
+                            <asp:Label ID="lblWeatherHeaderCity" Text="Min" runat="server" meta:resourcekey="lblWeatherHeaderCityResource1" />
+                            <asp:Label ID="lblWeatherHeaderTempMin" Text="Min" runat="server" meta:resourcekey="lblWeatherHeaderTempMinResource1" />
+                            <asp:Label ID="lblWeatherHeaderTempMax" Text="Max" runat="server" meta:resourcekey="lblWeatherHeaderTempMaxResource1" />
+                            <asp:Label ID="lblWeatherHeaderTmp" Text="Tmp" runat="server" meta:resourcekey="lblWeatherHeaderTmpResource1" />
+                            <asp:Label ID="lblWeatherHeaderHum" Text="Hum (%)" runat="server" meta:resourcekey="lblWeatherHeaderHumResource1" />
                             ]
                         </div>
                         <div id="dataWeatherBue">
-                            <asp:Image ID="imgCountryFlagBue" runat="server" />
-                            <asp:Label ID="lblCityBue" runat="server" />
-                            <asp:Label ID="lblBueTempMin" runat="server" />
-                            <asp:Label ID="lblBueTempMax" runat="server" />
-                            <asp:Label ID="lblBueTempDay" runat="server" />
-                            <asp:Label ID="lblBueHumidity" runat="server" />
-                            <asp:Image ID="imgWeatherIconBue" runat="server" />
+                            <asp:Image ID="imgCountryFlagBue" runat="server" meta:resourcekey="imgCountryFlagBueResource1" />
+                            <asp:Label ID="lblCityBue" runat="server" meta:resourcekey="lblCityBueResource1" />
+                            <asp:Label ID="lblBueTempMin" runat="server" meta:resourcekey="lblBueTempMinResource1" />
+                            <asp:Label ID="lblBueTempMax" runat="server" meta:resourcekey="lblBueTempMaxResource1" />
+                            <asp:Label ID="lblBueTempDay" runat="server" meta:resourcekey="lblBueTempDayResource1" />
+                            <asp:Label ID="lblBueHumidity" runat="server" meta:resourcekey="lblBueHumidityResource1" />
+                            <asp:Image ID="imgWeatherIconBue" runat="server" meta:resourcekey="imgWeatherIconBueResource1" />
                         </div>
 
                         <div id="dataWeatherCor">
-                            <asp:Image ID="imgCountryFlagMen" runat="server" />
-                            <asp:Label ID="lblCityCMen" runat="server" />
-                            <asp:Label ID="lblMenTempMin" runat="server" />
-                            <asp:Label ID="lblMenTempMax" runat="server" />
-                            <asp:Label ID="lblMenTempDay" runat="server" />
-                            <asp:Label ID="lblMenHumidity" runat="server" />
-                            <asp:Image ID="imgWeatherIconMen" runat="server" />
+                            <asp:Image ID="imgCountryFlagMen" runat="server" meta:resourcekey="imgCountryFlagMenResource1" />
+                            <asp:Label ID="lblCityCMen" runat="server" meta:resourcekey="lblCityCMenResource1" />
+                            <asp:Label ID="lblMenTempMin" runat="server" meta:resourcekey="lblMenTempMinResource1" />
+                            <asp:Label ID="lblMenTempMax" runat="server" meta:resourcekey="lblMenTempMaxResource1" />
+                            <asp:Label ID="lblMenTempDay" runat="server" meta:resourcekey="lblMenTempDayResource1" />
+                            <asp:Label ID="lblMenHumidity" runat="server" meta:resourcekey="lblMenHumidityResource1" />
+                            <asp:Image ID="imgWeatherIconMen" runat="server" meta:resourcekey="imgWeatherIconMenResource1" />
                         </div>
 
                         <div id="dataWeatherRos">
-                            <asp:Image ID="imgCountryFlagRos" runat="server" />
-                            <asp:Label ID="lblCityRos" runat="server" />
-                            <asp:Label ID="lblRosTempMin" runat="server" />
-                            <asp:Label ID="lblRosTempMax" runat="server" />
-                            <asp:Label ID="lblRosTempDay" runat="server" />
-                            <asp:Label ID="lblRosHumidity" runat="server" />
-                            <asp:Image ID="imgWeatherIconRos" runat="server" />
+                            <asp:Image ID="imgCountryFlagRos" runat="server" meta:resourcekey="imgCountryFlagRosResource1" />
+                            <asp:Label ID="lblCityRos" runat="server" meta:resourcekey="lblCityRosResource1" />
+                            <asp:Label ID="lblRosTempMin" runat="server" meta:resourcekey="lblRosTempMinResource1" />
+                            <asp:Label ID="lblRosTempMax" runat="server" meta:resourcekey="lblRosTempMaxResource1" />
+                            <asp:Label ID="lblRosTempDay" runat="server" meta:resourcekey="lblRosTempDayResource1" />
+                            <asp:Label ID="lblRosHumidity" runat="server" meta:resourcekey="lblRosHumidityResource1" />
+                            <asp:Image ID="imgWeatherIconRos" runat="server" meta:resourcekey="imgWeatherIconRosResource1" />
                         </div>
                     </div>
                 </div>
@@ -100,15 +100,15 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento3" runat="server" />
+                        <asp:Label ID="lblCodigoEvento3" runat="server" meta:resourcekey="lblCodigoEvento3Resource1" />
                     </h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento3" runat="server" />
+                        <asp:Label ID="lblDetalleEvento3" runat="server" meta:resourcekey="lblDetalleEvento3Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento3" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento3" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento3Resource1"></asp:Label>
                     </small>
                 </div>
             </div>
@@ -118,15 +118,15 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento4" runat="server" />
+                        <asp:Label ID="lblCodigoEvento4" runat="server" meta:resourcekey="lblCodigoEvento4Resource1" />
                     </h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento4" runat="server" />
+                        <asp:Label ID="lblDetalleEvento4" runat="server" meta:resourcekey="lblDetalleEvento4Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento4" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento4" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento4Resource1"></asp:Label>
                     </small>
                 </div>
             </div>
@@ -136,15 +136,15 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento5" runat="server" />
+                        <asp:Label ID="lblCodigoEvento5" runat="server" meta:resourcekey="lblCodigoEvento5Resource1" />
                     </h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento5" runat="server" />
+                        <asp:Label ID="lblDetalleEvento5" runat="server" meta:resourcekey="lblDetalleEvento5Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento5" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento5" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento5Resource1"></asp:Label>
                     </small>
                 </div>
             </div>
@@ -156,15 +156,15 @@
                 <div class="card-body">
 
                     <h5 class="card-title">
-                        <asp:Label ID="lblCodigoEvento6" runat="server" />
+                        <asp:Label ID="lblCodigoEvento6" runat="server" meta:resourcekey="lblCodigoEvento6Resource1" />
                     </h5>
                     <p class="card-text">
-                        <asp:Label ID="lblDetalleEvento6" runat="server" />
+                        <asp:Label ID="lblDetalleEvento6" runat="server" meta:resourcekey="lblDetalleEvento6Resource1" />
                     </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <asp:Label ID="lblFechaEvento6" class="lblFechaEvento" runat="server"></asp:Label>
+                        <asp:Label ID="lblFechaEvento6" class="lblFechaEvento" runat="server" meta:resourcekey="lblFechaEvento6Resource1"></asp:Label>
                     </small>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="isOk.aspx.cs" Inherits="MotoPoint.isOk" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="isOk.aspx.cs" Inherits="MotoPoint.isOk" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,7 @@
             <img id="imgFeedback" src="Content/image/feedback_positivo.svg" alt="Smiley face" />
             <br />
             <br />
-            <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" />
+            <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" meta:resourcekey="btnVolverResource1" />
             <br />
         </div>
     </form>

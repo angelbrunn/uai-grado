@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="blockUsuario.aspx.cs"
-    Inherits="MotoPoint.blockUsuario" %>
+    Inherits="MotoPoint.blockUsuario" meta:resourcekey="PageResource1" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
             <div class="alert alert-danger" role="alert">
                 Su usuario ha sido bloqueado - Comuniquese con soporte tecnico motopointserviciocontacto@gmail.com
             </div>
-            <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" />
+            <asp:Button runat="server" ID="btnVolver" Text="Volver" OnClick="btnVolver_Click" meta:resourcekey="btnVolverResource1" />
             <br />
         </div>
     </form>

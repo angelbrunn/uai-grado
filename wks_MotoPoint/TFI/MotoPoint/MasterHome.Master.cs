@@ -44,5 +44,25 @@ namespace MotoPoint
             FormsAuthentication.SignOut();
             Response.Redirect("login.aspx");
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSetLangEs_Click(object sender, EventArgs e)
+        {
+            Session["lang"] = "es-ES";
+            Response.Redirect(Request.Url.ToString());
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSetLangEn_Click(object sender, EventArgs e)
+        {
+            Session["lang"] = "en-US";
+            Response.Redirect(Request.Url.ToString());
+        }
     }
 }
