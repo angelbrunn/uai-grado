@@ -20,6 +20,10 @@ namespace SIS.BUSINESS
     /// </summary>
     public class NegNegocio : INegNegocio
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        string rutaPDF = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/FACTURAS/");
         //ESTE SERVICIO WEB DA SERVICIO DE COBRO
         BLL.localhost.Service ws_001 = new BLL.localhost.Service();
         /// <summary>
@@ -174,7 +178,7 @@ namespace SIS.BUSINESS
             bool estado = false;
             string IdSys = "SYS";
 
-            string filename = @"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf";
+            string filename = rutaPDF + " - " + numeroOrden + ".pdf";
             Attachment data = new Attachment(filename, MediaTypeNames.Application.Octet);
 
             //NEGOCIO - OBTENER PAGO REALIZADO POR EL CLIENTE
@@ -253,7 +257,7 @@ namespace SIS.BUSINESS
             Document document = new Document(PageSize.A4, 70, 70, 70, 70);
 
             PdfWriter writer = PdfWriter.GetInstance(document,
-                            new FileStream(@"C:\MotoPoint\FACTURAS\FACTURA-" + numeroOrden + ".pdf", FileMode.Create));
+                            new FileStream(rutaPDF + " - " + numeroOrden + ".pdf", FileMode.Create));
 
             document.AddTitle("FACTURA -" + numeroOrden);
             document.AddCreator("MOTOPOINT S.A");

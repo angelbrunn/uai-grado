@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web.Security;
@@ -30,6 +31,10 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
+        string bkpRuta = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/");
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
@@ -39,7 +44,8 @@ namespace MotoPoint
                 //SI EL USUARIO NO TIENE PERMISOS LO SACO DE LA WEBMASTER PAGE!
                 Response.Redirect("eventos.aspx");
             }
-            else {
+            else
+            {
                 // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
                 bool resultadoConsistenciaUsuarios = false;
                 // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
@@ -73,7 +79,7 @@ namespace MotoPoint
                 {
                     Tx = TxBackUp.ToString();
                 }
-                
+
                 if (Tx == "1")
                 {
                     TxE = TxExportar.ToString();
@@ -91,7 +97,7 @@ namespace MotoPoint
                         TxI = "0";
                     }
                 }
-                else if(Tx == "0")
+                else if (Tx == "0")
                 {
                     TxE = "0";
                     TxI = "0";
@@ -122,13 +128,14 @@ namespace MotoPoint
                 CellDescripcion.Text = _bitacora.Descripcion;
                 CellFecha.Text = _bitacora.Fecha.ToString();
 
-                if (CellIdEvento.Text != "1") {
-                row.Cells.Add(CellIdEvento);
-                row.Cells.Add(CellIdUsuario);
-                row.Cells.Add(CellDescripcion);
-                row.Cells.Add(CellFecha);
+                if (CellIdEvento.Text != "1")
+                {
+                    row.Cells.Add(CellIdEvento);
+                    row.Cells.Add(CellIdUsuario);
+                    row.Cells.Add(CellDescripcion);
+                    row.Cells.Add(CellFecha);
 
-                tbBitacora.Rows.Add(row);
+                    tbBitacora.Rows.Add(row);
                 }
 
             }
@@ -207,49 +214,49 @@ namespace MotoPoint
             {
                 if (chkbxBitacora.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Bitacora.csv";
                     interfazNegocioBackup.ExportarAArchivoBitacora(ruta, ";");
                 }
 
                 if (chkbxUsuario.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Usuario.csv";
                     interfazNegocioBackup.ExportarAArchivoUsuario(ruta, ";");
                 }
 
                 if (chkbxGrupo.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Grupo.csv";
                     interfazNegocioBackup.ExportarAArchivoGrupo(ruta, ";");
                 }
 
                 if (chkbxGrupoPermiso.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_GrupoPermiso.csv";
                     interfazNegocioBackup.ExportarAArchivoGrupoPermisos(ruta, ";");
                 }
 
                 if (chkbxPermiso.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Permiso.csv";
                     interfazNegocioBackup.ExportarAArchivoPermisos(ruta, ";");
                 }
 
                 if (chkbxMultiIdioma.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_MultiIdioma.csv";
                     interfazNegocioBackup.ExportarAArchivoMultiIdioma(ruta, ";");
                 }
 
                 if (chkbxUsuarioGrupo.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_UsuarioGrupo.csv";
                     interfazNegocioBackup.ExportarAArchivoUsuarioGrupo(ruta, ";");
                 }
@@ -261,7 +268,8 @@ namespace MotoPoint
                 new SIS.EXCEPCIONES.UIExcepcion(ex.Message);
             }
 
-            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked)) {
+            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked))
+            {
                 validarExportar = false;
             }
 
@@ -290,49 +298,49 @@ namespace MotoPoint
             {
                 if (chkbxBitacora.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Bitacora.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoBitacora(ruta, delimitter);
                 }
 
                 if (chkbxUsuario.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Usuario.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoUsuario(ruta, delimitter);
                 }
 
                 if (chkbxGrupo.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Grupo.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoGrupo(ruta, delimitter);
                 }
 
                 if (chkbxGrupoPermiso.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_GrupoPermiso.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoGrupoPermiso(ruta, delimitter);
                 }
 
                 if (chkbxPermiso.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_Permiso.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoPermiso(ruta, delimitter);
                 }
 
                 if (chkbxMultiIdioma.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_MultiIdioma.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoMultiIdioma(ruta, delimitter);
                 }
 
                 if (chkbxUsuarioGrupo.Checked)
                 {
-                    ruta = "C:\\MotoPoint";
+                    ruta = bkpRuta;
                     ruta = ruta + "\\bkp_UsuarioGrupo.csv";
                     interfazNegocioBackup.ImportarDesdeArchivoUsuarioGrupo(ruta, delimitter);
                 }
@@ -403,6 +411,32 @@ namespace MotoPoint
         {
             //LISTAR XML DE CONTROL DE TRANSACCION
             Response.Redirect("webmasterpagos.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnTidioma_Click(object sender, EventArgs e)
+        {
+            //POR DEFUALT VIENE ESPAÑOL
+            if (Session["lang"] == null)
+            {
+
+                Session["lang"] = "en-US";
+            }
+
+            if (Session["lang"].ToString() == "en-US")
+            {
+                Session["lang"] = "es-ES";
+                Response.Redirect(Request.Url.ToString());
+            }
+            else
+            {
+                Session["lang"] = "en-US";
+                Response.Redirect(Request.Url.ToString());
+            }
+
         }
     }
 }

@@ -15,7 +15,7 @@ public class Service : System.Web.Services.WebService
     /// <summary>
     /// 
     /// </summary>
-    String ruta = "C:\\MotoPoint\\pagos.xml";
+    string ruta = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/FACTURAS/");
     /// <summary>
     /// 
     /// </summary>

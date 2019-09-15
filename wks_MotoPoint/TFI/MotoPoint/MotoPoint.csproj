@@ -156,6 +156,7 @@
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -509,6 +510,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\MasterHome.Master.en-US.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FilesMotoPoint\Contingencia\" />
+    <Folder Include="FilesMotoPoint\Logs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,5 @@
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\bin\Release\EL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\bin\Release\EL.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Release\EL.csproj.CoreCompileInputs.cache
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Release\EL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Release\EL.pdb

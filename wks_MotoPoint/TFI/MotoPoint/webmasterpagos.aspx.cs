@@ -15,6 +15,10 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
+        string rutaPAGOS = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/");
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +30,7 @@ namespace MotoPoint
             }
             else {
                 XmlDataDocument miDataDoc = new XmlDataDocument();
-                miDataDoc.DataSet.ReadXmlSchema("C:\\MotoPoint\\pagos.xml");
+                miDataDoc.DataSet.ReadXmlSchema(rutaPAGOS + "\\pagos.xml");
 
                 miDataDoc.Load("C:\\MotoPoint\\pagos.xml");
                 GridViewPago.DataSource = miDataDoc.DataSet.Tables[0];

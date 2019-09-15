@@ -10,6 +10,7 @@ using System.Net;
 using System.Web.Script.Serialization;
 using System.Threading;
 using System.Globalization;
+using System.IO;
 
 namespace MotoPoint
 {

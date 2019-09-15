@@ -56,7 +56,7 @@
     <div id="admDebug">
         <p>Administracion de arquitectura Base - Debug</p>
         <asp:Button class="btn warning" ID="btnTbitacora" Text="Test Bitacora" runat="server" OnClick="btnTbitacora_Click" meta:resourcekey="btnTbitacoraResource1"/>
-        <asp:Button class="btn warning" ID="btnTidioma" Text="Cambiar Idioma" runat="server" meta:resourcekey="btnTidiomaResource1"/>
+        <asp:Button class="btn warning" ID="btnTidioma" Text="Cambiar Idioma" runat="server" meta:resourcekey="btnTidiomaResource1" OnClick="btnTidioma_Click"/>
         <asp:Button class="btn info" ID="btnTinfo" Text="Informacion Pagos" runat="server" OnClick="btnTinfo_Click" meta:resourcekey="btnTinfoResource1"/>
         <asp:Button class="btn danger" ID="btnSalir" Text="Salir" runat="server" OnClick="btnSalir_Click" meta:resourcekey="btnSalirResource1"/>
     </div>

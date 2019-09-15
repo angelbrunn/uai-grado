@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<!--Registros pago via web!-->
+<TransaccionesPago>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0121</fechaValidez>
+    <nombreTitular>ANGEL PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788002</numeroTarjeta>
+    <numeroSeguridad>522</numeroSeguridad>
+    <fechaValidez>0222</fechaValidez>
+    <nombreTitular>MIGUEL LOPEZ OCHOA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788003</numeroTarjeta>
+    <numeroSeguridad>
+    </numeroSeguridad>
+    <fechaValidez>0323</fechaValidez>
+    <nombreTitular>JAIRO RAMIREZ JARAMILLO</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>
+    </numeroTarjeta>
+    <numeroSeguridad>
+    </numeroSeguridad>
+    <fechaValidez>
+    </fechaValidez>
+    <nombreTitular>
+    </nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>2121</fechaValidez>
+    <nombreTitular>
+    </nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0121</fechaValidez>
+    <nombreTitular>ANGEL PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0102</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0126</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>522</numeroSeguridad>
+    <fechaValidez>0120</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>0121</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1212</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>121</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1233</fechaValidez>
+    <nombreTitular>Miguel Restrepo</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4546283345788001</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1223</fechaValidez>
+    <nombreTitular>MAURICIO CORREA J</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300009512699</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0819</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300009512699</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0819</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300009559938</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300009999939</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>43383000099</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4343300009091212</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300090908989</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338300009098989</numeroTarjeta>
+    <numeroSeguridad>125</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4343000912122331</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0124</fechaValidez>
+    <nombreTitular>MIGUEL ZAPPATA COREA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4343232415156565</numeroTarjeta>
+    <numeroSeguridad>324</numeroSeguridad>
+    <fechaValidez>1225</fechaValidez>
+    <nombreTitular>MIGUEL LA ZORRA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>0000000000</numeroTarjeta>
+    <numeroSeguridad>551</numeroSeguridad>
+    <fechaValidez>1326</fechaValidez>
+    <nombreTitular>ANGEL . PRAO BRUN</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338123123123</numeroTarjeta>
+    <numeroSeguridad>521</numeroSeguridad>
+    <fechaValidez>1326</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433800001233123</numeroTarjeta>
+    <numeroSeguridad>186</numeroSeguridad>
+    <fechaValidez>1387</fechaValidez>
+    <nombreTitular>angel prado brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4333000012331233</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4333000001020102</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>RUBEN CORREA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4333010100001212</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433344556677</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338232312341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4333123412341223</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433323232323</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO RECHAZADO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>4338123412341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812311231</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>EUGENIO COSTA</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0122</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812391239</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>angel brun prado</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>Angel Prado Brun</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812341234</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+  <Transacciones>
+    <numeroTarjeta>433812391238</numeroTarjeta>
+    <numeroSeguridad>123</numeroSeguridad>
+    <fechaValidez>0129</fechaValidez>
+    <nombreTitular>ANGEL GU PRADO BRUN</nombreTitular>
+    <estadoTrans>PAGO REALIZADO CON EXITO</estadoTrans>
+  </Transacciones>
+</TransaccionesPago>
