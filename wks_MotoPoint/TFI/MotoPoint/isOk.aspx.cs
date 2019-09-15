@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -40,6 +42,26 @@ namespace MotoPoint
                     Response.Redirect("actividades.aspx");
                 }
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void InitializeCulture()
+        {
+            if (Session["lang"] != null)
+            {
+                SetCulture(Session["lang"].ToString());
+                base.InitializeCulture();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lang"></param>
+        private void SetCulture(string lang)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
         }
         /// <summary>
         /// 

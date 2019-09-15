@@ -85,7 +85,10 @@ namespace MotoPoint
                 base.InitializeCulture();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lang"></param>
         private void SetCulture(string lang)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);

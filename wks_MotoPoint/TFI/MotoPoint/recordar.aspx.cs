@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SIS.ENTIDAD;
 using System.Net.Mail;
+using System.Threading;
+using System.Globalization;
 
 namespace MotoPoint
 {
@@ -43,6 +45,26 @@ namespace MotoPoint
                 FormsAuthentication.SignOut();
                 Response.Redirect("login.aspx");
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void InitializeCulture()
+        {
+            if (Session["lang"] != null)
+            {
+                SetCulture(Session["lang"].ToString());
+                base.InitializeCulture();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lang"></param>
+        private void SetCulture(string lang)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
         }
         /// <summary>
         /// 
