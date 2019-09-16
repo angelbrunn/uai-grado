@@ -2,6 +2,10 @@
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using System.Net.Mime;
 
 namespace SIS.ESCRITURA
 {
@@ -13,11 +17,15 @@ namespace SIS.ESCRITURA
         /// <summary>
         /// 
         /// </summary>
+        string rutaLog = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/");
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="oBitacora"></param>
         public void RegistrarEnBitacoraIO(ENTIDAD.Bitacora oBitacora)
         {
             string delimitador = ";";
-            string ruta = @"C:\Logs MotoPoint\log.csv";
+            string ruta = rutaLog + "\\log.csv";
             string cabecera = "idEvento" + delimitador + "idUsuario" + delimitador + "descripcion" + delimitador + "fecha";
             try
             {
@@ -46,7 +54,7 @@ namespace SIS.ESCRITURA
         public void RegistrarLogSystem(string errorTabla, string errorColumna)
         {
             string delimitador = "|";
-            string ruta = "C:\\MotoPoint\\log_System.txt";
+            string ruta = rutaLog + "\\log_System.txt";
             try
             {
                 StreamWriter archivo = new StreamWriter(ruta, true);
@@ -74,7 +82,7 @@ namespace SIS.ESCRITURA
         /// </summary>
         public DataTable LeerLogSystem()
         {
-            string ruta = "C:\\MotoPoint\\log_System.txt";
+            string ruta = rutaLog + "\\log_System.txt";
             Char delimitador = '|';
             bool header = false;
             DataTable dt = new DataTable();

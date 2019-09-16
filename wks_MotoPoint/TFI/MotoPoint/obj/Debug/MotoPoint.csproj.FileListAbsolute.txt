@@ -206,6 +206,9 @@ C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.csproj.CoreCompileInputs.cache
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.dll
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.dll.config
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\MotoPoint.pdb
@@ -222,7 +225,6 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\Moto
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.Managed.Core.targets
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\Microsoft.VisualBasic.Core.targets
@@ -230,13 +232,11 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\Moto
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Console.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Diagnostics.StackTrace.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.IO.Compression.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.IO.Pipes.AccessControl.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.IO.Pipes.dll
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Security.Claims.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\roslyn\System.Security.Cryptography.Algorithms.dll
@@ -261,7 +261,9 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\Moto
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\IO.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\DAL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BL.dll
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\itextsharp.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BE.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BLL.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BLL.dll.config
@@ -269,12 +271,10 @@ C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\Moto
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\IO.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\DAL.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\BL.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.csprojAssemblyReference.cache
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.csproj.CoreCompileInputs.cache
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.csproj.CopyComplete
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\obj\Debug\MotoPoint.pdb
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.dll
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\SEG.pdb
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\MotoPoint\bin\itextsharp.dll

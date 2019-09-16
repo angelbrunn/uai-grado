@@ -23,7 +23,7 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        string rutaPDF = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/FACTURAS/");
+        string rutaPDF = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/FACTURAS/");
         //ESTE SERVICIO WEB DA SERVICIO DE COBRO
         BLL.localhost.Service ws_001 = new BLL.localhost.Service();
         /// <summary>

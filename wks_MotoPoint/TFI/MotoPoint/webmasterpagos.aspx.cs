@@ -15,7 +15,7 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
-        string rutaPAGOS = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/");
+        string rutaPAGOS = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/");
         /// <summary>
         /// 
         /// </summary>
@@ -28,11 +28,12 @@ namespace MotoPoint
                 //SI EL USUARIO NO TIENE PERMISOS LO SACO DE LA WEBMASTER PAGE - CONTINGENCIAS DE BACKLOG SYSTEM!
                 Response.Redirect("home.aspx");
             }
-            else {
+            else
+            {
                 XmlDataDocument miDataDoc = new XmlDataDocument();
                 miDataDoc.DataSet.ReadXmlSchema(rutaPAGOS + "\\pagos.xml");
 
-                miDataDoc.Load("C:\\MotoPoint\\pagos.xml");
+                miDataDoc.Load(rutaPAGOS + "\\pagos.xml");
                 GridViewPago.DataSource = miDataDoc.DataSet.Tables[0];
                 GridViewPago.DataBind();
             }

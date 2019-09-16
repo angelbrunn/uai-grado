@@ -31,7 +31,7 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
-        string bkpRuta = System.Web.HttpContext.Current.Server.MapPath("~/FilesMotoPoint/Contingencia/");
+        string bkpRuta = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/");
         /// <summary>
         /// 
         /// </summary>

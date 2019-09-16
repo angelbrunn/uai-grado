@@ -139,46 +139,46 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:27:05</publishTime>
     </File>
     <File Include="bin/BE.dll">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:45</publishTime>
     </File>
     <File Include="bin/BE.pdb">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:45</publishTime>
     </File>
     <File Include="bin/BL.dll">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:47</publishTime>
     </File>
     <File Include="bin/BL.pdb">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:47</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>09/15/2019 17:49:44</publishTime>
+      <publishTime>09/15/2019 21:54:47</publishTime>
     </File>
     <File Include="bin/BLL.dll.config">
       <publishTime>12/31/2018 19:52:10</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>09/15/2019 17:49:44</publishTime>
+      <publishTime>09/15/2019 21:54:47</publishTime>
     </File>
     <File Include="bin/BLL.XmlSerializers.dll">
-      <publishTime>09/15/2019 17:49:47</publishTime>
+      <publishTime>09/15/2019 21:54:48</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="bin/EL.dll">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:45</publishTime>
     </File>
     <File Include="bin/EL.pdb">
-      <publishTime>09/15/2019 17:49:42</publishTime>
+      <publishTime>09/15/2019 21:54:45</publishTime>
     </File>
     <File Include="bin/IO.dll">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="bin/IO.pdb">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
       <publishTime>08/24/2019 18:23:09</publishTime>
@@ -187,13 +187,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/MotoPoint.dll">
-      <publishTime>09/15/2019 17:50:01</publishTime>
+      <publishTime>09/15/2019 21:55:00</publishTime>
     </File>
     <File Include="bin/MotoPoint.pdb">
-      <publishTime>09/15/2019 17:50:01</publishTime>
+      <publishTime>09/15/2019 21:55:00</publishTime>
     </File>
     <File Include="bin/MotoPoint.XmlSerializers.dll">
-      <publishTime>09/15/2019 17:50:02</publishTime>
+      <publishTime>09/15/2019 21:55:01</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/31/2018 19:52:12</publishTime>
@@ -334,10 +334,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/SEG.dll">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="bin/SEG.pdb">
-      <publishTime>09/15/2019 17:49:43</publishTime>
+      <publishTime>09/15/2019 21:54:46</publishTime>
     </File>
     <File Include="blockUsuario.aspx">
       <publishTime>09/15/2019 12:28:06</publishTime>
@@ -625,10 +625,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/15/2019 17:50:04</publishTime>
+      <publishTime>09/15/2019 21:57:11</publishTime>
     </File>
     <File Include="webmaster.aspx">
-      <publishTime>09/15/2019 12:36:18</publishTime>
+      <publishTime>09/15/2019 19:09:26</publishTime>
     </File>
     <File Include="webmasterContingencia.aspx">
       <publishTime>09/15/2019 12:36:52</publishTime>
