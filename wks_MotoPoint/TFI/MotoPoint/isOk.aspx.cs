@@ -31,13 +31,14 @@ namespace MotoPoint
                     Response.Redirect("login.aspx");
                 }
             }
-            else
+            else if (Session["CompraActividad"] != null)
             {
                 string isCompraActividad = Session["CompraActividad"].ToString();
                 if (isCompraActividad == "0")
                 {
                     Response.Redirect("eventos.aspx");
-                }else if (isCompraActividad == "1")
+                }
+                else if (isCompraActividad == "1")
                 {
                     Response.Redirect("actividades.aspx");
                 }
@@ -70,7 +71,16 @@ namespace MotoPoint
         /// <param name="e"></param>
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            string isCompraActividad = Session["CompraActividad"].ToString();
+            string isCompraActividad = "0";
+            if (Session["CompraActividad"] != null)
+            {
+                isCompraActividad = Session["CompraActividad"].ToString();
+            }
+            else if (Session["CompraActividad"] != null)
+            {
+                isCompraActividad = Session["ayudaEmail"].ToString();
+            }
+
             if (isCompraActividad == "0")
             {
                 Response.Redirect("eventos.aspx");

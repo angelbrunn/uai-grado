@@ -23,7 +23,7 @@ namespace SIS.BUSINESS
         /// <summary>
         /// 
         /// </summary>
-        string rutaPDF = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/FACTURAS/");
+        string rutaPDF = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/FACTURA/");
         //ESTE SERVICIO WEB DA SERVICIO DE COBRO
         BLL.localhost.Service ws_001 = new BLL.localhost.Service();
         /// <summary>
@@ -178,7 +178,7 @@ namespace SIS.BUSINESS
             bool estado = false;
             string IdSys = "SYS";
 
-            string filename = rutaPDF + " - " + numeroOrden + ".pdf";
+            string filename = rutaPDF + "FACTURA" + "-" + numeroOrden + ".pdf";
             Attachment data = new Attachment(filename, MediaTypeNames.Application.Octet);
 
             //NEGOCIO - OBTENER PAGO REALIZADO POR EL CLIENTE
@@ -212,7 +212,7 @@ namespace SIS.BUSINESS
 
             mail.Body = sb.ToString(); ;
 
-            SmtpServer.Port = 587;
+            SmtpServer.Port = 25;
             SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
             SmtpServer.EnableSsl = true;
 
@@ -257,7 +257,7 @@ namespace SIS.BUSINESS
             Document document = new Document(PageSize.A4, 70, 70, 70, 70);
 
             PdfWriter writer = PdfWriter.GetInstance(document,
-                            new FileStream(rutaPDF + " - " + numeroOrden + ".pdf", FileMode.Create));
+                            new FileStream(rutaPDF+ "FACTURA" + "-" + numeroOrden + ".pdf", FileMode.Create));
 
             document.AddTitle("FACTURA -" + numeroOrden);
             document.AddCreator("MOTOPOINT S.A");
@@ -419,7 +419,7 @@ namespace SIS.BUSINESS
             cb.ShowText("Aprobado!");
             cb.EndText();
 
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath("~/Content/image/logo-pdf.png"));
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath("~/Content/image/logoPdf.svg"));
             logo.SetAbsolutePosition((PageSize.A4.Width - logo.ScaledWidth) / 2, (PageSize.A4.Height - logo.ScaledHeight) / 2);
             document.Add(logo);
 
@@ -536,7 +536,7 @@ namespace SIS.BUSINESS
             sb.AppendLine("-------------------------------------------------------------------------");
             mail.Body = sb.ToString(); ;
 
-            SmtpServer.Port = 587;
+            SmtpServer.Port = 25;
             SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
             SmtpServer.EnableSsl = true;
 
@@ -831,7 +831,7 @@ namespace SIS.BUSINESS
             sb.AppendLine("-------------------------------------------------------------------------");
             mail.Body = sb.ToString(); ;
 
-            SmtpServer.Port = 587;
+            SmtpServer.Port = 25;
             SmtpServer.Credentials = new System.Net.NetworkCredential("motopointserviciocontacto@gmail.com", "Motopoint1#_");
             SmtpServer.EnableSsl = true;
 

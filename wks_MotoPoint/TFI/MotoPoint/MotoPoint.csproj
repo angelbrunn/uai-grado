@@ -85,10 +85,12 @@
     <Content Include="Content\css\blockUsuario.css" />
     <Content Include="Content\css\ayuda.css" />
     <Content Include="Content\css\avisopago.css" />
+    <Content Include="Content\FilesMotoPoint\Contingencia\FACTURA\inventario.txt" />
     <Content Include="Content\FilesMotoPoint\Contingencia\log_System.txt" />
     <Content Include="Content\FilesMotoPoint\Contingencia\pagos.xml" />
     <Content Include="Content\FilesMotoPoint\Readme.txt" />
     <Content Include="Content\image\bill.svg" />
+    <Content Include="Content\image\logoPdf.svg" />
     <Content Include="Content\image\rutaDetalle.svg" />
     <Content Include="Content\css\perfil.css" />
     <Content Include="Content\css\recordar.css" />
@@ -515,9 +517,7 @@
   <ItemGroup>
     <Content Include="App_LocalResources\MasterHome.Master.en-US.resx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\FilesMotoPoint\Contingencia\FACTURA\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

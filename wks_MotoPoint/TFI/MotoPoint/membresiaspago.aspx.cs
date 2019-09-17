@@ -114,7 +114,9 @@ namespace MotoPoint
 
             Boolean resultadoPago = false;
 
-            resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
+            //TODO CALL TO WEBSERVICE DEPLOYMENT
+            //resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
+            resultadoPago = true;
 
             string isCompraActividad = Session["CompraActividad"].ToString();
 

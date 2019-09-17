@@ -10,7 +10,7 @@ C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\
 C:\Users\angel\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.pdb
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\bin\Debug\EL.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\bin\Debug\EL.pdb
-C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.csprojAssemblyReference.cache
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.dll
 C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.pdb
+C:\Users\angel\OneDrive\Documents\wks_microsoft\uai-grado\wks_MotoPoint\TFI\EL\obj\Debug\EL.csprojAssemblyReference.cache

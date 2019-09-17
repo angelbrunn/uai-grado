@@ -107,6 +107,7 @@ namespace MotoPoint
                 //ARQ.BASE - SETEO ESTADOS PARA USUARIO
                 Session["loginEstado"] = 0;
                 Session["usuarioOk"] = 0;
+                Session["ayudaEmail"] = 0;
                 //ARQ.BASE - ENVIAR POR EMAIL LA CONSULTA DEL USUARIO
                 estado = interfazNegocio.EnviarConsulta(nombre, oUsuario.Email, tipoConsulta, descripcion);
                 //ARQ.BASE - FEEDBACK POSITIVO
@@ -116,6 +117,7 @@ namespace MotoPoint
             {
                 //ARQ.BASE - FEEDBACK NEGATIVO
                 Session["usuarioOk"] = 1;
+                Session["ayudaEmail"] = 1;
                 Response.Redirect("isError.aspx");
             }
         }
