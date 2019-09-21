@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<!--Escribir datos pappi!-->
-<Datos Cliente Numero Tarjeta="Guardar">
-  <NumeroTarjeta>sadasdadadas</NumeroTarjeta>
-  <NumeroSeguridad>asdasas</NumeroSeguridad>
-  <FechaValidez>asdasda</FechaValidez>
-  <NombreCliente>asdasdad</NombreCliente>
-</Datos Cliente>

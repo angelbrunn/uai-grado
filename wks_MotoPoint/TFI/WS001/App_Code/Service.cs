@@ -30,8 +30,9 @@ public class Service : System.Web.Services.WebService
     public Boolean PagoMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular)
     {
         Boolean resultadoPago;
-        String estadoTrans;
+        string estadoTrans;
 
+        /* ONLY DEV MODE */
         //VALIDAR QUE TODOS LOS CAMPOS ESTEN CORRECTOS
         if (numeroTarjeta != "" && numeroSeguridad != "" && fechaValidez != "" && nombreTitular != "")
         {
@@ -68,7 +69,7 @@ public class Service : System.Web.Services.WebService
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(ruta);
 
-        XmlNode transferencia = this.CrearNodoXml(xmlDoc,numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular, estadoTrans);
+        XmlNode transferencia = this.CrearNodoXml(xmlDoc, numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular, estadoTrans);
 
         //Obtenemos el nodo raiz del documento.
         XmlNode nodoRaiz = xmlDoc.DocumentElement;
@@ -89,7 +90,7 @@ public class Service : System.Web.Services.WebService
     /// <param name="nombreTitular"></param>
     /// <param name="estadoTrans"></param>
     /// <returns></returns>
-    private XmlNode CrearNodoXml(XmlDocument xmlDoc,string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular, string estadoTrans)
+    private XmlNode CrearNodoXml(XmlDocument xmlDoc, string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular, string estadoTrans)
     {
         //Creamos el nodo que deseamos insertar.
         XmlElement transaccionPago = xmlDoc.CreateElement("Transacciones");

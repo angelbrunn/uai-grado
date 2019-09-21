@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace MotoPoint.localhost {
+namespace MotoPoint.somee {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -23,10 +23,10 @@ namespace MotoPoint.localhost {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3190.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="ServiceSoap", Namespace="http://motopoint.com.ar/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="ServiceSoap", Namespace="http://tempuri.org/")]
     public partial class Service : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback PagoMembresiaOperationCompleted;
@@ -35,7 +35,7 @@ namespace MotoPoint.localhost {
         
         /// <remarks/>
         public Service() {
-            this.Url = global::MotoPoint.Properties.Settings.Default.MotoPoint_localhost_Service;
+            this.Url = global::MotoPoint.Properties.Settings.Default.MotoPoint_somee_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -73,7 +73,7 @@ namespace MotoPoint.localhost {
         public event PagoMembresiaCompletedEventHandler PagoMembresiaCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://motopoint.com.ar/PagoMembresia", RequestNamespace="http://motopoint.com.ar/", ResponseNamespace="http://motopoint.com.ar/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/PagoMembresia", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool PagoMembresia(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular) {
             object[] results = this.Invoke("PagoMembresia", new object[] {
                         numeroTarjeta,
@@ -127,11 +127,11 @@ namespace MotoPoint.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3190.0")]
     public delegate void PagoMembresiaCompletedEventHandler(object sender, PagoMembresiaCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3190.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class PagoMembresiaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

@@ -59,7 +59,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:51:33</publishTime>
     </File>
     <File Include="App_LocalResources/isOk.aspx.resx">
-      <publishTime>09/15/2019 12:31:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="App_LocalResources/MasterHome.Master.en-US.resx">
       <publishTime>09/15/2019 16:06:03</publishTime>
@@ -71,7 +71,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:53:50</publishTime>
     </File>
     <File Include="App_LocalResources/membresias.aspx.resx">
-      <publishTime>09/15/2019 12:32:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="App_LocalResources/membresiaspago.aspx.en-US.resx">
       <publishTime>09/15/2019 12:54:46</publishTime>
@@ -131,7 +131,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 13:01:55</publishTime>
     </File>
     <File Include="App_LocalResources/webmasterpagos.aspx.resx">
-      <publishTime>09/15/2019 12:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="avisoPago.aspx">
       <publishTime>09/15/2019 12:13:05</publishTime>
@@ -188,13 +188,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/MotoPoint.dll">
-      <publishTime>09/17/2019 01:26:07</publishTime>
+      <publishTime>09/20/2019 20:45:01</publishTime>
     </File>
     <File Include="bin/MotoPoint.pdb">
-      <publishTime>09/17/2019 01:26:07</publishTime>
+      <publishTime>09/20/2019 20:45:01</publishTime>
     </File>
     <File Include="bin/MotoPoint.XmlSerializers.dll">
-      <publishTime>09/17/2019 01:26:08</publishTime>
+      <publishTime>09/20/2019 20:45:02</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/31/2018 19:52:12</publishTime>
@@ -643,8 +643,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Scripts/popper.min.js">
       <publishTime>12/31/2018 19:52:10</publishTime>
     </File>
+    <File Include="Web References/somee/Reference.map">
+      <publishTime>09/20/2019 20:33:43</publishTime>
+    </File>
     <File Include="Web.config">
-      <publishTime>09/15/2019 22:04:05</publishTime>
+      <publishTime>09/20/2019 20:45:23</publishTime>
     </File>
     <File Include="webmaster.aspx">
       <publishTime>09/15/2019 19:09:26</publishTime>

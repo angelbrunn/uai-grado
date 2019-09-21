@@ -106,7 +106,7 @@ namespace MotoPoint
         protected void btnPagar_Click(object sender, EventArgs e)
         {
             //NEGOCIO - VALIDO EL PAGO VIA WEBSERVICES
-            var operacion = new localhost.Service();
+            var operacion = new somee.Service();
             string numeroTarjeta = txtNumeroTarjeta.Text;
             string numeroSeguridad = txtCvc.Text;
             string fechaValidez = txtFecha.Text;
@@ -115,8 +115,8 @@ namespace MotoPoint
             Boolean resultadoPago = false;
 
             //TODO CALL TO WEBSERVICE DEPLOYMENT
-            //resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
-            resultadoPago = true;
+            resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
+            //resultadoPago = true;
 
             string isCompraActividad = Session["CompraActividad"].ToString();
 
