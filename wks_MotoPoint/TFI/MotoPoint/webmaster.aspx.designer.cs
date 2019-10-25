@@ -31,6 +31,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblDbEstado;
         
         /// <summary>
+        /// Control lblLinkGestionPerfiles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLinkGestionPerfiles;
+        
+        /// <summary>
         /// Control LinkGestionPerfiles.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.LinkButton LinkGestionPerfiles;
         
         /// <summary>
+        /// Control lblGestionPerfilesIntoLink.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGestionPerfilesIntoLink;
+        
+        /// <summary>
+        /// Control lblLinkHome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLinkHome;
+        
+        /// <summary>
         /// Control LinkHome.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkHome;
+        
+        /// <summary>
+        /// Control LinkHomeInto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LinkHomeInto;
         
         /// <summary>
         /// Control linkContingencia.
@@ -65,6 +101,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tbBitacora;
+        
+        /// <summary>
+        /// Control lblAdminBitacora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdminBitacora;
         
         /// <summary>
         /// Control chkbxBitacora.
@@ -146,6 +191,15 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnImportar;
+        
+        /// <summary>
+        /// Control lblBtnWebMaster.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBtnWebMaster;
         
         /// <summary>
         /// Control btnTbitacora.
