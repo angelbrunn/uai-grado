@@ -257,7 +257,7 @@ namespace SIS.BUSINESS
             Document document = new Document(PageSize.A4, 70, 70, 70, 70);
 
             PdfWriter writer = PdfWriter.GetInstance(document,
-                            new FileStream(rutaPDF+ "FACTURA" + "-" + numeroOrden + ".pdf", FileMode.Create));
+                            new FileStream(rutaPDF + "FACTURA" + "-" + numeroOrden + ".pdf", FileMode.Create));
 
             document.AddTitle("FACTURA -" + numeroOrden);
             document.AddCreator("MOTOPOINT S.A");
@@ -873,6 +873,63 @@ namespace SIS.BUSINESS
 
             listadoExpertos = oDalNegocio.ObteneExpertoDisponibles();
             return listadoExpertos;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<TarjetaCredito> ObtenerTarjetaCredito()
+        {
+            List<TarjetaCredito> listadoTarjetaCredito = new List<TarjetaCredito>();
+            DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+            listadoTarjetaCredito = oDalNegocio.ObtenerTarjetasCredito();
+            return listadoTarjetaCredito;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroTarjeta"></param>
+        /// <param name="numeroSeguridad"></param>
+        /// <param name="fechaValidez"></param>
+        /// <param name="nombreTitular"></param>
+        /// <param name="saldo"></param>
+        /// <returns></returns>
+        public int RegistrarTarjetaCredito(TarjetaCredito oTarjetaCredito)
+        {
+            int resultadoValidacion = 1;
+            string idUsuario = "Sys";
+            try
+            {
+                resultadoValidacion = 0;
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.RegistrarTarjetaCredito(oTarjetaCredito.NumeroTarjeta, oTarjetaCredito.NumeroSeguridad, oTarjetaCredito.FechaValidez, oTarjetaCredito.NombreTitular, oTarjetaCredito.Saldo);
+            }
+            catch (Exception ex)
+            {
+                resultadoValidacion = 1;
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(idUsuario, oExBLL);
+            }
+            return resultadoValidacion;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="saldo"></param>
+        public void DecrementarTarjetaCreditoSaldo(string numeroTarjeta, string saldo)
+        {
+            string IdSys = "BLL";
+            try
+            {
+                DATOS.DALNegocio oDalNegocio = new DATOS.DALNegocio();
+                oDalNegocio.DecrementarTarjetaCreditoSaldo(numeroTarjeta, saldo);
+            }
+            catch (Exception ex)
+            {
+
+                EXCEPCIONES.BLLExcepcion oExBLL = new EXCEPCIONES.BLLExcepcion(ex.Message);
+                interfazNegocioBitacora.RegistrarEnBitacora_BLL(IdSys, oExBLL);
+            }
         }
     }
 }

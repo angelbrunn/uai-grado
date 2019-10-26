@@ -609,5 +609,107 @@ namespace SIS.DATOS
                 return listadoExperto;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<TarjetaCredito> ObtenerTarjetasCredito()
+        {
+            List<TarjetaCredito> listadoTarjetasCredito = new List<TarjetaCredito>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdSelect = new SqlCommand("SELECT * FROM TarjetaCredito", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (var reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                TarjetaCredito oTarjetaCredito = new TarjetaCredito();
+                                oTarjetaCredito.NumeroTarjeta = reader["NumeroTarjeta"].ToString();
+                                oTarjetaCredito.NumeroSeguridad = reader["NumeroSeguridad"].ToString();
+                                oTarjetaCredito.FechaValidez = reader["FechaValidez"].ToString();
+                                oTarjetaCredito.NombreTitular = reader["NombreTitular"].ToString();
+                                oTarjetaCredito.Saldo = reader["Saldo"].ToString();
+                                listadoTarjetasCredito.Add(oTarjetaCredito);
+                            }
+                        }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+                return listadoTarjetasCredito;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroTarjeta"></param>
+        /// <param name="numeroSeguridad"></param>
+        /// <param name="fechaValidez"></param>
+        /// <param name="nombreTitular"></param>
+        /// <param name="saldo"></param>
+        public void RegistrarTarjetaCredito(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular, string saldo)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdInsert = new SqlCommand("INSERT INTO TarjetaCredito (NumeroTarjeta,NumeroSeguridad,FechaValidez,NombreTitular,Saldo) VALUES (@NumeroTarjeta,@NumeroSeguridad,@FechaValidez,@NombreTitular,@Saldo)", con))
+                {
+                    cmdInsert.Parameters.AddWithValue("@NumeroTarjeta", numeroTarjeta);
+                    cmdInsert.Parameters.AddWithValue("@NumeroSeguridad", numeroSeguridad);
+                    cmdInsert.Parameters.AddWithValue("@FechaValidez", fechaValidez);
+                    cmdInsert.Parameters.AddWithValue("@NombreTitular", nombreTitular);
+                    cmdInsert.Parameters.AddWithValue("@Saldo", saldo);
+
+                    try
+                    {
+                        con.Open();
+                        cmdInsert.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="saldoFinal"></param>
+        /// <returns></returns>
+        public int DecrementarTarjetaCreditoSaldo(string numeroTarjeta, string saldoFinal)
+        {
+            int resultadoValidacion = 0;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoPoint"].ConnectionString))
+            {
+                using (SqlCommand cmdUpdate = new SqlCommand("UPDATE TarjetaCredito SET saldo=@Saldo WHERE numeroTarjeta=@NumeroTarjeta", con))
+                {
+                    try
+                    {
+                        con.Open();
+                        cmdUpdate.Parameters.AddWithValue("@NumeroTarjeta", numeroTarjeta);
+                        cmdUpdate.Parameters.AddWithValue("@Saldo", saldoFinal);
+                        resultadoValidacion = (int)cmdUpdate.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        con.Close();
+                        throw new EXCEPCIONES.DALExcepcion(ex.Message);
+                    }
+                }
+            }
+            return resultadoValidacion;
+        }
     }
 }

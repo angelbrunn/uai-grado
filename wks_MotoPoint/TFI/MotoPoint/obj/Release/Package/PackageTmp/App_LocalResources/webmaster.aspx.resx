@@ -255,4 +255,22 @@
   <data name="tbBitacoraResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="lblAdminBitacoraResource1.Text" xml:space="preserve">
+    <value>Administración de arquitectura Base - Resguardo y Restauración.</value>
+  </data>
+  <data name="lblBtnWebMasterResource1.Text" xml:space="preserve">
+    <value>Administración de arquitectura Base - Debug</value>
+  </data>
+  <data name="lblGestionPerfilesIntoLinkResource1.Text" xml:space="preserve">
+    <value>  Gestion Perfiles</value>
+  </data>
+  <data name="lblLinkGestionPerfilesResource1.Text" xml:space="preserve">
+    <value>Administracion de Usuarios - ABM Perfiles - </value>
+  </data>
+  <data name="lblLinkHomeResource1.Text" xml:space="preserve">
+    <value>Ir a la WebSite MotoPoint! -  </value>
+  </data>
+  <data name="LinkHomeIntoResource1.Text" xml:space="preserve">
+    <value>  Ir a MotoPoint!</value>
+  </data>
 </root>

@@ -28,6 +28,10 @@ namespace MotoPoint
         /// <summary>
         /// 
         /// </summary>
+        List<TarjetaCredito> collTarjetasCredito = new List<TarjetaCredito>();
+        /// <summary>
+        /// 
+        /// </summary>
         string idUsuario;
         /// <summary>
         /// 
@@ -111,12 +115,17 @@ namespace MotoPoint
             string numeroSeguridad = txtCvc.Text;
             string fechaValidez = txtFecha.Text;
             string nombreTitular = txtTitularTarjeta.Text;
+            string saldo = txtMontoPagar.Text;
 
             Boolean resultadoPago = false;
+            Boolean esTarjetaValida = false;
+
+            esTarjetaValida = ValTarjetaYvalSaldo(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular, saldo);
 
             //TODO CALL TO WEBSERVICE DEPLOYMENT
             resultadoPago = operacion.PagoMembresia(numeroTarjeta, numeroSeguridad, fechaValidez, nombreTitular);
-            //resultadoPago = true;
+
+            resultadoPago = esTarjetaValida;
 
             string isCompraActividad = Session["CompraActividad"].ToString();
 
@@ -206,6 +215,129 @@ namespace MotoPoint
                     Response.Redirect("isError.aspx");
                 }
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroTarjeta"></param>
+        /// <param name="numeroSeguridad"></param>
+        /// <param name="fechaValidez"></param>
+        /// <param name="nombreTitular"></param>
+        /// <returns></returns>
+        public Boolean ValTarjetaYvalSaldo(string numeroTarjeta, string numeroSeguridad, string fechaValidez, string nombreTitular, string saldo)
+        {
+            Boolean resultadoPago = false;
+
+            //OBTENGO LAS TARJETAS VAIDAS DE LOS CLIENTES
+            collTarjetasCredito = interfazNegocio.ObtenerTarjetaCredito();
+
+            // BUSCO DENTRO DE MI DB EN MEMORIA SI EXISTE VALIDO CVC SINO EXISTE LO AGREGO
+            IEnumerator<TarjetaCredito> enu1 = collTarjetasCredito.GetEnumerator();
+            IEnumerator<TarjetaCredito> enu = collTarjetasCredito.GetEnumerator();
+            int nuevaTarjeta = 0;
+            Boolean block = false;
+
+            while (enu1.MoveNext())
+            {
+                if (enu1.Current.NumeroTarjeta == numeroTarjeta)
+                {
+                    // SI LA TARJETA EXISTE ENTONCES OPERO CON DICHA TARJETA
+                    nuevaTarjeta = 0;
+                }
+                else
+                {
+                    // SI LA TARJETA NO EXISTE LA AGREGO
+                    nuevaTarjeta = 1;
+                }
+            }
+
+            while (enu.MoveNext())
+            {
+                if (nuevaTarjeta == 0)
+                {
+                    // VALIDO SI EXISTE LA TARJETA O SI YA SE INGRESO
+                    if (enu.Current.NumeroTarjeta == numeroTarjeta)
+                    {
+                        // SI YA LA AGREGUE VALIDO SI EL CODIGO DE CVC ES VALIDO
+                        if (enu.Current.NumeroSeguridad == numeroSeguridad)
+                        {
+                            // VALIDACION DE LA FECHA | LA MISMA TIENE QUE ESTAR VIGENTE
+                            DateTime dateActual = DateTime.Now;
+                            string fecha = "01/" + fechaValidez.Substring(0, 2).ToString() + "/" + "20" + fechaValidez.Substring(2, 2).ToString();
+                            DateTime dateTarjeta = DateTime.Parse(fecha);
+
+                            if (dateTarjeta > dateActual)
+                            {
+                                int saldoDisponible = Convert.ToInt32(enu.Current.Saldo);
+                                int saldoDebitar = Convert.ToInt32(saldo);
+                                // VALIDO SI TIENE SALDO - PENDING
+                                if (saldoDisponible >= saldoDebitar)
+                                {
+                                    int saldoFinal = saldoDisponible - saldoDebitar;
+                                    // DEBITO | DECREMENTO SALDO PARA DICHA TARJETA
+                                    interfazNegocio.DecrementarTarjetaCreditoSaldo(enu.Current.NumeroTarjeta, saldoFinal.ToString());
+                                    resultadoPago = true;
+                                }
+                                else
+                                {
+                                    resultadoPago = false;
+                                }
+                            }
+                            else
+                            {
+                                resultadoPago = false;
+                            }
+
+                        }
+                        else
+                        {
+                            resultadoPago = false;
+                        }
+                    }
+                }
+                else if (nuevaTarjeta == 1)
+                {
+                    if (block == false)
+                    {
+                        //SAVE TARJETA
+                        block = true;
+                        TarjetaCredito oTarjetaCredito = new TarjetaCredito();
+                        oTarjetaCredito.NumeroTarjeta = numeroTarjeta;
+                        oTarjetaCredito.NumeroSeguridad = numeroSeguridad;
+                        oTarjetaCredito.FechaValidez = fechaValidez;
+                        oTarjetaCredito.NombreTitular = nombreTitular;
+                        int saldoDisponible = Convert.ToInt32("5000");
+                        int saldoDebitar = Convert.ToInt32(saldo);
+                        int saldoFinal = saldoDisponible - saldoDebitar;
+                        oTarjetaCredito.Saldo = saldoFinal.ToString();
+                        // LA TARJETA ES NUEVA LA AGREGO | SI ES TARJETA VALIDA
+                        switch (enu.Current.NumeroTarjeta.Substring(0, 4))
+                        {
+                            case "4338":
+                                Console.WriteLine("PAGO CON VISA");
+                                interfazNegocio.RegistrarTarjetaCredito(oTarjetaCredito);
+                                resultadoPago = true;
+                                break;
+                            case "3777":
+                                Console.WriteLine("PAGO CON AMEX");
+                                interfazNegocio.RegistrarTarjetaCredito(oTarjetaCredito);
+                                resultadoPago = true;
+                                break;
+                            case "5323":
+                                Console.WriteLine("PAGO CON MS");
+                                interfazNegocio.RegistrarTarjetaCredito(oTarjetaCredito);
+                                resultadoPago = true;
+                                break;
+                            default:
+                                Console.WriteLine("Invalid Card");
+                                interfazNegocio.RegistrarTarjetaCredito(oTarjetaCredito);
+                                resultadoPago = false;
+                                break;
+                        }
+                    }
+                }
+            }
+            return resultadoPago;
         }
     }
 }

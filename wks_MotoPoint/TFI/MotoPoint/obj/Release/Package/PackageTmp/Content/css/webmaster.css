@@ -37,6 +37,17 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+#lblAdminBitacora {
+    text-align: left;
+    font-family: arial, sans-serif;
+}
+
+#lblBtnWebMaster {
+    text-align: left;
+    font-family: arial, sans-serif;
+}
+
 /* CONTENEDOR DE BOTONERA DE ACCIONES DE BACKUP  Y DEBUG DE ARQ.BASE*/
 #admBackup p {
     text-align: left;

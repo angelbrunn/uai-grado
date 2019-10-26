@@ -223,25 +223,25 @@
     <value>WebMaster</value>
   </data>
   <data name="TableCellResource1.Text" xml:space="preserve">
-    <value>idEvento</value>
+    <value>idEvent</value>
   </data>
   <data name="TableCellResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="TableCellResource2.Text" xml:space="preserve">
-    <value>idUsuario</value>
+    <value>idUser</value>
   </data>
   <data name="TableCellResource2.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="TableCellResource3.Text" xml:space="preserve">
-    <value>descripcion</value>
+    <value>description</value>
   </data>
   <data name="TableCellResource3.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="TableCellResource4.Text" xml:space="preserve">
-    <value>fecha</value>
+    <value>date</value>
   </data>
   <data name="TableCellResource4.ToolTip" xml:space="preserve">
     <value />
@@ -254,5 +254,23 @@
   </data>
   <data name="tbBitacoraResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="lblAdminBitacoraResource1.Text" xml:space="preserve">
+    <value>Base Architecture Administration - Backup and Restoration.</value>
+  </data>
+  <data name="lblBtnWebMasterResource1.Text" xml:space="preserve">
+    <value>Base architecture administration - Debug</value>
+  </data>
+  <data name="lblGestionPerfilesIntoLinkResource1.Text" xml:space="preserve">
+    <value>  Profiles Management</value>
+  </data>
+  <data name="lblLinkGestionPerfilesResource1.Text" xml:space="preserve">
+    <value>User Administration - ABM Profiles - </value>
+  </data>
+  <data name="lblLinkHomeResource1.Text" xml:space="preserve">
+    <value>Go to the MotoPoint WebSite! - </value>
+  </data>
+  <data name="LinkHomeIntoResource1.Text" xml:space="preserve">
+    <value>  Go to MotoPoint!</value>
   </data>
 </root>

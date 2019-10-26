@@ -193,5 +193,25 @@ namespace SIS.BUSINESS
         /// <param name="desc"></param>
         /// <param name="monto"></param>
         void CrearPDFVoucher(string numeroOrden, string nombre, string desc, string monto);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<TarjetaCredito> ObtenerTarjetaCredito();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroTarjeta"></param>
+        /// <param name="numeroSeguridad"></param>
+        /// <param name="fechaValidez"></param>
+        /// <param name="nombreTitular"></param>
+        /// <param name="saldo"></param>
+        /// <returns></returns>
+        int RegistrarTarjetaCredito(TarjetaCredito oTarjetaCredito);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="saldo"></param>
+        void DecrementarTarjetaCreditoSaldo(string numeroTarjeta, string saldo);
     }
 }
