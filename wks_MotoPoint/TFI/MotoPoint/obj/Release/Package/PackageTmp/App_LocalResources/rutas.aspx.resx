@@ -330,4 +330,7 @@
   <data name="lblAvisoModalLikeTituloResource1.Text" xml:space="preserve">
     <value>Aviso Votación</value>
   </data>
+  <data name="lblMensajeAvisoResource1.Text" xml:space="preserve">
+    <value>Votacion Registrada</value>
+  </data>
 </root>

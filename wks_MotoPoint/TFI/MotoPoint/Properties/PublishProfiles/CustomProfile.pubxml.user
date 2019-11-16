@@ -104,10 +104,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:34:52</publishTime>
     </File>
     <File Include="App_LocalResources/rutas.aspx.en-US.resx">
-      <publishTime>09/15/2019 15:14:16</publishTime>
+      <publishTime>11/16/2019 00:47:57</publishTime>
     </File>
     <File Include="App_LocalResources/rutas.aspx.resx">
-      <publishTime>09/15/2019 15:14:23</publishTime>
+      <publishTime>11/16/2019 00:46:26</publishTime>
     </File>
     <File Include="App_LocalResources/webmaster.aspx.en-US.resx">
       <publishTime>10/24/2019 21:25:26</publishTime>
@@ -140,46 +140,46 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:27:05</publishTime>
     </File>
     <File Include="bin/BE.dll">
-      <publishTime>10/26/2019 16:43:12</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/BE.pdb">
-      <publishTime>10/26/2019 16:43:12</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/BL.dll">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="bin/BL.pdb">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>10/26/2019 16:43:15</publishTime>
+      <publishTime>11/15/2019 22:49:04</publishTime>
     </File>
     <File Include="bin/BLL.dll.config">
       <publishTime>12/31/2018 19:52:10</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>10/26/2019 16:43:15</publishTime>
+      <publishTime>11/15/2019 22:49:04</publishTime>
     </File>
     <File Include="bin/BLL.XmlSerializers.dll">
-      <publishTime>10/26/2019 16:43:16</publishTime>
+      <publishTime>11/15/2019 22:49:06</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>10/26/2019 16:43:13</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>10/26/2019 16:43:13</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/EL.dll">
-      <publishTime>10/26/2019 16:43:12</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/EL.pdb">
-      <publishTime>10/26/2019 16:43:12</publishTime>
+      <publishTime>11/15/2019 22:49:02</publishTime>
     </File>
     <File Include="bin/IO.dll">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="bin/IO.pdb">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
       <publishTime>08/24/2019 18:23:09</publishTime>
@@ -188,13 +188,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/MotoPoint.dll">
-      <publishTime>10/26/2019 16:43:28</publishTime>
+      <publishTime>11/16/2019 01:25:22</publishTime>
     </File>
     <File Include="bin/MotoPoint.pdb">
-      <publishTime>10/26/2019 16:43:28</publishTime>
+      <publishTime>11/16/2019 01:25:22</publishTime>
     </File>
     <File Include="bin/MotoPoint.XmlSerializers.dll">
-      <publishTime>10/26/2019 16:43:29</publishTime>
+      <publishTime>11/16/2019 01:25:23</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/31/2018 19:52:12</publishTime>
@@ -335,10 +335,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/SEG.dll">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="bin/SEG.pdb">
-      <publishTime>10/26/2019 16:43:14</publishTime>
+      <publishTime>11/15/2019 22:49:03</publishTime>
     </File>
     <File Include="blockUsuario.aspx">
       <publishTime>09/15/2019 12:28:06</publishTime>
@@ -590,7 +590,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:35:06</publishTime>
     </File>
     <File Include="rutas.aspx">
-      <publishTime>09/15/2019 16:12:56</publishTime>
+      <publishTime>11/16/2019 00:50:54</publishTime>
     </File>
     <File Include="Scripts/bootstrap-4.1.3.min.js">
       <publishTime>08/20/2019 20:25:26</publishTime>

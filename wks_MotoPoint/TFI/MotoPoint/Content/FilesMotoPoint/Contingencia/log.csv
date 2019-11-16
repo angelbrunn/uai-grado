@@ -252,3 +252,5 @@ idEvento;idUsuario;descripcion;fecha
 0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:56:03
 idEvento;idUsuario;descripcion;fecha
 0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:22:21
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;10:40:31

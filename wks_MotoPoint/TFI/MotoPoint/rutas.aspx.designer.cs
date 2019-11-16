@@ -247,6 +247,15 @@ namespace MotoPoint {
         protected global::System.Web.UI.WebControls.Label lblMensajeAviso;
         
         /// <summary>
+        /// Control btnCerrarModal01.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarModal01;
+        
+        /// <summary>
         /// Control lblModalDetalleTitulo.
         /// </summary>
         /// <remarks>
@@ -344,5 +353,14 @@ namespace MotoPoint {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotificacionEvento;
+        
+        /// <summary>
+        /// Control btnCerrarModal02.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarModal02;
     }
 }

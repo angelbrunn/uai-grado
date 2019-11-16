@@ -88,7 +88,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Usted ya ha dado like a esta Ruta!
+                    <asp:Label ID="lblMensajeAviso" Text="Votacion Registrada" runat="server" meta:resourcekey="lblMensajeAvisoResource1"></asp:Label>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -123,7 +123,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        function openModal() {
+        function openModalAviso() {
             $('#AvisoModal01').modal('show');
         }
         function openModalDetalle() {

@@ -333,4 +333,10 @@
   <data name="lblMensajeAvisoResource1.Text" xml:space="preserve">
     <value>Votacion Registrada</value>
   </data>
+  <data name="btnCerrarModal01Resource1.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="btnCerrarModal02Resource1.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
 </root>
