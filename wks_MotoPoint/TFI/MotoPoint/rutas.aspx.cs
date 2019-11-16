@@ -30,6 +30,10 @@ namespace MotoPoint
         /// </summary>
         String rROS = "ROS01";
         /// <summary>
+        /// 
+        /// </summary>
+        string feedAvisoModal1;
+        /// <summary>
         /// Instancio la clase de negocio motopoint | interfazNegocio
         /// </summary>
         SIS.BUSINESS.INegNegocio interfazNegocio = new SIS.BUSINESS.NegNegocio();
@@ -53,6 +57,15 @@ namespace MotoPoint
 
                 //VALIDO A CUALES EVENTOS LE HIZO LIKE EL USUARIO LOGEADO
                 EvaluarLikeUsuario(loginUsuario);
+
+                feedAvisoModal1 = Session["avisoModal01"] as string;
+
+                //AVISO DE REGISTRO DE EVENTO
+                if (feedAvisoModal1 == "1")
+                {
+                    Session["avisoModal01"] = "0";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallModal", "openModalAviso()", true);
+                }
 
                 //SI ES UN USUARIO NUEVO O INVALIDO LO SACO
                 if (loginEstado == "1" || (loginUsuario == "NuevoUsuario"))
@@ -318,6 +331,7 @@ namespace MotoPoint
         {
             //INICIALIZO LOS ESTADOS DE LA RUTA
             InicializarEstadoRuta();
+            Session["avisoModal01"] = "0";
 
             //OBTENGO LA RUTA A BUSCAR DEALLE
             string codRuta = ((((ImageButton)sender).ID).ToString()).Substring(7, 5);
@@ -434,6 +448,8 @@ namespace MotoPoint
         /// <param name="sender"></param>
         protected void EvaluarLike(object sender)
         {
+            Session["avisoModal01"] = "1";
+
             //RESULTADO POR DEFAULT | TRUE YA EXISTE LIKE OR FALSE AUN NO TIENE LIKE
             Boolean resultado = true;
 

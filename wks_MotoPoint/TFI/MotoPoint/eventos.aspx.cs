@@ -29,6 +29,7 @@ namespace MotoPoint
         {
             if (Session["loginUsuario"] != null)
             {
+                Session["avisoModal01"] = "0";
                 string loginEstado = Session["loginEstado"].ToString();
                 string loginUsuario = Session["loginUsuario"].ToString();
 

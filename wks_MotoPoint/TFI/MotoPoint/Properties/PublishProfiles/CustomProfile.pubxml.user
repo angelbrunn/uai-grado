@@ -140,46 +140,46 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/15/2019 12:27:05</publishTime>
     </File>
     <File Include="bin/BE.dll">
-      <publishTime>10/24/2019 21:26:46</publishTime>
+      <publishTime>10/26/2019 16:43:12</publishTime>
     </File>
     <File Include="bin/BE.pdb">
-      <publishTime>10/24/2019 21:26:46</publishTime>
+      <publishTime>10/26/2019 16:43:12</publishTime>
     </File>
     <File Include="bin/BL.dll">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="bin/BL.pdb">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:15</publishTime>
     </File>
     <File Include="bin/BLL.dll.config">
       <publishTime>12/31/2018 19:52:10</publishTime>
     </File>
     <File Include="bin/BLL.pdb">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:15</publishTime>
     </File>
     <File Include="bin/BLL.XmlSerializers.dll">
-      <publishTime>10/24/2019 21:26:49</publishTime>
+      <publishTime>10/26/2019 16:43:16</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>10/24/2019 21:26:47</publishTime>
+      <publishTime>10/26/2019 16:43:13</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>10/24/2019 21:26:47</publishTime>
+      <publishTime>10/26/2019 16:43:13</publishTime>
     </File>
     <File Include="bin/EL.dll">
-      <publishTime>10/24/2019 21:26:46</publishTime>
+      <publishTime>10/26/2019 16:43:12</publishTime>
     </File>
     <File Include="bin/EL.pdb">
-      <publishTime>10/24/2019 21:26:46</publishTime>
+      <publishTime>10/26/2019 16:43:12</publishTime>
     </File>
     <File Include="bin/IO.dll">
-      <publishTime>10/24/2019 21:26:47</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="bin/IO.pdb">
-      <publishTime>10/24/2019 21:26:47</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
       <publishTime>08/24/2019 18:23:09</publishTime>
@@ -188,13 +188,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/MotoPoint.dll">
-      <publishTime>10/24/2019 21:26:59</publishTime>
+      <publishTime>10/26/2019 16:43:28</publishTime>
     </File>
     <File Include="bin/MotoPoint.pdb">
-      <publishTime>10/24/2019 21:26:59</publishTime>
+      <publishTime>10/26/2019 16:43:28</publishTime>
     </File>
     <File Include="bin/MotoPoint.XmlSerializers.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/26/2019 16:43:29</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/31/2018 19:52:12</publishTime>
@@ -335,10 +335,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>12/31/2018 19:52:12</publishTime>
     </File>
     <File Include="bin/SEG.dll">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="bin/SEG.pdb">
-      <publishTime>10/24/2019 21:26:48</publishTime>
+      <publishTime>10/26/2019 16:43:14</publishTime>
     </File>
     <File Include="blockUsuario.aspx">
       <publishTime>09/15/2019 12:28:06</publishTime>
@@ -647,7 +647,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/20/2019 20:33:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/24/2019 21:27:42</publishTime>
+      <publishTime>10/26/2019 16:44:35</publishTime>
     </File>
     <File Include="webmaster.aspx">
       <publishTime>10/24/2019 21:14:08</publishTime>
