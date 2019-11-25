@@ -91,7 +91,7 @@
                     <asp:Label ID="lblMensajeAviso" Text="Votacion Registrada" runat="server" meta:resourcekey="lblMensajeAvisoResource1"></asp:Label>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:Button ID="btnCerrarModal01" class="btn btn-secondary" runat="server" Text="Cerrar" data-dismiss="modal" meta:resourcekey="btnCerrarModal01Resource1" /> 
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
                     <p><asp:Label ID="lblNotificacionEvento"  Text="Como siempre cuando se llegue al cupo minimo de la ruta se lanzara el evento, lugar de salida y horario seran enviados via Email!" runat="server" meta:resourcekey="lblNotificacionEventoResource1"></asp:Label></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:Button ID="btnCerrarModal02" class="btn btn-secondary" runat="server" Text="Cerrar" data-dismiss="modal" meta:resourcekey="btnCerrarModal02Resource1" /> 
                 </div>
             </div>
         </div>
