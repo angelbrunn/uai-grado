@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://motopoint.somee.com/www.motopoint.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="actividades.aspx">
+      <publishTime>09/15/2019 16:11:47</publishTime>
+    </File>
+    <File Include="App_LocalResources/actividades.aspx.en-US.resx">
+      <publishTime>09/15/2019 15:17:33</publishTime>
+    </File>
+    <File Include="App_LocalResources/actividades.aspx.resx">
+      <publishTime>09/15/2019 15:17:21</publishTime>
+    </File>
+    <File Include="App_LocalResources/avisoPago.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:49:04</publishTime>
+    </File>
+    <File Include="App_LocalResources/avisoPago.aspx.resx">
+      <publishTime>09/15/2019 12:12:48</publishTime>
+    </File>
+    <File Include="App_LocalResources/ayuda.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:49:55</publishTime>
+    </File>
+    <File Include="App_LocalResources/ayuda.aspx.resx">
+      <publishTime>09/15/2019 12:26:49</publishTime>
+    </File>
+    <File Include="App_LocalResources/blockUsuario.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:50:09</publishTime>
+    </File>
+    <File Include="App_LocalResources/blockUsuario.aspx.resx">
+      <publishTime>09/15/2019 12:27:51</publishTime>
+    </File>
+    <File Include="App_LocalResources/eventos.aspx.en-US.resx">
+      <publishTime>09/15/2019 14:02:24</publishTime>
+    </File>
+    <File Include="App_LocalResources/eventos.aspx.resx">
+      <publishTime>09/15/2019 12:28:27</publishTime>
+    </File>
+    <File Include="App_LocalResources/expertos.aspx.en-US.resx">
+      <publishTime>09/15/2019 15:15:53</publishTime>
+    </File>
+    <File Include="App_LocalResources/expertos.aspx.resx">
+      <publishTime>09/15/2019 15:15:44</publishTime>
+    </File>
+    <File Include="App_LocalResources/isError.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:51:22</publishTime>
+    </File>
+    <File Include="App_LocalResources/isError.aspx.resx">
+      <publishTime>09/15/2019 12:30:30</publishTime>
+    </File>
+    <File Include="App_LocalResources/isOk.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:51:33</publishTime>
+    </File>
+    <File Include="App_LocalResources/isOk.aspx.resx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="App_LocalResources/MasterHome.Master.en-US.resx">
+      <publishTime>09/15/2019 16:06:03</publishTime>
+    </File>
+    <File Include="App_LocalResources/MasterHome.Master.resx">
+      <publishTime>09/15/2019 16:06:14</publishTime>
+    </File>
+    <File Include="App_LocalResources/membresias.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:53:50</publishTime>
+    </File>
+    <File Include="App_LocalResources/membresias.aspx.resx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="App_LocalResources/membresiaspago.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:54:46</publishTime>
+    </File>
+    <File Include="App_LocalResources/membresiaspago.aspx.resx">
+      <publishTime>09/15/2019 12:32:32</publishTime>
+    </File>
+    <File Include="App_LocalResources/miPerfil.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:55:10</publishTime>
+    </File>
+    <File Include="App_LocalResources/miPerfil.aspx.resx">
+      <publishTime>09/15/2019 12:33:02</publishTime>
+    </File>
+    <File Include="App_LocalResources/ofertas.aspx.en-US.resx">
+      <publishTime>09/15/2019 14:44:14</publishTime>
+    </File>
+    <File Include="App_LocalResources/ofertas.aspx.resx">
+      <publishTime>09/15/2019 12:33:43</publishTime>
+    </File>
+    <File Include="App_LocalResources/recordar.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:55:36</publishTime>
+    </File>
+    <File Include="App_LocalResources/recordar.aspx.resx">
+      <publishTime>09/15/2019 12:34:28</publishTime>
+    </File>
+    <File Include="App_LocalResources/registro.aspx.en-US.resx">
+      <publishTime>09/15/2019 12:55:54</publishTime>
+    </File>
+    <File Include="App_LocalResources/registro.aspx.resx">
+      <publishTime>09/15/2019 12:34:52</publishTime>
+    </File>
+    <File Include="App_LocalResources/rutas.aspx.en-US.resx">
+      <publishTime>11/16/2019 10:42:32</publishTime>
+    </File>
+    <File Include="App_LocalResources/rutas.aspx.resx">
+      <publishTime>11/16/2019 10:42:52</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmaster.aspx.en-US.resx">
+      <publishTime>10/24/2019 21:25:26</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmaster.aspx.resx">
+      <publishTime>10/24/2019 21:25:35</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterContingencia.aspx.en-US.resx">
+      <publishTime>09/15/2019 13:00:23</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterContingencia.aspx.resx">
+      <publishTime>09/15/2019 12:36:40</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterGestionPerfiles.aspx.en-US.resx">
+      <publishTime>09/15/2019 13:01:07</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterGestionPerfiles.aspx.resx">
+      <publishTime>09/15/2019 12:37:22</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterpagos.aspx.en-US.resx">
+      <publishTime>09/15/2019 13:01:55</publishTime>
+    </File>
+    <File Include="App_LocalResources/webmasterpagos.aspx.resx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="avisoPago.aspx">
+      <publishTime>09/15/2019 12:13:05</publishTime>
+    </File>
+    <File Include="ayuda.aspx">
+      <publishTime>09/15/2019 12:27:05</publishTime>
+    </File>
+    <File Include="bin/BE.dll">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/BE.pdb">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/BL.dll">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="bin/BL.pdb">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="bin/BLL.dll">
+      <publishTime>11/15/2019 22:49:04</publishTime>
+    </File>
+    <File Include="bin/BLL.dll.config">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="bin/BLL.pdb">
+      <publishTime>11/15/2019 22:49:04</publishTime>
+    </File>
+    <File Include="bin/BLL.XmlSerializers.dll">
+      <publishTime>11/15/2019 22:49:06</publishTime>
+    </File>
+    <File Include="bin/DAL.dll">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/DAL.pdb">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/EL.dll">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/EL.pdb">
+      <publishTime>11/15/2019 22:49:02</publishTime>
+    </File>
+    <File Include="bin/IO.dll">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="bin/IO.pdb">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>08/24/2019 18:23:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/MotoPoint.dll">
+      <publishTime>11/16/2019 10:51:39</publishTime>
+    </File>
+    <File Include="bin/MotoPoint.pdb">
+      <publishTime>11/16/2019 10:51:39</publishTime>
+    </File>
+    <File Include="bin/MotoPoint.XmlSerializers.dll">
+      <publishTime>11/16/2019 10:51:40</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.AccessControl.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>12/31/2018 19:52:12</publishTime>
+    </File>
+    <File Include="bin/SEG.dll">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="bin/SEG.pdb">
+      <publishTime>11/15/2019 22:49:03</publishTime>
+    </File>
+    <File Include="blockUsuario.aspx">
+      <publishTime>09/15/2019 12:28:06</publishTime>
+    </File>
+    <File Include="Content/actividades/CHASCO.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/actividades/COR.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/actividades/MDQ.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/actividades/ROS.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/carpetaTest/pago.xml">
+      <publishTime>09/15/2019 22:50:38</publishTime>
+    </File>
+    <File Include="Content/css/abmusuario.css">
+      <publishTime>03/31/2019 23:36:36</publishTime>
+    </File>
+    <File Include="Content/css/avisopago.css">
+      <publishTime>03/31/2019 23:36:36</publishTime>
+    </File>
+    <File Include="Content/css/ayuda.css">
+      <publishTime>03/31/2019 23:36:36</publishTime>
+    </File>
+    <File Include="Content/css/blockUsuario.css">
+      <publishTime>03/31/2019 23:36:36</publishTime>
+    </File>
+    <File Include="Content/css/feedback.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/css/home.css">
+      <publishTime>08/25/2019 20:26:51</publishTime>
+    </File>
+    <File Include="Content/css/login.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/css/membresias.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/css/membresiaspago.css">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/css/perfil.css">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/css/recordar.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/css/registro.css">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/css/webmaster.css">
+      <publishTime>10/24/2019 21:24:54</publishTime>
+    </File>
+    <File Include="Content/expertos/EXP1.png">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/expertos/EXP2.jpeg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/expertos/EXP3.jpeg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/expertos/EXP4.jpeg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/FilesMotoPoint/Contingencia/FACTURA/inventario.txt">
+      <publishTime>09/17/2019 00:55:22</publishTime>
+    </File>
+    <File Include="Content/FilesMotoPoint/Contingencia/log_System.txt">
+      <publishTime>09/15/2019 23:50:32</publishTime>
+    </File>
+    <File Include="Content/FilesMotoPoint/Contingencia/pagos.xml">
+      <publishTime>09/15/2019 23:49:46</publishTime>
+    </File>
+    <File Include="Content/FilesMotoPoint/Readme.txt">
+      <publishTime>09/15/2019 23:47:26</publishTime>
+    </File>
+    <File Include="Content/image/bill.svg">
+      <publishTime>08/23/2019 11:58:37</publishTime>
+    </File>
+    <File Include="Content/image/BlockUsuario.png">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/image/faltaPago.svg">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/image/feedback_negativo.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/feedback_positivo.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/idCardBronce.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/idCardOro.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/idCardPlata.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/logoPdf.svg">
+      <publishTime>08/24/2019 17:01:38</publishTime>
+    </File>
+    <File Include="Content/image/membresiaBronce.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/membresiaOro.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/membresiaPlata.svg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/image/perfilBronce.svg">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/image/perfilOro.svg">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/image/perfilPlata.svg">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="Content/image/rutaDetalle.svg">
+      <publishTime>04/07/2019 16:16:02</publishTime>
+    </File>
+    <File Include="Content/image/shopping-bag.svg">
+      <publishTime>08/23/2019 18:37:49</publishTime>
+    </File>
+    <File Include="Content/image/supplier.svg">
+      <publishTime>04/07/2019 00:11:08</publishTime>
+    </File>
+    <File Include="Content/ofertas/ACA.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/ATALAYA.png">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/AUTOMOTORESDELSUR.png">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/HONDA.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/PIRELLI.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/YAMAHA.png">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/YPF.jpeg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/ofertas/ZANELLA.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/rutas/ATALAYA.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/rutas/CORDOBA.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/rutas/MDQ.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Content/rutas/ROS.jpg">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="eventos.aspx">
+      <publishTime>09/15/2019 12:28:48</publishTime>
+    </File>
+    <File Include="expertos.aspx">
+      <publishTime>09/15/2019 16:11:02</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>12/31/2018 19:52:11</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="isError.aspx">
+      <publishTime>09/15/2019 12:30:43</publishTime>
+    </File>
+    <File Include="isOk.aspx">
+      <publishTime>09/15/2019 12:31:17</publishTime>
+    </File>
+    <File Include="login.aspx">
+      <publishTime>03/31/2019 23:36:43</publishTime>
+    </File>
+    <File Include="MasterHome.Master">
+      <publishTime>09/15/2019 15:56:16</publishTime>
+    </File>
+    <File Include="membresias.aspx">
+      <publishTime>09/15/2019 12:32:16</publishTime>
+    </File>
+    <File Include="membresiaspago.aspx">
+      <publishTime>09/15/2019 12:32:46</publishTime>
+    </File>
+    <File Include="miPerfil.aspx">
+      <publishTime>09/15/2019 12:33:22</publishTime>
+    </File>
+    <File Include="ofertas.aspx">
+      <publishTime>09/15/2019 12:34:15</publishTime>
+    </File>
+    <File Include="recordar.aspx">
+      <publishTime>09/15/2019 12:34:39</publishTime>
+    </File>
+    <File Include="registro.aspx">
+      <publishTime>09/15/2019 12:35:06</publishTime>
+    </File>
+    <File Include="rutas.aspx">
+      <publishTime>11/16/2019 10:41:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-4.1.3.min.js">
+      <publishTime>08/20/2019 20:25:26</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/JavaScript.js">
+      <publishTime>08/20/2019 20:31:07</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.map">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js">
+      <publishTime>12/31/2018 19:52:10</publishTime>
+    </File>
+    <File Include="Web References/somee/Reference.map">
+      <publishTime>09/20/2019 20:33:43</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/26/2019 16:44:35</publishTime>
+    </File>
+    <File Include="webmaster.aspx">
+      <publishTime>10/24/2019 21:14:08</publishTime>
+    </File>
+    <File Include="webmasterContingencia.aspx">
+      <publishTime>09/15/2019 12:36:52</publishTime>
+    </File>
+    <File Include="webmasterGestionPerfiles.aspx">
+      <publishTime>09/15/2019 12:37:38</publishTime>
+    </File>
+    <File Include="webmasterpagos.aspx">
+      <publishTime>09/15/2019 12:38:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

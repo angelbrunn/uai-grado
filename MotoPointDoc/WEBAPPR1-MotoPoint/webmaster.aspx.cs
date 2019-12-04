@@ -1,0 +1,442 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Web.Security;
+using System.Web.UI.WebControls;
+
+namespace MotoPoint
+{
+    public partial class admin : System.Web.UI.Page
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        SIS.BUSINESS.INegMultiUsuario interfazNegocioUsuario = new SIS.BUSINESS.NegMultiUsuario();
+        /// <summary>
+        /// 
+        /// </summary>
+        SIS.BUSINESS.INegBitacora interfazNegocioBitacora = new SIS.BUSINESS.NegBitacora();
+        /// <summary>
+        /// 
+        /// </summary>
+        SIS.BUSINESS.INegBackup interfazNegocioBackup = new SIS.BUSINESS.NegBackup();
+        /// <summary>
+        /// 
+        /// </summary>
+        List<SIS.ENTIDAD.Bitacora> listBitacora = new List<SIS.ENTIDAD.Bitacora>();
+        /// <summary>
+        /// 
+        /// </summary>
+        string bkpRuta = System.Web.HttpContext.Current.Server.MapPath("~/Content/FilesMotoPoint/Contingencia/");
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (User.IsInRole("Usuario"))
+            {
+                //SI EL USUARIO NO TIENE PERMISOS LO SACO DE LA WEBMASTER PAGE!
+                Response.Redirect("eventos.aspx");
+            }
+            else
+            {
+                // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
+                bool resultadoConsistenciaUsuarios = false;
+                // ARQ.BASE - DIGITO VERIFICADO - TABLA:USUARIOS
+                bool resultadoConsistenciaBitacora = false;
+
+                // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
+                resultadoConsistenciaUsuarios = interfazNegocioUsuario.VerificarConsistenciaUsuarioBD();
+                // 1 - VERIFICO CONSISTENCIA DE LA BASE DE DATOS POR MEDIO DEL DIGITO VERIFICADOR - TABLA USUARIOS| FALSE:ERROR / TRUE:ISOK
+                resultadoConsistenciaBitacora = interfazNegocioBitacora.VerificarConsistenciaBitacoraBD();
+
+                if (resultadoConsistenciaUsuarios == false || resultadoConsistenciaBitacora == false)
+                {
+                    // MENSAJE ERROR CRITICO | BANNER ROJO
+                    Session["dbEstado"] = 1;
+                    Session["dbContingencia"] = 1;
+                }
+                else
+                {
+                    //MENSAJE OK | BANNER VERDE
+                    Session["dbEstado"] = 0;
+                    Session["dbContingencia"] = 0;
+                }
+                // ARQ.BASE - GESTION DE BACKUP
+                var TxBackUp = Session["TxBackup"];
+                var TxExportar = Session["fExportar"];
+                var TxImportar = Session["fImportar"];
+                string Tx = "0";
+                string TxE = "0";
+                string TxI = "0";
+                if (TxBackUp != null)
+                {
+                    Tx = TxBackUp.ToString();
+                }
+
+                if (Tx == "1")
+                {
+                    TxE = TxExportar.ToString();
+                    TxI = TxImportar.ToString();
+                    if (TxE == "1")
+                    {
+                        Session["fExportar"] = 1;
+                        Session["fImportar"] = 0;
+                        TxE = "0";
+                    }
+                    else if (TxI == "1")
+                    {
+                        Session["fExportar"] = 0;
+                        Session["fImportar"] = 1;
+                        TxI = "0";
+                    }
+                }
+                else if (Tx == "0")
+                {
+                    TxE = "0";
+                    TxI = "0";
+                    Session["fExportar"] = 0;
+                    Session["fImportar"] = 0;
+                }
+            }
+            // ARQ.BASE - GESTION DE BITACORA
+            // 2 - BUSCO DATOS DE LA TABLA BITACORA PARA EVALUAR ERRORES DEL SISTEMA
+            listBitacora = interfazNegocioBitacora.ObtenerEventosBitacora();
+
+            TableRow row;
+            TableCell CellIdEvento;
+            TableCell CellIdUsuario;
+            TableCell CellDescripcion;
+            TableCell CellFecha;
+
+            foreach (SIS.ENTIDAD.Bitacora _bitacora in listBitacora)
+            {
+                row = new TableRow();
+                CellIdEvento = new TableCell();
+                CellIdUsuario = new TableCell();
+                CellDescripcion = new TableCell();
+                CellFecha = new TableCell();
+
+                CellIdEvento.Text = _bitacora.IdEvento.ToString();
+                CellIdUsuario.Text = _bitacora.IdUsuario.ToString();
+                CellDescripcion.Text = _bitacora.Descripcion;
+                CellFecha.Text = _bitacora.Fecha.ToString();
+
+                if (CellIdEvento.Text != "1")
+                {
+                    row.Cells.Add(CellIdEvento);
+                    row.Cells.Add(CellIdUsuario);
+                    row.Cells.Add(CellDescripcion);
+                    row.Cells.Add(CellFecha);
+
+                    tbBitacora.Rows.Add(row);
+                }
+
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void InitializeCulture()
+        {
+            if (Session["lang"] != null)
+            {
+                SetCulture(Session["lang"].ToString());
+                base.InitializeCulture();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lang"></param>
+        private void SetCulture(string lang)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+        }
+        /// <summary>
+        /// REDIRECCIONO HACIA EL HOME PAGE
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void LinkHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("eventos.aspx");
+        }
+        /// <summary>
+        ///  ARQ.BASE: GESTION DE PERFILES
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void LinkGestionPerfiles_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("webmasterGestionPerfiles.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void linkContingencia_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("webmasterContingencia.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            FormsAuthentication.SignOut();
+            Response.Redirect("login.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExportar_Click(object sender, EventArgs e)
+        {
+            var ruta = "";
+            var validarExportar = true;
+            Session["fExportar"] = 0;
+            Session["fImportar"] = 0;
+            Session["TxBackup"] = 1;
+            try
+            {
+                if (chkbxBitacora.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Bitacora.csv";
+                    interfazNegocioBackup.ExportarAArchivoBitacora(ruta, ";");
+                }
+
+                if (chkbxUsuario.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Usuario.csv";
+                    interfazNegocioBackup.ExportarAArchivoUsuario(ruta, ";");
+                }
+
+                if (chkbxGrupo.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Grupo.csv";
+                    interfazNegocioBackup.ExportarAArchivoGrupo(ruta, ";");
+                }
+
+                if (chkbxGrupoPermiso.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_GrupoPermiso.csv";
+                    interfazNegocioBackup.ExportarAArchivoGrupoPermisos(ruta, ";");
+                }
+
+                if (chkbxPermiso.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Permiso.csv";
+                    interfazNegocioBackup.ExportarAArchivoPermisos(ruta, ";");
+                }
+
+                if (chkbxMultiIdioma.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_MultiIdioma.csv";
+                    interfazNegocioBackup.ExportarAArchivoMultiIdioma(ruta, ";");
+                }
+
+                if (chkbxUsuarioGrupo.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_UsuarioGrupo.csv";
+                    interfazNegocioBackup.ExportarAArchivoUsuarioGrupo(ruta, ";");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                validarExportar = false;
+                new SIS.EXCEPCIONES.UIExcepcion(ex.Message);
+            }
+
+            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked))
+            {
+                validarExportar = false;
+            }
+
+            if (validarExportar)
+            {
+                //Feedback de exportacion | 1:isok 0:isErrok
+                Session["fExportar"] = 1;
+            }
+
+            Response.Redirect("webmaster.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnImportar_Click(object sender, EventArgs e)
+        {
+            var ruta = "";
+            var validarImportar = true;
+            Char delimitter = ';';
+            Session["fImportar"] = 0;
+            Session["fExportar"] = 0;
+            Session["TxBackup"] = 1;
+            try
+            {
+                if (chkbxBitacora.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Bitacora.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoBitacora(ruta, delimitter);
+                }
+
+                if (chkbxUsuario.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Usuario.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoUsuario(ruta, delimitter);
+                }
+
+                if (chkbxGrupo.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Grupo.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoGrupo(ruta, delimitter);
+                }
+
+                if (chkbxGrupoPermiso.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_GrupoPermiso.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoGrupoPermiso(ruta, delimitter);
+                }
+
+                if (chkbxPermiso.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_Permiso.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoPermiso(ruta, delimitter);
+                }
+
+                if (chkbxMultiIdioma.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_MultiIdioma.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoMultiIdioma(ruta, delimitter);
+                }
+
+                if (chkbxUsuarioGrupo.Checked)
+                {
+                    ruta = bkpRuta;
+                    ruta = ruta + "\\bkp_UsuarioGrupo.csv";
+                    interfazNegocioBackup.ImportarDesdeArchivoUsuarioGrupo(ruta, delimitter);
+                }
+            }
+            catch (Exception ex)
+            {
+                validarImportar = false;
+                new SIS.EXCEPCIONES.UIExcepcion(ex.Message);
+            }
+
+            if (!(chkbxBitacora.Checked || chkbxUsuario.Checked || chkbxGrupo.Checked || chkbxGrupoPermiso.Checked || chkbxPermiso.Checked || chkbxMultiIdioma.Checked || chkbxUsuarioGrupo.Checked))
+            {
+                validarImportar = false;
+            }
+
+            if (validarImportar)
+            {
+                //Feedback de Importacion | 1:isok 0:isErrok
+                Session["fImportar"] = 1;
+            }
+
+            Response.Redirect("webmaster.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnTbitacora_Click(object sender, EventArgs e)
+        {
+            //##### USUARIO A PERSISTIR #####
+            string usuarioIdSession = Session["UsuarioId"].ToString();
+            //##### OBJETOS A PERSISTIR #####
+            SIS.ENTIDAD.Bitacora oBitacora_DAL = new SIS.ENTIDAD.Bitacora();
+            SIS.ENTIDAD.Bitacora oBitacora_IO = new SIS.ENTIDAD.Bitacora();
+            SIS.ENTIDAD.Bitacora oBitacora_BLL = new SIS.ENTIDAD.Bitacora();
+            SIS.ENTIDAD.Bitacora oBitacora_BKP = new SIS.ENTIDAD.Bitacora();
+            SIS.ENTIDAD.Bitacora oBitacora_SEG = new SIS.ENTIDAD.Bitacora();
+            SIS.ENTIDAD.Bitacora oBitacora_UI = new SIS.ENTIDAD.Bitacora();
+            //##### EDITO UN MENSAJE PARA UNA EXCEPCION DE TEST #####
+            oBitacora_DAL.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            oBitacora_IO.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            oBitacora_BLL.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            oBitacora_BKP.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            oBitacora_SEG.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            oBitacora_UI.Descripcion = "Probando desde depuracion,insercion de Trazas.";
+            //##### CONSTRUYO LA EXCEPCION DE TEST SEGUN TIPO DE EXCEPCION #####
+            var exc_DAL = new SIS.EXCEPCIONES.DALExcepcion(oBitacora_DAL.Descripcion);
+            var exc_IO = new SIS.EXCEPCIONES.IOException(oBitacora_IO.Descripcion);
+            var exc_BLL = new SIS.EXCEPCIONES.BLLExcepcion(oBitacora_BLL.Descripcion);
+            var exc_BKP = new SIS.EXCEPCIONES.BKPException(oBitacora_BKP.Descripcion);
+            var exc_SEG = new SIS.EXCEPCIONES.SEGExcepcion(oBitacora_SEG.Descripcion);
+            var exc_UI = new SIS.EXCEPCIONES.UIExcepcion(oBitacora_UI.Descripcion);
+            //##### EJECUTO TRAZA VIA BLL SEGUN TIPO DE EXCP QUE CORRESPONDA #####
+            interfazNegocioBitacora.RegistrarEnBitacora_BKP(usuarioIdSession, exc_BKP);
+
+            /*
+            interfazNegocioBitacora.registrarEnBitacora_BLL(usuarioIdSession, exc_BLL);
+            interfazNegocioBitacora.registrarEnBitacora_DAL(usuarioIdSession, exc_DAL);
+            interfazNegocioBitacora.registrarEnBitacora_IO(usuarioIdSession, exc_IO);
+            interfazNegocioBitacora.registrarEnBitacora_SEG(usuarioIdSession, exc_SEG);
+            interfazNegocioBitacora.registrarEnBitacora_UI(usuarioIdSession, exc_UI);
+            */
+            Response.Redirect("webmaster.aspx");
+        }
+
+        protected void btnTinfo_Click(object sender, EventArgs e)
+        {
+            //LISTAR XML DE CONTROL DE TRANSACCION
+            Response.Redirect("webmasterpagos.aspx");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnTidioma_Click(object sender, EventArgs e)
+        {
+            //POR DEFUALT VIENE ESPAÑOL
+            if (Session["lang"] == null)
+            {
+
+                Session["lang"] = "en-US";
+            }
+
+            if (Session["lang"].ToString() == "en-US")
+            {
+                Session["lang"] = "es-ES";
+                Response.Redirect(Request.Url.ToString());
+            }
+            else
+            {
+                Session["lang"] = "en-US";
+                Response.Redirect(Request.Url.ToString());
+            }
+
+        }
+    }
+}

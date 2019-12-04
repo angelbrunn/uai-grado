@@ -1,0 +1,256 @@
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:11:20
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:12:44
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:14:09
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:15:52
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:16:02
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:26:54
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(36),' expects the parameter '@DigitoVerificador', which was not supplied.;22:46:15
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(60),' expects the parameter '@DigitoVerificador', which was not supplied.;22:50:08
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;20:48:59
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;20:51:22
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;20:52:24
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;20:59:23
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;17:10:54
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(62),' expects the parameter '@DigitoVerificador', which was not supplied.;17:29:36
+idEvento;idUsuario;descripcion;fecha
+0;HASH;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(4),@Descripcion nvarchar(62),' expects the parameter '@DigitoVerificador', which was not supplied.;17:30:18
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;19:01:30
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;19:01:36
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;19:01:43
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:34:41
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:34:44
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;00:32:55
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;00:32:57
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;00:32:58
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;00:34:39
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(92),' expects the parameter '@DigitoVerificador', which was not supplied.;00:53:20
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(91),' expects the parameter '@DigitoVerificador', which was not supplied.;00:53:21
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(89),' expects the parameter '@DigitoVerificador', which was not supplied.;00:53:21
+idEvento;idUsuario;descripcion;fecha
+0;3;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(1),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;22:24:51
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:41:52
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:42:53
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:43:28
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:45:10
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:48:20
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:55:59
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:56:19
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:06:51
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:18:06
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:20:06
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:25:28
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:19:02
+idEvento;idUsuario;descripcion;fecha
+0;6;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(1),@Descripcion nvarchar(201)' expects the parameter '@DigitoVerificador', which was not supplied.;21:19:50
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:25:49
+idEvento;idUsuario;descripcion;fecha
+0;6;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(1),@Descripcion nvarchar(201)' expects the parameter '@DigitoVerificador', which was not supplied.;21:26:42
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:37:29
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;22:01:48
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:05:22
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(44),' expects the parameter '@DigitoVerificador', which was not supplied.;14:05:42
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:07:53
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:10:09
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:11:09
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:15:14
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:17:27
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(52),' expects the parameter '@DigitoVerificador', which was not supplied.;14:17:34
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:17:45
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:19:13
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:19:45
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:19:58
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:20:15
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:29:25
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:30:12
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:33:28
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:35:06
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:38:58
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:39:05
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:39:12
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:39:41
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:41:16
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:41:34
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:45:45
+idEvento;idUsuario;descripcion;fecha
+0;UI;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(95),' expects the parameter '@DigitoVerificador', which was not supplied.;21:45:58
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:47:01
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:49:32
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:51:14
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:53:15
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;21:55:39
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;21:56:35
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;22:35:43
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;22:37:54
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;22:45:34
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(53),' expects the parameter '@DigitoVerificador', which was not supplied.;22:46:28
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:19:13
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:19:42
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:23:06
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:25:35
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(159)' expects the parameter '@DigitoVerificador', which was not supplied.;13:25:37
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:26:02
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:31:28
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:32:13
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;13:32:31
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:38:17
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:38:30
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:45:56
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;14:46:02
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;18:47:41
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;18:47:45
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:00:24
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;16:14:25
+idEvento;idUsuario;descripcion;fecha
+0;DB;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(2),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;20:21:21
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:05:28
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;21:09:33
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:36:29
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:42:16
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:50:38
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:53:25
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:54:20
+idEvento;idUsuario;descripcion;fecha
+0;SYS;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(164)' expects the parameter '@DigitoVerificador', which was not supplied.;19:57:54
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(201)' expects the parameter '@DigitoVerificador', which was not supplied.;22:53:13
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;22:53:18
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(201)' expects the parameter '@DigitoVerificador', which was not supplied.;22:53:19
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:18:17
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:43:17
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;23:58:58
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:07:07
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:10:09
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:10:46
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:11:52
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:12:13
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:14:07
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:18:52
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:38:27
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:41:21
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:44:17
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:50:08
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:53:30
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:53:54
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;00:56:03
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;01:22:21
+idEvento;idUsuario;descripcion;fecha
+0;BLL;The parameterized query '(@IdEvento int,@IdUsuario nvarchar(3),@Descripcion nvarchar(76),' expects the parameter '@DigitoVerificador', which was not supplied.;10:40:31

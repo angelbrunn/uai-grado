@@ -1,0 +1,48 @@
+﻿@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 50px auto;
+    width: 600px;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #FF6600, #FF6600);
+    background: -moz-linear-gradient(right, #FF6600, #FF6600);
+    background: -o-linear-gradient(right, #FF6600, #FF6600);
+    background: linear-gradient(to left, #FF6600, #FF6600);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#btnPagar {
+    background-color: #333;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #464242;
+}
+
+    #btnPagar:hover {
+        background-color: #4e4c4c;
+    }
+
+.col-md-offset-4 {
+    margin-left: 100px;
+}
+
+#lblMontoPagar, #lblNumeroTarjeta, #lblCvc, #lblTitularTarjeta, #lblFechaExpiracion {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
